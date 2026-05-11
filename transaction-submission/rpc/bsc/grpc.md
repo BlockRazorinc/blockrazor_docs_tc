@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # gRPC
 
 ### 介紹
