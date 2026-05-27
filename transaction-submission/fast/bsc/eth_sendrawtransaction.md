@@ -12,7 +12,17 @@ Fast模式不和訂閱計劃綁定，但每筆交易中需要包含轉賬至0x9D
 
 ### 端點
 
+{% tabs %}
+{% tab title="通用域名" %}
+```
 http://bsc-fast.blockrazor.io
+```
+{% endtab %}
+
+{% tab title="地理域名" %}
+<table><thead><tr><th width="146.78125">地區</th><th>域名</th></tr></thead><tbody><tr><td>Frankfurt</td><td><a href="http://frankfurt.bsc-fast.blockrazor.io">http://frankfurt.bsc-fast.blockrazor.io</a></td></tr><tr><td>Japan</td><td><a href="http://japan.bsc-fast.blockrazor.io">http://japan.bsc-fast.blockrazor.io</a></td></tr><tr><td>Virginia</td><td><a href="http://virginia.bsc-fast.blockrazor.io">http://virginia.bsc-fast.blockrazor.io</a></td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 
 
