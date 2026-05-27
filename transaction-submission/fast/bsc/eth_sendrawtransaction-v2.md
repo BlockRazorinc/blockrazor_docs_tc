@@ -17,7 +17,17 @@ Fast模式基於BlockRazor的全球高性能網絡實現交易最低延遲上鏈
 
 ### 端點
 
+{% tabs %}
+{% tab title="通用域名" %}
+```
 http://bsc-fast.blockrazor.io/v2/sendRawTransaction
+```
+{% endtab %}
+
+{% tab title="地理域名" %}
+<table><thead><tr><th width="124.109375">地區</th><th>域名</th></tr></thead><tbody><tr><td>Frankfurt</td><td>http://frankfurt.bsc-fast.blockrazor.io/v2/sendRawTransaction</td></tr><tr><td>Japan</td><td>http://japan.bsc-fast.blockrazor.io/v2/sendRawTransaction</td></tr><tr><td>Virginia</td><td>http://virginia.bsc-fast.blockrazor.io/v2/sendRawTransaction</td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 
 

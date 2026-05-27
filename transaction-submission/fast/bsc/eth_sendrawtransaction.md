@@ -20,7 +20,7 @@ http://bsc-fast.blockrazor.io
 {% endtab %}
 
 {% tab title="地理域名" %}
-<table><thead><tr><th width="146.78125">地區</th><th>域名</th></tr></thead><tbody><tr><td>Frankfurt</td><td><a href="http://frankfurt.bsc-fast.blockrazor.io">http://frankfurt.bsc-fast.blockrazor.io</a></td></tr><tr><td>Japan</td><td><a href="http://japan.bsc-fast.blockrazor.io">http://japan.bsc-fast.blockrazor.io</a></td></tr><tr><td>Virginia</td><td><a href="http://virginia.bsc-fast.blockrazor.io">http://virginia.bsc-fast.blockrazor.io</a></td></tr></tbody></table>
+<table><thead><tr><th width="146.78125">地區</th><th>域名</th></tr></thead><tbody><tr><td>Frankfurt</td><td>http://frankfurt.bsc-fast.blockrazor.io</td></tr><tr><td>Japan</td><td>http://japan.bsc-fast.blockrazor.io</td></tr><tr><td>Virginia</td><td>http://virginia.bsc-fast.blockrazor.io</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
