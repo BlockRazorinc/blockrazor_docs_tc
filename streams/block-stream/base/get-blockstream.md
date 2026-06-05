@@ -1,12 +1,10 @@
 # Get BlockStream
 
-## 介紹
+### 介紹
 
 本方法用於獲取Base的區塊數據，支持gRPC協議。
 
-
-
-## 端點
+### 端點
 
 {% tabs %}
 {% tab title="gRPC" %}
@@ -14,15 +12,11 @@
 {% endtab %}
 {% endtabs %}
 
+### 價格
 
+每月每條數據流的價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
 
-## 限流
-
-<table><thead><tr><th width="123.15234375"></th><th width="89.59375">Tier 4</th><th width="90.77734375">Tier 3</th><th width="98.43359375">Tier 2</th><th width="135.82421875">Tier 1</th><th>Tier 0</th></tr></thead><tbody><tr><td>BlockStream</td><td>-</td><td>-</td><td>-</td><td>✅</td><td>✅</td></tr></tbody></table>
-
-
-
-## 請求示例
+### 請求示例
 
 {% tabs %}
 {% tab title="gRPC" %}
@@ -159,8 +153,6 @@ service BaseApi {
 ```
 Number=35347872, Hash=0x1c1dd5911cf8fe47c227159f5e3dad08d289879a225b6d51840f4ecd0b212dd8, TransactionCount=252
 ```
-
-
 
 **異常**
 

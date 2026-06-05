@@ -1,82 +1,30 @@
-# BSC全節點同步
+# 全節點同步
 
 ### 介紹
 
-{% hint style="info" %}
-全節點同步服務支持單獨採購。如訂閱計劃達到Tier 2及以上，則可按計劃等級免費獲得額度（允許連接的全節點數量）。
-{% endhint %}
-
 全節點高速同步服務基於高性能網絡為Ethereum客戶端提供低時延同步服務。與訂閱區塊數據流不同，用戶的Ethereum客戶端可直接與就近地區的relay建立P2P連接，relay將最新區塊通過對等節點網絡同步至Ethereum客戶端，用戶可在第一時間獲得最新區塊事件與世界狀態。
 
+### 價格
 
-
-### 價格 & 免费額度
-
-{% hint style="info" %}
-全節點同步服務已支持單獨採購，單個enode的價格詳見以下表格。如訂閱計劃達到Tier 2及以上，則可按計劃等級免費獲得enode額度（允許連接的全節點數量）
-{% endhint %}
-
-#### 單獨採購價格
-
-| 服務週期  | 折扣   | 價格                |
-| ----- | ---- | ----------------- |
-| 1 個月  | 100% | $500(1 \* $500)   |
-| 3 個月  | 95%  | $1425(3 \* $475)  |
-| 6 個月  | 90%  | $2700(6 \* $450)  |
-| 9 個月  | 85%  | $3825(9 \* $425)  |
-| 12 個月 | 80%  | $4800(12 \* $400) |
-
-#### 訂閱計劃免費額度
-
-<table><thead><tr><th width="194"></th><th width="100.1015625">Tier 4</th><th width="93.2109375">Tier 3</th><th>Tier 2</th><th>Tier 1</th><th>Tier 0</th></tr></thead><tbody><tr><td>允許連接的全節點數量</td><td>-</td><td>-</td><td>2</td><td>5</td><td>30</td></tr></tbody></table>
-
-
+每月每條數據流的價格為$800，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
 
 ### Relay IP
 
 <table><thead><tr><th width="154">地區</th><th width="218">可用區（AWS）</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>euc1-az2</td><td>35.157.64.49:50051</td></tr><tr><td>東京</td><td>apne1-az4</td><td>54.249.93.63:50051</td></tr><tr><td>愛爾蘭</td><td>euw1-az1</td><td>3.248.65.151:50051</td></tr><tr><td>弗吉尼亞</td><td>use1-az4</td><td>52.205.173.134:50051</td></tr></tbody></table>
 
-
-
 ### 使用說明
 
-#### 步驟1：添加Enode
-
-**免費添加Enode**
+#### 步驟1：採購Node Stream
 
 1. 前往[https://www.blockrazor.io/](https://www.blockrazor.io/)，點擊右上角的【註冊】，完成註冊
-2. 登錄控制台，前往【訂閱】，選擇Tier 2及以上計劃，點擊【開始訂閱】
+2. 登錄控制台，前往【訂閱】- Node Stream，完成採購
+3.  前往【服務】 - 【Streams】-【Node Stream】，點擊【編輯】
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt="" width="563"><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+4.  輸入需要連接relay的Ethereum客戶端Enode，選擇離Ethereum客戶端最近的地區，點擊【確認】，完成添加
 
-3. 確認服務週期和支付方式，完成支付
-4. 前往【服務】 - 【全節點同步】，點擊【添加Enode】
-
-<figure><img src="../../.gitbook/assets/image (75).png" alt="" width="563"><figcaption></figcaption></figure>
-
-5. 輸入需要連接relay的Ethereum客戶端Enode，選擇離Ethereum客戶端最近的地區，點擊【確認】，完成添加
-
-<figure><img src="../../.gitbook/assets/image (76).png" alt="" width="563"><figcaption></figcaption></figure>
-
-6. 回到Enode列表，點擊【複製Relay Enode】
-
-
-
-**單獨採購Enode**
-
-1. 前往[https://www.blockrazor.io/](https://www.blockrazor.io/)，點擊右上角的【註冊】，完成註冊
-2. 登錄控制台，前往【服務】 - 【全節點同步】，點擊【添加Enode】
-
-<figure><img src="../../.gitbook/assets/image (77).png" alt="" width="563"><figcaption></figcaption></figure>
-
-3. 輸入需要連接relay的Ethereum客戶端Enode，選擇離Ethereum客戶端最近的地區，點擊【確認】
-
-<figure><img src="../../.gitbook/assets/image (78).png" alt="" width="563"><figcaption></figcaption></figure>
-
-4. 確認服務週期和支付方式，完成支付
-5. 回到Enode列表，點擊【複製Relay Enode】（注:Enode列表僅在支付完成後顯示）
-
-
+    <figure><img src="../../.gitbook/assets/image (81).png" alt="" width="375"><figcaption></figcaption></figure>
+5. 回到Enode列表，點擊【複製Relay Enode】
 
 #### 步驟2：向relay開放端口
 
@@ -90,7 +38,7 @@
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="52.205.173.134" port port="30311" protocol="tcp" accept'
 ```
 
-* source address是Relay的IP地址，可以在 [Relay IP](bsc-quan-jie-dian-tong-bu.md#relay-ip) 中查詢
+* source address是Relay的IP地址，可以在 [Relay IP](quan-jie-dian-tong-bu.md#relay-ip) 中查詢
 * port是Ethereum客戶端允許Relay訪問的端口，一般默認為30311，用戶可根據自己節點配置修改
 
 2. 重載防火牆配置，以使配置生效
@@ -98,8 +46,6 @@ sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address
 ```
 sudo firewall-cmd --reload
 ```
-
-
 
 #### 步骤3：设置Relay为TrustedNode（以Geth節點為例）
 
@@ -113,8 +59,6 @@ TrustedNodes = ["enode://b5b4e5aa8d8f4568af755af6da0d4642b6475d8d87c3470632bdeca
 ```
 
 2. 重啓Geth節點，指定config.toml啓動，`--config config.toml`
-
-
 
 #### 步驟4：查詢連接狀態（以在Geth節點中開啓admin namespace為例）
 
@@ -154,4 +98,3 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 {% hint style="info" %}
 如經查詢發現連接狀態異常，有可能是因為節點間的網絡通信出現問題，請前往[Discord](https://discord.com/invite/qqJuwRb8Nh)與我們取得聯系。
 {% endhint %}
-

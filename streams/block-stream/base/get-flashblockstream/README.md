@@ -1,14 +1,12 @@
 # Get FlashBlockStream
 
-## 介紹
+### 介紹
 
 本方法用於獲取Base的FlashBlock數據，支持gRPC和WebSocket協議。
 
 Flashblocks 是 Base 上每 200 毫秒流式傳輸的“子區塊”（sub-blocks），實現比標準 2 秒區塊時間快 10 倍 的交易預確認。這些子區塊被稱為 Flashblocks，包含大約一個完整區塊交易數據的 10%，允許應用程序幾乎即時獲得交易反饋，適用於需要低延遲的場景。
 
-
-
-## 端點
+### 端點
 
 {% tabs %}
 {% tab title="gRPC" %}
@@ -20,15 +18,11 @@ Flashblocks 是 Base 上每 200 毫秒流式傳輸的“子區塊”（sub-block
 {% endtab %}
 {% endtabs %}
 
+### 價格
 
+每月每條數據流的價格為$250，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
 
-## 限流
-
-<table><thead><tr><th width="171.44140625"></th><th width="97.92578125">Tier 4</th><th width="90.2578125">Tier 3</th><th width="94.734375">Tier 2</th><th width="129.59765625">Tier 1</th><th>Tier 0</th></tr></thead><tbody><tr><td>FlashBlockStream</td><td>-</td><td>-</td><td>-</td><td>✅</td><td>✅</td></tr></tbody></table>
-
-
-
-## 請求示例
+### 請求示例
 
 {% tabs %}
 {% tab title="gRPC" %}
@@ -362,9 +356,7 @@ service BaseApi {
 }
 ```
 
-
-
-## 返回示例
+### **返回**示例
 
 **正常**
 
@@ -373,8 +365,6 @@ service BaseApi {
    message: "185329……7e04b7"
 }
 ```
-
-
 
 **异常**
 

@@ -4,27 +4,17 @@
 
 用於訂閱高性能網絡中的區塊數據流，方法名`NewBlocks`。
 
-
-
 ### 端點
 
 <table><thead><tr><th width="154">地區</th><th width="218">可用區（AWS）</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>euc1-az2</td><td>35.157.64.49:50051</td></tr><tr><td>東京</td><td>apne1-az4</td><td>54.249.93.63:50051</td></tr><tr><td>愛爾蘭</td><td>euw1-az1</td><td>3.248.65.151:50051</td></tr><tr><td>弗吉尼亞</td><td>use1-az4</td><td>52.205.173.134:50051</td></tr></tbody></table>
 
+### 價格
 
-
-### 流控說明
-
-|       | Tier 4 | Tier 3 | Tier 2 | Tier 1 | Tier 0 |
-| ----- | ------ | ------ | ------ | ------ | ------ |
-| 並行數據流 | -      | 1      | 5      | 10     | 30     |
-
-
+每月每條數據流的價格為$500，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
 
 ### 請求參數
 
 <table><thead><tr><th width="165">參數</th><th width="74">必選</th><th width="103">格式</th><th width="87">示例</th><th>描述</th></tr></thead><tbody><tr><td>NodeValidation</td><td>是</td><td>boolean</td><td>false</td><td>該字段目前僅支持設置為false，relay會以更低延遲推送全部新區塊（未經校驗）</td></tr></tbody></table>
-
-
 
 ### 請求示例
 

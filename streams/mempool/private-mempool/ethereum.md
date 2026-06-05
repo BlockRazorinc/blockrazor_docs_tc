@@ -8,21 +8,13 @@ Private Mempool可應用於Backrun、跟單、狙擊等多種場景。
 
 為避免由於網絡波動導致的數據斷流，建議建立重連機制。
 
-
-
 ### RPC端點
 
 {% hint style="info" %}
-請將訂閱bundle的域名與發送bundle的域名保持一致。如訂閱https://jp-ethscutum.blockrazor.xyz/stream，則將bundle發送至https://jp-ethscutum.blockrazor.xyz
-{% endhint %}
-
-{% hint style="info" %}
-不同地區推送的隱私數據流不同，建議同時訂閱2個端點
+請將訂閱bundle的域名與發送bundle的域名保持一致。如訂閱https://jp-ethscutum.blockrazor.xyz/stream，則將bundle發送至https://jp-ethscutum.blockrazor.xyz。不同地區推送的隱私數據流不同，建議同時訂閱2個端點
 {% endhint %}
 
 <table><thead><tr><th width="107.42578125">地區</th><th>端點</th></tr></thead><tbody><tr><td>東京</td><td>https://jp-ethscutum.blockrazor.xyz/stream</td></tr><tr><td>紐約</td><td>https://us-ethscutum.blockrazor.xyz/stream</td></tr></tbody></table>
-
-
 
 ### Authentication
 
@@ -48,8 +40,6 @@ https://eth.blockrazor.xyz/stream?token=<token>
 2. 在註冊頁輸入郵箱和密碼，點擊【註冊】，系統會向郵箱發送賬戶激活郵件
 3. 前往郵箱，查看賬戶激活郵件，點擊賬戶激活鏈接
 4. 成賬戶激活，前往登錄，查看賬戶信息，複製auth token
-
-
 
 ### 數據流結構
 

@@ -2,7 +2,7 @@
 
 ### 介紹
 
-Fast模式基於BlockRazor的全球高性能網絡實現交易最低延遲上鏈，適合對交易上鏈速度存在極致要求的用戶。相比[Send RawTx](send-rawtx.md) ，发往`eth_sendRawTransaction`的交易不會通過mempool廣播，在確保速度的同時具備隱私性。
+Fast模式基於BlockRazor的全球高性能網絡實現交易最低延遲上鏈，適合對交易上鏈速度存在極致要求的用戶。相比[Send RawTx](fast-tx.md) ，发往`eth_sendRawTransaction`的交易不會通過mempool廣播，在確保速度的同時具備隱私性。
 
 {% hint style="info" %}
 `eth_sendRawTransaction`不和訂閱計劃綁定，但每筆交易中需要包含轉賬至0x9D70AC39166ca154307a93fa6b595CF7962fe8e5的tip，金額至少為0.000025 BNB 或 Transaction Fee 的5%

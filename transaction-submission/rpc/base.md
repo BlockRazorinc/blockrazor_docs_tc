@@ -8,8 +8,6 @@
 
 本API用於在Base鏈上發送已簽名的交易，支持gRPC和HTTPS協議。
 
-
-
 ### 端點
 
 {% tabs %}
@@ -22,19 +20,13 @@
 {% endtab %}
 {% endtabs %}
 
-
-
 ### 限流
 
-<table><thead><tr><th width="78.45703125"></th><th>Tier 4</th><th>Tier 3</th><th>Tier 2</th><th>Tier 1</th><th>Tier 0</th></tr></thead><tbody><tr><td>TPS</td><td>1 Tx / 5s</td><td>1 Tx / 5s</td><td>3 TPS</td><td>5 TPS</td><td>Custom</td></tr></tbody></table>
-
-
+<table><thead><tr><th width="155.45703125">用戶類型</th><th width="208.93359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>1 Tx / 5s</td><td>免費</td></tr><tr><td>付費用戶</td><td>5 Txs / 1s</td><td>$1000 / 月</td></tr></tbody></table>
 
 ### 請求參數
 
 <table><thead><tr><th width="142.265625">參數</th><th width="84.64453125">必選</th><th width="104.48046875">格式</th><th width="230.7109375">示例</th><th>備註</th></tr></thead><tbody><tr><td>rawTransaction</td><td>是</td><td>string[hex]</td><td>"0xd46e8dd67c5d32be8d24c6b0afe7c5c3f4e9c3b2dae18d0c6b0cf5c8f3e8b2c1"</td><td>已簽名的raw transaction</td></tr></tbody></table>
-
-
 
 ### 請求示例
 
@@ -153,8 +145,6 @@ service BaseApi {
 }
 ```
 
-
-
 ### 返回
 
 **正常**
@@ -162,8 +152,6 @@ service BaseApi {
 ```go
 res: txHash:"0xaf430540d20eae2448947ffb254b03180b82333ef0c56bd526f7047489c195b5"
 ```
-
-
 
 **異常**
 

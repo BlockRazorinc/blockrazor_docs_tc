@@ -8,8 +8,6 @@ Private Mempool可應用於Backrun、跟單、狙擊等多種場景。
 
 為避免由於網絡波動導致的數據斷流，建議建立重連機制。
 
-
-
 ### RPC端點
 
 {% hint style="info" %}
@@ -21,8 +19,6 @@ Private Mempool可應用於Backrun、跟單、狙擊等多種場景。
 {% endhint %}
 
 <table><thead><tr><th width="107.42578125">地區</th><th>端點</th></tr></thead><tbody><tr><td>東京</td><td>https://jp-bscscutum.blockrazor.xyz/stream</td></tr><tr><td>紐約</td><td>https://us-bscscutum.blockrazor.xyz/stream</td></tr><tr><td>法蘭克福</td><td>https://ger-bscscutum.blockrazor.xyz/stream</td></tr><tr><td>都柏林</td><td>https://ire-bscscutum.blockrazor.xyz/stream</td></tr></tbody></table>
-
-
 
 ### Authentication
 
@@ -47,15 +43,9 @@ https://jp-bscscutum.blockrazor.xyz/stream?token=<token>
 3. 前往郵箱，查看賬戶激活郵件，點擊賬戶激活鏈接
 4. 成賬戶激活，前往登錄，查看賬戶信息，複製auth token
 
+### 價格
 
-
-### 流控說明
-
-|     | Tier 4 | Tier 3 | Tier 2    | Tier 1    | Tier 0    |
-| --- | ------ | ------ | --------- | --------- | --------- |
-| 數據流 | -      | -      | 2 streams | 2 streams | 2 streams |
-
-
+每月價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。每個地區允許訂閱2條數據流。
 
 ### Bundle類型
 
@@ -69,8 +59,6 @@ Raw Bundle是指尚未被跟隨策略交易的bundle，Raw Bundle中的交易來
 **Followed Bundle**
 
 客戶端在對Raw Bundle執行backrun、跟單或狙擊策略後，可以通過開啟hint繼續將bundle披露至Private Mempool以執行嵌套的backrun策略。此時Private Mempool中的該類Bundle稱為Followed Bundle，包含raw bundle中的全部交易，以及1筆策略交易。
-
-
 
 ### 數據流結構
 
@@ -86,8 +74,6 @@ Raw Bundle是指尚未被跟隨策略交易的bundle，Raw Bundle中的交易來
 
 <table><thead><tr><th width="210">參數</th><th width="164">格式</th><th>備注</th></tr></thead><tbody><tr><td>address</td><td>string</td><td>触发事件的智能合约地址</td></tr><tr><td>topics</td><td>[]string</td><td>事件日志的topcis</td></tr><tr><td>data</td><td>string</td><td>非索引参数的存储区域</td></tr></tbody></table>
 
-
-
 #### **state**
 
 {% hint style="info" %}
@@ -99,8 +85,6 @@ BSC：https://jp-bscscutum.blockrazor.xyz/stream?state=true
 {% endhint %}
 
 <table><thead><tr><th width="212">參數</th><th width="166">格式</th><th>備註</th></tr></thead><tbody><tr><td>"0x7C3b……3cb9E2"</td><td>[]string</td><td>數據發生變化的狀態對象地址，可以是一個EOA地址或智能合約地址</td></tr><tr><td>"0x935b……6cf608"</td><td>string</td><td>狀態對象數據發生變化的Key</td></tr><tr><td>"0x0000……3ffc00"</td><td>string</td><td>狀態對象數據變化後的Value</td></tr></tbody></table>
-
-
 
 ### 數據流示例（默認）
 
@@ -136,8 +120,6 @@ BSC：https://jp-bscscutum.blockrazor.xyz/stream?state=true
     "refundCfg":10380050 //返利配置
 }
 ```
-
-
 
 ### 數據流示例（包含state）
 

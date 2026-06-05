@@ -4,19 +4,13 @@
 
 本接口用於接收用戶提交的模擬bundle的請求，方法名為`eth_callBundle`。
 
+### 價格
 
-
-### 流控说明
-
-<table><thead><tr><th width="176.4296875"></th><th width="99.47265625">Tier 4</th><th width="113.46484375">Tier 3</th><th width="94.48046875">Tier 2</th><th width="104.7421875">Tier 1</th><th width="117.92578125">Tier 0</th></tr></thead><tbody><tr><td><code>eth_callBundle</code></td><td>-</td><td>支持</td><td>支持</td><td>支持</td><td>支持</td></tr></tbody></table>
-
-
+Call Bundle僅包含於極速服務包中，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購極速服務包。限流為1 TPS
 
 ### 请求参数
 
 <table><thead><tr><th width="159">參數</th><th width="62">必選</th><th width="113">格式</th><th>示例</th><th>描述</th></tr></thead><tbody><tr><td>txs</td><td>是</td><td>array[hex]</td><td>["0x…4b", "0x…5c"]</td><td>經過簽名的raw transaction列表</td></tr><tr><td>blockNumber</td><td>是</td><td>number</td><td>39177941</td><td>當前區塊號+1</td></tr></tbody></table>
-
-
 
 ### 請求示例
 
@@ -41,9 +35,7 @@ curl https://virginia.builder.blockrazor.io \
 {% endtab %}
 {% endtabs %}
 
-
-
-## 返回示例
+### 返回示例
 
 #### **正常**
 
@@ -76,8 +68,6 @@ curl https://virginia.builder.blockrazor.io \
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 #### 异常
 
@@ -148,6 +138,4 @@ curl https://virginia.builder.blockrazor.io \
   }
 }
 ```
-
-
 

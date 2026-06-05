@@ -7,4 +7,4 @@
 3. 前往郵箱，查看賬戶激活郵件，點擊賬戶激活鏈接
 4. 完成賬戶激活，前往登錄，查看賬戶信息，複製auth token
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>

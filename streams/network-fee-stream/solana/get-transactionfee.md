@@ -1,24 +1,20 @@
 # Get TransactionFee
 
-## **介紹**
+### **介紹**
 
 `Get TransactionFee` 用於聚合獲取Solana交易的priority fee和tip，支持gRPC協議，端點域名：<mark style="color:$primary;">grpc.solana-fee.blockrazor.me:443</mark>
 
+### 限流
 
+| 用戶類型 | 限流     | 價格       |
+| ---- | ------ | -------- |
+| 付費用戶 | 10 qps | $300 / 月 |
 
-## 流控說明
-
-<table><thead><tr><th width="115.97265625"></th><th>Tier 4</th><th>Tier 3</th><th>Tier 2</th><th>Tier 1</th><th>Tier 0</th></tr></thead><tbody><tr><td>QPS</td><td>1</td><td>5</td><td>10</td><td>50</td><td>100</td></tr></tbody></table>
-
-
-
-## 請求參數
+### 請求參數
 
 <table><thead><tr><th width="112.46484375" valign="middle">字段</th><th width="62.78515625">必選</th><th width="92.390625">格式</th><th>示例</th><th>備注</th></tr></thead><tbody><tr><td valign="middle">accounts</td><td>否</td><td>string[]</td><td>["DH4xma……HFtNYJ"]</td><td>不指定account則統計指定slot區間內全部交易的priority fee和tip</td></tr><tr><td valign="middle">percentile</td><td>是</td><td>int</td><td>50</td><td>獲取指定分位的priority fee和tip，枚舉值：25、50、75、95、99</td></tr><tr><td valign="middle">slotRange</td><td>是</td><td>int</td><td>150</td><td>統計最近N個confirmed slot中交易的priorityFee和tip，N取值範圍1-150</td></tr></tbody></table>
 
-
-
-## 請求示例
+### 請求示例
 
 ```go
 package main
@@ -104,8 +100,6 @@ func (a *Authentication) RequireTransportSecurity() bool {
 
 ```
 
-
-
 ### Proto
 
 ```json
@@ -136,9 +130,7 @@ message FeeValue {
 }
 ```
 
-
-
-## 返回示例
+### 返回示例
 
 ```json
 Response PriorityFee Percentile: 75
@@ -150,10 +142,4 @@ Response2 PriorityFee Value: 432313.2435833086
 Response2 Tip Percentile: 75
 Response2 Tip Value: 0.0001
 ```
-
-
-
-
-
-
 

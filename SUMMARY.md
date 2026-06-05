@@ -36,8 +36,7 @@
   * [BSC](transaction-submission/fast/bsc/README.md)
     * [eth\_sendRawTransaction](transaction-submission/fast/bsc/eth_sendrawtransaction.md)
     * [eth\_sendRawTransaction v2](transaction-submission/fast/bsc/eth_sendrawtransaction-v2.md)
-    * [Send RawTx](transaction-submission/fast/bsc/send-rawtx.md)
-    * [Send RawTxBatch](transaction-submission/fast/bsc/send-rawtxbatch.md)
+    * [Fast-Tx](transaction-submission/fast/bsc/fast-tx.md)
   * [Sui](transaction-submission/fast/sui/README.md)
     * [sui\_executeTransactionBlock](transaction-submission/fast/sui/sui_executetransactionblock/README.md)
       * [TS](transaction-submission/fast/sui/sui_executetransactionblock/ts.md)
@@ -61,6 +60,7 @@
   * [Private Mempool](streams/mempool/private-mempool/README.md)
     * [BSC](streams/mempool/private-mempool/bsc.md)
     * [Ethereum](streams/mempool/private-mempool/ethereum.md)
+  * [Tx Trace](streams/mempool/tx-trace.md)
 * [Block Stream](streams/block-stream/README.md)
   * [Solana](streams/block-stream/solana/README.md)
     * [Shred Stream](streams/block-stream/solana/shred-stream.md)
@@ -77,7 +77,7 @@
     * [Get FlashBlockStream](streams/block-stream/base/get-flashblockstream/README.md)
       * [解析FlashBlock](streams/block-stream/base/get-flashblockstream/jie-xi-flashblock.md)
 * [Node Stream](streams/node-stream/README.md)
-  * [BSC全節點同步](streams/node-stream/bsc-quan-jie-dian-tong-bu.md)
+  * [全節點同步](streams/node-stream/quan-jie-dian-tong-bu.md)
   * [Dedicate Node](streams/node-stream/dedicate-node/README.md)
     * [創建Dedicate Node](streams/node-stream/dedicate-node/chuang-jian-dedicate-node.md)
     * [使用Dedicate Node](streams/node-stream/dedicate-node/shi-yong-dedicate-node.md)
@@ -97,6 +97,8 @@
   * [Send PrivateTransaction](block-builder/block-builder/send-privatetransaction.md)
   * [Call Bundle](block-builder/block-builder/call-bundle.md)
   * [Trace Bundle](block-builder/block-builder/trace-bundle.md)
+  * [Fast Submit](block-builder/block-builder/fast-submit.md)
+  * [Dedicate Connection](block-builder/block-builder/dedicate-connection.md)
 
 ## 📄 声明
 
