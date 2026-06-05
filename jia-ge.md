@@ -18,7 +18,7 @@ BlockRazor定價體系全面升級，將原先多鏈多等級體系中的功能�
 
 {% tabs %}
 {% tab title="BSC" %}
-<table><thead><tr><th width="194.09765625">服務</th><th>描述</th><th>價格</th></tr></thead><tbody><tr><td>Fast-Tx</td><td>基於高性能網絡傳播交易和交易batch</td><td>$500 / 月</td></tr><tr><td>Public Mempool</td><td>訂閱高性能網絡交易數據</td><td>$300 / 條 / 月</td></tr><tr><td>Private Mempool</td><td>訂閱BlockRazor RPC的訂單流數據</td><td>$1000 / 月</td></tr><tr><td>Block Stream</td><td>訂閱高性能網絡區塊數據</td><td>$500 / 條 / 月</td></tr><tr><td>Node Stream</td><td>低延遲同步世界狀態</td><td>$800 / 個 / 月</td></tr><tr><td>Network Fee Stream</td><td>獲取BSC gas price數據</td><td>$500 / 月</td></tr><tr><td>Dedicate Connection to Builder</td><td>直連BlockRazor Block Builder</td><td>$1500 / 月</td></tr><tr><td>Bundle Tracing &#x26; Explorer</td><td>Block Builder bundle追蹤與瀏覽</td><td>$1500 / 月</td></tr><tr><td>Tx Trace</td><td>監控交易傳播路徑和跨區域延遲分佈</td><td>$500 / 月</td></tr></tbody></table>
+<table><thead><tr><th width="194.09765625">服務</th><th>描述</th><th>價格</th></tr></thead><tbody><tr><td>Fast-Tx</td><td>基於高性能網絡傳播交易和交易batch</td><td>$500 / 月</td></tr><tr><td>Public Mempool</td><td>訂閱高性能網絡交易數據</td><td>$300 / 條 / 月</td></tr><tr><td>Private Mempool</td><td>訂閱BlockRazor RPC的訂單流數據</td><td>$1000 / 月</td></tr><tr><td>Block Stream</td><td>訂閱高性能網絡區塊數據</td><td>$500 / 條 / 月</td></tr><tr><td>Node Stream</td><td>低延遲同步世界狀態</td><td>$800 / 個 / 月</td></tr><tr><td>Network Fee Stream</td><td>獲取BSC gas price數據</td><td>$500 / 月</td></tr><tr><td>Bundle Tracing &#x26; Explorer</td><td>Block Builder bundle追蹤與瀏覽</td><td>$1500 / 月</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Solana" %}
@@ -32,7 +32,7 @@ BlockRazor定價體系全面升級，將原先多鏈多等級體系中的功能�
 {% tab title="General" %}
 | 服務                | 描述     | 價格        |
 | ----------------- | ------ | --------- |
-| Dedicated Channel | 專屬技術支持 | $1500 / 月 |
+| Dedicated Channel | 專屬技術支持 | $1000 / 月 |
 {% endtab %}
 {% endtabs %}
 
@@ -70,7 +70,7 @@ Fast模式基於BlockRazor的全球分佈式加速網絡和高質押驗證者提
 
 <table><thead><tr><th width="113.1328125">鏈</th><th>方法</th><th>限流</th></tr></thead><tbody><tr><td>Solana</td><td><ul><li><code>Send Transaction</code></li><li><code>Send Transaction</code> v2</li></ul></td><td>默認為3 TPS</td></tr><tr><td>BSC</td><td><ul><li><code>eth_sendRawTransaction</code></li><li><code>eth_sendRawTransaction</code> v2</li></ul></td><td>默認為10 TPS</td></tr><tr><td>Base</td><td><ul><li><code>eth_sendRawTransaction</code></li></ul></td><td>默認為10 TPS</td></tr></tbody></table>
 
-_<mark style="color:$primary;">**注：新注冊用戶也可以使用不需要Tip的交易發送服務，即Fast-Tx服務中的**</mark><mark style="color:$primary;">`SendTx`</mark><mark style="color:$primary;">**，**</mark><mark style="color:$primary;">**TPS為10 txs / 5s以及10 txs / day。**</mark>_
+_<mark style="color:$primary;">**注：新注冊用戶也可以使用不需要Tip的交易發送服務，即Fast-Tx服務中的**</mark><mark style="color:$primary;">`SendTx`</mark><mark style="color:$primary;">**，TPS為10 txs / 5s以及10 txs / day。**</mark>_
 
 #### Bundle
 
