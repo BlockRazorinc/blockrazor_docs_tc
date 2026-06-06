@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Dedicate Connection
 
 Dedicate Connection 是一項面向低時延交易提交場景的專用連接服務，支持將客戶端與服務端部署在同機房，並向客戶開放 Block Builder 的 `ip:port` 進行裸調。相比通過 HTTP 域名入口提交交易，Dedicate Connection 提供的是一條更直接、更底層的 Builder 接入方式，盡可能減少共享入口、代理層和額外封裝帶來的開銷，縮短客戶端到 Builder 的實際網絡路徑，從而提升提交鏈路的穩定性、確定性和可控性。
