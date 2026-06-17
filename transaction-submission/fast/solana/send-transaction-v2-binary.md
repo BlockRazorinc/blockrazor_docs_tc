@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Fast模式的Send Transaction v2接口以及集成方法
+description: 介紹BlockRazor Solana Fast模式的Send Transaction v2(binary)接口以及集成方法
 ---
 
 # Send Transaction v2(binary)
