@@ -779,14 +779,25 @@ option go_package = "./pb/serverpb";
 service Server {
     rpc SendTransaction(SendRequest) returns(SendResponse) {};
 
+    rpc SendBinaryTransaction(SendBinaryRequest) returns(SendResponse) {};
+
     rpc GetHealth(HealthRequest) returns(HealthResponse) {};
 }
 
 message SendRequest {
     string transaction = 1;
     string mode = 2;
-    int32 safeWindow = 3; // only take effect in sandwichMitigation mode
+    int32 safeWindow = 3;
     bool revertProtection = 4;
+}
+
+message SendBinaryRequest {
+    bytes binaryTransaction = 1;
+    string mode = 2;
+    int32 safeWindow = 3;
+    bool revertProtection = 4;
+    bool skipPreflight = 5;
+    string preflightCommitment = 6;
 }
 
 message SendResponse {
