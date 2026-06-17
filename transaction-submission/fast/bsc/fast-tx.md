@@ -1,18 +1,27 @@
+---
+description: 介紹BlockRazor BSC的Fast-Tx接口以及集成方法
+---
+
 # Fast-Tx
 
-### 接口說明
+### 什麼是Fast-Tx
 
-{% hint style="info" %}
-該接口不具備MEV保護能力，通過該接口發送的交易會在公開mempool廣播。
-{% endhint %}
+Fast-Tx 是 BlockRazor 提供的一種快速交易發送服務，用於幫助用戶以更低延遲將交易發送到鏈上。它屬於 Fast 體系的一部分，但與需要在交易中附加 tip 的標準 Fast 模式不同，Fast-Tx 不要求用戶在交易內部額外支付 tip，因此更適合作為低門檻的快速發送入口使用。
 
-Fast-Tx用於在BSC高性能网络上廣播單筆rawtx或一批交易。其中廣播單筆rawtx方法名為`SendTx` ，支持HTTP和gRPC協議。廣播一批rawtx，方法名`SendTxs`，支持gRPC協議。
+需要注意的是，Fast-Tx 雖然屬於 Fast 體系，但它並不等同於具備完整交易保護能力的私有發送通道。Fast-Tx 發送的交易仍然會進入公開傳播路徑，因此不具備 MEV 防護能力。
+
+### 什麼場景下選擇Fast-Tx
+
+* **不需要 tip，接入門檻更低**\
+  與標準 Fast 模式不同，Fast-Tx 不要求在交易中附加 tip，因此更適合希望快速接入、但不想修改交易激勵結構的用戶。
+* **適合對速度有要求、但暫不強調 MEV 防護的場景**\
+  如果你的重點是盡量更快地把交易發出去，而不是通過私有路徑隱藏交易或抵御 sandwich、frontrunning 等風險，那麼 Fast-Tx 會是一個更直接的選擇。
 
 ### 端點
 
 <table><thead><tr><th width="154">地區</th><th width="218">可用區（AWS）</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>euc1-az2</td><td>35.157.64.49:50051</td></tr><tr><td>東京</td><td>apne1-az4</td><td>54.249.93.63:50051</td></tr><tr><td>愛爾蘭</td><td>euw1-az1</td><td>3.248.65.151:50051</td></tr><tr><td>弗吉尼亞</td><td>use1-az4</td><td>52.205.173.134:50051</td></tr></tbody></table>
 
-### 限流
+### 價格
 
 <table><thead><tr><th width="153.44921875">用戶類型</th><th>限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td><p><code>SendTx</code></p><ul><li>TPS：10 Txs / 5s</li><li>每日交易上限：10</li></ul></td><td>免費</td></tr><tr><td>付費用戶</td><td><p><code>SendTx</code></p><ul><li>TPS：100 Txs / 5s</li><li>每日交易上限：100000<br></li></ul><p><code>SendTxs</code></p><ul><li>BPS：4 batches / 1s</li><li>Txs per Batch：10</li></ul></td><td>$500 / 月</td></tr></tbody></table>
 

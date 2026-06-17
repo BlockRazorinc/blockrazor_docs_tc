@@ -1,18 +1,18 @@
+---
+description: 介紹集成BlockRazor Ethereum RPC的步驟
+---
+
 # 集成RPC
 
-### 介紹
-
 {% hint style="info" %}
-項目方無需訂閱計劃即可使用項目專屬RPC
+BlockRazor RPC面向所有用戶開放，無需採購服務或申請Auth
 {% endhint %}
 
-BlockRazor RPC可以為Ethereum上的Wallet、DEX、Trading Bot等項目提供MEV保護，支持返利至項目方用戶地址或項目方指定地址。
+### 端點
 
-BlockRazor RPC為每個項目方提供專屬的RPC URL，支持可視化自定義RPC域名、交易披露、返利地址和Revert保護等參數，便於項目方低成本快速集成RPC。
+<table><thead><tr><th width="165.31640625">端點類型</th><th width="483.47265625">URL</th></tr></thead><tbody><tr><td>通用RPC</td><td>https://eth.blockrazor.xyz</td></tr><tr><td>項目默認RPC</td><td>https://eth.blockrazor.xyz/&#x3C;rpc_id></td></tr><tr><td>項目自定義RPC</td><td>https://&#x3C;custom_domain>.eth.blockrazor.xyz</td></tr></tbody></table>
 
-
-
-### 如何將RPC集成到項目中
+### 如何將Ethereum RPC集成到項目中
 
 #### 1. 配置RPC
 
@@ -38,7 +38,7 @@ BlockRazor RPC為每個項目方提供專屬的RPC URL，支持可視化自定�
 const Web3 = require('web3');
 
 // 創建web3實例並連接到RPC URL
-const web3 = new Web3('https://ethereum-rpc.publicnode.com'); // 可在此处将RPC URL替换为Scutum RPC URL
+const web3 = new Web3('https://eth.blockrazor.xyz'); // 可在此处将通用RPC URL替换为项目RPC URL
 
 // 檢查連接
 web3.eth.net.isListening()

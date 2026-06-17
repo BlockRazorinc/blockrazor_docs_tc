@@ -1,19 +1,19 @@
+---
+description: 介紹BlockRazor BSC Fast模式的eth_sendRawTransaction v2接口以及集成方法
+---
+
 # eth\_sendRawTransaction v2
 
-### 介紹
-
-Fast模式基於BlockRazor的全球高性能網絡實現交易最低延遲上鏈，適合對交易上鏈速度存在極致要求的用戶。相比[Send RawTx](fast-tx.md) ，发往`eth_sendRawTransaction`的交易不會通過mempool廣播，在確保速度的同時具備隱私性。
-
-{% hint style="info" %}
-`eth_sendRawTransaction`不和訂閱計劃綁定，但每筆交易中需要包含轉賬至0x9D70AC39166ca154307a93fa6b595CF7962fe8e5的tip，金額至少為0.000025 BNB 或 Transaction Fee 的5%
-{% endhint %}
-
-與[eth\_sendRawTransaction](eth_sendrawtransaction.md)相比，`eth_sendRawTransaction v2`提供了一種更精簡、更迅速的交易提交途徑。
+在 [eth\_sendRawTransaction](eth_sendrawtransaction.md) 的基礎上，`eth_sendRawTransaction v2`提供了一種更精簡、更迅速的交易提交途徑。
 
 * 繞過 CORS 預檢： 它消除了通常由 OPTIONS 預檢請求所引起的延遲（大約 50-100 毫秒）。
 * 純文本而非 JSON： 採用簡單的純文本傳輸，避免了與解析 JSON 相關的計算負擔。此外，由此產生的較小數據包尺寸有助於縮短網路傳輸時間並降低成本。
 
+`eth_sendRawTransaction v2` 的以上特性更適合擁有全球用戶的前端交易應用項目。
 
+{% hint style="info" %}
+`eth_sendRawTransaction`不和訂閱計劃綁定，但每筆交易中需要包含轉賬至0x9D70AC39166ca154307a93fa6b595CF7962fe8e5的tip，金額至少為0.000025 BNB 或 Transaction Fee 的5%
+{% endhint %}
 
 ### 端點
 
@@ -29,13 +29,9 @@ http://bsc-fast.blockrazor.io/v2/sendRawTransaction
 {% endtab %}
 {% endtabs %}
 
-
-
 ### 限流
 
 `eth_sendRawTransaction v2`不和訂閱計劃綁定，限流默認統一為10 TPS，如需提升TPS，請於我們聯繫
-
-
 
 ### 請求示例
 
@@ -55,8 +51,6 @@ curl -X POST 'bsc-fast.blockrazor.io/v2/sendRawTransaction?auth=<auth_token>'
 * 認證 (auth) 參數必須以 URI 參數的形式填入URL
 * 請求中唯一允許的header是 `Content-Type: text/plain`
 {% endhint %}
-
-
 
 ### 返回示例
 
@@ -81,8 +75,6 @@ curl -X POST 'bsc-fast.blockrazor.io/v2/sendRawTransaction?auth=<auth_token>'
 	"data": null
 }
 ```
-
-
 
 ### Keep Alive
 

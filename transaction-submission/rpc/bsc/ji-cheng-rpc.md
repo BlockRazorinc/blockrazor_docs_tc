@@ -1,18 +1,18 @@
+---
+description: 介紹集成BlockRazor BSC RPC的步驟
+---
+
 # 集成RPC
 
-### 介紹
-
 {% hint style="info" %}
-項目方無需訂閱計劃即可使用項目專屬RPC
+BlockRazor RPC面向所有用户开放，無需采购服务或申请Auth
 {% endhint %}
 
-BlockRazor RPC可以為BSC上的Wallet、DEX、Trading Bot等項目提供MEV保護，支持返利至項目方用戶地址或項目方指定地址。
+### 端點
 
-BlockRazor RPC為每個項目方提供專屬的RPC URL，支持可視化自定義RPC域名、交易披露、返利地址和Revert保護等參數，便於項目方低成本快速集成RPC。
+<table><thead><tr><th width="165.31640625">端點類型</th><th width="483.47265625">URL</th></tr></thead><tbody><tr><td>通用RPC</td><td>https://bsc.blockrazor.xyz</td></tr><tr><td>項目默認RPC</td><td>https://bsc.blockrazor.xyz/&#x3C;rpc_id></td></tr><tr><td>項目自定義RPC</td><td>https://&#x3C;custom_domain>.bsc.blockrazor.xyz</td></tr></tbody></table>
 
-
-
-### 如何將RPC集成到項目中
+### 如何將BSC RPC集成到項目中
 
 #### 1. 配置RPC
 
@@ -27,7 +27,7 @@ BlockRazor RPC為每個項目方提供專屬的RPC URL，支持可視化自定�
 #### 2.集成RPC
 
 1. 找到配置文件或代碼：打開項目工程，在DApp項目中找到配置RPC節點的文件或代碼段。這可能是一個配置文件，如.env、config.js、truffle-config.js等，或者是直接在代碼中硬編碼
-2. 修改RPC URL：將配置文件或代碼中的RPC URL修改為Scutum RPC URL
+2. 修改RPC URL：將配置文件或代碼中的RPC URL修改為项目默认RPC或项目自定义RPC
 3. 測試連接：更改後，在本地運行DApp或相應的測試腳本來確保新的RPC URL可以正常工作，可以使用如`web3.eth.net.isListening()`或`ethers.provider.pollingInterval`等方法來檢查連接是否成功
 4. 部署更新：如測試通過，可以將變更部署至生產環境
 
@@ -38,7 +38,7 @@ BlockRazor RPC為每個項目方提供專屬的RPC URL，支持可視化自定�
 const Web3 = require('web3');
 
 // 創建web3實例並連接到RPC URL
-const web3 = new Web3('https://ethereum-rpc.publicnode.com'); // 可在此处将RPC URL替换为Scutum RPC URL
+const web3 = new Web3('https://bsc.blockrazor.xyz'); // 可在此处将通用RPC URL替换为项目RPC URL
 
 // 檢查連接
 web3.eth.net.isListening()

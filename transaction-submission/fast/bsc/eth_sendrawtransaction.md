@@ -1,14 +1,16 @@
+---
+description: 介紹BlockRazor BSC Fast模式的eth_sendRawTransaction接口以及集成方法
+---
+
 # eth\_sendRawTransaction
 
-### 介紹
+`eth_sendRawTransaction` 是 BlockRazor 為 BSC 提供的 Fast 模式交易發送接口，兼容標準 `eth_sendRawTransaction` 調用方式，用於將已簽名交易以更低延遲發送到鏈上。
 
-Fast模式基於BlockRazor的全球高性能網絡實現交易最低延遲上鏈，適合對交易上鏈速度存在極致要求的用戶。相比[Send RawTx](fast-tx.md) ，Fast模式的交易不會通過mempool廣播，在確保速度的同時具備隱私性。Fast模式的交易發送方法和`eth_sendRawTransaction`兼容。
+發往Fast 模式`eth_sendRawTransaction` 的交易不會通過公開 Mempool 廣播，因此在提升發送速度的同時，也能避免交易在公開傳播過程中暴露。
 
 {% hint style="info" %}
-Fast模式不和訂閱計劃綁定，但每筆交易中需要包含轉賬至0x9D70AC39166ca154307a93fa6b595CF7962fe8e5的tip，金額至少為0.000025 BNB 或 Transaction Fee 的5%
+`eth_sendRawTransaction`不和訂閱計劃綁定，但每筆交易中需要包含轉賬至0x9D70AC39166ca154307a93fa6b595CF7962fe8e5的tip，金額至少為0.000025 BNB 或 Transaction Fee 的5%
 {% endhint %}
-
-
 
 ### 端點
 
@@ -24,13 +26,9 @@ http://bsc-fast.blockrazor.io
 {% endtab %}
 {% endtabs %}
 
-
-
 ### 限流
 
 `eth_sendRawTransaction`不和訂閱計劃綁定，限流默認統一為10 TPS，如需提升TPS，請於我們聯繫
-
-
 
 ### 請求示例
 
@@ -51,8 +49,6 @@ curl http://bsc-fast.blockrazor.io \
   '
 ```
 
-
-
 ### 返回示例
 
 **正常**
@@ -64,8 +60,6 @@ curl http://bsc-fast.blockrazor.io \
  "result":"0xa06b……f7e8ec"  // 交易哈希
 }‍
 ```
-
-
 
 **異常**
 
@@ -79,8 +73,6 @@ curl http://bsc-fast.blockrazor.io \
     }
 }
 ```
-
-
 
 ### Keep Alive
 

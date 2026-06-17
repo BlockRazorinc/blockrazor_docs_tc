@@ -1,54 +1,54 @@
+---
+description: 介紹BlockRazor Solana Fast模式的Send Transaction接口以及集成方法
+---
+
 # Send Transaction
 
-### 介紹
-
 {% hint style="warning" %}
-Solana發送交易的服務不和訂閱計劃綁定，可前往 [Authentication](../../../../authentication.md) 獲取API KEY，默认限流为3 TPS。如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理
+Solana發送交易的服務不和訂閱計劃綁定，可前往 [Authentication](../../../../get-started/authentication.md) 獲取API KEY，默认限流为3 TPS。如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理
 {% endhint %}
 
-`Send Transaction` 用於在Solana上發送已簽名的交易，支持HTTP和gRPC協議。
+`Send Transaction` 是 BlockRazor 為 Solana 提供的快速交易發送接口，用於將已簽名交易以更低延遲發送到鏈上。該服務基於 HTTP 和 gRPC 提供接入方式，適合對交易上鏈速度有較高要求的用戶。
 
+`Send Transaction` 在兼容現有發送方式的前提下，通過 BlockRazor 的 [BEF](../../../../he-xin-ji-shu/blockchain-edge-fabric.md)，縮短交易從客戶端到 Leader 節點之間的路徑，提升交易上鏈速度。 `Send Transaction` 的上鏈路徑、測試說明和benchamark結果可參考 [構建極速 Solana 交易發送服務](https://blockrazor.io/zh/blog/20250801Benchmarking/)
 
+目前，Send Transaction 支持 fast 和 sandwichMitigation 兩種模式：
+
+* fast 模式適合對發送速度要求更高的場景
+* sandwichMitigation 模式適合希望在速度和特定風險控制之間做平衡的場景
 
 ### 端點
 
-**HTTP**
-
+{% tabs %}
+{% tab title="HTTP" %}
 <table><thead><tr><th width="108.7109375">地区</th><th>URL</th></tr></thead><tbody><tr><td>法蘭克福</td><td>http://frankfurt.solana.blockrazor.xyz:443/sendTransaction</td></tr><tr><td>紐約</td><td>http://newyork.solana.blockrazor.xyz:443/sendTransaction</td></tr><tr><td>東京</td><td>http://tokyo.solana.blockrazor.xyz:443/sendTransaction</td></tr><tr><td>阿姆斯特丹</td><td>http://amsterdam.solana.blockrazor.xyz:443/sendTransaction</td></tr><tr><td>倫敦</td><td>http://london.solana.blockrazor.xyz:443/sendTransaction</td></tr></tbody></table>
+{% endtab %}
 
-#### gRPC
-
+{% tab title="gRPC" %}
 <table><thead><tr><th width="115.80859375">地区</th><th width="544.58984375">URL</th></tr></thead><tbody><tr><td>法蘭克福</td><td>frankfurt.solana-grpc.blockrazor.xyz:80</td></tr><tr><td>紐約</td><td>newyork.solana-grpc.blockrazor.xyz:80</td></tr><tr><td>東京</td><td>tokyo.solana-grpc.blockrazor.xyz:80</td></tr><tr><td>阿姆斯特丹</td><td>amsterdam.solana-grpc.blockrazor.xyz:80</td></tr><tr><td>倫敦</td><td>london.solana-grpc.blockrazor.xyz:80</td></tr></tbody></table>
-
-
+{% endtab %}
+{% endtabs %}
 
 ### 流控說明
 
 {% hint style="info" %}
-Solana發交易服務已不和訂閱計劃綁定，可前往 [Authentication](../../../../authentication.md) 獲取API KEY，默认限流为3 TPS。如需提升Solana發交易的限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理
+Solana發交易服務不和訂閱計劃綁定，可前往 [Authentication](../../../../get-started/authentication.md) 獲取API KEY，默认限流为3 TPS。如需提升Solana發交易的限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理
 {% endhint %}
-
-
 
 ### 交易構建示例
 
+* [Curl](curl.md)
 * [Go](go.md)
 * [Rust](rust.md)
 * [JS](js.md)
-
-
 
 ### 请求参数
 
 <table><thead><tr><th width="103.18359375">字段</th><th width="77.1875">必填</th><th width="125.62890625">示例</th><th>備注</th></tr></thead><tbody><tr><td>transaction</td><td>是</td><td>"4hXTCk……tAnaAT"</td><td>已完成簽名的交易，兼容base 64和base 58的編碼格式，建議用base 64</td></tr><tr><td>mode</td><td>否</td><td>"fast"<br>"sandwichMitigation"</td><td>BlockRazor支持fast和sandwichMitigation兩種模式，默認為fast模式。<br><br>在fast模式中，交易會基於全球分布式高性能網絡和高質量SWQoS質押鏈路被飽和式發送，以最低延遲到達Leader節點。<br><br>在sandwichMitigation模式中，交易會被發往BlockRazor高度信任的SWQoS質押鏈路，同時交易會跳過黑名單Leader(經BlockRazor三明治監測機制動態精確識別)的slot。在此模式下，<strong>請不要用</strong>durable nonce發送交易，這會使三明治保護失效。</td></tr><tr><td>safeWindow</td><td>否</td><td>3</td><td>sandwichMitigation模式中用於確定交易發送時機的參數，數字代表從當前slot起連續白名單驗證者的slot數量，比如設定3，則交易會僅在當前起連續3個slot都屬於白名單驗證者時發送。<br><br>safeWindow的參數範圍是3-13，數字越大防治三明治攻擊效果越好，但可能會對上鏈速度有一定影響。如不設定，則默認為3。</td></tr><tr><td>revertProtection</td><td>否</td><td>false</td><td>默認為false。如設置為true，交易不會在鏈上執行失敗，但上鏈速度会受到影响且存在无法上链的可能，請根據實際需求謹慎選擇開啓。</td></tr></tbody></table>
 
-
-
 ### **Priority** Fee
 
 Priority Fee是Solana在Base Fee（發送交易的最低成本，交易中每包含一個簽名花費5000 Lamports）基礎上的額外交易費用。由於計算資源有限，Leader節點在出塊時主要按交易價值對交易進行排序，Priority Fee越高的交易被優先納入下個區塊的概率越高。建議在發送交易時將CU Price至少設置為1,000,000。
-
-
 
 ### Tip
 
@@ -75,8 +75,6 @@ Priority Fee是Solana在Base Fee（發送交易的最低成本，交易中每包
 為盡量避免因地址佔用引起交易處理性能下降，導致交易延遲，請盡量在發交易時輪換Tip賬戶地址。
 {% endhint %}
 
-
-
 ### Keep Alive
 
 請發送 POST 請求到健康檢查端點以保持連線活躍，請求示例如下：
@@ -91,4 +89,8 @@ curl -X POST 'http://frankfurt.solana.blockrazor.xyz:443/health' \
 ```
 {% endtab %}
 {% endtabs %}
+
+### Send Binary Transaction
+
+Send Binary Transaction支持已簽名交易以binary形式提交，而不用先轉成Base 64。這樣做的好處是少了一層編碼與解碼開銷，而且由於數據包更小交易在傳輸時不容易分包，可以降低因此導致的高延遲。詳見[交易構建示例](./#jiao-yi-gou-jian-shi-li)。
 

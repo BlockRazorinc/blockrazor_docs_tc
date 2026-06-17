@@ -1,84 +1,78 @@
+---
+description: 介紹BlockRazor RPC的服務、用戶和優勢
+---
+
 # 總覽
 
-### 產品介紹
+### BlockRazor RPC是什麼
 
-BlockRazor RPC是一款為用戶提供MEV保護、支持返利的RPC產品，目前已支持BSC和Ethereum。\
-用戶提交的交易如由普通RPC處理，會在節點P2P網絡間公開廣播，交易極容易受到MEV攻擊，導致因交易產生的潛在返利空間被壓榨乾淨。\
-BlockRazor RPC相比普通RPC，可以實現對交易的隱私保護，從而抵御三明治攻擊和搶跑攻擊。同時, BlockRazor RPC支持用戶自定義披露交易數據，從中產生的收益講實時返利至用戶賬戶。
+BlockRazor RPC 是面向 Ethereum, BSC 和Base 的交易提交通道，為用戶提供交易隱私保護、MEV 防護和實時返利能力。
 
+在常規公共 RPC 中，用戶提交的交易通常會進入公開傳播路徑，並在節點網絡中廣播，更容易暴露交易意圖，使交易受到 sandwich、frontrunning 等惡意 MEV 攻擊的影響，不僅可能帶來更差的成交價格，也可能讓原本屬於用戶的潛在價值被外部策略搶走。
 
+相比之下，BlockRazor RPC 會將交易保留在隱私鏈路中，降低交易在公開傳播過程中被惡意利用的風險。同時，BlockRazor RPC 支持對交易數據披露範圍進行自定義配置，在保證交易安全的前提下，將適合公開的部分信息提供給 Searcher 執行無害的 backrun 策略，並將由此產生的部分收益實時返還給用戶。
 
-### 產品優勢
+### BlockRazor RPC提供什麼
 
-#### 高安全性
+BlockRazor RPC 主要提供以下能力：
 
-BlockRazor RPC支持Ethereum和BSC上全類型交易的隱私保護，抵御三明治攻擊和搶跑攻擊。
+* 交易隱私保護，減少公開傳播帶來的風險
+* 抵御 sandwich 和 frontrunning 等惡意 MEV 攻擊
+* 通過可控的數據披露機制支持無害 backrun
+* 將部分 backrun 收益實時返還給用戶
+* 支持項目方快速接入，並可自定義 RPC 域名和相關配置
 
-#### 快速打包
+### BlockRazor RPC適合哪些用戶
 
-BlockRazor RPC支持backrun bundle競拍，以實現交易價值最大化，同時藉助BlockRazor高性能網絡的技術將交易以極低延遲發往Ethereum和BSC上的頭部區塊構建者。
+* **Wallets / DEXs：**&#x5E0C;望提升交易保護能力、優化用戶成交體驗並引入返利機制的團隊
+* **Trading Bot / Quant Team：**&#x5E0C;望在提交交易時減少惡意 MEV 干擾，並兼顧執行質量的團隊
+* **Project Builders：**&#x9700;要專屬 RPC 接入能力，並希望自定義交易披露和返利配置的項目方
+* **普通交易用戶：**&#x5E0C;望在 Ethereum 和 BSC 上獲得更安全交易路徑的用戶
 
-#### 實時返利
+### 為什麼選擇BlockRazor RPC
 
-交易潛在收益會實時返利給用戶。返利交易會在RPC內部提前構建完成，緊隨用戶交易發往區塊構建者，納入同一個區塊中。
+高安全性：BlockRazor RPC 為 Ethereum 和 BSC 上的全類型交易提供 MEV 防護能力，重點抵御 sandwich 和 frontrunning 等對用戶危害較大的攻擊方式。同時對Seacher採取高門檻准入策略，結合實時MEV攻擊監控，進一步降低用戶交易風險。
 
-#### 極速集成
+快速打包：BlockRazor RPC 基於 [BEF](../../he-xin-ji-shu/blockchain-edge-fabric.md) 將交易以最低延遲和最高價值發送至出塊節點，以爭取更優的上鏈效果。
 
-交易者可[一鍵添加RPC到錢包](../../yong-hu-an-li/ge-ren-jiao-yi-zhe.md)，項目方可[自定義RPC URL和交易隱私數據](bsc/ji-cheng-rpc.md)，快速完成RPC集成。
+實時返利：當用戶交易存在可執行的無害 backrun 空間時，Searcher 可基於被授權披露的交易信息構造 backrun 策略，並將其中一部分收益實時返還給用戶。
 
-
+極速集成：BlockRazor RPC 保持標準 JSON-RPC 使用方式，便於錢包、DEX、Trading Bot 和項目方快速接入。對於普通用戶來說，可以像使用標準 RPC 一樣直接使用；對於項目方來說，BlockRazor RPC 還支持自定義域名、交易披露策略、返利地址和 revert protection 等配置，方便以較低成本完成集成和上線。
 
 ### 常見問題
 
-**如何確保交易在獲得返利的同時抵御MEV攻擊**
+<details>
 
-* 交易會根據自定義披露配置分享給Searcher，Searcher只能對交易執行無害的backrun策略，以此在抵御三明治和搶跑攻擊的同時，也可以將backrun產生的收益返利給用戶
+<summary><strong>為什麼交易在受到 MEV 保護的同時還能獲得返利？</strong></summary>
 
-**我會在什麼時候以什麼形式收到返利？**
+因為 BlockRazor RPC 支持按自定義規則披露交易信息。Searchers 可以基於這些被授權披露的數據執行無害的 backrun 策略，而不是對用戶有害的 sandwich 或 frontrunning 攻擊。由 backrun 產生的部分收益會實時返還給用戶。
 
-* 如交易存在執行backrun策略的機會，返利由Searcher調用智能合約完成，返利交易和項目交易會在同一個區塊內執行成功，以達到實時返利的目的。​
+</details>
 
-**交易存在revert的可能性嗎？**
+<details>
 
-* 如果BlockRazor RPC在實際執行過程中發現交易revert且revert保護已經開啟，則交易不會納入區塊中。
+<summary><strong>返利會在什麼時候到賬？以什麼形式完成？</strong></summary>
 
-**各個角色間的利潤分配是怎麼樣的？**
+如果用戶交易存在可執行的 backrun 空間，Searchers 會通過鏈上方式實時完成返利。通常情況下，返利交易會與用戶交易一起在同一區塊內完成執行。
 
-* 如交易存在利润空间且在競價成功後納入區塊，BlockRazor RPC會將競價的部分返利給用戶，剩餘一部分用於支付BlockRazor RPC手續費，另一部分用於向builder支付bribe以使交易盡快上鏈。
+</details>
 
+<details>
 
+<summary><strong>交易會不會revert？</strong></summary>
 
-### New to MEV
+如果 BlockRazor RPC 檢測到交易會回滾，並且交易所屬渠道開啓了 revert protection，那麼這筆交易將不會被打包上鏈。
 
-#### MEV
+</details>
 
-MEV全稱是 Maximal Extractable Value，指的是在新區塊生產過程中，MEV機器人會對mempool中的交易重新排序，在利用價格波動賺取利潤的同時，實現區塊整體價值的最大化。在MEV策略中，三明治攻擊對用戶的傷害最大，機器人會在目標交易（通常是DEX的SWAP交易）的前後分別構建一筆攻擊交易，導致用戶收到的加密貨幣數量相比預期減少。
+<details>
 
-#### Searcher
+<summary><strong>收益是如何分配的？</strong></summary>
 
-Searcher是指那些尋找並利用MEV機會的獨立網絡參與者，他們通過運行複雜的算法來檢測盈利的 MEV 機會，構建交易組成[bundle](zong-lan.md#bundle)提交給[MEV Protect RPC](zong-lan.md#rpc)或區塊構建者，以期將bundle納入區塊從中獲利。在Searcher執行的MEV策略中，三明治（sandwich）攻擊和搶跑（frontrunning）攻擊對用戶傷害最大，而backrun策略由於其在用戶交易後序執行，對用戶無害。
+當交易存在利潤空間並成功打包後，部分收益會返還給用戶，剩餘部分用於支付 BlockRazor RPC 的服務費用，以及支付 builder 為爭取更優打包位置所需的成本。
 
-#### Sandwich
-
-Sandwich是一種惡意的MEV策略，這種攻擊通常發生在去中心化交易所（DEX）上，當一個用戶（比如Alice）想要在DEX上購買一個代幣時，一個惡意的交易者（比如Bob）可以偵測到這個交易，並在Alice的交易前後分別插入自己的兩個交易來「夾擊」它。
-
-Bob首先在Alice的交易之前買入代幣A（Bob會在Alice的交易前插入高gas費用的交易，以確保被優先處理，此類前置交易的攻擊也被稱為frontrunning），這會推高代幣A的價格。然後，在Alice的交易之後，Bob再賣出代幣A，此時由於價格已經被推高，Bob可以從中獲利。這種攻擊方式不僅影響了Alice原本交易的執行價格，還讓Bob通過操縱價格獲得了利潤。
-
-#### Backrun
-
-Backrun是一種無害的MEV策略，backrun策略的執行者會在一筆高價值交易後立即策略性地執行一筆Backrun交易，利用因前置交易價格波動產生的套利機會來獲取利潤。由Backrun交易在用戶交易之後執行，不會對前置交易造成影響。
-
-#### Bundle
-
-在MEV中，Searcher通過將用戶交易和策略交易按一定順序構建成bundle（交易捆綁包）來捕獲套利機會。bundle具備原子性，如果bundle中的任意一筆交易模擬執行失敗，則整個bundle都將不會執行，這意味著bundle中的交易要麼全部執行成功，要麼全部執行失敗。
-
-#### RPC
-
-RPC（遠程過程調用 Remote Procedure Call）是一種協議，它允許一個程序（客戶端）通過網絡向另一個程序（服務器）請求服務，而無需瞭解底層網絡技術的細節。在區塊鏈的上下文中，RPC通常用於節點通信和客戶端交互，區塊鏈客戶端（如錢包或DApp前端）通過RPC與區塊鏈節點交互，發送交易、查詢賬戶餘額、獲取區塊信息等。
-
-
+</details>
 
 ### 隱私聲明
 
 BlockRazor RPC 不跟蹤任何類型的用戶信息（例如 IP 地址、位置等）。僅保留區塊鏈上公開的信息，如交易的時間戳。
-

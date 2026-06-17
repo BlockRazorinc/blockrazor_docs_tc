@@ -1,10 +1,35 @@
+---
+description: 介紹Get FlashBlockStream服務、優勢以及接入方法
+---
+
 # Get FlashBlockStream
 
-### 介紹
+### Base Get FlashBlockStream是什麼
 
-本方法用於獲取Base的FlashBlock數據，支持gRPC和WebSocket協議。
+`Get FlashBlockStream` 是 BlockRazor 為 Base 提供的實時 FlashBlock 數據訂閱接口，用於以更低延遲方式獲取 Base 上更早階段的區塊數據。該接口支持 gRPC 和 WebSocket 兩種協議，適合對數據到達時間更敏感的交易系統、監控系統和實時處理系統接入。
 
-Flashblocks 是 Base 上每 200 毫秒流式傳輸的“子區塊”（sub-blocks），實現比標準 2 秒區塊時間快 10 倍 的交易預確認。這些子區塊被稱為 Flashblocks，包含大約一個完整區塊交易數據的 10%，允許應用程序幾乎即時獲得交易反饋，適用於需要低延遲的場景。
+在 Base 上，FlashBlock 可以理解為正式區塊形成之前的“子區塊”數據流，通常以約 200ms 的頻率持續推送。相比標準約 2s 的區塊時間，FlashBlock 能夠更早提供交易相關反饋，因此更適合那些希望盡快感知鏈上變化的低延遲場景。
+
+對於 Trading Bot、量化策略、實時監控平台和前端交易應用來說，等待正式區塊往往意味著更長的反饋時間；而 Get FlashBlockStream 的價值，就是幫助系統在正式區塊到來之前，更早接收到交易和區塊變化信號，為後續判斷和響應爭取更多時間。
+
+### 為什麼選擇Base Get FlashBlockStream
+
+BlockRazor 基於 [BEF](../../../../he-xin-ji-shu/blockchain-edge-fabric.md) 在 Base 上提供 Frankfurt、Virginia 和 Tokyo 等多個區域入口，根據 [Base Benchmark](https://blockrazor.io/zh/blog/20250922basebenchmark/)，BlockRazor 在多個地區的FlashBlock接收延遲相較 Base官方服務均表現出優勢，尤其在中高分位區間領先更明顯。
+
+### 常見問題
+
+<details>
+
+<summary>Get BlockStream 和 Get FlashBlockStream 有什麼區別</summary>
+
+兩者的核心區別在於 數據粒度、時間點和適用場景 不同。
+
+* **Get BlockStream**\
+  用於獲取 Base 上已經形成的正式區塊數據，關注的是已確認區塊和其中的交易內容。它更適合確認結果監控、區塊級分析、鏈上數據處理和需要穩定消費正式區塊的數據系統。
+* **Get FlashBlockStream**\
+  用於獲取 Base 上的 FlashBlock 數據。FlashBlock 是 Base 每約 200ms 推送一次的“子區塊”數據，相比標準約 2s 的正式區塊時間，能夠更早提供交易預確認信息。它更適合對低延遲更敏感、希望盡早看到鏈上變化的場景。
+
+</details>
 
 ### 端點
 
@@ -21,6 +46,10 @@ Flashblocks 是 Base 上每 200 毫秒流式傳輸的“子區塊”（sub-block
 ### 價格
 
 每月每條數據流的價格為$250，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+
+{% hint style="info" %}
+數據流的可訂閱數量按所有地區共享計算。比如購買 1 條，則僅可在 1 個地區訂閱，其他地區將無法訂閱。
+{% endhint %}
 
 ### 請求示例
 

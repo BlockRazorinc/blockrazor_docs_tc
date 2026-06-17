@@ -1,8 +1,12 @@
+---
+description: 介紹BSC GetAllGasPriceStream的接入方法
+---
+
 # GetAllGasPriceStream
 
 ### **介紹**
 
-`GetAllGasPriceStream` 供BSC交易gas price訂閱服務，基於gRPC流按百分位向用戶推送BSC交易在最近上鏈區塊中的gas price，端點域名：<mark style="color:$primary;">grpc.bsc-fee.blockrazor.me:443</mark>
+`GetAllGasPriceStream` 提供BSC交易gas price訂閱服務，基於gRPC流按百分位向用戶推送BSC交易在最近上鏈區塊中的gas price，端點域名：<mark style="color:$primary;">grpc.bsc-fee.blockrazor.me:443</mark>
 
 ### 價格
 

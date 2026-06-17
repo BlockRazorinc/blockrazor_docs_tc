@@ -1,10 +1,14 @@
+---
+description: 介紹BlockRazor的Gas Sponsor模式
+---
+
 # Gas Sponsor
 
 {% hint style="info" %}
-BlockRazor Gas Sponsor目前支持BSC、Solana和Ethereum，如需接入Gas Sponsor服務請於我們[聯繫](https://discord.gg/qqJuwRb8Nh)。
+BlockRazor Gas Sponsor目前支持BSC、Solana、Ethereum和Base，如需接入Gas Sponsor服務請於我們[聯繫](https://discord.gg/qqJuwRb8Nh)。
 {% endhint %}
 
-### Gas Sponsor介绍
+### 什麼是Gas Sponsor
 
 Gas Sponsor通過gas贊助使錢包用戶能夠進行代幣互換（Swap）而無需支付任何原生區塊鏈貨幣（比如ETH、BNB、SOL等）。對於錢包項目方集成Gas Sponsor可以帶來以下收益：
 
@@ -12,7 +16,7 @@ Gas Sponsor通過gas贊助使錢包用戶能夠進行代幣互換（Swap）而�
 * 消除交易障礙：用戶不再需要僅僅為了支付 Gas 費用而專門獲取原生代幣（例如，ETH、BNB、SOL），這消除了交易中最大的障礙，從而實現了真正無縫和無摩擦的交易體驗
 * 增加收入: 更多用戶完成SWAP，整體交易量更高，為項目方帶來更多的SWAP費用收入
 
-### Gas Sponsor特性
+### Gas Sponsor的核心特性是什麼
 
 * 與原生交易接口 `eth_sendRawTransaction` (EVM) / `sendTransaction` (Solana)完全兼容，只需簡單地更改端點即可實現兼容
 * 支持交易過濾和成本控制，可針對交易進行篩選和成本管理

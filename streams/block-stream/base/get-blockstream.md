@@ -1,8 +1,31 @@
+---
+description: 介紹Get BlockStream的服務、優勢以及接入方法
+---
+
 # Get BlockStream
 
-### 介紹
+### Base Get BlockStream是什麼
 
-本方法用於獲取Base的區塊數據，支持gRPC協議。
+Get BlockStream 是 BlockRazor 為 Base 提供的實時區塊數據訂閱接口，用於以低延遲方式持續獲取 Base 上最新生成的區塊數據。該接口基於 gRPC 協議提供，適合需要持續消費區塊數據的交易系統、數據系統和基礎設施系統接入。
+
+### 為什麼選擇Base Get BlockStream
+
+對於交易系統、監控系統和數據系統來說，區塊數據獲取能力不只是“能夠拿到新區塊”，還關係到不同地區服務的接收時效、數據鏈路的穩定性，以及長時間運行場景下的整體表現。BlockRazor 基於全球多點部署和跨洲專線在 Base 上提供 Frankfurt、Virginia 和 Tokyo 等多個區域入口，根據 [Base Benchmark](https://blockrazor.io/zh/blog/20250922basebenchmark/)，BlockRazor 在多個地區的區塊接收延遲相較 Base官方服務均表現出優勢，尤其在中高分位區間領先更明顯。
+
+### 常見問題
+
+<details>
+
+<summary>Get BlockStream 和 Get FlashBlockStream 有什麼區別</summary>
+
+兩者的核心區別在於 數據粒度、時間點和適用場景 不同。
+
+* **Get BlockStream**\
+  用於獲取 Base 上已經形成的正式區塊數據，關注的是已確認區塊和其中的交易內容。它更適合確認結果監控、區塊級分析、鏈上數據處理和需要穩定消費正式區塊的數據系統。
+* **Get FlashBlockStream**\
+  用於獲取 Base 上的 FlashBlock 數據。FlashBlock 是 Base 每約 200ms 推送一次的“子區塊”數據，相比標準約 2s 的正式區塊時間，能夠更早提供交易預確認信息。它更適合對低延遲更敏感、希望盡早看到鏈上變化的場景。
+
+</details>
 
 ### 端點
 
@@ -14,7 +37,11 @@
 
 ### 價格
 
-每月每條數據流的價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+BlockStream每月每條數據流的價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+
+{% hint style="info" %}
+數據流的可訂閱數量按所有地區共享計算。比如購買 1 條，則僅可在 1 個地區訂閱，其他地區將無法訂閱。
+{% endhint %}
 
 ### 請求示例
 
@@ -144,9 +171,7 @@ service BaseApi {
 }
 ```
 
-
-
-## 返回示例
+### 返回示例
 
 **正常**
 
