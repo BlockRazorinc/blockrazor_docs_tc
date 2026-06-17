@@ -1,5 +1,6 @@
 ---
 description: 介紹BlockRazor BSC Fast模式的eth_sendRawTransaction v2接口以及集成方法
+hidden: true
 ---
 
 # eth\_sendRawTransaction v2

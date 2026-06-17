@@ -54,7 +54,7 @@ Private Mempool 依賴 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) �
 
 ### 價格
 
-每月價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。每個地區允許訂閱2條數據流。
+每月價格為$1000，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。每個地區允許訂閱2條數據流。
 
 ### 端點
 
