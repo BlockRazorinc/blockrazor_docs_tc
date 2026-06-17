@@ -356,7 +356,7 @@ sendTx().catch(console.error);
 {% hint style="info" %}
 注意：
 
-* 認證 (auth) 和 請求 (request) 參數必須以 URI 參數的形式填入URL，比如http://frankfurt.solana.blockrazor.xyz:443/v2/sendTransaction?auth=\<auth\_token>\&mode=fast\&revertProtection=true
+* 認證 (auth) 和 請求 (request) 參數必須以 URI 參數的形式填入URL，比如http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction?auth=\<auth\_token>\&mode=fast\&revertProtection=true
 {% endhint %}
 
 ### 請求參數
