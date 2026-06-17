@@ -156,12 +156,199 @@ func sendTx() error {
 {% endtab %}
 
 {% tab title="Rust" %}
-```
+```rust
+use bincode;
+use rand::Rng;
+use reqwest::header::{HeaderMap, HeaderValue, CONTENT_TYPE};
+use solana_client::rpc_client::RpcClient;
+use solana_sdk::{
+    commitment_config::CommitmentConfig,
+    pubkey::Pubkey,
+    signature::{Keypair, Signer},
+    transaction::Transaction,
+};
+use solana_system_interface::instruction::transfer;
+use std::str::FromStr;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let http_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction?auth=<auth_token>";
+    let mainnetrpc = "";
+    let privatekey = "";
+    let publickey = "";
+    let amount: u64 = 200_000;
+    let tipamount: u64 = 1_000_000;
+
+    let tip_accounts = [
+        "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
+        "FjmZZrFvhnqqb9ThCuMVnENaM3JGVuGWNyCAxRJcFpg9",
+        "6No2i3aawzHsjtThw81iq1EXPJN6rh8eSJCLaYZfKDTG",
+        "A9cWowVAiHe9pJfKAj3TJiN9VpbzMUq6E4kEvf5mUT22",
+        "68Pwb4jS7eZATjDfhmTXgRJjCiZmw1L7Huy4HNpnxJ3o",
+        "4ABhJh5rZPjv63RBJBuyWzBK3g9gWMUQdTZP2kiW31V9",
+        "B2M4NG5eyZp5SBQrSdtemzk5TqVuaWGQnowGaCBt8GyM",
+        "5jA59cXMKQqZAVdtopv8q3yyw9SYfiE3vUCbt7p8MfVf",
+        "5YktoWygr1Bp9wiS1xtMtUki1PeYuuzuCF98tqwYxf61",
+        "295Avbam4qGShBYK7E9H5Ldew4B3WyJGmgmXfiWdeeyV",
+        "EDi4rSy2LZgKJX74mbLTFk4mxoTgT6F7HxxzG2HBAFyK",
+        "BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
+        "Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
+        "AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
+    ];
+
+    let client = reqwest::Client::new();
+
+    send_transaction(
+        &client,
+        mainnetrpc,
+        privatekey,
+        publickey,
+        &tip_accounts,
+        tipamount,
+        amount,
+        http_endpoint,
+    )
+    .await?;
+
+    Ok(())
+}
+
+async fn send_transaction(
+    client: &reqwest::Client,
+    mainnetrpc: &str,
+    privatekey: &str,
+    publickey: &str,
+    tip_accounts: &[&str],
+    tipamount: u64,
+    amount: u64,
+    http_endpoint: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let from = Keypair::from_base58_string(privatekey);
+    let receiver = Pubkey::from_str(publickey)?;
+    let tip = Pubkey::from_str(tip_accounts[rand::thread_rng().gen_range(0..tip_accounts.len())])?;
+
+    let rpcurl = String::from(mainnetrpc);
+    let connection = RpcClient::new_with_commitment(rpcurl, CommitmentConfig::confirmed());
+    let recent_blockhash = connection
+        .get_latest_blockhash()
+        .expect("Failed to get recent blockhash.");
+
+    let ix_tip = transfer(&from.pubkey(), &tip, tipamount);
+    let ix_main = transfer(&from.pubkey(), &receiver, amount);
+
+    let tx = Transaction::new_signed_with_payer(
+        &[ix_tip, ix_main],
+        Some(&from.pubkey()),
+        &[&from],
+        recent_blockhash,
+    );
+
+    let serialized = bincode::serialize(&tx)?;
+
+    let mut headers = HeaderMap::new();
+    headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/octet-stream"));
+
+    let res = client
+        .post(http_endpoint)
+        .headers(headers)
+        .body(serialized)
+        .send()
+        .await?;
+
+    let text = res.text().await?;
+    println!("[send tx] response: {}", text);
+
+    Ok(())
+}
 ```
 {% endtab %}
 
 {% tab title="JS" %}
-```
+```javascript
+const axios = require("axios");
+const web3 = require("@solana/web3.js");
+const bs58 = require("bs58");
+const http = require("http");
+const https = require("https");
+
+const httpEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction?auth=<auth_token>";
+const mainNetRPC = "";
+const privateKey = "";
+const publicKey = "";
+const amount = 200_000;
+const tipAmount = 1_000_000;
+
+const tipAccounts = [
+  "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
+  "FjmZZrFvhnqqb9ThCuMVnENaM3JGVuGWNyCAxRJcFpg9",
+  "6No2i3aawzHsjtThw81iq1EXPJN6rh8eSJCLaYZfKDTG",
+  "A9cWowVAiHe9pJfKAj3TJiN9VpbzMUq6E4kEvf5mUT22",
+  "68Pwb4jS7eZATjDfhmTXgRJjCiZmw1L7Huy4HNpnxJ3o",
+  "4ABhJh5rZPjv63RBJBuyWzBK3g9gWMUQdTZP2kiW31V9",
+  "B2M4NG5eyZp5SBQrSdtemzk5TqVuaWGQnowGaCBt8GyM",
+  "5jA59cXMKQqZAVdtopv8q3yyw9SYfiE3vUCbt7p8MfVf",
+  "5YktoWygr1Bp9wiS1xtMtUki1PeYuuzuCF98tqwYxf61",
+  "295Avbam4qGShBYK7E9H5Ldew4B3WyJGmgmXfiWdeeyV",
+  "EDi4rSy2LZgKJX74mbLTFk4mxoTgT6F7HxxzG2HBAFyK",
+  "BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
+  "Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
+  "AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
+];
+
+const httpClient = axios.create({
+  timeout: 10000,
+  httpAgent: new http.Agent({ keepAlive: true }),
+  httpsAgent: new https.Agent({ keepAlive: true }),
+});
+
+async function sendTx() {
+  const senderPrivateKey = new Uint8Array(bs58.decode(privateKey));
+  const senderKeypair = web3.Keypair.fromSecretKey(senderPrivateKey);
+  const receiver = new web3.PublicKey(publicKey);
+  const tipAccount = new web3.PublicKey(
+    tipAccounts[Math.floor(Math.random() * tipAccounts.length)]
+  );
+
+  const connection = new web3.Connection(mainNetRPC);
+  const { blockhash } = await connection.getLatestBlockhash("finalized");
+
+  const tx = new web3.Transaction()
+    .add(
+      web3.SystemProgram.transfer({
+        fromPubkey: senderKeypair.publicKey,
+        toPubkey: tipAccount,
+        lamports: tipAmount,
+      })
+    )
+    .add(
+      web3.SystemProgram.transfer({
+        fromPubkey: senderKeypair.publicKey,
+        toPubkey: receiver,
+        lamports: amount,
+      })
+    );
+
+  tx.recentBlockhash = blockhash;
+  tx.feePayer = senderKeypair.publicKey;
+  tx.sign(senderKeypair);
+
+  const serialized = tx.serialize();
+
+  try {
+    const res = await httpClient.post(httpEndpoint, Buffer.from(serialized), {
+      headers: {
+        "Content-Type": "application/octet-stream",
+      },
+      responseType: "text",
+    });
+
+    console.log("[send tx] response:", res.data);
+  } catch (err) {
+    console.error("SendTx failed:", err.response?.data || err.message);
+  }
+}
+
+sendTx().catch(console.error);
 ```
 {% endtab %}
 {% endtabs %}
