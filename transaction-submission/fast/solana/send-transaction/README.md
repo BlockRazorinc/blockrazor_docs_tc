@@ -92,5 +92,5 @@ curl -X POST 'http://frankfurt.solana.blockrazor.xyz:443/health' \
 
 ### Send Binary Transaction
 
-Send Binary Transaction支持已簽名交易以binary形式提交，而不用先轉成Base 64。這樣做的好處是少了一層編碼與解碼開銷，而且由於數據包更小交易在傳輸時不容易分包，可以降低因此導致的高延遲。詳見[交易構建示例](./#jiao-yi-gou-jian-shi-li)。
+Send Binary Transaction支持已簽名交易以binary形式提交，而不用先轉成Base64。這樣做的好處是少了一層編碼與解碼開銷，而且由於數據包更小交易在傳輸時不容易分包，可以降低因此導致的高延遲。詳見[交易構建示例](./#jiao-yi-gou-jian-shi-li)。
 
