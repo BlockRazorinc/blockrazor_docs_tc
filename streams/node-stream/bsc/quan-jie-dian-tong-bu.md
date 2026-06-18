@@ -24,6 +24,16 @@ description: 介紹BSC全節點同步的服務、優勢、目標用戶以及接�
 如果你的目標只是低延遲獲取確認後的區塊數據，Block Stream 通常就已經足夠。\
 如果你的系統需要自己的本地節點盡快同步到最新區塊和 world state，那麼全節點同步會更合適。
 
+### Benchmark
+
+在本次測試中，我們分別在 Dublin、Frankfurt、Tokyo 和 Virginia 四個區域，對“已連接 BlockRazor Relay 的節點”與“未連接 Relay 的節點”進行了對比。評估方式基於節點的 block 接收日誌，比較兩者接收同一區塊的時間差，以驗證全節點同步對本地全節點同步速度的提升效果。
+
+<table><thead><tr><th width="117.09765625">Region</th><th width="264.55859375">Relay-Connected Node Lead Rate</th><th>Avg Lead</th><th>P90 Lead</th></tr></thead><tbody><tr><td>Dublin</td><td>98.7%</td><td>51.9 ms</td><td>90 ms</td></tr><tr><td>Frankfurt</td><td>98.2%</td><td>72.0 ms</td><td>140 ms</td></tr><tr><td>Tokyo</td><td>99.4%</td><td>155.2 ms</td><td>312 ms</td></tr><tr><td>Virginia</td><td>99.6%</td><td>113.7 ms</td><td>326 ms</td></tr></tbody></table>
+
+從結果來看，接入 Relay 的節點在四個區域都表現出穩定優勢。按 matched block 樣本計算，連接 Relay 的節點在 Dublin、Frankfurt、Tokyo 和 Virginia 的領先比例分別達到 98.7%、98.2%、99.4% 和 99.6%。這說明在絕大多數可比樣本中，接入 BlockRazor Relay 的節點都能更早同步到新區塊，從而更快獲得最新鏈上狀態。
+
+從領先幅度看，連接 Relay 的節點在四個區域的平均領先時間分別約為 51.9ms、72.0ms、155.2ms 和 113.7ms；在 P90 維度下，領先幅度分別達到 90ms、140ms、312ms 和 326ms。這表明全節點同步不僅提升了領先概率，也在更高分位場景下維持了可觀的同步優勢。
+
 ### 價格
 
 每月每條數據流的價格為$800，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。

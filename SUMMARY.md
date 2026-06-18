@@ -55,7 +55,7 @@
   * [BSC](transaction-submission/fast/bsc/README.md)
     * [eth\_sendRawTransaction](transaction-submission/fast/bsc/eth_sendrawtransaction.md)
     * [eth\_sendRawTransaction v2](transaction-submission/fast/bsc/eth_sendrawtransaction-v2.md)
-    * [Fast-Tx](transaction-submission/fast/bsc/fast-tx.md)
+    * [Broadcast Tx](transaction-submission/fast/bsc/broadcast-tx.md)
   * [Base](transaction-submission/fast/base/README.md)
     * [eth\_sendRawTransaction](transaction-submission/fast/base/eth_sendrawtransaction.md)
   * [Sui](transaction-submission/fast/sui/README.md)

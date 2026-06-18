@@ -16,6 +16,16 @@ NewBlocks 基於 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 分發�
 * **區塊級數據分析：** 獲取區塊頭、交易列表與後續出塊者信息，用於區塊研究、節點觀測與網絡狀態分析
 * **策略數據輸入：** 作為交易系統的 confirmed 數據源，與 Public Mempool、Transaction Submission 等能力配合使用，構建更完整的監控與執行鏈路
 
+### Benchmark
+
+在接收新區塊的延遲測試中，我們分別在 Dublin、Frankfurt、Tokyo 和 Virginia 四個區域，對 BlockRazor 與普通 Node 進行了對比。評估方式基於雙方對同一區塊的接收時間差，統計在可比樣本中由哪一方更早收到新區塊。
+
+<table><thead><tr><th width="134.953125">Region</th><th width="201.30859375">BlockRazor Lead Rate</th><th>Avg Lead</th><th>P90 Lead</th></tr></thead><tbody><tr><td>Dublin</td><td>99.5%</td><td>80.4 ms</td><td>130.9 ms</td></tr><tr><td>Frankfurt</td><td>100.0%</td><td>111.1 ms</td><td>189.1 ms</td></tr><tr><td>Tokyo</td><td>100.0%</td><td>223.0 ms</td><td>645.3 ms</td></tr><tr><td>Virginia</td><td>100.0%</td><td>133.6 ms</td><td>351.8 ms</td></tr></tbody></table>
+
+從結果來看，BlockRazor 在四個區域均表現出穩定領先。Frankfurt、Tokyo 和 Virginia 三個區域中，BlockRazor 的領先率均達到 100%；Dublin 區域的領先率也達到 99.5%。從領先幅度看，BlockRazor 在不同區域的平均領先時間約為 80.4ms、111.1ms、223.0ms 和 133.6ms；在 P90 維度下，領先幅度分別達到 130.9ms、189.1ms、645.3ms 和 351.8ms。
+
+這表明在新區塊到達這一關鍵鏈路上，BlockRazor 能夠更穩定地搶先於普通 Node 接收到區塊數據。
+
 ### 端點
 
 <table><thead><tr><th width="154">地區</th><th width="218">可用區（AWS）</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>euc1-az2</td><td>35.157.64.49:50051</td></tr><tr><td>東京</td><td>apne1-az4</td><td>54.249.93.63:50051</td></tr><tr><td>愛爾蘭</td><td>euw1-az1</td><td>3.248.65.151:50051</td></tr><tr><td>弗吉尼亞</td><td>use1-az4</td><td>52.205.173.134:50051</td></tr></tbody></table>
