@@ -6,9 +6,9 @@ description: 介紹BSC Public Mempool的服務、優勢、應用場景以及接�
 
 ### BSC Public Mempool是什麼
 
-Public Mempool 是 BlockRazor 提供的高性能 pending 交易數據流服務，用於低延遲訂閱公開傳播中的未確認交易。
+Public Mempool 是 BlockRazor 基于 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 提供的高性能 pending 交易數據流服務，用於低延遲訂閱公開傳播中的未確認交易。
 
-在 EVM 網絡中，交易在進入區塊之前，通常會先在 Mempool 中傳播。Public Mempool 的核心價值，就是幫助用戶更早獲取公開的 pending 交易信號，並將這些信號以更低延遲接入自己的策略系統。它常用於監控公開交易活動、跟蹤 Smart Money 行為、識別新機會，以及為 backrun、copy trading、sniping 等策略提供更快的信號輸入。對於依賴 pending 信號驅動交易決策的系統來說，更早看到交易，往往意味著：
+在 EVM 網絡中，交易在進入區塊之前，通常會先在 Mempool 中傳播。Public Mempool 可以幫助用戶更早獲取公開的 pending 交易信號，並將這些信號以更低延遲接入自己的策略系統。它常用於監控公開交易活動、跟蹤 Smart Money 行為、識別新機會，以及為 backrun、copy trading、sniping 等策略提供更快的信號輸入。對於依賴 pending 信號驅動交易決策的系統來說，更早看到交易，往往意味著：
 
 * 更早進入策略判斷流程
 * 更充足的時間完成參數計算與風險控制
@@ -21,12 +21,6 @@ Public Mempool 是 BlockRazor 提供的高性能 pending 交易數據流服務�
 * **Backrun機會發現：**&#x767C;現可能觸發 backrun 機會的公開交易，為後續策略判斷和交易提交爭取更多時間
 * **Sniping機會發現：**&#x5728;新池上線、流動性注入或目標交易出現時，盡早捕捉公開市場中的首輪信號
 * **策略實時數據輸入**：作為交易系統的實時輸入源，與 Block Stream、Node Stream、RPC 或 Block Builder 等能力配合使用，構建更完整的監控與執行鏈路
-
-### 為什麼BSC Public Mempool更快
-
-在區塊鏈網絡中，區塊通常由驗證者產生並廣播，而交易的產生與傳播則更加分散。用戶、機器人、項目方和各類節點都可能成為新交易的起點。因此，Public Mempool 的競爭力不僅取決於節點部署位置，也取決於網絡連接路徑、轉發跳數以及是否能夠盡可能靠近交易最早出現的位置。
-
-[BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 正是圍繞這一點進行設計：在多個核心區域收集最新交易，並持續優化與網絡中高價值節點的連接關係，以盡可能更快接收新交易，再將其轉發給用戶訂閱。這樣做的目標，不只是降低平均延遲，更是盡量提高“第一時間看到交易”的能力。
 
 ### Benchmark
 
