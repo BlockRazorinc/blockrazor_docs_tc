@@ -5,8 +5,9 @@ description: 介紹BlockRazor服務的定價
 # 價格
 
 {% hint style="info" %}
-* BlockRazor目前支持組合式訂購多鏈服務或以優惠價格訂購極速服務包。
-* 此外，新注册用户仍可零门槛享有Solana, BSC, Etherem和Base上的多模式交易发送服务，详见[新注册用户](jia-ge.md#xin-zhu-ce-yong-hu)。
+BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速服務包，支持按日採購
+
+此外，新注册用户仍可零门槛享有Solana, BSC, Etherem和Base上的多模式交易发送服务，详见[新注册用户](jia-ge.md#xin-zhu-ce-yong-hu)。
 {% endhint %}
 
 ## 付費订阅服務
