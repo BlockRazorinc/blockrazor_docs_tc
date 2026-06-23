@@ -56,13 +56,13 @@ BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速�
 相比單項服務的組合式採購，用戶可通過極速服務包以更低價格完成打包採購。目前極速服務包主要包含BSC服務，整體訂閱價格&#x70BA;**$1250 / 月**，具體服務如下：
 {% endhint %}
 
-<table><thead><tr><th width="177.390625">服務</th><th>描述</th></tr></thead><tbody><tr><td><a href="../streams/mempool/bsc/public-mempool.md">Public Mempool</a></td><td>訂閱高性能網絡交易數據</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream</a></td><td>訂閱高性能網絡區塊數據</td></tr><tr><td><a href="../streams/node-stream/bsc/quan-jie-dian-tong-bu.md">Node Stream</a></td><td>低延遲同步世界狀態</td></tr><tr><td><a href="../transaction-submission/block-builder/call-bundle.md">Call Bundle</a></td><td>向Block Builder提交請求接收bundle模擬結果</td></tr><tr><td><a href="../transaction-submission/block-builder/fast-submit.md">Fast Submit</a></td><td>以更低延遲、更高穩定性向Block Builder提交交易</td></tr><tr><td><a href="../streams/mempool/bsc/tx-trace.md">Tx Trace</a></td><td>監控交易傳播路徑和跨區域延遲分佈</td></tr></tbody></table>
+<table><thead><tr><th width="158.05078125">服務</th><th width="560.16796875">描述</th></tr></thead><tbody><tr><td><a href="../streams/mempool/bsc/public-mempool.md">Public Mempool</a></td><td>訂閱高性能網絡交易數據</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream</a></td><td>訂閱高性能網絡區塊數據</td></tr><tr><td><a href="../streams/node-stream/bsc/quan-jie-dian-tong-bu.md">Node Stream</a></td><td>低延遲同步世界狀態</td></tr><tr><td><a href="../transaction-submission/block-builder/call-bundle.md">Call Bundle</a></td><td>向Block Builder提交請求接收bundle模擬結果</td></tr><tr><td><a href="../transaction-submission/block-builder/fast-submit.md">Fast Submit</a></td><td>以更低延遲、更高穩定性向Block Builder提交交易</td></tr><tr><td><a href="../streams/mempool/bsc/tx-trace.md">Tx Trace</a></td><td>監控交易傳播路徑和跨區域延遲分佈</td></tr></tbody></table>
 
 #### 折扣說明
 
 折扣和訂閱週期的關係如下：
 
-<table><thead><tr><th width="314.41796875">訂閱週期</th><th width="328.90234375">折扣</th></tr></thead><tbody><tr><td>1個月</td><td>無折扣</td></tr><tr><td>3個月</td><td>5%折扣</td></tr><tr><td>6個月</td><td>10%折扣</td></tr><tr><td>9個月</td><td>15%折扣</td></tr><tr><td>12個月及以上</td><td>20%折扣</td></tr></tbody></table>
+<table><thead><tr><th width="314.41796875">訂閱週期</th><th width="416.4765625">折扣</th></tr></thead><tbody><tr><td>1個月</td><td>無折扣</td></tr><tr><td>3個月</td><td>5%折扣</td></tr><tr><td>6個月</td><td>10%折扣</td></tr><tr><td>9個月</td><td>15%折扣</td></tr><tr><td>12個月及以上</td><td>20%折扣</td></tr></tbody></table>
 
 #### **常見問題**
 

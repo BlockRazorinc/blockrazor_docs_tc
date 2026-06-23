@@ -1,5 +1,23 @@
 ---
 description: 介紹集成BlockRazor BSC RPC的步驟
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # 集成RPC
@@ -10,7 +28,7 @@ BlockRazor RPC面向所有用户开放，無需采购服务或申请Auth
 
 ### 端點
 
-<table><thead><tr><th width="165.31640625">端點類型</th><th width="483.47265625">URL</th></tr></thead><tbody><tr><td>通用RPC</td><td>https://bsc.blockrazor.xyz</td></tr><tr><td>項目默認RPC</td><td>https://bsc.blockrazor.xyz/&#x3C;rpc_id></td></tr><tr><td>項目自定義RPC</td><td>https://&#x3C;custom_domain>.bsc.blockrazor.xyz</td></tr></tbody></table>
+<table><thead><tr><th width="165.31640625">端點類型</th><th>URL</th></tr></thead><tbody><tr><td>通用RPC</td><td>https://bsc.blockrazor.xyz</td></tr><tr><td>項目默認RPC</td><td>https://bsc.blockrazor.xyz/&#x3C;rpc_id></td></tr><tr><td>項目自定義RPC</td><td>https://&#x3C;custom_domain>.bsc.blockrazor.xyz</td></tr></tbody></table>
 
 ### 如何將BSC RPC集成到項目中
 
