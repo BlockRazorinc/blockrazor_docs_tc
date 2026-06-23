@@ -1,7 +1,7 @@
 ---
 description: 介紹BlockRazor服務的定價
 layout:
-  width: wide
+  width: default
   title:
     visible: true
   description:

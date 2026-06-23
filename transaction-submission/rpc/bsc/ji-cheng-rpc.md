@@ -1,7 +1,7 @@
 ---
 description: 介紹集成BlockRazor BSC RPC的步驟
 layout:
-  width: wide
+  width: default
   title:
     visible: true
   description:
