@@ -68,21 +68,21 @@ BlockRazor為Searcher提供極具性價比的訂閱計劃，一經訂閱，Searc
 **隱私交易流套利**
 
 1. [註冊](https://www.blockrazor.io/#/register)BlockRazor
-2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，訂閱BlockRazor的Tier 2及以上計劃，前往賬戶模塊獲取token
-3. [​訂閱](/broken/pages/NXkreaYlqBUKcNyRE5Zf)隱私交易流
+2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，采购Private Mempool，前往賬戶模塊獲取token
+3. ​訂閱 [Private Mempool](../../streams/mempool/bsc/private-mempool.md)
 4. 執行套利策略，將隱私流交易和backrun策略交易以[Bundle](../../transaction-submission/rpc/bsc/eth_sendmevbundle/)提交至RPC
 
 **公開交易流套利**
 
 1. [註冊](https://www.blockrazor.io/#/register)BlockRazor
-2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，訂閱BlockRazor的Tier 3及以上計劃，前往賬戶模塊獲取token
+2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，采购Public Mempool，前往賬戶模塊獲取token
 3. 對接[Public Mempool](../../streams/mempool/bsc/public-mempool.md)方法，低延遲訂閱最新交易；如果本地有節點，則採購[Node Stream](../../streams/node-stream/)低延遲同步節點數據。
 4. 執行套利策略，將Mempool交易和策略交易[Bundle](../../transaction-submission/rpc/bsc/eth_sendmevbundle/)提交至Scutum。
 
 **塊尾0 gwei**
 
 1. [註冊](https://www.blockrazor.io/#/register)BlockRazor
-2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，訂閱BlockRazor的Tier 2及以上計劃，前往賬戶模塊獲取token
+2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，採購極速服務包，前往賬戶模塊獲取token
 3. 請加入[Discord](https://discord.com/invite/qqJuwRb8Nh)與我們聯繫，對接BlockRazor Builder的塊尾0 gwei接口
 
 ### **常見問題**
