@@ -44,17 +44,17 @@ chmod +x client
 
 ```
 # 訂閱交易
-./client -e "https://geyserstream-frankfurt.blockrazor.xyz" --x-token "$AUTH_TOKEN" subscribe --transactions --transactions-vote false --transactions-failed false
+./client -e "https://geyserstream-tokyo.blockrazor.xyz" --x-token "$AUTH_TOKEN" subscribe --transactions --transactions-vote false --transactions-failed false
 ```
 
 ```
 # 訂閱賬戶
-./client -e "https://geyserstream-frankfurt.blockrazor.xyz" --x-token "$AUTH_TOKEN" subscribe --accounts --accounts-owner 11111111111111111111111111111111
+./client -e "https://geyserstream-tokyo.blockrazor.xyz" --x-token "$AUTH_TOKEN" subscribe --accounts --accounts-owner 11111111111111111111111111111111
 ```
 
 ```
 # 訂閱區塊
-./client -e "https://geyserstream-frankfurt.blockrazor.xyz" --x-token "$AUTH_TOKEN" subscribe --blocks
+./client -e "https://geyserstream-tokyo.blockrazor.xyz" --x-token "$AUTH_TOKEN" subscribe --blocks
 ```
 {% endstep %}
 {% endstepper %}

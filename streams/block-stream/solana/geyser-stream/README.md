@@ -59,7 +59,7 @@ Geyser 是 Solana 驗證者的插件機制，可將鏈上的 `account`、`slot`�
 
 ### 端點
 
-<table><thead><tr><th width="171.1796875">地區</th><th>端點</th></tr></thead><tbody><tr><td>法蘭克福</td><td>geyserstream-frankfurt.blockrazor.xyz:443</td></tr><tr><td>東京</td><td>geyserstream-tokyo.blockrazor.xyz:443</td></tr></tbody></table>
+<table><thead><tr><th width="171.1796875">地區</th><th>端點</th></tr></thead><tbody><tr><td>東京</td><td>geyserstream-tokyo.blockrazor.xyz:443</td></tr></tbody></table>
 
 ### 價格
 
