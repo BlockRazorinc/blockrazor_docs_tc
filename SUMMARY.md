@@ -41,6 +41,7 @@
   * [Send PrivateTransaction](transaction-submission/block-builder/send-privatetransaction.md)
   * [Trace Bundle](transaction-submission/block-builder/trace-bundle.md)
   * [Call Bundle](transaction-submission/block-builder/call-bundle.md)
+  * [Send BackBundle](transaction-submission/block-builder/send-backbundle.md)
   * [Dedicate Connection](transaction-submission/block-builder/dedicate-connection.md)
 * [Fast](transaction-submission/fast/README.md)
   * [總覽](transaction-submission/fast/zong-lan.md)
