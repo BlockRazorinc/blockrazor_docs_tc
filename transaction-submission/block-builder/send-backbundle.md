@@ -14,7 +14,7 @@ https://virginia.builder.blockrazor.io
 
 ### 請求參數
 
-<table><thead><tr><th width="151.38671875">參數</th><th width="85.73046875">必選</th><th width="136">格式</th><th width="124">示例</th><th>描述</th></tr></thead><tbody><tr><td>txs</td><td>是</td><td>array[hex]</td><td>["0x…4b"]</td><td>經過簽名的raw transaction，仅允许一笔</td></tr><tr><td>blockNumber</td><td>否</td><td>uint64</td><td>106210501</td><td>該bundle期望被包含的目标区块</td></tr></tbody></table>
+<table><thead><tr><th width="151.38671875">參數</th><th width="85.73046875">必選</th><th width="136">格式</th><th width="124">示例</th><th>描述</th></tr></thead><tbody><tr><td>txs</td><td>是</td><td>array[hex]</td><td>["0x…4b"]</td><td>經過簽名的raw transaction，仅允许一笔</td></tr><tr><td>blockNumber</td><td>是</td><td>uint64</td><td>106210501</td><td>該bundle期望被包含的目标区块</td></tr></tbody></table>
 
 ### 請求示例
 
