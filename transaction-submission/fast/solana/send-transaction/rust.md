@@ -358,43 +358,37 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {% tab title="Proto" %}
 ```go
 syntax = "proto3";
-
 package serverpb;
-
 option go_package = "./pb/serverpb";
-
-
 service Server {
     rpc SendTransaction(SendRequest) returns(SendResponse) {};
-
     rpc SendBinaryTransaction(SendBinaryRequest) returns(SendResponse) {};
-
+    rpc SendBundle(SendBundleRequest) returns(SendBundleResponse) {};
     rpc GetHealth(HealthRequest) returns(HealthResponse) {};
 }
-
 message SendRequest {
     string transaction = 1;
     string mode = 2;
-    optional int32 safeWindow = 3;
+    int32 safeWindow = 3;
     bool revertProtection = 4;
 }
-
 message SendBinaryRequest {
     bytes binaryTransaction = 1;
     string mode = 2;
     int32 safeWindow = 3;
     bool revertProtection = 4;
-    bool skipPreflight = 5;
-    string preflightCommitment = 6;
 }
-
 message SendResponse {
     string signature = 1;
 }
-
+message SendBundleRequest {
+    repeated string transactions = 1;
+}
+message SendBundleResponse {
+    string signature = 1;
+}
 message HealthRequest {
 }
-
 message HealthResponse {
     string status = 1;
 }
@@ -743,43 +737,37 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {% tab title="Proto" %}
 ```go
 syntax = "proto3";
-
 package serverpb;
-
 option go_package = "./pb/serverpb";
-
-
 service Server {
     rpc SendTransaction(SendRequest) returns(SendResponse) {};
-
     rpc SendBinaryTransaction(SendBinaryRequest) returns(SendResponse) {};
-
+    rpc SendBundle(SendBundleRequest) returns(SendBundleResponse) {};
     rpc GetHealth(HealthRequest) returns(HealthResponse) {};
 }
-
 message SendRequest {
     string transaction = 1;
     string mode = 2;
-    optional int32 safeWindow = 3;
+    int32 safeWindow = 3;
     bool revertProtection = 4;
 }
-
 message SendBinaryRequest {
     bytes binaryTransaction = 1;
     string mode = 2;
     int32 safeWindow = 3;
     bool revertProtection = 4;
-    bool skipPreflight = 5;
-    string preflightCommitment = 6;
 }
-
 message SendResponse {
     string signature = 1;
 }
-
+message SendBundleRequest {
+    repeated string transactions = 1;
+}
+message SendBundleResponse {
+    string signature = 1;
+}
 message HealthRequest {
 }
-
 message HealthResponse {
     string status = 1;
 }
