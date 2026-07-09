@@ -38,10 +38,6 @@ description: 介紹BSC全節點同步的服務、優勢、目標用戶以及接�
 
 每月每條數據流的價格為$800，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
 
-### 端點
-
-<table><thead><tr><th width="154">地區</th><th width="218">可用區（AWS）</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>euc1-az2</td><td>35.157.64.49:50051</td></tr><tr><td>東京</td><td>apne1-az4</td><td>54.249.93.63:50051</td></tr><tr><td>愛爾蘭</td><td>euw1-az1</td><td>3.248.65.151:50051</td></tr><tr><td>弗吉尼亞</td><td>use1-az4</td><td>52.205.173.134:50051</td></tr></tbody></table>
-
 ### 使用說明
 
 #### 步驟1：採購Node Stream

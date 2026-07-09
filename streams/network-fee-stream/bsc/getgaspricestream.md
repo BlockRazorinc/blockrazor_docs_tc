@@ -10,7 +10,7 @@ description: 介紹BSC GetGasPriceStream的接入方法
 
 ### **價格**
 
-每月每條數據流的價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+每月價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
 
 ### 請求參數
 

@@ -34,19 +34,19 @@ BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速�
 
 {% tabs %}
 {% tab title="BSC" %}
-<table><thead><tr><th width="194.09765625">服務</th><th>描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../transaction-submission/fast/bsc/broadcast-tx.md">Broadcast Tx</a></td><td>低延遲傳播交易和交易batch</td><td>$500 / 月</td><td>$50 / 月</td></tr><tr><td><a href="../streams/mempool/bsc/public-mempool.md">Public Mempool</a></td><td>低延遲訂閱pending交易數據</td><td>$300 / 條 / 月</td><td>$30 / 條 / 月</td></tr><tr><td><a href="../streams/mempool/bsc/private-mempool.md">Private Mempool</a></td><td>訂閱BlockRazor RPC的隱私訂單流數據</td><td>$1000 / 月</td><td>$100 / 月</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream</a></td><td>低延遲訂閱BSC區塊數據</td><td>$500 / 條 / 月</td><td>$50 / 條 / 月</td></tr><tr><td><a href="../streams/node-stream/bsc/quan-jie-dian-tong-bu.md">Node Stream</a></td><td>低延遲同步世界狀態</td><td>$800 / 個 / 月</td><td>$80 / 個 / 月</td></tr><tr><td><a href="../streams/network-fee-stream/bsc/getgaspricestream.md">Network Fee Stream</a></td><td>獲取BSC gas price數據</td><td>$500 / 月</td><td>$50 / 月</td></tr><tr><td><a href="../transaction-submission/block-builder/trace-bundle.md">Bundle Tracing &#x26; Explorer</a></td><td>Block Builder bundle追蹤與瀏覽</td><td>$1500 / 月</td><td>$150 / 月</td></tr></tbody></table>
+<table><thead><tr><th width="173.05859375">服務</th><th>描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../transaction-submission/fast/bsc/broadcast-tx.md">Broadcast Tx</a></td><td>低延遲傳播交易和交易batch</td><td>$500 / 月</td><td>$50 / 日</td></tr><tr><td><a href="../streams/mempool/bsc/public-mempool.md">Public Mempool</a></td><td>低延遲訂閱pending交易數據</td><td>$300 / 條 / 月</td><td>$30 / 條 / 日</td></tr><tr><td><a href="../streams/mempool/bsc/private-mempool.md">Private Mempool</a></td><td>訂閱BlockRazor RPC的隱私訂單流數據</td><td>$1000 / 月</td><td>$100 / 日</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream</a></td><td>低延遲訂閱BSC區塊數據</td><td>$500 / 條 / 月</td><td>$50 / 條 / 日</td></tr><tr><td><a href="../streams/node-stream/bsc/quan-jie-dian-tong-bu.md">Node Stream</a></td><td>低延遲同步世界狀態</td><td>$800 / 個 / 月</td><td>$80 / 個 / 日</td></tr><tr><td><a href="../streams/network-fee-stream/bsc/getgaspricestream.md">Network Fee Stream</a></td><td>獲取BSC gas price數據</td><td>$300 / 月</td><td>$30 / 日</td></tr><tr><td><a href="../transaction-submission/block-builder/trace-bundle.md">Bundle Tracing &#x26; Explorer</a></td><td>Block Builder bundle追蹤與瀏覽</td><td>$1500 / 月</td><td>$150 / 日</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Solana" %}
-<table><thead><tr><th width="150.8203125">服务</th><th width="149.66015625">描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../streams/block-stream/solana/shred-stream.md">Shred Stream</a></td><td>低延遲傳輸shred</td><td>$500 / 條 / 月</td><td>$50 / 條 / 月</td></tr><tr><td><a href="../streams/block-stream/solana/geyser-stream/">Geyser Stream</a></td><td>實時傳輸Solana鏈上數據，包含account, slot, block和transaction等</td><td>5 TiB - $250 / 月<br>10 TiB - $500 / 月<br>50 TiB - $250 / 月<br>100 TiB - $4750 / 月<br>150 TiB - $6750 / 月<br>200 TiB - $8500 / 月<br>250 TiB - $10000 / 月</td><td>-</td></tr><tr><td><a href="../streams/network-fee-stream/solana/get-transactionfee.md">Network Fee Stream</a></td><td>獲取Solana的priority fee和tip數據</td><td>$300 / 月</td><td>$30 / 月</td></tr></tbody></table>
+<table><thead><tr><th width="150.8203125">服务</th><th width="149.66015625">描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../streams/block-stream/solana/shred-stream.md">Shred Stream</a></td><td>低延遲傳輸shred</td><td>$500 / 條 / 月</td><td>$50 / 條 / 日</td></tr><tr><td><a href="../streams/block-stream/solana/geyser-stream/">Geyser Stream</a></td><td>實時傳輸Solana鏈上數據，包含account, slot, block和transaction等</td><td>5 TiB - $250 / 月<br>10 TiB - $500 / 月<br>50 TiB - $250 / 月<br>100 TiB - $4750 / 月<br>150 TiB - $6750 / 月<br>200 TiB - $8500 / 月<br>250 TiB - $10000 / 月</td><td>-</td></tr><tr><td><a href="../streams/network-fee-stream/solana/get-transactionfee.md">Network Fee Stream</a></td><td>獲取Solana的priority fee和tip數據</td><td>$300 / 月</td><td>$30 / 日</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Base" %}
-<table><thead><tr><th width="145.37890625">服務</th><th>描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../streams/block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td><td>低延遲獲取Base FlashBlock數據</td><td>$250 / 條 / 月</td><td>$25 / 條 / 月</td></tr><tr><td><a href="../streams/block-stream/base/get-blockstream.md">Block Stream</a></td><td>低延遲獲取Base Block數據</td><td>$300 / 條 / 月</td><td>$30 / 條 / 月</td></tr><tr><td><a href="../transaction-submission/rpc/base/eth_sendrawtransaction.md">RPC發送交易</a></td><td>低延遲高TPS發送Base交易上鏈</td><td>$1000 / 月</td><td>$100 / 月</td></tr></tbody></table>
+<table><thead><tr><th width="145.37890625">服務</th><th>描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../streams/block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td><td>低延遲獲取Base FlashBlock數據</td><td>$250 / 條 / 月</td><td>$25 / 條 / 日</td></tr><tr><td><a href="../streams/block-stream/base/get-blockstream.md">Block Stream</a></td><td>低延遲獲取Base Block數據</td><td>$300 / 條 / 月</td><td>$30 / 條 / 日</td></tr><tr><td><a href="../transaction-submission/rpc/base/eth_sendrawtransaction.md">RPC發送交易</a></td><td>低延遲高TPS發送Base交易上鏈</td><td>$1000 / 月</td><td>$100 / 日</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="General" %}
-<table><thead><tr><th width="140.84765625">服務</th><th width="160.96484375">描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td>Dedicated Channel</td><td>專屬技術支持</td><td>$1000 / 月</td><td>$100 / 月</td></tr></tbody></table>
+<table><thead><tr><th width="140.84765625">服務</th><th width="160.96484375">描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td>Dedicated Channel</td><td>專屬技術支持</td><td>$1000 / 月</td><td>$100 / 日</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
@@ -56,7 +56,7 @@ BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速�
 相比單項服務的組合式採購，用戶可通過極速服務包以更低價格完成打包採購。目前極速服務包主要包含BSC服務，整體訂閱價格&#x70BA;**$1250 / 月**，具體服務如下：
 {% endhint %}
 
-<table><thead><tr><th width="158.05078125">服務</th><th width="560.16796875">描述</th></tr></thead><tbody><tr><td><a href="../streams/mempool/bsc/public-mempool.md">Public Mempool</a></td><td>訂閱高性能網絡交易數據</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream</a></td><td>訂閱高性能網絡區塊數據</td></tr><tr><td><a href="../streams/node-stream/bsc/quan-jie-dian-tong-bu.md">Node Stream</a></td><td>低延遲同步世界狀態</td></tr><tr><td><a href="../transaction-submission/block-builder/call-bundle.md">Call Bundle</a></td><td>向Block Builder提交請求接收bundle模擬結果</td></tr><tr><td><a href="../transaction-submission/block-builder/fast-submit.md">Fast Submit</a></td><td>以更低延遲、更高穩定性向Block Builder提交交易</td></tr><tr><td><a href="../streams/mempool/bsc/tx-trace.md">Tx Trace</a></td><td>監控交易傳播路徑和跨區域延遲分佈</td></tr></tbody></table>
+<table><thead><tr><th width="206.2421875">服務</th><th width="86.25">數量</th><th width="422.9609375">描述</th></tr></thead><tbody><tr><td><a href="../streams/mempool/bsc/public-mempool.md">Public Mempool - BSC</a><br><a href="../streams/mempool/ethereum/public-mempool.md">Public Mempool - ETH</a></td><td>2</td><td>低延遲訂閱BSC和Ethereum公開mempool交易數據，訂閱額度跨鏈共享</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream - BSC</a><br><a href="../streams/block-stream/ethereum/newblocks.md">Block Stream - ETH</a></td><td>2</td><td>低延迟订阅BSC和Ethereum區塊數據，，訂閱額度跨鏈共享</td></tr><tr><td><a href="../streams/node-stream/bsc/quan-jie-dian-tong-bu.md">Node Stream - BSC</a><br><a href="../streams/node-stream/ethereum/clel-ke-hu-duan-tong-bu.md">Node Stream - ETH</a></td><td>1</td><td>低延遲同步BSC和Ethereum的世界狀態，同步额度跨链共享</td></tr><tr><td><a href="../transaction-submission/block-builder/call-bundle.md">Call Bundle</a></td><td>1</td><td>向Block Builder提交請求接收bundle模擬結果</td></tr><tr><td><a href="../transaction-submission/block-builder/fast-submit.md">Fast Submit</a></td><td>1</td><td>以更低延遲、更高穩定性向Block Builder提交交易</td></tr><tr><td><a href="../streams/mempool/bsc/tx-trace.md">Tx Trace</a></td><td>1</td><td>監控交易傳播路徑和跨區域延遲分佈</td></tr></tbody></table>
 
 #### 折扣說明
 
@@ -71,6 +71,22 @@ BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速�
 <summary>極速服務包和自選服務是否可以同時訂購</summary>
 
 可以同時訂購
+
+</details>
+
+<details>
+
+<summary>自選服務中的數據流服務額度是指什麼</summary>
+
+數據流服務額度是指允許連接的gRPC數據流數量，額度為多地區共享，如購買1條Public Mempool，則僅允許在一個地區連接一條數據流
+
+</details>
+
+<details>
+
+<summary>極速服務包中的額度共享是指什麼</summary>
+
+在極速服務包中，Public Mempool, Block Stream和Node Stream在BSC和Ethereum上共享數據流額度，比如採購極速服務包後獲取2條Public Mempool額度，則允許在BSC和Ethereum上一共訂閱2條數據流。如已訂閱2條BSC Public Mempool，則無法在Ethereum上訂閱Public Mempool
 
 </details>
 
