@@ -41,6 +41,15 @@ BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速�
 <table><thead><tr><th width="150.8203125">服务</th><th width="149.66015625">描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../streams/block-stream/solana/shred-stream.md">Shred Stream</a></td><td>低延遲傳輸shred</td><td>$500 / 條 / 月</td><td>$50 / 條 / 日</td></tr><tr><td><a href="../streams/block-stream/solana/geyser-stream/">Geyser Stream</a></td><td>實時傳輸Solana鏈上數據，包含account, slot, block和transaction等</td><td>5 TiB - $250 / 月<br>10 TiB - $500 / 月<br>50 TiB - $250 / 月<br>100 TiB - $4750 / 月<br>150 TiB - $6750 / 月<br>200 TiB - $8500 / 月<br>250 TiB - $10000 / 月</td><td>-</td></tr><tr><td><a href="../streams/network-fee-stream/solana/get-transactionfee.md">Network Fee Stream</a></td><td>獲取Solana的priority fee和tip數據</td><td>$300 / 月</td><td>$30 / 日</td></tr></tbody></table>
 {% endtab %}
 
+{% tab title="Ethereum" %}
+| 服務                                                                        | 描述               | 按月購買         | 按日購買        |
+| ------------------------------------------------------------------------- | ---------------- | ------------ | ----------- |
+| [Broadcast Tx](../transaction-submission/fast/ethereum/broadcast-tx.md)   | 低延遲傳播交易和交易batch  | $500 / 月     | $50 / 日     |
+| [Public Mempool](../streams/mempool/ethereum/public-mempool.md)           | 低延遲訂閱pending交易數據 | $300 / 條 / 月 | $30 / 條 / 日 |
+| [Block Stream](../streams/block-stream/ethereum/newblocks.md)             | 低延遲訂閱BSC區塊數據     | $500 / 條 / 月 | $50 / 條 / 日 |
+| [Node Stream](../streams/node-stream/ethereum/clel-ke-hu-duan-tong-bu.md) | 低延遲同步世界狀態        | $800 / 個 / 月 | $80 / 個 / 日 |
+{% endtab %}
+
 {% tab title="Base" %}
 <table><thead><tr><th width="145.37890625">服務</th><th>描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../streams/block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td><td>低延遲獲取Base FlashBlock數據</td><td>$250 / 條 / 月</td><td>$25 / 條 / 日</td></tr><tr><td><a href="../streams/block-stream/base/get-blockstream.md">Block Stream</a></td><td>低延遲獲取Base Block數據</td><td>$300 / 條 / 月</td><td>$30 / 條 / 日</td></tr><tr><td><a href="../transaction-submission/rpc/base/eth_sendrawtransaction.md">RPC發送交易</a></td><td>低延遲高TPS發送Base交易上鏈</td><td>$1000 / 月</td><td>$100 / 日</td></tr></tbody></table>
 {% endtab %}
