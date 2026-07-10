@@ -24,14 +24,17 @@ import (
 )
 
 const (
-	httpEndpoint   = "http://frankfurt.solana.blockrazor.xyz:443/sendBundle"
-	healthEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/health"
-	mainNetRPC     = ""
-	authKey        = ""
-	privateKey     = ""
-	publicKey      = ""
-	amount         = 200_000
-	tipAmount      = 1_000_000
+	httpEndpoint     = "http://frankfurt.solana.blockrazor.xyz:443/sendBatch"
+	healthEndpoint   = "http://frankfurt.solana.blockrazor.xyz:443/health"
+	mainNetRPC       = ""
+	authKey          = ""
+	privateKey       = ""
+	publicKey        = ""
+	amount           = 200_000
+	tipAmount        = 1_000_000
+	mode             = "fast"
+	safeWindow       = 5
+	revertProtection = false
 )
 
 var tipAccounts = []string{
@@ -56,12 +59,24 @@ var httpClient = &http.Client{
 }
 
 type SendRequest struct {
-	Transactions []string `json:"transactions"`
+	Transactions     []string `json:"transactions"`
+	Mode             string   `json:"mode"`
+	SafeWindow       int      `json:"safeWindow"`
+	RevertProtection bool     `json:"revertProtection"`
 }
 
-type SendResponse struct {
-	Signature string `json:"signature"`
+// BatchResponse .
+type BatchResponse struct {
+	Result []BatchResponseItem `json:"result"`
+	Error  string              `json:"error"`
 }
+
+// BatchResponseItem .
+type BatchResponseItem struct {
+	Signature string `json:"signature"`
+	Error     string `json:"error"`
+}
+
 type HealthResponse struct {
 	Result string `json:"result"`
 }
@@ -83,8 +98,8 @@ func main() {
 			time.Sleep(30 * time.Second)
 		}
 	}()
-	// send bundle
-	if err := sendBundle(); err != nil {
+	// send batch
+	if err := sendBatch(); err != nil {
 		fmt.Printf("send tx failed: %v\n", err)
 	}
 }
@@ -119,7 +134,7 @@ func pingHealth() error {
 	return nil
 }
 
-func sendBundle() error {
+func sendBatch() error {
 	account, err := solana.WalletFromPrivateKeyBase58(privateKey)
 	if err != nil {
 		return err
@@ -161,7 +176,10 @@ func sendBundle() error {
 	}
 
 	reqBody := SendRequest{
-		Transactions: []string{txBase64},
+		Transactions:     []string{txBase64},
+		Mode:             mode,
+		SafeWindow:       safeWindow,
+		RevertProtection: revertProtection,
 	}
 	jsonBody, _ := json.Marshal(reqBody)
 
@@ -173,16 +191,16 @@ func sendBundle() error {
 	httpReq.Header.Set("apikey", authKey)
 	resp, err := httpClient.Do(httpReq)
 	if err != nil {
-		return fmt.Errorf("send bundle error: %v", err)
+		return fmt.Errorf("send batch error: %v", err)
 	}
 	defer resp.Body.Close()
 
 	bodyBytes, _ := io.ReadAll(resp.Body)
-	var sendRes SendResponse
+	var sendRes BatchResponse
 	if err := json.Unmarshal(bodyBytes, &sendRes); err != nil {
 		return fmt.Errorf("decode error: %v", err)
 	}
-	fmt.Printf("[send bundle] response: %+v\n", sendRes)
+	fmt.Printf("[send batch] response: %+v\n", sendRes)
 	return nil
 }
 ```
@@ -223,6 +241,12 @@ const (
 	// transfer amount
 	amount = 200_000
 
+	// send mode
+	mode = "fast"
+	// safeWindow
+	safeWindow = 5
+	// revertProtection
+	revertProtection = false
 	// tip amount
 	tipAmount = 1_000_000
 )
@@ -319,14 +343,17 @@ func main() {
 		panic(fmt.Sprintf("encode tx error: %v", err))
 	}
 
-	sendRes, err := client.SendBundle(context.TODO(), &pb.SendBundleRequest{
-		Transactions: []string{txBase64},
+	sendRes, err := client.SendBatch(context.TODO(), &pb.SendBatchRequest{
+		Transactions:     []string{txBase64},
+		Mode:             mode,
+		SafeWindow:       safeWindow,
+		RevertProtection: revertProtection,
 	})
 	if err != nil {
-		panic(fmt.Sprintf("[send bundle] error: %v", err))
+		panic(fmt.Sprintf("[send batch] error: %v", err))
 	}
 
-	fmt.Printf("[send bundle] response: %+v \n", sendRes)
+	fmt.Printf("[send batch] response: %+v \n", sendRes)
 	return
 }
 

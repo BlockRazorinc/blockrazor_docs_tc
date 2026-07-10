@@ -12,7 +12,7 @@ const bs58 = require('bs58');
 
 // ------------------ Configuration Constants ------------------
 // BlockRazor relay endpoint address
-const httpEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/sendBundle";
+const httpEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/sendBatch";
 const healthEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/health";
 // Replace with your Solana RPC endpoint
 const mainNetRPC = "";
@@ -65,8 +65,8 @@ async function pingHealth() {
 		}
 }
 
-// ------------------ Build and Send Bundle ------------------
-async function sendBundle() {
+// ------------------ Build and Send Batch ------------------
+async function sendBatch() {
 		const senderPrivateKey = new Uint8Array(bs58.decode(privateKey));
 		const senderKeypair = web3.Keypair.fromSecretKey(senderPrivateKey);
 		const receiver = new web3.PublicKey(publicKey);
@@ -96,13 +96,14 @@ async function sendBundle() {
 
 		const payload = {
 				transactions: [base64Tx],
+				mode: 'fast',
 		};
 
 		try {
 				const res = await httpClient.post(httpEndpoint, payload);
-				console.log('[send bundle] response:', res.data);
+				console.log('[send batch] response:', res.data);
 		} catch (err) {
-				console.error('sendBundle failed:', err.response?.data || err.message);
+				console.error('sendBatch failed:', err.response?.data || err.message);
 		}
 }
 
@@ -113,8 +114,9 @@ async function sendBundle() {
 
 		// Periodically send /health to keep connection alive
 		setInterval(pingHealth, 30 * 1000);
-		sendBundle().catch(console.error);
+		sendBatch().catch(console.error);
 })();
+
 ```
 {% endcode %}
 {% endtab %}
@@ -227,13 +229,13 @@ async function pingHealth() {
 		const serializedTransaction = transaction.serialize();
 		const base64Tx = serializedTransaction.toString('base64');
 
-		client.SendBundle({ transactions: [base64Tx] }, meta, (err, response) => {
+		client.SendBatch({ transactions: [base64Tx], mode: "fast" }, meta, (err, response) => {
 				if (err) {
-						console.error('[send bundle] error:', err);
+						console.error('[send batch] error:', err);
 						return;
 				}
 
-				console.log('[send bundle] response:', response);
+				console.log('[send batch] response:', response);
 		});
 })();
 ```
@@ -242,7 +244,7 @@ async function pingHealth() {
 
 {% tab title="Proto" %}
 {% code overflow="wrap" %}
-```go
+```javascript
 syntax = "proto3";
 
 package serverpb;

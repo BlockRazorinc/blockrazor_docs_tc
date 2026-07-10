@@ -24,13 +24,25 @@ use std::time::Duration;
 use tokio::time::sleep;
 
 #[derive(Serialize)]
-struct SendBundleRequest {
+struct SendBatchRequest {
     transactions: Vec<String>,
+    mode: String,
+    #[serde(rename = "safeWindow")]
+    safe_window: u32,
+    #[serde(rename = "revertProtection")]
+    revert_proctection: bool,
 }
 
 #[derive(Deserialize, Debug)]
-struct SendBundleResponse {
+struct SendBatchResponse {
+    result: Vec<BatchResponseItem>,
+    error: String,
+}
+
+#[derive(Deserialize, Debug)]
+struct BatchResponseItem {
     signature: String,
+    error: String,
 }
 
 #[derive(Deserialize, Debug)]
@@ -41,7 +53,7 @@ struct HealthResponse {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Configuration values
-    let http_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/sendBundle";
+    let http_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/sendBatch";
     let health_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/health";
     let mainnetrpc = "";
     // replace your authKey
@@ -54,6 +66,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let amount: u64 = 200_000;
     // tip amount
     let tipamount: u64 = 1_000_000;
+    // safe window
+    let safe_window: u32 = 5;
+    // revert protection
+    let revert_protection = false;
+    // send mode
+    let mode = "fast";
 
     let tip_accounts = [
         "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
@@ -91,8 +109,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     });
 
-    // Send Solana Bundle
-    send_bundle(
+    // Send Solana Batch
+    send_batch(
         &client,
         mainnetrpc,
         authkey,
@@ -101,6 +119,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         &tip_accounts,
         tipamount,
         amount,
+        mode,
+        safe_window,
+        revert_protection,
         http_endpoint,
     )
     .await?;
@@ -130,8 +151,8 @@ async fn ping_health(
     Ok(())
 }
 
-/// Build and send a base64-encoded transaction via HTTP POST
-async fn send_bundle(
+/// Build and send base64-encoded transactions via HTTP POST
+async fn send_batch(
     client: &reqwest::Client,
     mainnetrpc: &str,
     authkey: &str,
@@ -140,6 +161,9 @@ async fn send_bundle(
     tip_accounts: &[&str],
     tipamount: u64,
     amount: u64,
+    mode: &str,
+    safe_window: u32,
+    revert_protection: bool,
     http_endpoint: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let from = Keypair::from_base58_string(privatekey);
@@ -164,8 +188,11 @@ async fn send_bundle(
 
     let serialized = bincode::serialize(&tx)?;
     let base64_encoded = general_purpose::STANDARD.encode(serialized);
-    let request = SendBundleRequest {
+    let request = SendBatchRequest {
         transactions: vec![base64_encoded],
+        mode: mode.to_string(),
+        safe_window: safe_window,
+        revert_proctection: revert_protection,
     };
     let mut headers = HeaderMap::new();
     headers.insert("apikey", HeaderValue::from_str(authkey)?);
@@ -179,10 +206,10 @@ async fn send_bundle(
         .await?;
 
     let text = res.text().await?;
-    let parsed: Result<SendBundleResponse, _> = serde_json::from_str(&text);
+    let parsed: Result<SendBatchResponse, _> = serde_json::from_str(&text);
     match parsed {
         Ok(r) => {
-            println!("First Transaction Signature: {}", r.signature); // use field
+            println!("Result: {:?}", r.result); // use field
         }
         Err(_) => println!("RAW RESPONSE: {}", text),
     }
@@ -195,12 +222,12 @@ async fn send_bundle(
 
 {% tab title="gRPC" %}
 {% code overflow="wrap" %}
-```go
+```rust
 use base64::{engine::general_purpose, Engine as _};
 use bincode;
 use rand::Rng;
 use server::server_client::ServerClient;
-use server::{HealthRequest, SendBundleRequest};
+use server::{HealthRequest, SendBatchRequest};
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::commitment_config::CommitmentConfig;
 use solana_sdk::pubkey::Pubkey;
@@ -230,6 +257,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let privatekey = "";
     // tip amount
     let tipamount = 1_000_000;
+    // send mode
+    let mode = "fast";
+    // safe window
+    let safe_window = None;
+    // revert protection
+    let revert_protection = false;
 
     let tip_accounts = [
         "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
@@ -305,14 +338,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // tx base64
     let serialized = bincode::serialize(&tx)?;
     let base64_encoded = general_purpose::STANDARD.encode(serialized);
-    let mut bundle_request: tonic::Request<SendBundleRequest> = tonic::Request::new(SendBundleRequest {
+    let mut batch_request: tonic::Request<SendBatchRequest> = tonic::Request::new(SendBatchRequest {
         transactions: vec![base64_encoded],
+        mode: mode.to_string(),
+        safe_window: safe_window.unwrap_or_default(),
+        revert_protection: revert_protection
     });
-    bundle_request
+    batch_request
         .metadata_mut()
         .insert("apikey", apikeyvalue.clone());
-    let response = client.send_bundle(bundle_request).await?;
-    println!("SEND BUNDLE RESPONSE={:?}", response);
+    let response = client.send_batch(batch_request).await?;
+    println!("SEND BATCH RESPONSE={:?}", response);
 
     Ok(())
 }
@@ -344,14 +380,14 @@ service Server {
 message SendRequest {
     string transaction = 1;
     string mode = 2;
-    int32 safeWindow = 3;
+    optional int32 safeWindow = 3;
     bool revertProtection = 4;
 }
 
 message SendBinaryRequest {
     bytes binaryTransaction = 1;
     string mode = 2;
-    int32 safeWindow = 3;
+    optional int32 safeWindow = 3;
     bool revertProtection = 4;
 }
 
@@ -370,7 +406,7 @@ message SendBundleResponse {
 message SendBatchRequest {
     repeated string transactions = 1;
     string mode = 2;
-    int32 safeWindow = 3;
+    optional int32 safeWindow = 3;
     bool revertProtection = 4;
 }
 
