@@ -101,6 +101,7 @@
     * [Get BlockStream](streams/block-stream/base/get-blockstream.md)
     * [Get FlashBlockStream](streams/block-stream/base/get-flashblockstream/README.md)
       * [解析FlashBlock](streams/block-stream/base/get-flashblockstream/jie-xi-flashblock.md)
+    * [Get FlashBlockTransaction](streams/block-stream/base/get-flashblocktransaction.md)
 * [Node Stream](streams/node-stream/README.md)
   * [BSC](streams/node-stream/bsc/README.md)
     * [全節點同步](streams/node-stream/bsc/quan-jie-dian-tong-bu.md)
