@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Send BackBundle
 
 ### 接口說明

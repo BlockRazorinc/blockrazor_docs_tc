@@ -134,7 +134,7 @@ sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address
 ```
 
 * source address是Relay的IP地址，可以在 [端點](clel-ke-hu-duan-tong-bu.md#duan-dian) 中查詢
-* port是 EL 客戶端允許Relay訪問的端口，用戶可根據客戶端類型默認值自行修改
+* port是 CL 客戶端允許Relay訪問的端口，用戶可根據客戶端類型默認值自行修改
 
 2. 重載防火牆配置，以使配置生效
 
