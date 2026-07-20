@@ -12,7 +12,7 @@ Robinhood Chain交易數據：[https://robinhoodchain.blockscout.com/stats](http
 
 ### 價格
 
-<table><thead><tr><th width="155.45703125">用戶類型</th><th width="208.93359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>1 Tx / 5s</td><td>免費</td></tr><tr><td>付費用戶</td><td>5 Txs / 1s</td><td>$1000 / 月</td></tr></tbody></table>
+<table><thead><tr><th width="155.45703125">用戶類型</th><th width="208.93359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>20 Tx / 1s</td><td>免費</td></tr></tbody></table>
 
 ### Benchmark
 

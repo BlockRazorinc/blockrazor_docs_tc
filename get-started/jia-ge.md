@@ -54,10 +54,6 @@ BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速�
 <table><thead><tr><th width="145.37890625">服務</th><th>描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td><a href="../streams/block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td><td>低延遲獲取Base FlashBlock數據</td><td>$250 / 條 / 月</td><td>$25 / 條 / 日</td></tr><tr><td><a href="../streams/block-stream/base/get-blockstream.md">Block Stream</a></td><td>低延遲獲取Base Block數據</td><td>$300 / 條 / 月</td><td>$30 / 條 / 日</td></tr><tr><td><a href="../transaction-submission/rpc/base/eth_sendrawtransaction.md">RPC發送交易</a></td><td>低延遲高TPS發送Base交易上鏈</td><td>$1000 / 月</td><td>$100 / 日</td></tr></tbody></table>
 {% endtab %}
 
-{% tab title="Robinhood" %}
-<table><thead><tr><th width="147.03125">服務</th><th>描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td>RPC發送交易</td><td>低延遲高TPS發送Robinhood交易上鏈</td><td>$1000 / 月</td><td>$100 / 月</td></tr></tbody></table>
-{% endtab %}
-
 {% tab title="General" %}
 <table><thead><tr><th width="140.84765625">服務</th><th width="160.96484375">描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td>Dedicated Channel</td><td>專屬技術支持</td><td>$1000 / 月</td><td>$100 / 日</td></tr></tbody></table>
 {% endtab %}
@@ -113,7 +109,7 @@ BlockRazor面向新註冊用戶提供Solana, BSC, Etherem和Base上的多模式�
 
 #### RPC
 
-<table><thead><tr><th width="125.16015625">鏈</th><th>方法</th><th>限流</th></tr></thead><tbody><tr><td>BSC</td><td><ul><li><a href="../transaction-submission/rpc/bsc/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/bsc/eth_sendmevbundle/"><code>eth_sendMevBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr><tr><td>Ethereum</td><td><ul><li><a href="../transaction-submission/rpc/ethereum/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/ethereum/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr><tr><td>Base</td><td><ul><li><a href="../transaction-submission/rpc/base/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li></ul></td><td>1 Tx / 5s</td></tr><tr><td>Robinhood</td><td><ul><li><a href="../transaction-submission/rpc/robinhood-chain/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li></ul></td><td>1 Tx / 5s</td></tr></tbody></table>
+<table><thead><tr><th width="125.16015625">鏈</th><th>方法</th><th>限流</th></tr></thead><tbody><tr><td>BSC</td><td><ul><li><a href="../transaction-submission/rpc/bsc/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/bsc/eth_sendmevbundle/"><code>eth_sendMevBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr><tr><td>Ethereum</td><td><ul><li><a href="../transaction-submission/rpc/ethereum/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/ethereum/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr><tr><td>Base</td><td><ul><li><a href="../transaction-submission/rpc/base/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li></ul></td><td>1 Tx / 5s</td></tr><tr><td>Robinhood</td><td><ul><li><a href="../transaction-submission/rpc/robinhood-chain/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li></ul></td><td>20 Tx / 1s</td></tr></tbody></table>
 
 #### Block Builder
 
