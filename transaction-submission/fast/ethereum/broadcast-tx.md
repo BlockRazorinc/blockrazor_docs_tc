@@ -17,7 +17,7 @@ Broadcast Tx 是 BlockRazor 提供的一種快速交易發送服務，用於幫�
 
 ### 端點
 
-<table><thead><tr><th width="154">地區</th><th width="218">可用區（AWS）</th><th>Relay IP:Port</th></tr></thead><tbody><tr><td>法蘭克福</td><td>euc1-az2</td><td>35.157.64.49:50061</td></tr><tr><td>東京</td><td>apne1-az4</td><td>54.249.93.63:50061</td></tr><tr><td>弗吉尼亞</td><td>use1-az4</td><td>52.205.173.134:50061</td></tr></tbody></table>
+<table><thead><tr><th width="154">地區</th><th width="218">可用區（AWS）</th><th>Relay IP:Port</th></tr></thead><tbody><tr><td>法蘭克福</td><td>euc1-az2</td><td>64.130.47.75:50061</td></tr><tr><td>東京</td><td>apne1-az4</td><td>63.254.162.18:50061</td></tr><tr><td>弗吉尼亞</td><td>use1-az4</td><td>208.91.105.204:50061</td></tr></tbody></table>
 
 ### 價格
 
