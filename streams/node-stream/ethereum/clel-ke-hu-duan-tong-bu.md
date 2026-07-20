@@ -45,7 +45,7 @@ CL/EL 客戶端同步的價值，不只是“幫助節點連上網絡”，而�
 1. 進入自己的 EL 客戶端所在服务器，設置防火牆允許Relay訪問
 
 ```bash
-sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="35.157.64.49" port port="30303" protocol="tcp" accept'
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="63.254.162.18" port port="30303" protocol="tcp" accept'
 ```
 
 * source address是Relay的IP地址，可以在 [端點](clel-ke-hu-duan-tong-bu.md#duan-dian) 中查詢
@@ -128,9 +128,9 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 1. 進入自己的 CL 客戶端所在服务器，設置防火牆允許Relay訪問
 
 ```bash
-sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="35.157.64.49" port port="9000" protocol="tcp" accept'
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="63.254.162.18" port port="9000" protocol="tcp" accept'
 
-sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="35.157.64.49" port port="9000" protocol="udp" accept'
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="63.254.162.18" port port="9000" protocol="udp" accept'
 ```
 
 * source address是Relay的IP地址，可以在 [端點](clel-ke-hu-duan-tong-bu.md#duan-dian) 中查詢
