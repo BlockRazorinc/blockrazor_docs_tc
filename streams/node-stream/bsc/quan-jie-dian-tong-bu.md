@@ -61,7 +61,7 @@ description: 介紹BSC全節點同步的服務、優勢、目標用戶以及接�
 1. 進入自己的Ethereum客戶端所在服务器，設置防火牆允許Relay訪問
 
 ```
-sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="52.205.173.134" port port="30311" protocol="tcp" accept'
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="63.254.162.18" port port="30311" protocol="tcp" accept'
 ```
 
 * source address是Relay的IP地址，可以在 [Relay IP](quan-jie-dian-tong-bu.md#relay-ip) 中查詢
