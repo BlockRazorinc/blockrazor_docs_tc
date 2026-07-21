@@ -37,10 +37,10 @@ Robinhood Chain交易數據：[https://robinhoodchain.blockscout.com/stats](http
 ```bash
 curl https://robinhood.blockrazor.io \
   -H 'content-type: application/json' \
-  -H 'Authorization: <auth-token>' \
+  -H 'Authorization: Bearer <auth-token>' \
   --data '{
   "jsonrpc": "2.0",
-  "id": "1",
+  "id": 1,
   "method": "eth_sendRawTransaction",
   "params": ["0x…9c"]
 }'
