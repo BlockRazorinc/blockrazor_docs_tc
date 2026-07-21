@@ -64,7 +64,7 @@ curl https://robinhood.blockrazor.io \
   "id":"1",
   "error":{
     "code":-32000,
-    "message":"nonce too low: next nonce 57, tx nonce 56"
+    "message":"auth is invalid"
     }
 }
 ```
