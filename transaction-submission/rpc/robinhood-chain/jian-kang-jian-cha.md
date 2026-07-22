@@ -11,7 +11,7 @@ Robinhood Chain RPC暫不對用戶開放，如需對接請[聯繫](https://disco
 ```bash
 curl -X POST 'https://robinhood.blockrazor.io/health' \
 -H "Content-Type: application/json" \
--H "apikey: <auth_token>" \
+-H "Authorization: Bearer <auth-token>" \
 -d ""
 ```
 {% endtab %}
