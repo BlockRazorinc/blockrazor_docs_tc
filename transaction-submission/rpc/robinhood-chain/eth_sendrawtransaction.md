@@ -40,7 +40,7 @@ curl https://robinhood.blockrazor.io \
   -H 'Authorization: Bearer <auth-token>' \
   --data '{
   "jsonrpc": "2.0",
-  "id": 1,
+  "id": "1",
   "method": "eth_sendRawTransaction",
   "params": ["0x…9c"]
 }'
