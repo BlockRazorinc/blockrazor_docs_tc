@@ -1,5 +1,9 @@
 # eth\_sendRawTransaction
 
+{% hint style="info" %}
+Robinhood Chain RPC暫不對用戶開放，如需對接請[聯繫](https://discord.gg/qqJuwRb8Nh)我們
+{% endhint %}
+
 `eth_sendRawTransaction`  是BlockRazor 為 Robinhood Chain 提供的交易發送接口，用户可通过该方法將已簽名的原始交易低延迟發送到鏈上，目前支持HTTPS协议。
 
 ### Robinhood Chain是什么 <a href="#what-is-robinhood-chain" id="what-is-robinhood-chain"></a>
@@ -10,10 +14,6 @@ Robinhood Chain官網：[https://robinhood.com/us/en/chain/](https://robinhood.c
 
 Robinhood Chain交易數據：[https://robinhoodchain.blockscout.com/stats](https://robinhoodchain.blockscout.com/stats)
 
-### 價格
-
-<table><thead><tr><th width="155.45703125">用戶類型</th><th width="208.93359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>20 Tx / 1s</td><td>免費</td></tr></tbody></table>
-
 ### Benchmark
 
 我們將測試客戶端部署於AWS的法蘭克福、俄亥俄和日本地區，向對應地區的 BlockRazor 端點和官方 RPC 端點發送 50 組 nonce 相同的交易。每組交易除接收地址（用於區分發送通道）外，其餘所有參數均保持完全一致。
@@ -21,10 +21,6 @@ Robinhood Chain交易數據：[https://robinhoodchain.blockscout.com/stats](http
 我們通過比較兩種通道最終成功上鏈交易的佔比來評估性能，上鏈佔比越高，代表交易傳播和執行速度越快。基準測試結果如下。
 
 <table><thead><tr><th width="157.453125">地區</th><th>BlockRazor上鍊率</th><th>Robinhood上鏈率</th></tr></thead><tbody><tr><td>法蘭克福</td><td>88%</td><td>12%</td></tr><tr><td>俄亥俄</td><td>50%</td><td>50%</td></tr><tr><td>日本</td><td>96%</td><td>4%</td></tr></tbody></table>
-
-### 端点
-
-<table><thead><tr><th width="128.29296875">地區</th><th>端點</th></tr></thead><tbody><tr><td>全球</td><td>https://robinhood.blockrazor.io</td></tr><tr><td>法蘭克福</td><td>https://eu.robinhood.blockrazor.io</td></tr><tr><td>俄亥俄</td><td>https://us.robinhood.blockrazor.io</td></tr><tr><td>日本</td><td>https://ap.robinhood.blockrazor.io</td></tr></tbody></table>
 
 ### 請求參數
 

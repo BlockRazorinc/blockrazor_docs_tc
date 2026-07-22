@@ -1,16 +1,12 @@
 # Send Batch
 
+{% hint style="info" %}
+Robinhood Chain RPC暫不對用戶開放，如需對接請[聯繫](https://discord.gg/qqJuwRb8Nh)我們
+{% endhint %}
+
 `Send Batch`  是BlockRazor 為 Robinhood Chain 提供的交易批量發送接口，用户可通过该方法將已簽名的原始交易批量低延迟發送到鏈上，目前支持HTTPS协议。
 
 Batch的交易容量上限為10筆，交易每隔5ms依序發送至Robinhood官方排序器。需要注意的是，Batch不具備原子性，不保證最終上鍊順序和請求預期一致。
-
-### 價格
-
-<table><thead><tr><th width="155.45703125">用戶類型</th><th width="208.93359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>10 batches / 1s</td><td>免費</td></tr></tbody></table>
-
-### 端点
-
-<table><thead><tr><th width="128.29296875">地區</th><th>端點</th></tr></thead><tbody><tr><td>全球</td><td>https://robinhood.blockrazor.io</td></tr><tr><td>法蘭克福</td><td>https://eu.robinhood.blockrazor.io</td></tr><tr><td>俄亥俄</td><td>https://us.robinhood.blockrazor.io</td></tr><tr><td>日本</td><td>https://ap.robinhood.blockrazor.io</td></tr></tbody></table>
 
 ### 請求參數
 

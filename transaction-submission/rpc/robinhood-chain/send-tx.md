@@ -12,10 +12,6 @@ hidden: true
 
 <table><thead><tr><th width="155.45703125">用戶類型</th><th width="208.93359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>20 Tx / 1s</td><td>免費</td></tr></tbody></table>
 
-### 端点
-
-<table><thead><tr><th width="128.29296875">地區</th><th>端點</th></tr></thead><tbody><tr><td>全球</td><td>https://robinhood.blockrazor.io</td></tr><tr><td>法蘭克福</td><td>https://eu.robinhood.blockrazor.io</td></tr><tr><td>俄亥俄</td><td>https://us.robinhood.blockrazor.io</td></tr><tr><td>日本</td><td>https://ap.robinhood.blockrazor.io</td></tr></tbody></table>
-
 ### 請求參數
 
 <table><thead><tr><th width="150.40234375">参数</th><th width="81">必选</th><th width="82">格式</th><th width="106">示例</th><th>描述</th></tr></thead><tbody><tr><td>-</td><td>是</td><td>String</td><td>"0x…4b"</td><td>經過簽名的raw transaction</td></tr></tbody></table>
