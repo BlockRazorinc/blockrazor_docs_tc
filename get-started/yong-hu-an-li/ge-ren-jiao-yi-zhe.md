@@ -14,67 +14,63 @@ description: 個人交易者的痛點以及如何使用Blockrazor的服務
 
 存在差異化需求的用戶可根據需求[選擇不同模式的通用RPC](ge-ren-jiao-yi-zhe.md#ru-he-zi-ding-yi-tian-jia-rpc-dao-qian-bao)進行添加。如有任何問題，請前往[Discord](https://discord.com/invite/qqJuwRb8Nh)與我們聯繫。
 
-### 如何快速添加RPC到錢包
+### 一键添加RPC到錢包
 
-#### Metamask
+{% hint style="info" %}
+目前僅Metamask和OKX錢包支持一鍵添加，下述步驟以在OKX錢包添加BSC RPC為例
+{% endhint %}
 
-1. 前往[rpc.blockrazor.io](https://rpc.blockrazor.io)，點擊開啓保護
+{% stepper %}
+{% step %}
+前往[http://blockrazor.io/rpc/?chain=bsc](http://127.0.0.1:4186/rpc/?chain=bsc)
+{% endstep %}
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt="" width="563"><figcaption></figcaption></figure>
+{% step %}
+選擇RPC，點擊【鏈接錢包後添加】，選擇錢包完成鏈接
 
-2. 點擊連接狐狸錢包，在喚起的狐狸錢包中完成連接
+<figure><img src="../../.gitbook/assets/image (86).png" alt="" width="563"><figcaption></figcaption></figure>
+{% endstep %}
 
-<figure><img src="../../.gitbook/assets/image (37).png" alt="" width="563"><figcaption></figcaption></figure>
+{% step %}
+點擊【添加此RPC】，授權添加
 
-<figure><img src="../../.gitbook/assets/image (47).png" alt="" width="355"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (87).png" alt="" width="350"><figcaption></figcaption></figure>
+{% endstep %}
 
-3. 點擊【一鍵添加RPC】，在喚起的狐狸錢包中批准添加新的網絡
+{% step %}
+RPC添加成功
 
-<figure><img src="../../.gitbook/assets/image (39).png" alt="" width="563"><figcaption></figcaption></figure>
+{% hint style="info" %}
+對於Metamask錢包，在RPC添加成功後需前往網絡列表手動切換
+{% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt="" width="351"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (88).png" alt="" width="375"><figcaption></figcaption></figure>
+{% endstep %}
+{% endstepper %}
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt="" width="318"><figcaption></figcaption></figure>
+### 手动添加RPC到錢包
+
+{% stepper %}
+{% step %}
+打開 OKX 錢包，打開網絡
+
+<figure><img src="../../.gitbook/assets/image (89).png" alt="" width="351"><figcaption></figcaption></figure>
 
 
+{% endstep %}
 
-#### 其他錢包（以Coinbase為例）
+{% step %}
+點擊 Add custom network，輸入[網絡信息](ge-ren-jiao-yi-zhe.md#tong-yong-rpc-wang-luo-xin-xi)
 
-1. 點擊瀏覽器插件，喚起Coinbase錢包
-2. 點擊【設置】 - 【網絡】&#x20;
+<figure><img src="../../.gitbook/assets/image (90).png" alt="" width="346"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (50).png" alt="" width="366"><figcaption></figcaption></figure>
 
-3. 點擊【+】添加網絡
+{% endstep %}
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt="" width="371"><figcaption></figcaption></figure>
-
-4. 填寫[通用RPC網絡信息](ge-ren-jiao-yi-zhe.md#tong-yong-rpc-wang-luo-xin-xi)，點擊【保存】
-
-<figure><img src="../../.gitbook/assets/image (30).png" alt="" width="351"><figcaption></figcaption></figure>
-
-### 如何自定义添加RPC到錢包
-
-#### Metamask
-
-1. 前往[rpc.blockrazor.io](https://rpc.blockrazor.io)，點擊開啓保護
-2. 點擊連接狐狸錢包，在喚起的狐狸錢包中完成連接
-3. 點擊【自定義添加RPC】，選擇[通用RPC模式](ge-ren-jiao-yi-zhe.md#tong-yong-rpc-mo-shi-dui-bi)
-
-<figure><img src="../../.gitbook/assets/image (32).png" alt="" width="563"><figcaption></figcaption></figure>
-
-4. 確認需要添加的RPC模式，點擊【自定義添加RPC】，在喚起的狐狸錢包中批准添加新的網絡
-
-#### 其他钱包（以Coinbase為例）
-
-1. 點擊瀏覽器插件，喚起Coinbase錢包
-2. 點擊【設置】 - 【網絡】&#x20;
-3. 點擊【+】添加網絡
-4. 填寫[通用RPC網絡信息](ge-ren-jiao-yi-zhe.md#tong-yong-rpc-wang-luo-xin-xi)。如需選擇RPC模式，詳見[通用RPC模式對比](ge-ren-jiao-yi-zhe.md#tong-yong-rpc-mo-shi-dui-bi)。
-
-<figure><img src="../../.gitbook/assets/image (29).png" alt="" width="357"><figcaption></figcaption></figure>
-
-5. 點擊 **儲存**，完成RPC添加
+{% step %}
+點擊保存，完成網絡添加
+{% endstep %}
+{% endstepper %}
 
 ### 通用RPC網絡信息
 
@@ -82,7 +78,7 @@ description: 個人交易者的痛點以及如何使用Blockrazor的服務
 
 ### 通用RPC模式對比
 
-<table><thead><tr><th width="161"></th><th width="186">default</th><th width="196">fullprivacy</th><th>maxbackrun</th></tr></thead><tbody><tr><td>BSC</td><td>https://bsc.blockrazor.xyz</td><td>https://bsc.blockrazor.xyz/fullprivacy</td><td>https://bsc.blockrazor.xyz/maxbackrun</td></tr><tr><td>Ethereum</td><td>https://eth.blockrazor.xyz</td><td>https://eth.blockrazor.xyz/fullprivacy</td><td>https://eth.blockrazor.xyz/maxbackrun</td></tr><tr><td>MEV保護</td><td>保護</td><td>保護</td><td>保護</td></tr><tr><td>交易隱私</td><td>最小程度披露</td><td>全隱私</td><td>最大程度披露</td></tr><tr><td>返利可能性</td><td>中等</td><td>無返利</td><td>高</td></tr><tr><td>返利比例</td><td>支持</td><td>無返利</td><td>支持</td></tr><tr><td>Revert保護</td><td>不保護</td><td>保護</td><td>保護</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th width="161"></th><th width="186">default</th><th width="196">fullprivacy</th><th>maxbackrun</th></tr></thead><tbody><tr><td>BSC</td><td>https://bsc.blockrazor.xyz</td><td>https://bsc.blockrazor.xyz/fullprivacy</td><td>https://bsc.blockrazor.xyz/maxbackrun</td></tr><tr><td>Ethereum</td><td>https://eth.blockrazor.xyz</td><td>https://eth.blockrazor.xyz/fullprivacy</td><td>https://eth.blockrazor.xyz/maxbackrun</td></tr><tr><td>MEV保護</td><td>保護</td><td>保護</td><td>保護</td></tr><tr><td>交易隱私</td><td>最小程度披露</td><td>全隱私</td><td>最大程度披露</td></tr><tr><td>返利可能性</td><td>中等</td><td>無返利</td><td>高</td></tr><tr><td>返利比例</td><td>支持</td><td>無返利</td><td>支持</td></tr><tr><td>Revert保護</td><td>不保護</td><td>保護</td><td>保護</td></tr></tbody></table>
 
 **default**
 
@@ -95,4 +91,3 @@ description: 個人交易者的痛點以及如何使用Blockrazor的服務
 **maxbackrun**
 
 * maxbackrun模式下，提交至Scutum通用RPC的交易，會在隱私保護的前提下披露必要的交易數據（hash、to、calldata、functionSelector、logs & state），以最大可能獲得返利。該模式下的交易同時會受到revert保護，為保證納入區塊的速度，建議在發送交易時設置一定的交易priority fee（Ethereum）。
-
