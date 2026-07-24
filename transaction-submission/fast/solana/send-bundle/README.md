@@ -1,7 +1,7 @@
 # Send Bundle
 
 {% hint style="warning" %}
-Solana發送bundle的服務不和訂閱計劃綁定，可前往 [Authentication](../../../../get-started/authentication.md) 獲取API KEY，默认限流为3 TPS。如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理
+Solana發送bundle的服務默認不對外開放，如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理
 {% endhint %}
 
 `Send Bundle` 是 BlockRazor 為 Solana 提供的bundle發送接口，用於將已簽名交易以bundle形式低延迟發送到鏈上。
