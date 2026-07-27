@@ -1,5 +1,7 @@
 ---
-description: 介紹Transaction Submission的模式以及如何選擇模式
+description: >-
+  介紹Transaction Submission的模式，包括RPC、Block Builder、Fast、Gas
+  Sponsor等模式，以及如何根據場景選擇模式
 ---
 
 # 總覽

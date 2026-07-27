@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor RPC的服務、用戶和優勢
+description: 介紹BlockRazor RPC是什麼、提供什麼服務、適合哪些用戶，以及為什麼選擇BlockRazor RPC
 ---
 
 # 總覽

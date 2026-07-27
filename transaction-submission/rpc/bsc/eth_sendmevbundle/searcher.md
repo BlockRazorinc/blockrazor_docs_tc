@@ -1,5 +1,5 @@
 ---
-description: 介紹Searcher如何集成BlockRazor BSC RPC的eth_sendMevBundle方法
+description: 介紹Searcher集成BlockRazor BSC RPC的eth_sendMevBundle方法
 ---
 
 # Searcher

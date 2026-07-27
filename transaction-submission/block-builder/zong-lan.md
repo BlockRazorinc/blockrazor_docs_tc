@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Block Builder以及如何選擇端點集成
+description: 介紹BlockRazor Block Builder，適合什麼用戶，提供什麼能力，以及如何選擇端點集成
 ---
 
 # 總覽

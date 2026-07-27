@@ -1,5 +1,5 @@
 ---
-description: 個人交易者的痛點以及如何使用Blockrazor的服務
+description: 介紹個人交易者的痛點以及如何添加BlockRazor RPC到錢包
 ---
 
 # 个人交易者

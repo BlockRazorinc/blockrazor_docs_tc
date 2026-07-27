@@ -1,5 +1,5 @@
 ---
-description: 介紹Solana Geyser Stream的服務、應用場景、關鍵特性以及接入方法
+description: 介紹BlockRazor Solana Geyser Stream的服務、應用場景、關鍵特性以及接入方法
 ---
 
 # Geyser Stream

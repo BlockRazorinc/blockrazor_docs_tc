@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor服務的定價
+description: 介紹訂閱服務（自選服務和極速服務包）的價格，新註冊用戶可零門檻享有的服務
 layout:
   width: default
   title:

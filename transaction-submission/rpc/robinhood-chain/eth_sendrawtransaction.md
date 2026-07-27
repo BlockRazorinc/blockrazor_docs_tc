@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Robinhood Chain RPC eth_sendRawTransaction的集成方法
+---
+
 # eth\_sendRawTransaction
 
 {% hint style="info" %}

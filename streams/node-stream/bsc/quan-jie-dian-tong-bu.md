@@ -1,5 +1,5 @@
 ---
-description: 介紹BSC全節點同步的服務、優勢、目標用戶以及接入方法
+description: 介紹BlockRazor BSC全節點同步的服務、優勢、目標用戶以及接入方法
 ---
 
 # 全節點同步

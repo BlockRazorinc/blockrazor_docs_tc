@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Fast模式在BSC上提供的服務
+description: 介紹BlockRazor BSC Fast模式以及API接入文檔
 ---
 
 # BSC

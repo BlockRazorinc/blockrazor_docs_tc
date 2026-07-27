@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Solana Fast模式下Send Batch in Binary的集成方法
+---
+
 # Send in Binary
 
 {% hint style="warning" %}

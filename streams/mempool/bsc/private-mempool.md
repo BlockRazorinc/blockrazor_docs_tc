@@ -1,5 +1,5 @@
 ---
-description: 介紹BSC Public Mempool的服務、應用場景、優勢以及接入方法
+description: 介紹BlockRazor BSC Public Mempool的服務、應用場景、優勢以及接入方法
 ---
 
 # Private Mempool

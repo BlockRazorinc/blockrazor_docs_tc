@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Ethereum CL/EL 客戶端同步的服務、優勢、目標用戶以及接入方法
+---
+
 # CL/EL 客戶端同步
 
 ### CL/EL 客戶端同步是什麼

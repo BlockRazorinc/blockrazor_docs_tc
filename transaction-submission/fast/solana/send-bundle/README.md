@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Solana Fast模式下Send Bundle的集成方法
+---
+
 # Send Bundle
 
 {% hint style="warning" %}

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor BSC的 Broadcast Tx 接口以及集成方法
+description: 介紹BlockRazor BSC Fast模式的 Broadcast Tx 接口以及集成方法
 ---
 
 # Broadcast Tx

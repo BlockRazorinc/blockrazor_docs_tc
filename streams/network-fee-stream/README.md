@@ -1,5 +1,5 @@
 ---
-description: 選擇鏈查看具體的Network Fee Stream服務
+description: 從鏈維度查看具體的Network Fee Stream服務
 ---
 
 # Network Fee Stream

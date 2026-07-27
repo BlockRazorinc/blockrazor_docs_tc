@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Ethereum Fast模式的 Broadcast Tx 接口以及集成方法
+---
+
 # Broadcast Tx
 
 ### 什麼是 Broadcast Tx

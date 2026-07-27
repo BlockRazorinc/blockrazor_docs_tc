@@ -1,5 +1,5 @@
 ---
-description: 介紹如何解析Base FlashBlock
+description: 介紹如何解析BlockRazor Base FlashBlock
 ---
 
 # 解析FlashBlock

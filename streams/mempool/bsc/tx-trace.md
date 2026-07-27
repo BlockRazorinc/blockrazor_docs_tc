@@ -1,5 +1,5 @@
 ---
-description: 介紹BSC Tx Trace的服務、應用場景以及接入方法
+description: 介紹BlockRazor BSC Tx Trace的服務、應用場景以及接入方法
 ---
 
 # Tx Trace

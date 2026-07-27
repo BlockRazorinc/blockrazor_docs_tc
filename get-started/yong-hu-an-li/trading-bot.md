@@ -1,5 +1,5 @@
 ---
-description: Trading Bot的痛點以及如何使用Blockrazor的服務
+description: 介紹Trading Bot在信號監聽和交易發送場景下的痛點，以及如何使用Blockrazor的服務來擴展、加速信號監聽和交易發送
 ---
 
 # Trading Bot
@@ -26,7 +26,7 @@ BlockRazor基于以上痛点为Trading Bot针对性提供产品服务。
 
 針對狙擊信號的滯後性，BlockRazor提供Geyser Stream、Shred Stream等服務，基於物理鏈路和交易鏈路的雙重優化，幫助Trading Bot以極致速度獲取到狙擊信號。同時，BlockRazor根據不同鏈的特性提供極速交易監聽服務。對於Ethereum和BSC等可以監聽到pending交易的鏈，BlockRazor提供Public Mempool和Private Mempool用於pending聰敏錢交易的監聽，以及New Blocks用於已上鏈聰敏錢交易的監聽。
 
-<table><thead><tr><th width="142.38671875">鏈</th><th width="286.75">pending信號交易</th><th>confirmed信號交易</th></tr></thead><tbody><tr><td>Ethereum</td><td><a href="../../streams/mempool/bsc/public-mempool.md">Public Mempool</a><br><a href="/broken/pages/NXkreaYlqBUKcNyRE5Zf">Private Mempool</a></td><td>-</td></tr><tr><td>BSC</td><td><a href="../../streams/mempool/bsc/public-mempool.md">Public Mempool</a><br><a href="/broken/pages/NXkreaYlqBUKcNyRE5Zf">Private Mempool</a></td><td><a href="../../streams/block-stream/bsc/newblocks.md">New Blocks</a></td></tr><tr><td>Solana</td><td>-</td><td><a href="../../streams/block-stream/solana/geyser-stream/">Geyser Stream</a><br><a href="../../streams/block-stream/solana/shred-stream.md">Shred Stream</a></td></tr><tr><td>Base</td><td>-</td><td><a href="../../streams/block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td></tr></tbody></table>
+<table><thead><tr><th width="142.38671875">鏈</th><th width="286.75">pending信號交易</th><th>confirmed信號交易</th></tr></thead><tbody><tr><td>Ethereum</td><td><a href="../../streams/mempool/bsc/public-mempool.md">Public Mempool</a><br><a href="../../streams/mempool/bsc/private-mempool.md">Private Mempool</a></td><td>-</td></tr><tr><td>BSC</td><td><a href="../../streams/mempool/bsc/public-mempool.md">Public Mempool</a><br><a href="../../streams/mempool/bsc/private-mempool.md">Private Mempool</a></td><td><a href="../../streams/block-stream/bsc/newblocks.md">New Blocks</a></td></tr><tr><td>Solana</td><td>-</td><td><a href="../../streams/block-stream/solana/geyser-stream/">Geyser Stream</a><br><a href="../../streams/block-stream/solana/shred-stream.md">Shred Stream</a></td></tr><tr><td>Base</td><td>-</td><td><a href="../../streams/block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td></tr></tbody></table>
 
 #### 多模式交易執行優化
 

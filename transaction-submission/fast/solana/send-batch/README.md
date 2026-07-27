@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Solana Fast模式下Send Batch的集成方法
+---
+
 # Send Batch
 
 {% hint style="warning" %}

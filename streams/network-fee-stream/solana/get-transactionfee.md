@@ -1,5 +1,5 @@
 ---
-description: 介紹Solana Get TransactionFee的接入方法
+description: 介紹BlockRazor Solana Get TransactionFee的接入方法
 ---
 
 # Get TransactionFee

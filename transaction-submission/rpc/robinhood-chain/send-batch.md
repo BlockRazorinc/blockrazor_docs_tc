@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Robinhood Chain RPC eth_sendBatch的集成方法
+---
+
 # Send Batch
 
 {% hint style="info" %}

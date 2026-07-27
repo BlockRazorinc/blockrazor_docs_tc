@@ -1,5 +1,5 @@
 ---
-description: 介紹如何獲取BlockRazor的auth
+description: 介紹如何獲取BlockRazor的auth，用於向API發送請求
 ---
 
 # Authentication

@@ -1,5 +1,5 @@
 ---
-description: 介紹BSC GetGasPriceStream的接入方法
+description: 介紹BlockRazor BSC GetGasPriceStream的接入方法
 ---
 
 # GetGasPriceStream

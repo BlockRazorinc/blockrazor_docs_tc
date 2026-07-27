@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor的Streams，Streams提供的能力以及選擇Stream的方法
+description: 介紹BlockRazor的Streams，Streams提供的能力以及如何選擇Stream
 ---
 
 # 總覽
@@ -45,16 +45,7 @@ Network Fee Stream 用於基於最近歷史區塊數據，實時獲取 Gas Price
 
 ### 如何選擇合適的Stream
 
-| 場景                                                 | 適用用戶                                            | 推薦能力                                                         |
-| -------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------ |
-| 監聽最新 pending 交易並做 backrun / copy trading / sniping | Searcher, Trading Bot                           | [Public Mempool](mempool/bsc/public-mempool.md)              |
-| 訂閱私有訂單流並做 backrun / copy trading / sniping         | Searcher, Trading Bot                           | [Private Mempool](/broken/pages/NXkreaYlqBUKcNyRE5Zf)        |
-| 動態優化 Gas / Priority Fee / Tip                      | Searcher, Trading Bot, Quant Team, Wallets, DEX | [Network Fee Stream](network-fee-stream/)                    |
-| 保持本地節點和 world state 最新                             | Searcher, Trading Bot, Quant Team, Wallets, DEX | [Node Stream](node-stream/bsc/quan-jie-dian-tong-bu.md)      |
-| 觀察交易傳播路徑與跨區域時延                                     | Searcher, Trading Bot, Quant Team               | [Tx Trace](mempool/bsc/tx-trace.md)                          |
-| 訂閱Base FlashBlock Stream                           | Searcher, Trading Bot, Quant Team, Wallets, DEX | [FlashBlock Stream](block-stream/base/get-flashblockstream/) |
-| 訂閱 Solana 賬戶、交易、slot、block 數據                      | Searcher, Trading Bot, Quant Team, Wallets, DEX | [Geyser Stream](block-stream/solana/geyser-stream/)          |
-| 獲取 Solana 更底層、極低延遲的 shred 數據                       | Searcher, Trading Bot                           | [Shred Stream](block-stream/solana/shred-stream.md)          |
+<table data-search="false"><thead><tr><th>場景</th><th>適用用戶</th><th>推薦能力</th></tr></thead><tbody><tr><td>監聽最新 pending 交易並做 backrun / copy trading / sniping</td><td>Searcher, Trading Bot</td><td><a href="mempool/bsc/public-mempool.md">Public Mempool</a></td></tr><tr><td>訂閱私有訂單流並做 backrun / copy trading / sniping</td><td>Searcher, Trading Bot</td><td><a href="mempool/bsc/private-mempool.md">Private Mempool</a></td></tr><tr><td>動態優化 Gas / Priority Fee / Tip</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="network-fee-stream/">Network Fee Stream</a></td></tr><tr><td>保持本地節點和 world state 最新</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="node-stream/bsc/quan-jie-dian-tong-bu.md">Node Stream</a></td></tr><tr><td>觀察交易傳播路徑與跨區域時延</td><td>Searcher, Trading Bot, Quant Team</td><td><a href="mempool/bsc/tx-trace.md">Tx Trace</a></td></tr><tr><td>訂閱Base FlashBlock Stream</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td></tr><tr><td>訂閱 Solana 賬戶、交易、slot、block 數據</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="block-stream/solana/geyser-stream/">Geyser Stream</a></td></tr><tr><td>獲取 Solana 更底層、極低延遲的 shred 數據</td><td>Searcher, Trading Bot</td><td><a href="block-stream/solana/shred-stream.md">Shred Stream</a></td></tr></tbody></table>
 
 ### 快速開始
 

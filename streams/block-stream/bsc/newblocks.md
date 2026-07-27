@@ -1,5 +1,5 @@
 ---
-description: 介紹BSC NewBlocks的服務、應用場景以及接入方法
+description: 介紹BlockRazor BSC NewBlocks的服務、應用場景以及接入方法
 ---
 
 # NewBlocks

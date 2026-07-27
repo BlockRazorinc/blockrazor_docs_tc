@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Base Get FlashBlockTransaction服務以及接入方法
+---
+
 # Get FlashBlockTransaction
 
 ### Base Get FlashBlockTransaction是什麼

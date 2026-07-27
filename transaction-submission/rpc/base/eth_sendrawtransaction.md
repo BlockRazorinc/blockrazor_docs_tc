@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Base RPC以及集成方法
+description: 介紹集成BlockRazor Base RPC的eth_sendRawTransaction的方法
 ---
 
 # eth\_sendRawTransaction

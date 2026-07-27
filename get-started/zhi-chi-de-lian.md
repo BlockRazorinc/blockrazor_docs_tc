@@ -1,5 +1,5 @@
 ---
-description: 從鏈維度介紹BlockRazor提供的服務
+description: 從鏈維度介紹BlockRazor提供的服務，目前BlockRazor支持Solana, BSC, Ethereum, Base和Robinhood
 ---
 
 # 支持的鏈
@@ -14,8 +14,13 @@ description: 從鏈維度介紹BlockRazor提供的服務
 
 ### Ethereum
 
-<table><thead><tr><th width="241.84765625">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="../transaction-submission/rpc/ethereum/">RPC</a></li><li><a href="../transaction-submission/gas-sponsor.md">Gas Sponsor</a></li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="241.84765625">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="../transaction-submission/rpc/ethereum/">RPC</a></li><li><a href="../transaction-submission/fast/ethereum/broadcast-tx.md">Fast</a></li><li><a href="../transaction-submission/gas-sponsor.md">Gas Sponsor</a></li></ul></td></tr><tr><td>Streams</td><td><ul><li><a href="../streams/mempool/ethereum/public-mempool.md">Public Mempool</a></li><li><a href="../streams/block-stream/ethereum/newblocks.md">Block Stream</a></li><li><a href="../streams/node-stream/ethereum/clel-ke-hu-duan-tong-bu.md">Node Steam</a></li></ul></td></tr></tbody></table>
 
 ### Base
 
 <table><thead><tr><th width="240.02734375">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="../transaction-submission/rpc/base/eth_sendrawtransaction.md">RPC</a></li><li><a href="../transaction-submission/fast/base/eth_sendrawtransaction.md">Fast</a></li></ul></td></tr><tr><td>Streams</td><td><ul><li><a href="../streams/block-stream/base/">Block Stream</a></li></ul></td></tr></tbody></table>
+
+### Robinhood
+
+<table><thead><tr><th width="244.97265625">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="../transaction-submission/rpc/robinhood-chain/eth_sendrawtransaction.md">RPC</a></li></ul></td></tr></tbody></table>
+

@@ -1,5 +1,5 @@
 ---
-description: 錢包/去中心化交易所的痛點以及如何使用Blockrazor的服務
+description: 介紹錢包/去中心化交易所在交易發送場景下的痛點，以及如何通過使用Blockrazor的服務，包括RPC、Fast模式等來解決痛點
 ---
 
 # 錢包/去中心化交易所

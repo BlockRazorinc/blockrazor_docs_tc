@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Solana Fast模式下Send Bundle的Curl請求示例
+---
+
 # Curl
 
 ### 請求示例

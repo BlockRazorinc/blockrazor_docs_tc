@@ -1,5 +1,5 @@
 ---
-description: 介紹如何集成BlockRazor Ethereum RPC的eth_sendRawTransaction方法
+description: 介紹集成BlockRazor Ethereum RPC的eth_sendRawTransaction的方法
 ---
 
 # eth\_sendRawTransaction

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Fast模式的Send Transaction v2接口以及集成方法
+description: 介紹BlockRazor Solana Fast模式下Send Transaction in Plain Text的集成方法
 ---
 
 # Send in Plain Text

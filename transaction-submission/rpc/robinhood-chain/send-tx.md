@@ -1,4 +1,5 @@
 ---
+description: 介紹BlockRazor Robinhood Chain RPC sendTx的集成方法
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: 本文檔介紹如何通過Curl構建、發送Solana交易
+description: 介紹BlockRazor Solana Fast模式下Send Transaction的Curl請求示例
 ---
 
 # Curl

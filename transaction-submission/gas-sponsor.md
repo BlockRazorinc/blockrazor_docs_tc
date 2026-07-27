@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor的Gas Sponsor模式
+description: 介紹BlockRazor的Gas Sponsor，以及其核心特性和接入流程
 ---
 
 # Gas Sponsor

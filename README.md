@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor以及其提供的服務
+description: 介紹BlockRazor是誰，BlockRazor面向的用戶以及提供的服務，包括Transaction Submission和Streams
 ---
 
 # 關於BlockRazor

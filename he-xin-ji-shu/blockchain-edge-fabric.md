@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor的核心技術Blockchain Edge Fabric
+description: 介紹BlockRazor的核心技術Blockchain Edge Fabric，包括核心理念、架構組成、面向用戶以及和在BlockRazor產品體系中的作用
 ---
 
 # Blockchain Edge Fabric

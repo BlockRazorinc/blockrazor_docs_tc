@@ -1,3 +1,7 @@
+---
+description: 介紹BlockRazor Solana Fast模式下Send Batch的JS請求示例
+---
+
 # JS
 
 ### 請求示例

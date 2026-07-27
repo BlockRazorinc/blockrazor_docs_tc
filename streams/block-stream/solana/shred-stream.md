@@ -1,5 +1,5 @@
 ---
-description: 介紹Solana Shred Stream的服務、目標用戶、優勢以及接入方法
+description: 介紹BlockRazor Solana Shred Stream的服務、目標用戶、優勢以及接入方法
 ---
 
 # Shred Stream

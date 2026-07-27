@@ -1,5 +1,5 @@
 ---
-description: 介紹Get FlashBlockStream服務、優勢以及接入方法
+description: 介紹BlockRazor Base Get FlashBlockStream服務、優勢以及接入方法
 ---
 
 # Get FlashBlockStream

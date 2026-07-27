@@ -1,5 +1,5 @@
 ---
-description: Searcher的痛點以及如何使用Blockrazor的服務
+description: 介紹Searcher在處理bundle過程中的痛點以及如何使用Blockrazor的服務來提升競爭力
 ---
 
 # Searcher
