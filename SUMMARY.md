@@ -4,7 +4,8 @@
 
 * [關於BlockRazor](README.md)
 * [支持的鏈](get-started/zhi-chi-de-lian.md)
-* [價格](get-started/jia-ge.md)
+* [免費開始](get-started/mian-fei-kai-shi.md)
+* [訂閱服務](get-started/ding-yue-fu-wu.md)
 * [Authentication](get-started/authentication.md)
 * [用戶案例](get-started/yong-hu-an-li/README.md)
   * [錢包/去中心化交易所](get-started/yong-hu-an-li/qian-bao-qu-zhong-xin-hua-jiao-yi-suo.md)
