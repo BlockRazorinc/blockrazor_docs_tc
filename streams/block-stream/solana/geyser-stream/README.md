@@ -64,18 +64,10 @@ Geyser 是 Solana 驗證者的插件機制，可將鏈上的 `account`、`slot`�
 ### 價格
 
 {% hint style="info" %}
-Geyser Stream按週期（單位：月）流量收費，價格在新採購、續費、新增流量等場景下一致
+Geyser Stream按週期（單位：月）流量收費，價格在新採購、續費、新增流量等場景下一致。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=solana&#x26;serviceId=solana_geyser_stream&#x26;billing=month" class="button primary small">訂閱</a>
 {% endhint %}
 
-| 週期流量    | 折扣   | 折後價 / 週期 |
-| ------- | ---- | -------- |
-| 5 TiB   | 100% | $250     |
-| 10 TiB  | 100% | $500     |
-| 50 TiB  | 100% | $2500    |
-| 100 TiB | 95%  | $4750    |
-| 150 TiB | 90%  | $6750    |
-| 200 TiB | 85%  | $8500    |
-| 250 TiB | 80%  | $10000   |
+<table data-search="false"><thead><tr><th>週期流量</th><th>折扣</th><th>折後價 / 週期</th></tr></thead><tbody><tr><td>5 TiB</td><td>100%</td><td>$250</td></tr><tr><td>10 TiB</td><td>100%</td><td>$500</td></tr><tr><td>50 TiB</td><td>100%</td><td>$2500</td></tr><tr><td>100 TiB</td><td>95%</td><td>$4750</td></tr><tr><td>150 TiB</td><td>90%</td><td>$6750</td></tr><tr><td>200 TiB</td><td>85%</td><td>$8500</td></tr><tr><td>250 TiB</td><td>80%</td><td>$10000</td></tr></tbody></table>
 
 #### 採購說明
 

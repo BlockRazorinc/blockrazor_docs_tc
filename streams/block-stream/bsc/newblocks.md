@@ -32,7 +32,7 @@ NewBlocks 基於 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 分發�
 
 ### 價格
 
-NewBlocks每月每條數據流的價格為$500，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+價格為$50 / 條 / 日和$500 / 條 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_block_stream&#x26;billing=day" class="button primary small">訂閱</a>
 
 {% hint style="info" %}
 數據流的可訂閱數量按所有地區共享計算。比如購買 1 條，則僅可在 1 個地區訂閱，其他地區將無法訂閱。

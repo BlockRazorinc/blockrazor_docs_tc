@@ -49,7 +49,7 @@ Shred Stream接收到的是 Solana 網絡中的原始 `shred` UDP 數據流，�
 
 ### 價格
 
-Shred Stream每月每條數據流的價格為$500，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+價格為$50 / 條 / 日和$500 / 條 / 月。<a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=solana&#x26;serviceId=solana_shreds_stream&#x26;billing=day" class="button primary small">訂閱</a>
 
 ### 使用說明
 

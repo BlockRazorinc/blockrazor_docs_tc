@@ -36,7 +36,7 @@ description: 介紹BlockRazor BSC全節點同步的服務、優勢、目標用�
 
 ### 價格
 
-每月每條數據流的價格為$800，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+價格為$80 / 個 / 日和$800 / 個 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_enode&#x26;billing=day" class="button primary small">訂閱</a>
 
 ### Relay IP
 

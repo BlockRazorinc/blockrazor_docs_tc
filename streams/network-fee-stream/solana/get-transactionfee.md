@@ -10,9 +10,7 @@ description: 介紹BlockRazor Solana Get TransactionFee的接入方法
 
 ### 限流
 
-| 用戶類型 | 限流     | 價格       |
-| ---- | ------ | -------- |
-| 付費用戶 | 10 qps | $300 / 月 |
+<table><thead><tr><th width="164.34765625">用戶類型</th><th width="146.20703125">限流</th><th>價格</th><th>動作</th></tr></thead><tbody><tr><td>付費用戶</td><td>10 QPS</td><td>$30 / 日<br>$300 / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=solana&#x26;serviceId=solana_network_fee_stream&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### 請求參數
 

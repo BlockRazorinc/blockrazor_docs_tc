@@ -10,7 +10,7 @@ description: 介紹BlockRazor BSC GetGasPriceStream的接入方法
 
 ### **價格**
 
-每月價格為$300，請前往[訂閱](https://blockrazor.io/#/pricing)頁面採購。
+每月價格$30 / 日和$300 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_fee_stream&#x26;billing=day" class="button primary small">訂閱</a>
 
 ### 請求參數
 

@@ -51,7 +51,7 @@ BlockRazor目前支持組合式訂購多鏈服務，以優惠價格訂購極速�
 {% endtab %}
 
 {% tab title="General" %}
-<table><thead><tr><th width="140.84765625">服務</th><th width="160.96484375">描述</th><th>按月購買</th><th>按日購買</th></tr></thead><tbody><tr><td>Dedicated Channel</td><td>專屬技術支持</td><td>$100 / 日<br>$1000 / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=common&#x26;serviceId=common_dedicated_channel&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="140.84765625">服務</th><th width="160.96484375">描述</th><th>價格</th><th>動作</th></tr></thead><tbody><tr><td>Dedicated Channel</td><td>專屬技術支持</td><td>$100 / 日<br>$1000 / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=common&#x26;serviceId=common_dedicated_channel&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
