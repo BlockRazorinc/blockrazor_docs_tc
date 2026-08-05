@@ -18,10 +18,7 @@ BlockRazor Sequencer Feed 為 Robinhood Chain 節點提供更加穩定、高效�
 
 我們通過同一個測試客戶端與Robinhood Chain Sequencer Feed和BlockRazor Sequencer Feed分別建立wss連接，比較從兩者接收區塊的相對延遲。先接收到區塊的Sequencer Feed其相對延遲視為0ms，後接收到區塊的Sequencer Feed其相對延遲等於先後接收區塊的時間戳差值。具體數據如下：
 
-| Sequencer Feed                 | 勝率         | P50          | P90           |
-| ------------------------------ | ---------- | ------------ | ------------- |
-| BlockRazor Sequencer Feed      | **88.40%** | **0.000 ms** | **0.293 ms**  |
-| Robinhood Chain Sequencer Feed | **11.60%** | **6.520 ms** | **14.579 ms** |
+<table><thead><tr><th>Sequencer Feed</th><th width="112.38671875">Win rate</th><th width="115.54296875">P50</th><th width="117.8984375">P90</th><th width="122.05859375">P95</th><th width="123.40234375">P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>88.40%</strong></td><td><strong>0.000 ms</strong></td><td><strong>0.293 ms</strong></td><td><strong>1.500 ms</strong></td><td><strong>4.515 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>11.60%</strong></td><td><strong>6.520 ms</strong></td><td><strong>14.579 ms</strong></td><td><strong>17.613 ms</strong></td><td><strong>32.520 ms</strong></td></tr></tbody></table>
 
 從延遲分布來看，BlockRazor 不僅在大多數區塊上率先到達，而且這種領先優勢具有較高的一致性；相比之下，Robinhood Chain Sequencer Feed 更經常處於落後位置，且延遲波動更為明顯。
 
