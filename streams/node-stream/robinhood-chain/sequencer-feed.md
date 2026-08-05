@@ -16,9 +16,21 @@ BlockRazor Sequencer Feed 為 Robinhood Chain 節點提供更加穩定、高效�
 
 ### Benchmark
 
-我們通過同一個測試客戶端與Robinhood Chain Sequencer Feed和BlockRazor Sequencer Feed分別建立wss連接，比較從兩者接收區塊的相對延遲。先接收到區塊的Sequencer Feed其相對延遲視為0ms，後接收到區塊的Sequencer Feed其相對延遲等於先後接收區塊的時間戳差值。具體數據如下：
+我們在AWS US East (Ohio)的每一個可用區（use2-az1、use2-az2、use2-az3）通過同一個測試客戶端與Robinhood Chain Sequencer Feed和BlockRazor Sequencer Feed分別建立wss連接，比較從兩者接收區塊的相對延遲。先接收到區塊的Sequencer Feed其相對延遲視為0ms，後接收到區塊的Sequencer Feed其相對延遲等於先後接收區塊的時間戳差值。具體數據如下：
 
-<table><thead><tr><th>Sequencer Feed</th><th width="112.38671875">Win rate</th><th width="115.54296875">P50</th><th width="117.8984375">P90</th><th width="122.05859375">P95</th><th width="123.40234375">P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>88.40%</strong></td><td><strong>0.000 ms</strong></td><td><strong>0.293 ms</strong></td><td><strong>1.500 ms</strong></td><td><strong>4.515 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>11.60%</strong></td><td><strong>6.520 ms</strong></td><td><strong>14.579 ms</strong></td><td><strong>17.613 ms</strong></td><td><strong>32.520 ms</strong></td></tr></tbody></table>
+{% tabs %}
+{% tab title="use2-az1" %}
+<table><thead><tr><th>Sequencer Feed</th><th width="104.07421875">Win rate</th><th width="101.1484375">P50</th><th width="110.5859375">P90</th><th width="105.84375">P95</th><th width="117.4296875">P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>90.51%</strong></td><td><strong>0.000 ms</strong></td><td><strong>0.000 ms</strong></td><td><strong>1.095 ms</strong></td><td><strong>3.812 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>9.49%</strong></td><td><strong>6.573 ms</strong></td><td><strong>15.456 ms</strong></td><td><strong>19.721 ms</strong></td><td><strong>42.707 ms</strong></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="use2-az2" %}
+<table><thead><tr><th width="121.29296875">Sequencer Feed</th><th width="107.6328125">Win rate</th><th width="109.671875">P50</th><th width="102.86328125">P90</th><th width="107.23828125">P95</th><th width="115.046875">P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>69.16%</strong></td><td><strong>0.000 ms</strong></td><td><strong>2.151 ms</strong></td><td><strong>3.230 ms</strong></td><td><strong>5.589 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>30.84%</strong></td><td><strong>1.719 ms</strong></td><td><strong>6.754 ms</strong></td><td><strong>9.782 ms</strong></td><td><strong>31.128 ms</strong></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="use2-az3" %}
+<table><thead><tr><th width="131.171875">Sequencer Feed</th><th width="108.26953125">Win rate</th><th width="110.5546875">P50</th><th width="111.25">P90</th><th width="105.05078125">P95</th><th width="108.12890625">P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>75.08%</strong></td><td><strong>0.000 ms</strong></td><td><strong>1.764 ms</strong></td><td><strong>2.861 ms</strong></td><td><strong>5.330 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>24.92%</strong></td><td><strong>2.524 ms</strong></td><td><strong>12.306 ms</strong></td><td><strong>16.728 ms</strong></td><td><strong>37.805 ms</strong></td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 從延遲分布來看，BlockRazor 不僅在大多數區塊上率先到達，而且這種領先優勢具有較高的一致性；相比之下，Robinhood Chain Sequencer Feed 更經常處於落後位置，且延遲波動更為明顯。
 
