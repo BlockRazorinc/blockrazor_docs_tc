@@ -128,6 +128,8 @@
       * [使用Dedicate Node](streams/node-stream/bsc/dedicate-node/shi-yong-dedicate-node.md)
   * [Ethereum](streams/node-stream/ethereum/README.md)
     * [CL/EL 客戶端同步](streams/node-stream/ethereum/clel-ke-hu-duan-tong-bu.md)
+  * [Robinhood Chain](streams/node-stream/robinhood-chain/README.md)
+    * [Sequencer Feed](streams/node-stream/robinhood-chain/sequencer-feed.md)
 * [Network Fee Stream](streams/network-fee-stream/README.md)
   * [Solana](streams/network-fee-stream/solana/README.md)
     * [Get TransactionFee](streams/network-fee-stream/solana/get-transactionfee.md)
