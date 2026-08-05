@@ -26,9 +26,9 @@ Public Mempool 是 BlockRazor 基于 [BEF](../../../he-xin-ji-shu/blockchain-edg
 
 在接收交易的延遲測試中，我們分別在 Dublin、Frankfurt、Tokyo 和 Virginia 四個區域，對 BlockRazor 與普通 Node 進行了對比。評估方式基於雙方對同一筆交易的首次接收時間差，統計在可比樣本中由哪一方更早收到交易。
 
-<table><thead><tr><th width="134.609375">Region</th><th>BlockRazor Lead Rate</th><th>Avg Lead</th><th>P90 Lead</th></tr></thead><tbody><tr><td>Dublin</td><td>84.0%</td><td>102.4 ms</td><td>221.0 ms</td></tr><tr><td>Frankfurt</td><td>99.7%</td><td>30.4 ms</td><td>67.7 ms</td></tr><tr><td>Tokyo</td><td>99.9%</td><td>148.6 ms</td><td>264.4 ms</td></tr><tr><td>Virginia</td><td>99.7%</td><td>62.0 ms</td><td>190.7 ms</td></tr></tbody></table>
+<table><thead><tr><th width="120.29296875">Region</th><th width="192.1015625">BlockRazor Lead Rate</th><th>Avg Lead</th><th>P50 Lead</th><th>P90 Lead</th></tr></thead><tbody><tr><td>Dublin</td><td><strong>99.7%</strong></td><td>43.7 ms</td><td>28.8 ms</td><td>89.7 ms</td></tr><tr><td>Frankfurt</td><td><strong>99.5%</strong></td><td>29.0 ms</td><td>21.5 ms</td><td>48.1 ms</td></tr><tr><td>Tokyo</td><td><strong>99.8%</strong></td><td>136.4 ms</td><td>119.5 ms</td><td>218.7 ms</td></tr><tr><td>Virginia</td><td><strong>99.8%</strong></td><td>55.1 ms</td><td>40.5 ms</td><td>107.4 ms</td></tr></tbody></table>
 
-從結果來看，BlockRazor 在四個區域均保持了明顯領先。Frankfurt、Tokyo 和 Virginia 三個區域的交易接收領先率均超過 99%，Dublin 區域的領先率為 84.0%。從領先幅度看，BlockRazor 在不同區域的平均領先時間約為 102.4ms、30.4ms、148.6ms 和 62.0ms；在 P90 維度下，領先幅度分別達到 221.0ms、67.7ms、264.4ms 和 190.7ms。
+從結果來看，BlockRazor 在四個區域均保持了明顯領先。4 個區域的交易接收領先率均超過 99%。從領先幅度看，BlockRazor 在不同區域的平均領先時間約為 43.7ms、29.0ms、136.4ms 和 55.1ms；在 P90 維度下，領先幅度分別達到 89.7ms、48.1ms、218.7ms 和 107.4ms。
 
 以上結果表明，BlockRazor 在交易傳播鏈路上展現出穩定的優先接收能力，能夠在絕大多數可比樣本中早於普通 Node 捕獲交易。
 

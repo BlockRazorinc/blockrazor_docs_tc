@@ -20,9 +20,9 @@ NewBlocks 基於 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 分發�
 
 在接收新區塊的延遲測試中，我們分別在 Dublin、Frankfurt、Tokyo 和 Virginia 四個區域，對 BlockRazor 與普通 Node 進行了對比。評估方式基於雙方對同一區塊的接收時間差，統計在可比樣本中由哪一方更早收到新區塊。
 
-<table><thead><tr><th width="134.953125">Region</th><th width="201.30859375">BlockRazor Lead Rate</th><th>Avg Lead</th><th>P90 Lead</th></tr></thead><tbody><tr><td>Dublin</td><td>99.5%</td><td>80.4 ms</td><td>130.9 ms</td></tr><tr><td>Frankfurt</td><td>100.0%</td><td>111.1 ms</td><td>189.1 ms</td></tr><tr><td>Tokyo</td><td>100.0%</td><td>223.0 ms</td><td>645.3 ms</td></tr><tr><td>Virginia</td><td>100.0%</td><td>133.6 ms</td><td>351.8 ms</td></tr></tbody></table>
+<table><thead><tr><th width="124.60546875">Region</th><th width="193.2421875">BlockRazor Lead Rate</th><th>Avg Lead</th><th>P50 Lead</th><th>P90 Lead</th></tr></thead><tbody><tr><td>Dublin</td><td><strong>100.0%</strong></td><td>60.4 ms</td><td>50.5 ms</td><td>90.7 ms</td></tr><tr><td>Frankfurt</td><td><strong>100.0%</strong></td><td>61.5 ms</td><td>54.7 ms</td><td>92.3 ms</td></tr><tr><td>Tokyo</td><td><strong>100.0%</strong></td><td>239.1 ms</td><td>145.7 ms</td><td>622.9 ms</td></tr><tr><td>Virginia</td><td><strong>99.5%</strong></td><td>69.0 ms</td><td>58.3 ms</td><td>121.6 ms</td></tr></tbody></table>
 
-從結果來看，BlockRazor 在四個區域均表現出穩定領先。Frankfurt、Tokyo 和 Virginia 三個區域中，BlockRazor 的領先率均達到 100%；Dublin 區域的領先率也達到 99.5%。從領先幅度看，BlockRazor 在不同區域的平均領先時間約為 80.4ms、111.1ms、223.0ms 和 133.6ms；在 P90 維度下，領先幅度分別達到 130.9ms、189.1ms、645.3ms 和 351.8ms。
+從結果來看，BlockRazor 在四個區域均表現出穩定領先。Frankfurt、Tokyo 和 Dublin 三個區域中，BlockRazor 的領先率均達到 100%；Virginia 區域的領先率也達到 99.5%。從領先幅度看，BlockRazor 在不同區域的平均領先時間約為 60.4 ms、61.5 ms、239.1 ms 和 69.0 ms；在 P90 維度下，領先幅度分別達到 90.7 ms、92.3 ms、622.9 ms 和 121.6 ms。
 
 這表明在新區塊到達這一關鍵鏈路上，BlockRazor 能夠更穩定地搶先於普通 Node 接收到區塊數據。
 
