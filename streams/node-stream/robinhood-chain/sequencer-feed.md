@@ -42,7 +42,7 @@ BlockRazor Sequencer Feed 為 Robinhood Chain 節點提供更加穩定、高效�
 
 ### 端點
 
-<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>美国</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr><tr><td>日本</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
 
 ### 使用步驟
 
