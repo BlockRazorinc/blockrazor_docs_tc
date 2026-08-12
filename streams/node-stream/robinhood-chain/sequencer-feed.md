@@ -16,7 +16,11 @@ BlockRazor Sequencer Feed 為 Robinhood Chain 節點提供更加穩定、高效�
 
 ### Benchmark
 
-我們在AWS US East (Ohio)的每一個可用區（use2-az1、use2-az2、use2-az3）通過同一個測試客戶端與Robinhood Chain Sequencer Feed和BlockRazor Sequencer Feed分別建立wss連接，比較從兩者接收區塊的相對延遲。先接收到區塊的Sequencer Feed其相對延遲視為0ms，後接收到區塊的Sequencer Feed其相對延遲等於先後接收區塊的時間戳差值。具體數據如下：
+我們在AWS US East (Ohio)的每一個可用區（use2-az1、use2-az2、use2-az3）通過同一個測試客戶端與Robinhood Chain Sequencer Feed和BlockRazor Sequencer Feed分別建立wss連接，比較從兩者接收區塊的相對延遲。先接收到區塊的Sequencer Feed其相對延遲視為0ms，後接收到區塊的Sequencer Feed其相對延遲等於先後接收區塊的時間戳差值。
+
+获取benchmark测试工具可前往 [GitHub - BlockRazorinc/robinhood-feed-speed](https://github.com/BlockRazorinc/robinhood-feed-speed)&#x20;
+
+Benchmark數據如下：
 
 {% tabs %}
 {% tab title="use2-az1" %}
