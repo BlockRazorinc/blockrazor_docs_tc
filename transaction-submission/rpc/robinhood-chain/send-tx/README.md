@@ -7,7 +7,7 @@ hidden: true
 
 `Send Tx`  是BlockRazor 為 Robinhood Chain 提供的交易發送接口，用户可通过该方法將已簽名的原始交易低延迟發送到鏈上，目前支持HTTPS协议。
 
-相比 [`eth_sendRawTransaction`](eth_sendrawtransaction.md) ，`Send Tx` 的交易在發送至Robinhood Chain官方排序器前會經過Pre-flight檢查，包括但不限於nonce是否正確、balance是否足够、contract execution 是否 revert等。
+相比 [`eth_sendRawTransaction`](../eth_sendrawtransaction/) ，`Send Tx` 的交易在發送至Robinhood Chain官方排序器前會經過Pre-flight檢查，包括但不限於nonce是否正確、balance是否足够、contract execution 是否 revert等。
 
 ### 端点
 

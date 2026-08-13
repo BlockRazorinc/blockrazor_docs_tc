@@ -22,5 +22,5 @@ description: 從鏈維度介紹BlockRazor提供的服務，目前BlockRazor支�
 
 ### Robinhood
 
-<table><thead><tr><th width="244.97265625">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="../transaction-submission/rpc/robinhood-chain/eth_sendrawtransaction.md">RPC</a></li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="244.97265625">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="../transaction-submission/rpc/robinhood-chain/eth_sendrawtransaction/">RPC</a></li></ul></td></tr></tbody></table>
 
