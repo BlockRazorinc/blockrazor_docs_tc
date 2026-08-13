@@ -26,7 +26,7 @@ curl -X POST 'https://robinhood.blockrazor.io/v2/sendTx?auth=<auth_token>' \
 {% hint style="info" %}
 注意：
 
-* auth和方法名必須以 URI 參數的形式填入URL，比如https://robinhood.blockrazor.io/v2/eth\_sendRawTransaction?auth=\<auth\_token>
+* auth和方法名必須以 URI 參數的形式填入URL，比如https://robinhood.blockrazor.io/v2/sendTx?auth=\<auth\_token>
 * 請求中唯一允許的header是 `Content-Type: text/plain`
 {% endhint %}
 
