@@ -1,3 +1,9 @@
+---
+description: >-
+  介紹BlockRazor Robinhood Chain RPC eth_sendRawTransaction(send in plain
+  text)的集成方法
+---
+
 # Send in Plain Text
 
 `Send in Plain Text` 用於在 Robinhood 上發送已簽名的交易，與 [eth\_sendRawTransaction](./) 方式相比，它提供了一種更精簡、更迅速的交易提交途徑。

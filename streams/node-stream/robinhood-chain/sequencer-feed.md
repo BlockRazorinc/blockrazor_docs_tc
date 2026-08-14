@@ -1,3 +1,7 @@
+---
+description: 介紹Robinhood Chain Sequencer Feed的定義、優勢、benchmark、價格和接入方法
+---
+
 # Sequencer Feed
 
 ### Sequencer Feed是什麼
