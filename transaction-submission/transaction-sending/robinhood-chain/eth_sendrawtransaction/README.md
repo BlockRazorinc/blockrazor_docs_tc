@@ -5,7 +5,7 @@ description: 介紹BlockRazor Robinhood Chain eth_sendRawTransaction的集成方
 # Robinhood Chain eth\_sendRawTransaction
 
 {% hint style="info" %}
-Robinhood Chain RPC暫不對用戶開放，如需對接請[聯繫](https://discord.gg/qqJuwRb8Nh)我們
+Robinhood Chain eth\_sendRawTransaction暫不對用戶開放，如需對接請[聯繫](https://discord.gg/qqJuwRb8Nh)我們
 {% endhint %}
 
 `eth_sendRawTransaction`  是BlockRazor 為 Robinhood Chain 提供的交易發送接口，用户可通过该方法將已簽名的原始交易低延迟發送到鏈上，目前支持HTTPS协议。
