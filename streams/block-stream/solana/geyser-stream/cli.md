@@ -1,8 +1,8 @@
 ---
-description: 介紹BlockRazor Solana Geyser Stream的CLI請求方法
+description: 介紹BlockRazor Solana Geyser Stream的CLI訂閱方法
 ---
 
-# CLI
+# Solana Geyser Stream CLI 訂閱示例
 
 ### 快速開始
 

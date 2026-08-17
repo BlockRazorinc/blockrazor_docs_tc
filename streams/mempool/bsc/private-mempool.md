@@ -2,7 +2,7 @@
 description: 介紹BlockRazor BSC Private Mempool的服務、應用場景、優勢以及接入方法
 ---
 
-# Private Mempool
+# BSC Private Mempool
 
 ### BSC Private Mempool是什麼
 
@@ -48,7 +48,7 @@ Private Mempool 依賴 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) �
 {% step %}
 **構建 & 提交bundle**
 
-詳見 [Bundle](../../../transaction-submission/rpc/bsc/eth_sendmevbundle/searcher.md)
+詳見 [Bundle](../../../transaction-submission/rpc/bsc/orderflow-auction.md)
 {% endstep %}
 {% endstepper %}
 

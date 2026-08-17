@@ -1,8 +1,8 @@
 ---
-description: 介紹BlockRazor BSC Tx Trace的服務、應用場景以及接入方法
+description: 介紹BlockRazor BSC Public Mempool Tx Trace的服務、應用場景以及接入方法
 ---
 
-# Tx Trace
+# BSC Public Mempool Tx Trace
 
 ### BSC Tx Trace是什麼
 

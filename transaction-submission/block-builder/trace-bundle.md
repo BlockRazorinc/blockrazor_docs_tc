@@ -1,8 +1,8 @@
 ---
-description: 介紹BlockRazor Block Builder的Trace Bundle接入方法
+description: 介紹BlockRazor BSC Block Builder的Trace Bundle接入方法
 ---
 
-# Trace Bundle
+# BSC Block Builder Trace Bundle
 
 ### 介紹
 

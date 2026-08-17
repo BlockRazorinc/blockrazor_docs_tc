@@ -2,7 +2,7 @@
 description: 介紹集成BlockRazor BSC RPC的eth_sendRawTransaction方法
 ---
 
-# eth\_sendRawTransaction
+# BSC RPC eth\_sendRawTransaction
 
 `eth_sendRawTransaction` 兼容原生的JSON-RPC方法，無需進行額外修改。
 
@@ -11,7 +11,7 @@ description: 介紹集成BlockRazor BSC RPC的eth_sendRawTransaction方法
 ### 端點
 
 {% hint style="info" %}
-项目RPC可參考 [集成RPC](ji-cheng-rpc.md) 获取
+项目RPC可參考 [集成RPC](integration.md) 获取
 {% endhint %}
 
 <table><thead><tr><th width="165.31640625">端點類型</th><th width="483.47265625">URL</th></tr></thead><tbody><tr><td>通用RPC</td><td>https://bsc.blockrazor.xyz</td></tr><tr><td>項目默認RPC</td><td>https://bsc.blockrazor.xyz/&#x3C;rpc_id></td></tr><tr><td>項目自定義RPC</td><td>https://&#x3C;custom_domain>.bsc.blockrazor.xyz</td></tr></tbody></table>

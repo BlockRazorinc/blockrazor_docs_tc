@@ -1,5 +1,6 @@
 ---
 hidden: true
+noIndex: true
 ---
 
 # Dedicate Node
@@ -34,7 +35,7 @@ Dedicate Node基於多雲多活的全球分佈式部署架構和自動擴容等�
 
 #### 高性能
 
-Dedicate Node擁有極致的性能表現，在處理bundle模擬等高消耗請求時實現毫秒級別響應，同時對接高性能網絡的[全節點高速同步](../quan-jie-dian-tong-bu.md)服務，可第一時間同步到最新世界狀態。
+Dedicate Node擁有極致的性能表現，在處理bundle模擬等高消耗請求時實現毫秒級別響應，同時對接高性能網絡的[全節點高速同步](../full-node-synchronization.md)服務，可第一時間同步到最新世界狀態。
 
 
 
@@ -48,7 +49,7 @@ Dedicate Node擁有極致的性能表現，在處理bundle模擬等高消耗請�
 
 **Dedicate Node和全節點同步有什麼關係？**
 
-* Dedicate Node為應用提供專有運行環境，全節點同步僅提供世界狀態高速同步服務，且用戶需要通過自己的全節點進行對接。Dedicate Node已對接高性能網絡的[全節點同步服務](../quan-jie-dian-tong-bu.md)，採購Dedicate Node也能第一時間同步到BSC最新世界狀態。
+* Dedicate Node為應用提供專有運行環境，全節點同步僅提供世界狀態高速同步服務，且用戶需要通過自己的全節點進行對接。Dedicate Node已對接高性能網絡的[全節點同步服務](../full-node-synchronization.md)，採購Dedicate Node也能第一時間同步到BSC最新世界狀態。
 
 
 

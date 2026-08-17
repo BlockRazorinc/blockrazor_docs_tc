@@ -1,8 +1,8 @@
 ---
-description: 介紹BlockRazor Block Builder的Send Bundle以及接入方法
+description: 介紹BlockRazor BSC Block Builder的Send Bundle以及接入方法
 ---
 
-# Send Bundle
+# BSC Block Builder Send Bundle
 
 ### 接口說明
 
@@ -13,7 +13,7 @@ bundle中交易的gas price需不小於BSC Validator要求的最低標準（當�
 
 ### 請求參數
 
-<table><thead><tr><th width="163">參數</th><th width="85.73046875">必選</th><th width="136">格式</th><th width="124">示例</th><th>描述</th></tr></thead><tbody><tr><td>txs</td><td>是</td><td>array[hex]</td><td>["0x…4b", "0x…5c"]</td><td>經過簽名的raw transaction列表</td></tr><tr><td>maxBlockNumber</td><td>否</td><td>uint64</td><td>39177941</td><td>該bundle有效的最大區塊號，默認為當前區塊號+100</td></tr><tr><td>minTimestamp</td><td>否</td><td>uint64</td><td>1710229370</td><td>期望bundle有效的最小Unix秒級時間戳</td></tr><tr><td>maxTimestamp</td><td>否</td><td>uint64</td><td>1710829390</td><td>期望bundle有效的最大Unix秒級時間戳</td></tr><tr><td>revertingTxHashes</td><td>否</td><td>array[hash]</td><td>["0x…c7", "0x…b7"]</td><td>允許revert的交易哈希列表</td></tr><tr><td>noMerge</td><td>否</td><td>bool</td><td>false</td><td>bundle merge可提升區塊價值，加快bundle上鏈速度，如不設置則默認為false（允許bundle merge）</td></tr><tr><td>positionFirst</td><td>否</td><td>bool</td><td>false</td><td>嚴格按優先費用對bundle排序。若該項设置为false（默認），則到達较晚的bundle可能被添加至區塊尾部区域，以保證其在當前區塊成功上鏈。</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th width="163">參數</th><th width="85.73046875">必選</th><th width="136">格式</th><th width="124">示例</th><th>描述</th></tr></thead><tbody><tr><td>txs</td><td>是</td><td>array[hex]</td><td>["0x…4b", "0x…5c"]</td><td>經過簽名的raw transaction列表</td></tr><tr><td>maxBlockNumber</td><td>否</td><td>uint64</td><td>39177941</td><td>該bundle有效的最大區塊號，默認為當前區塊號+100</td></tr><tr><td>minTimestamp</td><td>否</td><td>uint64</td><td>1710229370</td><td>期望bundle有效的最小Unix秒級時間戳</td></tr><tr><td>maxTimestamp</td><td>否</td><td>uint64</td><td>1710829390</td><td>期望bundle有效的最大Unix秒級時間戳</td></tr><tr><td>revertingTxHashes</td><td>否</td><td>array[hash]</td><td>["0x…c7", "0x…b7"]</td><td>允許revert的交易哈希列表</td></tr><tr><td>noMerge</td><td>否</td><td>bool</td><td>false</td><td>bundle merge可提升區塊價值，加快bundle上鏈速度，如不設置則默認為false（允許bundle merge）</td></tr><tr><td>positionFirst</td><td>否</td><td>bool</td><td>false</td><td>嚴格按優先費用對bundle排序。若該項设置为false（默認），則到達较晚的bundle可能被添加至區塊尾部区域，以保證其在當前區塊成功上鏈。</td></tr></tbody></table>
 
 ### 請求示例
 

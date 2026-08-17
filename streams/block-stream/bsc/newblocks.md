@@ -1,8 +1,8 @@
 ---
-description: 介紹BlockRazor BSC NewBlocks的服務、應用場景以及接入方法
+description: 介紹BlockRazor BSC Block Stream的服務、應用場景以及接入方法
 ---
 
-# NewBlocks
+# BSC Block Stream
 
 ### BSC NewBlocks是什麼
 

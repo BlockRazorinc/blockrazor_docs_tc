@@ -1,8 +1,8 @@
 ---
-description: 介紹如何獲取BlockRazor的auth，用於向API發送請求
+description: 介紹獲取BlockRazor auth的步驟，auth可用於向API發送請求
 ---
 
-# Authentication
+# 如何獲取 auth
 
 在對接BlockRazor服務的過程中，如需在請求中設置auth，請按如下步驟獲取：
 

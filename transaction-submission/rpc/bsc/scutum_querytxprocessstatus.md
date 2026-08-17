@@ -1,8 +1,8 @@
 ---
-description: 介紹集成BlockRazor RPC的scutum_queryTxProcessStatus方法
+description: 介紹如何集成scutum_queryTxProcessStatus方法來查詢BSC RPC交易狀態
 ---
 
-# scutum\_queryTxProcessStatus
+# BSC RPC交易狀態查詢
 
 `scutum_queryTxProcessStatus`  用於實時查詢BlockRazor RPC對於交易的處理狀態，目前支持查询BSC交易。
 
