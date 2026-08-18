@@ -1,4 +1,5 @@
 ---
+description: 了解 BlockRazor Ethereum RPC 如何保護交易，並將 90% 的 backrun 收益和 Priority Fee 返還給用戶
 metaLinks:
   canonical: refund.md
 ---

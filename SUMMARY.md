@@ -17,7 +17,7 @@
 ## Transaction Submission
 
 * [Transaction Submission總覽](transaction-submission/overview.md "總覽")
-* [RPC總覽](transaction-submission/rpc/README.md "RPC")
+* [RPC](transaction-submission/rpc/README.md "RPC")
   * [BSC RPC](transaction-submission/rpc/bsc/README.md "BSC")
     * [BSC RPC 端點](transaction-submission/rpc/bsc/endpoint.md "端點")
     * [添加到錢包](get-started/use-cases/individual-trader.md#yi-jian-tian-jia-rpc-dao-qian-bao)
@@ -31,7 +31,7 @@
   * [Ethereum RPC](transaction-submission/rpc/ethereum-rpc/README.md "Ethereum")
     * [Ethereum RPC 端點](transaction-submission/rpc/ethereum-rpc/endpoint.md "端點")
     * [添加到錢包](get-started/use-cases/individual-trader.md#yi-jian-tian-jia-rpc-dao-qian-bao)
-    * [集成 Ethereum RPC](transaction-submission/rpc/ethereum-rpc/integration.md "添加到項目")
+    * [如何在項目中集成 Ethereum RPC](transaction-submission/rpc/ethereum-rpc/integration.md "集成到項目")
     * [Ethereum RPC 返利機制](transaction-submission/rpc/ethereum-rpc/refund.md "返利機制")
     * [Ethereum RPC eth\_sendRawTransaction](transaction-submission/rpc/ethereum-rpc/eth_sendrawtransaction.md "eth_sendRawTransaction")
     * [Ethereum RPC eth\_sendBundle](transaction-submission/rpc/ethereum-rpc/eth_sendbundle.md "eth_sendBundle")

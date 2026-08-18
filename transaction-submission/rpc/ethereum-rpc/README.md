@@ -1,5 +1,7 @@
 ---
-description: 介紹BlockRazor Ethereum RPC的集成方式、接口接入文檔
+description: >-
+  BlockRazor Ethereum RPC 提供標準 JSON-RPC 訪問，以及私有交易路由、MEV 防護、低延遲上鏈和實時 backrun 返利+
+  Gas 返利等能力。
 metaLinks:
   canonical: ./
   alternates:

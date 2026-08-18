@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor BSC RPC的集成方式、接口接入文檔
+description: BlockRazor BSC RPC 提供標準 JSON-RPC 訪問，以及私有交易路由、MEV 防護、低延遲上鏈和實時 backrun 返利等能力。
 layout:
   width: wide
   title:
@@ -67,7 +67,7 @@ MEV 保護主要阻止 sandwich 和 frontrunning 等會傷害用戶的策略。�
 
 <summary>BSC RPC在哪些地區提供服務</summary>
 
-BSC RPC目前分佈式部署於弗吉尼亞、東京、法蘭克福和都柏林
+BSC RPC目前分佈式部署於紐約、東京、法蘭克福和都柏林
 
 </details>
 

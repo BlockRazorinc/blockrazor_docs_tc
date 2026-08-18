@@ -51,10 +51,6 @@ maxbackrun模式下，提交至BSC RPC的交易，會在隱私保護的前提下
 
 </details>
 
-{% openapi-operation spec="BlockRazor-BSC-RPC" path="/" method="post" %}
-[OpenAPI BlockRazor-BSC-RPC](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/a53bb0011f3e056eb9dbaa43acef1894d8608f9612627f3b40b58963a37f0849.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260818%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260818T065653Z&X-Amz-Expires=172800&X-Amz-Signature=a524c35928a200b51709c643783f7d0be740c54fc327b7c53a17393c0e70f385&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-{% endopenapi-operation %}
-
 ### 專屬端點
 
 專屬端點是BlockRazor為用戶提供的專屬交易渠道端點。用戶可在BlockRazor控制台配置專屬端點，比如自定義專屬端點讓URL變得更具識別性、設置交易披露參數和返利地址以接收返利等，在將專屬端點添加到錢包或集成到項目後，可前往控制台查看該專屬端點的交易和返利情況。

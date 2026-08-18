@@ -1,5 +1,5 @@
 ---
-description: BSC RPC 支持實時 Backrun 返利
+description: 了解 BlockRazor BSC RPC 如何通過私有訂單流拍賣保護交易，並將 60% 的可分配 backrun 收益返還給用戶
 metaLinks:
   canonical: refund.md
 ---
