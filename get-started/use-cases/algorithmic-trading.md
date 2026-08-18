@@ -1,5 +1,10 @@
 ---
 description: 介紹量化交易系統的痛點以及如何使用Blockrazor的服務來提升上鏈確定性
+metaLinks:
+  canonical: algorithmic-trading.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/algorithmic-trading
 ---
 
 # 量化交易系统

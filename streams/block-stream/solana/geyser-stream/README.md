@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Geyser Stream的服務、應用場景、關鍵特性以及接入方法
+metaLinks:
+  canonical: ./
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/solana/geyser-stream
 ---
 
-# Geyser Stream
+# Solana Geyser Stream
 
 ### **什麼是Geyser Stream**
 

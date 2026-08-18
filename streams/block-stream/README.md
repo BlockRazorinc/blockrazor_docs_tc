@@ -1,5 +1,9 @@
 ---
 description: 從鏈維度查看具體的Block Stream服務
+metaLinks:
+  canonical: ./
+  alternates:
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream
 ---
 
 # Block Stream

@@ -1,5 +1,9 @@
 ---
 description: 介紹BlockRazor是誰，BlockRazor面向的用戶以及提供的服務，包括Transaction Submission和Streams
+metaLinks:
+  canonical: ./
+  alternates:
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/about-us
 ---
 
 # 關於我們
@@ -10,7 +14,7 @@ BlockRazor 是一家專注於 Web3 基礎設施與 DeFi 交易的研究機構，
 
 ### Transaction Submission
 
-BlockRazor 提供多種[交易發送](transaction-submission/overview.md)模式，以適配不同業務在交易保護、上鏈速度、交易成本方面的需求：
+BlockRazor 提供多種交易發送模式，以適配不同業務在交易保護、上鏈速度、交易成本方面的需求：
 
 * [RPC](transaction-submission/rpc/)：提供標準JSON-RPC方法，為交易提供MEV保護，支持實時返利
 * [Block Builder](transaction-submission/block-builder/): 面向 BSC 的區塊構建服務，為用戶提供高勝率區塊構建承諾與低延遲接入能力

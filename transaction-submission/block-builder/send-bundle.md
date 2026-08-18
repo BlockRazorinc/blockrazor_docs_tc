@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor BSC Block Builder的Send Bundle以及接入方法
+metaLinks:
+  canonical: send-bundle.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/send-bundle
 ---
 
 # BSC Block Builder Send Bundle

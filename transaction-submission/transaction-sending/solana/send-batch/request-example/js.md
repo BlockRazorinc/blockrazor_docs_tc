@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending 模式下Send Batch的JS請求示例
+metaLinks:
+  canonical: js.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-batch/request-example/js
 ---
 
-# Solana Batch Sending JS Example
+# Solana Send Batch JS Example
 
 ### 請求示例
 

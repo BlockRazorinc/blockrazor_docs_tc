@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Base Transaction Sending 模式的eth_sendRawTransaction(tip)接口以及集成方法
+metaLinks:
+  canonical: eth_sendrawtransaction-tip.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/base/eth_sendrawtransaction-tip
 ---
 
 # Base eth\_sendRawTransaction(tip)

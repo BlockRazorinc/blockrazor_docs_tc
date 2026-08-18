@@ -1,8 +1,13 @@
 ---
 description: 介紹如何解析BlockRazor Base FlashBlock
+metaLinks:
+  canonical: parseflashblock.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/base/get-flashblockstream/parseflashblock
 ---
 
-# 解析FlashBlock
+# Base 解析 FlashBlock
 
 FlashBlock的解析方法如下：
 

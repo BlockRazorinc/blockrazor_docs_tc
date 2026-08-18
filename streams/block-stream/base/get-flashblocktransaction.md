@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Base Get FlashBlockTransaction服務以及接入方法
+metaLinks:
+  canonical: get-flashblocktransaction.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/base/get-flashblocktransaction
 ---
 
-# Get FlashBlockTransaction
+# Base Get FlashBlockTransaction
 
 ### Base Get FlashBlockTransaction是什麼
 

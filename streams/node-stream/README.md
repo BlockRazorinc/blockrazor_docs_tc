@@ -1,5 +1,9 @@
 ---
 description: 從鏈維度查看具體的Node Stream服務
+metaLinks:
+  canonical: ./
+  alternates:
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/node-stream
 ---
 
 # Node Stream

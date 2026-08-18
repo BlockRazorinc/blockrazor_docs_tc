@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Robinhood Chain eth_sendRawTransaction的集成方法
+metaLinks:
+  canonical: ./
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain/eth_sendrawtransaction
 ---
 
 # Robinhood Chain eth\_sendRawTransaction

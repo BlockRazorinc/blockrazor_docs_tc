@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending 模式的端點
+metaLinks:
+  canonical: endpoint.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/endpoint
 ---
 
 # Solana Transaction Sending Endpoint

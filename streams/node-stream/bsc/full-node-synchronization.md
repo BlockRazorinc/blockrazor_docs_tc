@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor BSC全節點同步的服務、優勢、目標用戶以及接入方法
+metaLinks:
+  canonical: full-node-synchronization.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/node-stream/bsc/full-node-synchronization
 ---
 
 # BSC 全節點同步

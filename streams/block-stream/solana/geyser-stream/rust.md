@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Geyser Stream的Rust請求方法
+metaLinks:
+  canonical: rust.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/solana/geyser-stream/rust
 ---
 
-# Rust
+# Solana Geyser Stream Rust 訂閱示例
 
 ### 快速開始
 

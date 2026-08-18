@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending模式下Send Transaction in Binary的集成方法
+metaLinks:
+  canonical: send-in-binary.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-transaction/send-in-binary
 ---
 
-# Solana Transaction Sending in Binary
+# Solana Send Transaction in Binary
 
 ### 介紹
 

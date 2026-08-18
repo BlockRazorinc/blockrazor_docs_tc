@@ -1,5 +1,9 @@
 ---
 description: 介紹獲取BlockRazor auth的步驟，auth可用於向API發送請求
+metaLinks:
+  canonical: authentication.md
+  alternates:
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/authentication
 ---
 
 # 如何獲取 auth

@@ -1,5 +1,9 @@
 ---
 description: 介紹BlockRazor的Streams，Streams提供的能力以及如何選擇Stream
+metaLinks:
+  canonical: overview.md
+  alternates:
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/overview
 ---
 
 # Streams 總覽

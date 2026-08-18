@@ -1,5 +1,10 @@
 ---
 description: 介紹集成BlockRazor Ethereum RPC的eth_sendRawTransaction的方法
+metaLinks:
+  canonical: eth_sendrawtransaction.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/ethereum/eth_sendrawtransaction
 ---
 
 # Ethereum RPC eth\_sendRawTransaction

@@ -1,5 +1,10 @@
 ---
 description: 介紹項目方如何集成BlockRazor BSC RPC的eth_sendBundle方法
+metaLinks:
+  canonical: eth_sendbundle.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/bsc/eth_sendbundle
 ---
 
 # BSC RPC eth\_sendBundle
@@ -10,7 +15,7 @@ description: 介紹項目方如何集成BlockRazor BSC RPC的eth_sendBundle方�
 項目RPC可前往 [集成RPC](integration.md) 獲取
 {% endhint %}
 
-<table><thead><tr><th width="165.31640625">端点类型</th><th width="483.47265625">URL</th></tr></thead><tbody><tr><td>通用RPC</td><td>https://bsc.blockrazor.xyz</td></tr><tr><td>項目默認RPC</td><td>https://bsc.blockrazor.xyz/&#x3C;rpc_id></td></tr><tr><td>項目自定義RPC</td><td>https://&#x3C;custom_domain>.bsc.blockrazor.xyz</td></tr></tbody></table>
+<table><thead><tr><th width="165.31640625">端点类型</th><th width="457.984375">URL</th></tr></thead><tbody><tr><td>通用RPC</td><td>https://bsc.blockrazor.xyz</td></tr><tr><td>項目默認RPC</td><td>https://bsc.blockrazor.xyz/&#x3C;rpc_id></td></tr><tr><td>項目自定義RPC</td><td>https://&#x3C;custom_domain>.bsc.blockrazor.xyz</td></tr></tbody></table>
 
 ### 請求參數
 

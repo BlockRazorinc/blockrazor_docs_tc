@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending 模式的Keep Alive集成方法
+metaLinks:
+  canonical: keep-alive.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/keep-alive
 ---
 
 # Solana Transaction Sending Keep Alive

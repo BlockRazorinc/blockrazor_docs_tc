@@ -1,5 +1,10 @@
 ---
 description: 介紹如何集成scutum_queryTxProcessStatus方法來查詢BSC RPC交易狀態
+metaLinks:
+  canonical: scutum_querytxprocessstatus.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/bsc/scutum_querytxprocessstatus
 ---
 
 # BSC RPC交易狀態查詢

@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Block Builder的Send PrivateTransaction接入方法
+metaLinks:
+  canonical: send-privatetransaction.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/send-privatetransaction
 ---
 
-# Send PrivateTransaction
+# BSC Block Builder Send PrivateTransaction
 
 ### 接口說明
 

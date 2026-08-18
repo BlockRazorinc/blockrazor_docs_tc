@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Transaction Sending模式，以及提供的服務和接口接入文檔
+metaLinks:
+  canonical: ./
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending
 ---
 
 # Transaction Sending

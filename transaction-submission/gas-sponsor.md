@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor的Gas Sponsor，以及其核心特性和接入流程
+metaLinks:
+  canonical: gas-sponsor.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/gas-sponsor
 ---
 
 # Gas Sponsor

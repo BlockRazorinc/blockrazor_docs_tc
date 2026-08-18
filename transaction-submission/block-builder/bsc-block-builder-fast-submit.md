@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor BSC Block Builder的Fast Submit以及接入方式
+metaLinks:
+  canonical: bsc-block-builder-fast-submit.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/fast-submit
 ---
 
 # BSC Block Builder Fast Submit

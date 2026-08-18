@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending模式下Send Bundle的Rust請求示例
+metaLinks:
+  canonical: rust.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-bundle/rust
 ---
 
-# Solana Bundle Sending Rust Example
+# Solana Send Bundle Rust Example
 
 ### 請求示例
 

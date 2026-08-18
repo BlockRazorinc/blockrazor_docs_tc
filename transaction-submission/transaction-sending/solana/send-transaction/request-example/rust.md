@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending 模式下Send Transaction的Rust請求示例
+metaLinks:
+  canonical: rust.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-transaction/request-example/rust
 ---
 
-# Solana Transaction Sending Rust Example
+# Solana Send Transaction Rust Example
 
 {% hint style="info" %}
 Solana發送交易的服務不和訂閱計劃綁定，可前往 [Authentication](../../../../../get-started/authentication.md) 獲取API KEY，默认限流为3 TPS。如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理

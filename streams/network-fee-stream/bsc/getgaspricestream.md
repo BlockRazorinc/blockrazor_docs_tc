@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor BSC GetGasPriceStream的接入方法
+metaLinks:
+  canonical: getgaspricestream.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/network-fee-stream/bsc/getgaspricestream
 ---
 
-# GetGasPriceStream
+# BSC GetGasPriceStream
 
 ### **介紹**
 

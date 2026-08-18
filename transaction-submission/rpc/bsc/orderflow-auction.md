@@ -1,5 +1,10 @@
 ---
 description: 介紹Searcher集成BlockRazor BSC RPC的eth_sendMevBundle方法來進行訂單流拍賣
+metaLinks:
+  canonical: orderflow-auction.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/bsc/orderflow-auction
 ---
 
 # BSC RPC 訂單流競拍

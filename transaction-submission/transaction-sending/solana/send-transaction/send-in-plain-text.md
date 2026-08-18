@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending模式下Send Transaction in Plain Text的集成方法
+metaLinks:
+  canonical: send-in-plain-text.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-transaction/send-in-plain-text
 ---
 
-# Solana Transaction Sending in Plain Text
+# Solana Send Transaction in Plain Text
 
 ### 介紹
 

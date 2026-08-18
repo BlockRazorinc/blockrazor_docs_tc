@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending模式下Send Bundle的Go請求示例
+metaLinks:
+  canonical: go.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-bundle/go
 ---
 
-# Solana Bundle Sending Go Example
+# Solana Send Bundle Go Example
 
 ### 請求示例
 

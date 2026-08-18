@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Geyser Stream的JS請求方法
+metaLinks:
+  canonical: js.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/solana/geyser-stream/js
 ---
 
-# JS
+# Solana Geyser Stream JS 訂閱示例
 
 ### 快速開始
 

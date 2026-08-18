@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Base Get FlashBlockStream服務、優勢以及接入方法
+metaLinks:
+  canonical: ./
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/base/get-flashblockstream
 ---
 
-# Get FlashBlockStream
+# Base Get FlashBlockStream
 
 ### Base Get FlashBlockStream是什麼
 

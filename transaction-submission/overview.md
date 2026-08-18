@@ -2,6 +2,11 @@
 description: >-
   介紹Transaction Submission的模式，包括RPC、Block Builder、Transaction Sending、Gas
   Sponsor等模式，以及如何根據場景選擇模式
+metaLinks:
+  canonical: overview.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/overview
 ---
 
 # Transaction Submission總覽

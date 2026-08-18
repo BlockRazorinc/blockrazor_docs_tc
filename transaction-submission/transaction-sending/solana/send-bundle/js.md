@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending模式下Send Bundle的JS請求示例
+metaLinks:
+  canonical: js.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-bundle/js
 ---
 
-# Solana Bundle Sending JS Example
+# Solana Send Bundle JS Example
 
 ### 請求示例
 

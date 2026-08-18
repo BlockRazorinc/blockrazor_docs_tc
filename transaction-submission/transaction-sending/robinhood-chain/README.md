@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Robinhood Chain Transaction Sending 的集成方式、接口接入文檔
+metaLinks:
+  canonical: ./
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain
 ---
 
 # Robinhood Chain Transaction Sending

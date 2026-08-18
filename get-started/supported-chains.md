@@ -1,5 +1,10 @@
 ---
 description: 目前BlockRazor支持Solana, BSC, Ethereum, Base和Robinhood
+metaLinks:
+  canonical: supported-chains.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/supported-chains
 ---
 
 # 我們支持哪些鏈
@@ -22,4 +27,4 @@ description: 目前BlockRazor支持Solana, BSC, Ethereum, Base和Robinhood
 
 ### Base
 
-<table><thead><tr><th width="240.02734375">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/fast/base/eth_sendrawtransaction">Transaction Sending</a></li></ul></td></tr><tr><td>Streams</td><td><ul><li><a href="../streams/block-stream/base/">Block Stream</a></li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="240.02734375">服務</th><th>目錄</th></tr></thead><tbody><tr><td>Transaction Submission</td><td><ul><li><a href="https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/base/eth_sendrawtransaction-tip">Transaction Sending</a></li></ul></td></tr><tr><td>Streams</td><td><ul><li><a href="../streams/block-stream/base/">Block Stream</a></li></ul></td></tr></tbody></table>

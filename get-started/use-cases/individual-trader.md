@@ -1,5 +1,10 @@
 ---
 description: 介紹個人交易者的痛點以及如何添加BlockRazor RPC到錢包
+metaLinks:
+  canonical: individual-trader.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/individual-trader
 ---
 
 # 個人交易者

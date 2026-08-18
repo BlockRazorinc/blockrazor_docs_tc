@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Geyser Stream的Go請求方法
+metaLinks:
+  canonical: go.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/solana/geyser-stream/go
 ---
 
-# Go
+# Solana Geyser Stream Go 訂閱示例
 
 ### 快速開始
 

@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Robinhood Chain RPC eth_sendBatch的集成方法
+metaLinks:
+  canonical: send-batch.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain/eth_sendbatch
 ---
 
 # Robinhood Chain eth\_sendBatch

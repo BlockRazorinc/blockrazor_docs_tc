@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor BSC Block Builder的Trace Bundle接入方法
+metaLinks:
+  canonical: trace-bundle.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/trace-bundle
 ---
 
 # BSC Block Builder Trace Bundle

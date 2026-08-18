@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Transaction Sending 模式下Send Batch的Go請求示例
+metaLinks:
+  canonical: go.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-batch/request-example/go
 ---
 
-# Solana Batch Sending Go Example
+# Solana Send Batch Go Example
 
 ### 請求示例
 

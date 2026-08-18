@@ -1,5 +1,10 @@
 ---
 description: 介紹BlockRazor Robinhood Chain Transaction Sending 的端點
+metaLinks:
+  canonical: endpoint.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain/endpoint
 ---
 
 # Robinhood Chain Transaction Sending 端點

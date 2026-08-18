@@ -1,5 +1,10 @@
 ---
 description: 介紹Searcher在處理bundle過程中的痛點以及如何使用Blockrazor的服務來提升競爭力
+metaLinks:
+  canonical: searcher.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/searcher
 ---
 
 # Searcher

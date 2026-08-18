@@ -1,5 +1,10 @@
 ---
 description: 介紹Trading Bot在信號監聽和交易發送場景下的痛點，以及如何使用Blockrazor的服務來擴展、加速信號監聽和交易發送
+metaLinks:
+  canonical: trading-bot.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/trading-bot
 ---
 
 # Trading Bot

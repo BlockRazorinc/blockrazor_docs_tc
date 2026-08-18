@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Block Builder的Call Bundle接入方法
+metaLinks:
+  canonical: call-bundle.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/call-bundle
 ---
 
-# Call Bundle
+# BSC Block Builder Call Bundle
 
 ### 接口說明
 

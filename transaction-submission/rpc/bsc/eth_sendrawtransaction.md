@@ -1,5 +1,10 @@
 ---
 description: 介紹集成BlockRazor BSC RPC的eth_sendRawTransaction方法
+metaLinks:
+  canonical: eth_sendrawtransaction.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/bsc/eth_sendrawtransaction
 ---
 
 # BSC RPC eth\_sendRawTransaction

@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Solana Get TransactionFee的接入方法
+metaLinks:
+  canonical: get-transactionfee.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/network-fee-stream/solana/get-transactionfee
 ---
 
-# Get TransactionFee
+# Solana Get TransactionFee
 
 ### **介紹**
 

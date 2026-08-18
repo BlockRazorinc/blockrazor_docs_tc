@@ -1,8 +1,13 @@
 ---
 description: 介紹BlockRazor Block Builder的eth_sendBackBundle(0 Gwei)以及接入方法
+metaLinks:
+  canonical: send-backbundle.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/send-backbundle
 ---
 
-# Send BackBundle
+# BSC Block Builder 0 Gwei
 
 ### 接口說明
 

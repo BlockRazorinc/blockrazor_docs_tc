@@ -1,8 +1,13 @@
 ---
 description: 介紹Robinhood Chain Sequencer Feed的定義、優勢、benchmark、價格和接入方法
+metaLinks:
+  canonical: sequencer-feed.md
+  alternates:
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/node-stream/robinhood-chain/sequencer-feed
 ---
 
-# Sequencer Feed
+# Robinhood Chain Sequencer Feed
 
 ### Sequencer Feed是什麼
 

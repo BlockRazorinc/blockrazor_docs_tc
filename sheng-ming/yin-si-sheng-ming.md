@@ -1,5 +1,9 @@
 ---
 description: 介紹BlockRazor的隱私聲明
+metaLinks:
+  canonical: yin-si-sheng-ming.md
+  alternates:
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/statement
 ---
 
 # 隱私聲明
