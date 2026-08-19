@@ -21,13 +21,17 @@ Fast Submit 不改變交易邏輯，也不要求用戶重寫現有提交流程�
 
 根據 benchmark，Fast Submit 相比標準提交鏈路在跨洋鏈路下可降低約 50ms 延遲，在內陸跨區域鏈路下可降低約 20ms 延遲。
 
-#### 對於交易流項目
+1. **對於交易流項目**
 
 例如 DEX、Wallet 等交易流項目，交易發送時機往往不受控制。此時，更短的提交鏈路意味著交易有更高概率更早進入 Builder 的處理窗口，從而為用戶提供極致的 0-block 上鏈體驗。 以當前 BSC 約 450ms 的出塊時間作為近似參考，50ms 和 20ms 的時延縮短，大致對應約 11% 和 4.4% 的時間窗口改善；如果未來區塊時間進一步縮短到約 250ms，對應改善可進一步擴大到約 20% 和 8%。
 
-#### 對於同塊競爭排序的交易系統&#x20;
+2. **對於同塊競爭排序的交易系統**&#x20;
 
 對於Backrun、Sniping、Copy Trading等策略型交易系統，Fast Submit 的價值不只是“更容易趕上”，還在於在相同競爭條件和相同的Builder 到達時點下，可以為策略計算留出更充分的計算時間。
+
+### 價格
+
+<table><thead><tr><th width="134.90625">支付方式</th><th width="370.83984375">價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td><strong>$100</strong> / 日<br><strong>$1000</strong> / 月</td><td><a href="https://blockrazor.io/#/portal/pricing?purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_fast_submit&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td><strong>$1250 / 月</strong><br>與其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### 為什麼 Fast Submit 更快、更穩
 

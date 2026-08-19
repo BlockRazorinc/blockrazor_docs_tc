@@ -19,7 +19,7 @@ metaLinks:
 採購Trace Bundle服務的用戶可同時訪問控制台中的Bundle Explorer
 {% endhint %}
 
-<table><thead><tr><th width="135.4921875">用戶類型</th><th width="257.8359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>付費用戶</td><td>1000筆 / 天</td><td>$150 / 日<br>$1500 / 月<br><br><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_bundle_tracing&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="135.4921875">用戶類型</th><th width="155.27734375">限流</th><th width="221.04296875">價格</th><th width="207.00390625">操作</th></tr></thead><tbody><tr><td>付費用戶</td><td>1000筆 / 天</td><td>$150 / 日<br>$1500 / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_tx_trace&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### 請求參數
 

@@ -33,7 +33,7 @@ CL/EL 客戶端同步的價值，不只是“幫助節點連上網絡”，而�
 
 ### 價格
 
-價格為$80 / 個 / 日和$800 / 個 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=ethereum&#x26;serviceId=ethereum_enode&#x26;billing=day" class="button primary small">訂閱</a>
+<table><thead><tr><th width="177.73046875">支付方式</th><th>價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$80 / client / 日<br>$800 / client / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=ethereum&#x26;serviceId=ethereum_enode&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / month<br>和其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### Relay IP
 

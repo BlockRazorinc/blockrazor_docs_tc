@@ -15,10 +15,6 @@ Searcher可以訂閱 [Private Mempool ](../../../streams/mempool/bsc/private-mem
 
 此外，Searcher也可以跳過bundle訂閱，直接將bundle發送至BlockRazor RPC，憑借高性能網絡的網絡加速服務，BlockRazor RPC可以極低延遲將bundle轉發至主流builders，无需重复对接builder接口。
 
-{% hint style="info" %}
-在BSC中，`eth_sendMevBundle`允許在bundle中包含0 gwei的交易，但bundle中交易（public mempool中的交易除外）的平均gasPrice仍需不小於0.05 gwei。
-{% endhint %}
-
 ### 競拍機制
 
 <figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption><p>bundle流轉</p></figcaption></figure>

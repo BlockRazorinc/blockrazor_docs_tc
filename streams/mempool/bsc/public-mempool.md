@@ -37,17 +37,17 @@ Public Mempool 是 BlockRazor 基于 [BEF](../../../he-xin-ji-shu/blockchain-edg
 
 以上結果表明，BlockRazor 在交易傳播鏈路上展現出穩定的優先接收能力，能夠在絕大多數可比樣本中早於普通 Node 捕獲交易。
 
-### 端點
-
-<table><thead><tr><th width="154">地區</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50051</td></tr><tr><td>東京</td><td>63.254.162.18:50051</td></tr><tr><td>都柏林</td><td>141.98.217.82:50051</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50051</td></tr></tbody></table>
-
 ### 價格
 
-價格為$30 / 條 / 日和$300 / 條 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_public_mempool&#x26;billing=day" class="button primary small">訂閱</a>
+<table><thead><tr><th width="167.296875">支付方式</th><th>價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$30 / stream / 日<br>$300 / stream / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_public_mempool&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / 月 <br>和其他9項服務打包購買 </td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 數據流的可訂閱數量按所有地區共享計算。比如購買 1 條，則僅可在 1 個地區訂閱，其他地區將無法訂閱。
 {% endhint %}
+
+### 端點
+
+<table><thead><tr><th width="154">地區</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50051</td></tr><tr><td>東京</td><td>63.254.162.18:50051</td></tr><tr><td>都柏林</td><td>141.98.217.82:50051</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50051</td></tr></tbody></table>
 
 ### 請求參數
 

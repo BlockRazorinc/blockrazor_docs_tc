@@ -31,17 +31,13 @@ NewBlocks 基於 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 分發�
 
 這表明在新區塊到達這一關鍵鏈路上，BlockRazor 能夠更穩定地搶先於普通 Node 接收到區塊數據。
 
+### 價格
+
+<table><thead><tr><th width="167.296875">支付方式</th><th>價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$50 / stream / 日<br>$500 / stream / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_block_stream&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / 月 <br>和其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
+
 ### 端點
 
 <table><thead><tr><th width="154">地區</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50051</td></tr><tr><td>東京</td><td>63.254.162.18:50051</td></tr><tr><td>都柏林</td><td>141.98.217.82:50051</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50051</td></tr></tbody></table>
-
-### 價格
-
-價格為$50 / 條 / 日和$500 / 條 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_block_stream&#x26;billing=day" class="button primary small">訂閱</a>
-
-{% hint style="info" %}
-數據流的可訂閱數量按所有地區共享計算。比如購買 1 條，則僅可在 1 個地區訂閱，其他地區將無法訂閱。
-{% endhint %}
 
 ### 請求參數
 

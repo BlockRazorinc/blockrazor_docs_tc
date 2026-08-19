@@ -21,17 +21,17 @@ NewBlocks 基於 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 分發�
 * **區塊級數據分析：** 獲取區塊頭、交易列表與後續出塊者信息，用於區塊研究、節點觀測與網絡狀態分析
 * **策略數據輸入：** 作為交易系統的 confirmed 數據源，與 Public Mempool、Transaction Submission 等能力配合使用，構建更完整的監控與執行鏈路
 
-### 端點
-
-<table><thead><tr><th width="154">地區</th><th>Relay IP:Port</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50061</td></tr><tr><td>東京</td><td>63.254.162.18:50061</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50061</td></tr></tbody></table>
-
 ### 價格
 
-價格為$50 / 條 / 日和$500 / 條 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=ethereum&#x26;serviceId=ethereum_block_stream&#x26;billing=day" class="button primary small">訂閱</a>
+<table><thead><tr><th width="167.296875">支付方式</th><th>價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$50 / stream / 日<br>$500 / stream / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=ethereum&#x26;serviceId=ethereum_block_stream&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / 月 <br>和其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 數據流的可訂閱數量按所有地區共享計算。比如購買 1 條，則僅可在 1 個地區訂閱，其他地區將無法訂閱。
 {% endhint %}
+
+### 端點
+
+<table><thead><tr><th width="154">地區</th><th>Relay IP:Port</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50061</td></tr><tr><td>東京</td><td>63.254.162.18:50061</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50061</td></tr></tbody></table>
 
 ### 請求示例
 

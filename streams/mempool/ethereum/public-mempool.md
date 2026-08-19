@@ -27,17 +27,17 @@ Public Mempool 是 BlockRazor 基于 [BEF](../../../he-xin-ji-shu/blockchain-edg
 * **Sniping機會發現：**&#x5728;新池上線、流動性注入或目標交易出現時，盡早捕捉公開市場中的首輪信號
 * **策略實時數據輸入**：作為交易系統的實時輸入源，與 Block Stream、Node Stream、RPC 或 Block Builder 等能力配合使用，構建更完整的監控與執行鏈路
 
+### 價格
+
+<table><thead><tr><th width="167.296875">支付方式</th><th>價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$30 / stream / 日<br>$300 / stream / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=ethereum&#x26;serviceId=ethereum_public_mempool&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / 月<br>和其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
+
+{% hint style="info" %}
+The number of data streams that can be subscribed to is calculated on a shared basis across all regions. For example, if you purchase one stream, you can only subscribe in one region; you will not be able to subscribe in other regions.
+{% endhint %}
+
 ### 端點
 
 <table><thead><tr><th width="154">地區</th><th>Relay IP:Port</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50061</td></tr><tr><td>東京</td><td>63.254.162.18:50061</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50061</td></tr></tbody></table>
-
-### 價格
-
-價格為$30 / 條 / 日和$300 / 條 / 月。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=ethereum&#x26;serviceId=ethereum_public_mempool&#x26;billing=day" class="button primary small">訂閱</a>
-
-{% hint style="info" %}
-數據流的可訂閱數量按所有地區共享計算。比如購買 1 條，則僅可在 1 個地區訂閱，其他地區將無法訂閱。
-{% endhint %}
 
 ### 請求示例
 

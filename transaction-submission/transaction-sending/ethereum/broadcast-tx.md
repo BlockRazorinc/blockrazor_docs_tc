@@ -13,6 +13,10 @@ metaLinks:
 
 <table><thead><tr><th width="154">地區</th><th>Relay IP:Port</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50061</td></tr><tr><td>東京</td><td>63.254.162.18:50061</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50061</td></tr></tbody></table>
 
+### 價格 & 限流
+
+<table><thead><tr><th width="148.92578125">支付方式</th><th width="241.35546875">限流</th><th width="197.57421875">價格</th><th>操作</th></tr></thead><tbody><tr><td>免費</td><td><ul><li>TPS：10 Txs / 5s</li><li>每日交易上限：10</li></ul></td><td>Free</td><td>-</td></tr><tr><td>Personalized</td><td><ul><li>TPS：100 Txs / 5s</li><li>每日交易上限：100000</li></ul></td><td>$50 / 日<br>$500 / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=ethereum&#x26;serviceId=ethereum_fast_tx&#x26;billing=day" class="button primary small">Subscribe</a></td></tr></tbody></table>
+
 ### SendTx
 
 #### **請求參數**
