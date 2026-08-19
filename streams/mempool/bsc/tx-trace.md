@@ -46,7 +46,7 @@ Tx Trace 主要適用於查詢已經進入公開傳播過程的交易在不同�
 
 ### 價格 & 限流
 
-<table><thead><tr><th width="132.03515625">支付方式</th><th width="197.1875">限流</th><th width="265.8828125">價格</th><th width="127.80078125">操作</th></tr></thead><tbody><tr><td>免費</td><td>20 次請求 / day</td><td>Free</td><td>-</td></tr><tr><td>Personalized</td><td>500 次請求 / day</td><td>$20 / 月<br>$200 / 月</td><td><a href="https://blockrazor.io/#/portal/pricing?purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_tx_trace&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>500 次請求 / day</td><td>$1250 / month<br>和其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="132.03515625">支付方式</th><th width="197.1875">限流</th><th width="265.8828125">價格</th><th width="127.80078125">操作</th></tr></thead><tbody><tr><td>免費</td><td>20 次請求 / day</td><td>Free</td><td>-</td></tr><tr><td>Personalized</td><td>500 次請求 / day</td><td>$20 / 日</td><td><a href="https://blockrazor.io/#/portal/pricing?purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_tx_trace&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>500 次請求 / day</td><td>$1250 / month<br>和其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### 端點
 
