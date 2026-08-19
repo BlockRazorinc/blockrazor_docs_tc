@@ -35,7 +35,7 @@ metaLinks:
 {% endtab %}
 
 {% tab title="Robinhood" %}
-<table><thead><tr><th width="136.76171875">服務</th><th width="308.6640625">描述</th><th width="139.51171875">價格</th><th width="100.96484375">動作</th></tr></thead><tbody><tr><td><a href="../streams/node-stream/robinhood-chain/sequencer-feed.md">Node Stream</a></td><td>以超低延遲接收 Robinhood Chain Sequencer Feed，持續更新節點狀態並讓策略保持領先</td><td>$80 / 個 / 日<br>$800 / 個 / 月</td><td> <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_fast_tx&#x26;billing=day" class="button primary medium">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="136.76171875">服務</th><th width="308.6640625">描述</th><th width="139.51171875">價格</th><th width="100.96484375">動作</th></tr></thead><tbody><tr><td><a href="../streams/node-stream/robinhood-chain/sequencer-feed.md">Node Stream</a></td><td>以超低延遲接收 Robinhood Chain Sequencer Feed，持續更新節點狀態並讓策略保持領先</td><td>$80 / 個 / 日<br>$800 / 個 / 月</td><td> <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_feed_stream&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Solana" %}

@@ -57,7 +57,7 @@ Benchmark數據如下：
 
 ### 價格
 
-價格為$80 / stream / 日和$800 / stream / 月。 <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_fast_tx&#x26;billing=day" class="button primary medium">訂閱</a>
+價格為$80 / stream / 日和$800 / stream / 月。 <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_feed_stream&#x26;billing=day" class="button primary small">訂閱</a>
 
 ### 端點
 
@@ -67,7 +67,7 @@ Benchmark數據如下：
 
 {% stepper %}
 {% step %}
-<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_fast_tx&#x26;billing=day" class="button primary medium">訂閱</a> **BlockRazor Sequencer Feed**
+<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_feed_stream&#x26;billing=day" class="button primary small">訂閱</a> **BlockRazor Sequencer Feed**
 {% endstep %}
 
 {% step %}
