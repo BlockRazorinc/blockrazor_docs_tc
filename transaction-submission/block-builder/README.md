@@ -65,9 +65,17 @@ Block Builder 當前支持以下幾類核心能力：
 
 两者的核心区别在于 Bundle 的提交路径和最终到达的目标不同。
 
-提交 [Bundle](/broken/pages/RrHwbLZI5iNwmmY7gGLL) 至 **BlockRazor RPC** 时，BlockRazor RPC 会将 Bundle 低延迟转发给主流 builders。这种方式更适合作为统一接入入口，用户不需要逐个对接不同 builder，即可完成 Bundle 提交。
+提交 [Bundle](../rpc/bsc/eth_sendbundle.md) 至 **BlockRazor RPC** 时，BlockRazor RPC 会将 Bundle 低延迟转发给主流 builders。这种方式更适合作为统一接入入口，用户不需要逐个对接不同 builder，即可完成 Bundle 提交。
 
 提交 Bundle 至 **Block Builder** 时，Bundle 会直接发送到 BlockRazor Builder。它更适合明确希望使用 BlockRazor Builder 能力与接入路径的场景。
+
+</details>
+
+<details>
+
+<summary><strong>如何理解bundle的平均gas price需不小於0.05 gwei？</strong></summary>
+
+假設一個 Bundle 中有 3 筆交易 `{tx1, tx2, tx3}`，其中 `tx1` 來自 mempool，BlockRazor Builder 會排除 `tx1`，僅計算 `tx2` 和 `tx3` 的平均 gas price。若 `tx3` 額外支付 tip 給 Builder，則該 tip 金額會加入計算公式的分子，分母仍只計算 `tx2` 和 `tx3` 的 gas used。計算公式為：`(tx2.gas price × tx2.gas used + tx3.gas price × tx3.gas used + tx3.tip) / (tx2.gas used + tx3.gas used)`。
 
 </details>
 
