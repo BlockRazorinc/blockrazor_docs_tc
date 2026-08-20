@@ -10,11 +10,11 @@ metaLinks:
 
 BlockRazor 是一家專注於 Web3 基礎設施與 DeFi 交易的研究機構，聚焦解決真實交易場景中的關鍵問題，並將[研究成果](https://blockrazor.io/zh/blog/)持續沉澱為可落地的基礎設施產品與服務，為追求卓越的構建者打造分佈全球的多鏈高性能基礎設施體系。
 
-通過長期研究和工程實踐，BlockRazor 面向 Wallets、DEXs、Trading Bots、Searchers 和量化交易系統，提供覆蓋 Transaction Submission 和 Streams的一體化能力，幫助客戶在 Solana、Ethereum、BSC、 Robinhood和 Base 等主流公鏈上獲得更快的區塊交易信號和更優的交易執行結果。
+通過長期研究和工程實踐，BlockRazor 面向 Wallets、DEXs、Trading Bots、Searchers 和量化交易系統，提供覆蓋 Transaction Submission 和 Streams的一體化能力，幫助客戶在 Solana、Ethereum、BSC、 Robinhood Chain 和 Base 等主流公鏈上獲得更快的區塊交易信號和更優的交易執行結果。
 
 ### Get Started
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>獲取Auth Token</td><td><a href="get-started/authentication.md">authentication.md</a></td></tr><tr><td>免費開始</td><td><a href="get-started/start-for-free.md">start-for-free.md</a></td></tr><tr><td>訂閱服務</td><td><a href="get-started/subscription-service.md">subscription-service.md</a></td></tr><tr><td>Trading Bot</td><td><a href="get-started/use-cases/trading-bot.md">trading-bot.md</a></td></tr><tr><td>Searcher</td><td><a href="get-started/use-cases/searcher.md">searcher.md</a></td></tr><tr><td>量化交易系統</td><td><a href="get-started/use-cases/algorithmic-trading.md">algorithmic-trading.md</a></td></tr><tr><td>BSC</td><td><a href="get-started/supported-chains.md#bsc">#bsc</a></td></tr><tr><td>Robinhood</td><td><a href="get-started/supported-chains.md#robinhood">#robinhood</a></td></tr><tr><td>Solana</td><td><a href="get-started/supported-chains.md#solana">#solana</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>獲取Auth Token</td><td><a href="get-started/authentication.md">authentication.md</a></td></tr><tr><td>免費開始</td><td><a href="get-started/start-for-free.md">start-for-free.md</a></td></tr><tr><td>訂閱服務</td><td><a href="get-started/subscription-service.md">subscription-service.md</a></td></tr><tr><td>Trading Bot</td><td><a href="get-started/use-cases/trading-bot.md">trading-bot.md</a></td></tr><tr><td>Searcher</td><td><a href="get-started/use-cases/searcher.md">searcher.md</a></td></tr><tr><td>量化交易系統</td><td><a href="get-started/use-cases/algorithmic-trading.md">algorithmic-trading.md</a></td></tr><tr><td>BSC</td><td><a href="get-started/supported-chains.md#bsc">#bsc</a></td></tr><tr><td>Robinhood Chain</td><td><a href="get-started/supported-chains.md#robinhood">#robinhood</a></td></tr><tr><td>Solana</td><td><a href="get-started/supported-chains.md#solana">#solana</a></td></tr></tbody></table>
 
 ### Streams
 

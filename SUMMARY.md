@@ -5,7 +5,7 @@
 * [關於我們](README.md "關於我們")
 * [我們支持哪些鏈](get-started/supported-chains.md "支持的鏈")
 * [免費發送交易](get-started/start-for-free.md "免費開始")
-* [訂閱服務](get-started/subscription-service.md)
+* [價格](get-started/subscription-service.md)
 * [如何獲取 Auth Token](get-started/authentication.md "獲取 Auth Token")
 * [面向哪些用戶](get-started/use-cases/README.md "用戶案例")
   * [錢包/去中心化交易所](get-started/use-cases/wallet-dex.md)
