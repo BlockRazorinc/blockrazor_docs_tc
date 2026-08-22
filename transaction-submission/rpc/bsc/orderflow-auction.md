@@ -11,7 +11,7 @@ metaLinks:
 
 ### 介绍
 
-Searcher可以訂閱 [Private Mempool ](../../../streams/mempool/bsc/private-mempool.md)執行backrun策略，再將[backrun bundle](orderflow-auction.md#qing-qiu-shi-li)發送至BlockRazor RPC參與競拍獲得收益。
+Searcher可以訂閱 [Private Mempool ](../../../streams/mempool/bsc/private-mempool.md)執行backrun策略，再將backrun bundle發送至BlockRazor RPC參與競拍獲得收益。
 
 此外，Searcher也可以跳過bundle訂閱，直接將bundle發送至BlockRazor RPC，憑借高性能網絡的網絡加速服務，BlockRazor RPC可以極低延遲將bundle轉發至主流builders，无需重复对接builder接口。
 
@@ -37,7 +37,7 @@ interface IProxyBid {
 }
 ```
 
-競拍代理合約地址（proxyBidContract）、refundAddress和refundCfg可以在[Private Mempool](/broken/pages/NXkreaYlqBUKcNyRE5Zf)中獲取，msg.value（即競拍金額）必須大於0。
+競拍代理合約地址（proxyBidContract）、refundAddress和refundCfg可以在[Private Mempool](../../../streams/mempool/ethereum/private-mempool.md)中獲取，msg.value（即競拍金額）必須大於0。
 
 參數正確性會由BlockRazor RPC嚴格校驗。請不要向refundAddress或競拍代理合約地址直接轉賬或執行其他可能引起上述賬戶餘額變化的操作。
 
@@ -59,7 +59,7 @@ interface IProxyBid {
 
 hint針對txs中的交易設置披露信息，如果設為true則視為披露該交易字段，false視為不披露該交易字段，如不設置，則默認為false。
 
-<table><thead><tr><th width="163">參數</th><th width="84">必填</th><th width="89">格式</th><th width="82">示例</th><th>備注</th></tr></thead><tbody><tr><td>hash</td><td>否</td><td>bool</td><td>true</td><td>交易哈希</td></tr><tr><td>from</td><td>否</td><td>bool</td><td>false</td><td>交易的發起方地址</td></tr><tr><td>to</td><td>否</td><td>bool</td><td>true</td><td>交易的接收方地址</td></tr><tr><td>value</td><td>否</td><td>bool</td><td>false</td><td>交易value</td></tr><tr><td>nonce</td><td>否</td><td>bool</td><td>false</td><td>交易nonce</td></tr><tr><td>calldata</td><td>否</td><td>bool</td><td>true</td><td>交易calldata</td></tr><tr><td>functionSelector</td><td>否</td><td>bool</td><td>true</td><td>合約函數簽名哈希的前4個字節</td></tr><tr><td>logs</td><td>否</td><td>bool</td><td>true</td><td>交易在執行過程中拋出的事件日誌(該字段聯動設置是否披露狀態對象的數據變化)</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th width="163">參數</th><th width="84">必填</th><th width="89">格式</th><th width="82">示例</th><th>備注</th></tr></thead><tbody><tr><td>hash</td><td>否</td><td>bool</td><td>true</td><td>交易哈希</td></tr><tr><td>from</td><td>否</td><td>bool</td><td>false</td><td>交易的發起方地址</td></tr><tr><td>to</td><td>否</td><td>bool</td><td>true</td><td>交易的接收方地址</td></tr><tr><td>value</td><td>否</td><td>bool</td><td>false</td><td>交易value</td></tr><tr><td>nonce</td><td>否</td><td>bool</td><td>false</td><td>交易nonce</td></tr><tr><td>calldata</td><td>否</td><td>bool</td><td>true</td><td>交易calldata</td></tr><tr><td>functionSelector</td><td>否</td><td>bool</td><td>true</td><td>合約函數簽名哈希的前4個字節</td></tr><tr><td>logs</td><td>否</td><td>bool</td><td>true</td><td>交易在執行過程中拋出的事件日誌(該字段聯動設置是否披露狀態對象的數據變化)</td></tr></tbody></table>
 
 ### 請求示例
 
