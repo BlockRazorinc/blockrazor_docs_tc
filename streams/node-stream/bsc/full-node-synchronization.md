@@ -45,7 +45,7 @@ metaLinks:
 
 ### Relay IP
 
-<table><thead><tr><th width="154">地區</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75:50051</td></tr><tr><td>東京</td><td>63.254.162.18:50051</td></tr><tr><td>都柏林</td><td>141.98.217.82:50051</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204:50051</td></tr></tbody></table>
+<table><thead><tr><th width="154">地區</th><th>Relay地址</th></tr></thead><tbody><tr><td>法蘭克福</td><td>64.130.47.75</td></tr><tr><td>東京</td><td>63.254.162.18</td></tr><tr><td>都柏林</td><td>141.98.217.82</td></tr><tr><td>弗吉尼亞</td><td>208.91.105.204</td></tr></tbody></table>
 
 ### 使用說明
 
