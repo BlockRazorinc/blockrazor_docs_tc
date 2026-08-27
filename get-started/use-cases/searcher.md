@@ -54,7 +54,7 @@ bundle上鏈速度的提升涉及Builder API限流解除成本。Searcher可以�
 
 #### 速度
 
-BlockRazor為Searcher提供[Public Mempool](../../streams/mempool/bsc/public-mempool.md)和[Block Stream](../../streams/block-stream/)服務，Searcher能夠以極低延遲訂閱交易同步區塊。在與業界領先的高性能網絡提供商bloXroute的對比中，BlockRazor能夠以更低延遲接收到最新交易，詳細數據對比如下
+BlockRazor為Searcher提供[Public Mempool](../../streams/public-mempool/bsc/public-mempool.md)和[Block Stream](../../streams/block-stream/)服務，Searcher能夠以極低延遲訂閱交易同步區塊。在與業界領先的高性能網絡提供商bloXroute的對比中，BlockRazor能夠以更低延遲接收到最新交易，詳細數據對比如下
 
 <figure><img src="../../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -66,7 +66,7 @@ BlockRazor為Searcher提供[Public Mempool](../../streams/mempool/bsc/public-mem
 
 #### 成本
 
-BlockRazor為Searcher提供極具性價比的訂閱計劃，一經訂閱，Searcher以極低延遲訂閱Public Mempool交易，向BSC上出塊率第一的Block Builder發送0 gwei交易，同時訂閱[Private Mempool](../../streams/mempool/bsc/private-mempool.md)的隱私交易流執行backrun策略以拓展套利機會範圍。
+BlockRazor為Searcher提供極具性價比的訂閱計劃，一經訂閱，Searcher以極低延遲訂閱Public Mempool交易，向BSC上出塊率第一的Block Builder發送0 gwei交易，同時訂閱[Private Mempool](../../streams/public-mempool/ethereum/private-mempool.md)的隱私交易流執行backrun策略以拓展套利機會範圍。
 
 ### 如何使用BlockRazor的服务
 
@@ -74,14 +74,14 @@ BlockRazor為Searcher提供極具性價比的訂閱計劃，一經訂閱，Searc
 
 1. [註冊](https://www.blockrazor.io/#/register)BlockRazor
 2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，采购Private Mempool，前往賬戶模塊獲取token
-3. ​訂閱 [Private Mempool](../../streams/mempool/bsc/private-mempool.md)
+3. ​訂閱 [Private Mempool](../../streams/private-mempool.md)
 4. 執行套利策略，將隱私流交易和backrun策略交易以[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)提交至RPC
 
 **公開交易流套利**
 
 1. [註冊](https://www.blockrazor.io/#/register)BlockRazor
 2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，采购Public Mempool，前往賬戶模塊獲取token
-3. 對接[Public Mempool](../../streams/mempool/bsc/public-mempool.md)方法，低延遲訂閱最新交易；如果本地有節點，則採購[Node Stream](../../streams/node-stream/)低延遲同步節點數據。
+3. 對接[Public Mempool](../../streams/public-mempool/bsc/public-mempool.md)方法，低延遲訂閱最新交易；如果本地有節點，則採購[Node Stream](../../streams/node-stream/)低延遲同步節點數據。
 4. 執行套利策略，將Mempool交易和策略交易[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)提交至Scutum。
 
 **塊尾0 gwei**

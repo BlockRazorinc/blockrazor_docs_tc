@@ -4,7 +4,7 @@ metaLinks:
   canonical: algorithmic-trading.md
   alternates:
     - >-
-      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/algorithmic-trading
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/quantitative-trading
 ---
 
 # 量化交易系统

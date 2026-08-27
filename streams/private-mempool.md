@@ -27,7 +27,7 @@ Private Mempool 適用於希望圍繞私有訂單流進行監控、判斷和策�
 
 在 BSC 場景中，很多高價值交易並不會出現在公開 Mempool 中，而是通過 BlockRazor RPC 提供的私有通道上鏈。對於希望圍繞這類交易構建策略的用戶來說，等到交易最終上鏈後再捕捉信號，往往已經錯過更有價值的處理時機。
 
-Private Mempool 依賴 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 為不同區域的用戶提供私有訂單流接入能力，讓用戶能夠圍繞私有交易本身做更早的分析與決策。
+Private Mempool 依賴 [BEF](../he-xin-ji-shu/blockchain-edge-fabric.md) 為不同區域的用戶提供私有訂單流接入能力，讓用戶能夠圍繞私有交易本身做更早的分析與決策。
 
 ### 快速開始
 
@@ -41,7 +41,7 @@ Private Mempool 依賴 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) �
 {% step %}
 **獲取Auth**
 
-詳見 [Authentication](../../../get-started/authentication.md)
+詳見 [Authentication](../get-started/authentication.md)
 {% endstep %}
 
 {% step %}
@@ -53,13 +53,13 @@ Private Mempool 依賴 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) �
 {% step %}
 **構建 & 提交bundle**
 
-詳見 [Bundle](../../../transaction-submission/rpc/bsc/orderflow-auction.md)
+詳見 [Bundle](../transaction-submission/rpc/bsc/orderflow-auction.md)
 {% endstep %}
 {% endstepper %}
 
 ### 價格
 
-價格為$100 / 日和$1000 / 月。每個地區允許訂閱2條數據流。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_private_mempool&#x26;billing=day" class="button primary small">訂閱</a>
+價格為 $100 / 日和 $1000 / 月。每個地區允許訂閱2條數據流。<a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_private_mempool&#x26;billing=day" class="button primary small">訂閱</a>
 
 ### 端點
 
@@ -101,11 +101,11 @@ Raw Bundle是指尚未被跟隨策略交易的bundle，Raw Bundle中的交易來
 
 **Bundle**
 
-<table><thead><tr><th width="210">參數</th><th width="166">格式</th><th>備注</th></tr></thead><tbody><tr><td>chainID</td><td>string</td><td>ETH: 1, BSC:56</td></tr><tr><td>hash</td><td>string</td><td>bundle hash,Private Mempool數據推流統一以bundle形式呈現</td></tr><tr><td><a href="private-mempool.md#tx">txs</a></td><td><a href="private-mempool.md#tx">[]tx</a></td><td>bundle中包含的交易</td></tr><tr><td>nextBlockNumber</td><td>uint64</td><td>該bundle所在區塊號</td></tr><tr><td>maxBlockNumber</td><td>uint64</td><td>該bundle有效的最大區塊號</td></tr><tr><td>proxyBidContract</td><td>string</td><td>bundle競拍代理合約地址，競拍方法调用詳見 <a href="/broken/pages/9FTJWMwZJ35WZYpzRmdD">Backrun</a></td></tr><tr><td>refundAddress</td><td>string</td><td>競拍方法的入參， 競拍金額將按比例返利至refundAddress</td></tr><tr><td>refundCfg</td><td>int</td><td>競拍方法的入參</td></tr><tr><td>state</td><td><a href="private-mempool.md#state">[]state</a></td><td>虛擬機狀態對象的數據變化，<a href="private-mempool.md#shu-ju-liu-shi-li-bao-han-state">查看數據流示例</a></td></tr></tbody></table>
+<table data-search="false"><thead><tr><th width="210">參數</th><th width="166">格式</th><th>備注</th></tr></thead><tbody><tr><td>chainID</td><td>string</td><td>ETH: 1, BSC:56</td></tr><tr><td>hash</td><td>string</td><td>bundle hash,Private Mempool數據推流統一以bundle形式呈現</td></tr><tr><td><a href="private-mempool.md#tx">txs</a></td><td><a href="private-mempool.md#tx">[]tx</a></td><td>bundle中包含的交易</td></tr><tr><td>nextBlockNumber</td><td>uint64</td><td>該bundle所在區塊號</td></tr><tr><td>maxBlockNumber</td><td>uint64</td><td>該bundle有效的最大區塊號</td></tr><tr><td>proxyBidContract</td><td>string</td><td>bundle競拍代理合約地址，競拍方法调用詳見 <a href="/broken/pages/9FTJWMwZJ35WZYpzRmdD">Backrun</a></td></tr><tr><td>refundAddress</td><td>string</td><td>競拍方法的入參， 競拍金額將按比例返利至refundAddress</td></tr><tr><td>refundCfg</td><td>int</td><td>競拍方法的入參</td></tr><tr><td>state</td><td><a href="private-mempool.md#state">[]state</a></td><td>虛擬機狀態對象的數據變化，<a href="private-mempool.md#shu-ju-liu-shi-li-bao-han-state">查看數據流示例</a></td></tr></tbody></table>
 
 **txs**
 
-<table><thead><tr><th width="212">參數</th><th width="166">格式</th><th>備注</th></tr></thead><tbody><tr><td>hash</td><td>string</td><td>交易哈希</td></tr><tr><td>from</td><td>string</td><td>交易的發起方地址</td></tr><tr><td>to</td><td>string</td><td>交易的接收方地址</td></tr><tr><td>value</td><td>hex</td><td>交易value</td></tr><tr><td>nonce</td><td>uint64</td><td>交易nonce</td></tr><tr><td>calldata</td><td>string</td><td>交易calldata</td></tr><tr><td>functionSelector</td><td>string</td><td>合約函數簽名哈希的前4個字節</td></tr><tr><td>logs</td><td><a href="private-mempool.md#log">[]log</a></td><td>交易在執行過程中拋出的事件日誌</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th width="212">參數</th><th width="166">格式</th><th>備注</th></tr></thead><tbody><tr><td>hash</td><td>string</td><td>交易哈希</td></tr><tr><td>from</td><td>string</td><td>交易的發起方地址</td></tr><tr><td>to</td><td>string</td><td>交易的接收方地址</td></tr><tr><td>value</td><td>hex</td><td>交易value</td></tr><tr><td>nonce</td><td>uint64</td><td>交易nonce</td></tr><tr><td>calldata</td><td>string</td><td>交易calldata</td></tr><tr><td>functionSelector</td><td>string</td><td>合約函數簽名哈希的前4個字節</td></tr><tr><td>logs</td><td><a href="private-mempool.md#log">[]log</a></td><td>交易在執行過程中拋出的事件日誌</td></tr></tbody></table>
 
 **log**
 

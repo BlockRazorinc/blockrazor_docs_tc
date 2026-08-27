@@ -21,13 +21,16 @@ Streams 是 BlockRazor 提供的一組高性能實時數據流服務，用於為
 
 ### Streams提供什麼能力
 
-#### Mempool
+#### Public Mempool
 
-Mempool 用於低延遲獲取未確認交易或私有訂單流數據，適合需要盡早捕捉鏈上信號的場景。
+Public Mempool 用於低延遲獲取未確認交易，適合需要盡早捕捉鏈上信號的場景。
 
-* [**Public Mempool**](mempool/bsc/public-mempool.md)**:** 用於低延遲訂閱 pending 交易，適合監控公開交易信號
-* [**Private Mempool**](mempool/bsc/private-mempool.md)**:** 用於訂閱私有訂單流數據，適合 backrun等場景
-* [**Tx Trace**](mempool/bsc/tx-trace.md)**:** 用於觀察交易在 Public Mempool 中的傳播路徑和跨區域時延分布，適合做交易延遲排查、多區域部署評估和傳播效果驗證
+* [Public Mempool](public-mempool/bsc/public-mempool.md)**:** 用於低延遲訂閱 pending 交易，適合監控公開交易信號
+* [Tx Trace](public-mempool/bsc/tx-trace.md): 用於觀察交易在 Public Mempool 中的傳播路徑和跨區域時延分布，適合做交易延遲排查、多區域部署評估和傳播效果驗證
+
+#### Private Mempool
+
+[Private Mempool](public-mempool/ethereum/private-mempool.md) 用於訂閱私有交易流數據，適合 Backrun, Sniping 和 Copy Trading 等場景
 
 #### Block Stream
 
@@ -49,7 +52,7 @@ Network Fee Stream 用於基於最近歷史區塊數據，實時獲取 Gas Price
 
 ### 如何選擇合適的Stream
 
-<table data-search="false"><thead><tr><th>場景</th><th>適用用戶</th><th>推薦能力</th></tr></thead><tbody><tr><td>監聽最新 pending 交易並做 backrun / copy trading / sniping</td><td>Searcher, Trading Bot</td><td><a href="mempool/bsc/public-mempool.md">Public Mempool</a></td></tr><tr><td>訂閱私有訂單流並做 backrun / copy trading / sniping</td><td>Searcher, Trading Bot</td><td><a href="mempool/bsc/private-mempool.md">Private Mempool</a></td></tr><tr><td>動態優化 Gas / Priority Fee / Tip</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="network-fee-stream/">Network Fee Stream</a></td></tr><tr><td>保持本地節點和 world state 最新</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="node-stream/bsc/full-node-synchronization.md">Node Stream</a></td></tr><tr><td>觀察交易傳播路徑與跨區域時延</td><td>Searcher, Trading Bot, Quant Team</td><td><a href="mempool/bsc/tx-trace.md">Tx Trace</a></td></tr><tr><td>訂閱Base FlashBlock Stream</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td></tr><tr><td>訂閱 Solana 賬戶、交易、slot、block 數據</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="block-stream/solana/geyser-stream/">Geyser Stream</a></td></tr><tr><td>獲取 Solana 更底層、極低延遲的 shred 數據</td><td>Searcher, Trading Bot</td><td><a href="block-stream/solana/shred-stream.md">Shred Stream</a></td></tr></tbody></table>
+<table data-search="false"><thead><tr><th>場景</th><th>適用用戶</th><th>推薦能力</th></tr></thead><tbody><tr><td>監聽最新 pending 交易並做 backrun / copy trading / sniping</td><td>Searcher, Trading Bot</td><td><a href="public-mempool/bsc/public-mempool.md">Public Mempool</a></td></tr><tr><td>訂閱私有訂單流並做 backrun / copy trading / sniping</td><td>Searcher, Trading Bot</td><td><a href="private-mempool.md">Private Mempool</a></td></tr><tr><td>動態優化 Gas / Priority Fee / Tip</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="network-fee-stream/">Network Fee Stream</a></td></tr><tr><td>保持本地節點和 world state 最新</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="node-stream/bsc/full-node-synchronization.md">Node Stream</a></td></tr><tr><td>觀察交易傳播路徑與跨區域時延</td><td>Searcher, Trading Bot, Quant Team</td><td><a href="public-mempool/bsc/tx-trace.md">Tx Trace</a></td></tr><tr><td>訂閱Base FlashBlock Stream</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="block-stream/base/get-flashblockstream/">FlashBlock Stream</a></td></tr><tr><td>訂閱 Solana 賬戶、交易、slot、block 數據</td><td>Searcher, Trading Bot, Quant Team, Wallets, DEX</td><td><a href="block-stream/solana/geyser-stream/">Geyser Stream</a></td></tr><tr><td>獲取 Solana 更底層、極低延遲的 shred 數據</td><td>Searcher, Trading Bot</td><td><a href="block-stream/solana/shred-stream.md">Shred Stream</a></td></tr></tbody></table>
 
 ### 快速開始
 

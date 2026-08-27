@@ -11,7 +11,7 @@ metaLinks:
 
 ### 介绍
 
-Searcher可以訂閱 [Private Mempool ](../../../streams/mempool/bsc/private-mempool.md)執行backrun策略，再將backrun bundle發送至BlockRazor RPC參與競拍獲得收益。
+Searcher可以訂閱 [Private Mempool ](../../../streams/private-mempool.md)執行backrun策略，再將backrun bundle發送至BlockRazor RPC參與競拍獲得收益。
 
 此外，Searcher也可以跳過bundle訂閱，直接將bundle發送至BlockRazor RPC，憑借高性能網絡的網絡加速服務，BlockRazor RPC可以極低延遲將bundle轉發至主流builders，无需重复对接builder接口。
 
@@ -37,7 +37,7 @@ interface IProxyBid {
 }
 ```
 
-競拍代理合約地址（proxyBidContract）、refundAddress和refundCfg可以在[Private Mempool](../../../streams/mempool/ethereum/private-mempool.md)中獲取，msg.value（即競拍金額）必須大於0。
+競拍代理合約地址（proxyBidContract）、refundAddress和refundCfg可以在[Private Mempool](../../../streams/public-mempool/ethereum/private-mempool.md)中獲取，msg.value（即競拍金額）必須大於0。
 
 參數正確性會由BlockRazor RPC嚴格校驗。請不要向refundAddress或競拍代理合約地址直接轉賬或執行其他可能引起上述賬戶餘額變化的操作。
 
