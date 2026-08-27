@@ -30,7 +30,7 @@ Public Mempool 用於低延遲獲取未確認交易，適合需要盡早捕捉�
 
 #### Private Mempool
 
-[Private Mempool](public-mempool/ethereum/private-mempool.md) 用於訂閱私有交易流數據，適合 Backrun, Sniping 和 Copy Trading 等場景
+[Private Mempool](private-mempool.md) 用於訂閱私有交易流數據，適合 Backrun, Sniping 和 Copy Trading 等場景
 
 #### Block Stream
 

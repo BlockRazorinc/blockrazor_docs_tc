@@ -37,7 +37,7 @@ interface IProxyBid {
 }
 ```
 
-競拍代理合約地址（proxyBidContract）、refundAddress和refundCfg可以在[Private Mempool](../../../streams/public-mempool/ethereum/private-mempool.md)中獲取，msg.value（即競拍金額）必須大於0。
+競拍代理合約地址（proxyBidContract）、refundAddress和refundCfg可以在[Private Mempool](../../../streams/private-mempool.md)中獲取，msg.value（即競拍金額）必須大於0。
 
 參數正確性會由BlockRazor RPC嚴格校驗。請不要向refundAddress或競拍代理合約地址直接轉賬或執行其他可能引起上述賬戶餘額變化的操作。
 

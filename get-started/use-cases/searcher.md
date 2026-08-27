@@ -66,7 +66,7 @@ BlockRazor為Searcher提供[Public Mempool](../../streams/public-mempool/bsc/pub
 
 #### 成本
 
-BlockRazor為Searcher提供極具性價比的訂閱計劃，一經訂閱，Searcher以極低延遲訂閱Public Mempool交易，向BSC上出塊率第一的Block Builder發送0 gwei交易，同時訂閱[Private Mempool](../../streams/public-mempool/ethereum/private-mempool.md)的隱私交易流執行backrun策略以拓展套利機會範圍。
+BlockRazor為Searcher提供極具性價比的訂閱計劃，一經訂閱，Searcher以極低延遲訂閱Public Mempool交易，向BSC上出塊率第一的Block Builder發送0 gwei交易，同時訂閱[Private Mempool](../../streams/private-mempool.md)的隱私交易流執行backrun策略以拓展套利機會範圍。
 
 ### 如何使用BlockRazor的服务
 
