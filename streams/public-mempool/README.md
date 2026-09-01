@@ -3,7 +3,7 @@ description: 從鏈維度查看具體的Public Mempool服務，支持BSC Public 
 metaLinks:
   canonical: ./
   alternates:
-    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/mempool
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/public-mempool
 ---
 
 # Public Mempool

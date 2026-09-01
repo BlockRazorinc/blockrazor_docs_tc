@@ -3,7 +3,7 @@ description: 介紹BlockRazor BSC Mempool 服務，主要為Public Mempool和Pri
 metaLinks:
   canonical: ./
   alternates:
-    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/mempool/bsc
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/public-mempool/bsc
 ---
 
 # BSC Mempool

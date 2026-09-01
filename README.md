@@ -5,7 +5,7 @@ description: >-
 metaLinks:
   canonical: ./
   alternates:
-    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/about-us
+    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/overview
 ---
 
 # 總覽
