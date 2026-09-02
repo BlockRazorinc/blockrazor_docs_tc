@@ -9,10 +9,6 @@ metaLinks:
 
 # Robinhood Chain eth\_sendBatch
 
-{% hint style="info" %}
-Robinhood Chain eth\_sendBatch 暫不對用戶開放，如需對接請[聯繫](https://discord.gg/qqJuwRb8Nh)我們
-{% endhint %}
-
 `Send Batch`  是BlockRazor 為 Robinhood Chain 提供的交易批量發送接口，用户可通过该方法將已簽名的原始交易批量低延迟發送到鏈上，目前支持HTTPS协议。
 
 Batch的交易容量上限為10筆，交易每隔5ms依序發送至Robinhood官方排序器。需要注意的是，Batch不具備原子性，不保證最終上鍊順序和請求預期一致。
