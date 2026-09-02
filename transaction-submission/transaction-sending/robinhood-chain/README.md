@@ -15,7 +15,7 @@ Robinhood Chain 是一個以太坊 Layer 2 網絡，基於 Arbitrum 構建，專
 
 ### 價格
 
-<table><thead><tr><th width="155.45703125">用戶類型</th><th width="244.66796875">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td><p><code>eth_sendRawTransaction</code></p><p>1 Tx / 5s<br><br><code>eth_sendBatch</code><br>1 Tx / 5s</p></td><td>免費</td></tr><tr><td>付費用戶</td><td><code>eth_sendRawTransaction</code><br>5 Txs / 1s<br><br><code>eth_sendBatch</code><br>5 Txs / 1s</td><td>$100 / 日<br>$1000 / 月<br><br><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_rpc_send_tx&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="155.45703125">用戶類型</th><th width="244.66796875">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td><p><code>eth_sendRawTransaction</code></p><p>1 Tx / 5s<br><br><code>eth_sendBatch</code><br>1 Tx / 5s</p></td><td>免費</td></tr><tr><td>付費用戶</td><td><code>eth_sendRawTransaction</code><br>10 Txs / 1s<br><br><code>eth_sendBatch</code><br>10 Txs / 1s</td><td>$100 / 日<br>$1000 / 月<br><br><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_rpc_send_tx&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### Benchmark
 
