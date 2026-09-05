@@ -1,5 +1,5 @@
 ---
-description: 介紹Robinhood Chain Sequencer Feed的定義、優勢、benchmark、價格和接入方法
+description: 介紹Robinhood Chain Sequencer Feed的benchmark、價格和接入方法
 metaLinks:
   canonical: sequencer-feed.md
   alternates:
@@ -7,21 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/node-stream/robinhood-chain/sequencer-feed
 ---
 
-# Robinhood Chain Sequencer Feed
-
-### Sequencer Feed是什麼
-
-Sequencer Feed 是由 Robinhood Chain Sequencer 實時推送的節點數據流。節點通過 WebSocket 訂閱 Feed，可以快速接收 Sequencer 發布的交易和區塊相關數據，及時同步鏈上最新狀態。
-
-對節點運行者比如Searcher而言，Sequencer Feed 的傳輸速度和穩定性會直接影響節點追塊和狀態更新速度。當官方 Feed 端點出現網絡延遲、網絡抖動或連接不穩定等問題時，節點可能無法及時接收最新數據，造成節點高度落後和數據更新延遲。
-
-### Why BlockRazor Sequencer Feed
-
-BlockRazor Sequencer Feed 為 Robinhood Chain 節點提供更加穩定、高效的 Sequencer Feed 接入服務。
-
-相比直接連接官方 Feed 端點，BlockRazor Sequencer Feed 通過就近接入和傳輸路徑優化，降低Feed同步過程中因網絡抖動和連接中斷帶來的延遲影響。
-
-此外 ，BlockRazor Sequencer Feed兼容官方標準接入方式。節點只需替換 Feed URL，即可更快、更穩定地接收最新數據，減少追塊延遲，保持鏈上狀態實時同步。
+# Robinhood Chain Node-required Sequencer Feed
 
 ### Benchmark
 
