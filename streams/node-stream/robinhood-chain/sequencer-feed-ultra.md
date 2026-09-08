@@ -49,6 +49,17 @@ Ultra 版本底層搭載 BEF 技術，能夠以最低延遲向用戶的本地節
 | **BlockRazor Sequencer Feed**  | 4,714 | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **9.580 ms** |
 | Robinhood Chain Sequencer Feed | 4,714 |    27.310 ms |    52.828 ms |    66.711 ms |   111.686 ms |   736.300 ms |
 {% endtab %}
+
+{% tab title="Tokyo" %}
+樣本總數：`3,996`
+
+| Sequencer Feed                 |          P50 |          P90 |          P95 |          P99 |           最大值 |
+| ------------------------------ | -----------: | -----------: | -----------: | -----------: | ------------: |
+| **BlockRazor Sequencer Feed**  | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **68.232 ms** |
+| Robinhood Chain Sequencer Feed |    71.365 ms |    108.596ms |    116.049ms |    220.859ms |    1969.576ms |
+
+
+{% endtab %}
 {% endtabs %}
 
 在三個可用區中，BlockRazor Sequencer Feed 的相對延遲從 P50 到 P99 均保持為 `0 ms`。相比之下，Robinhood Chain Sequencer Feed 的 P50 相對延遲介於 `27.310 ms` 至 `97.404 ms` 之間。
