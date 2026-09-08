@@ -6,7 +6,11 @@ description: 介紹Robinhood Chain Sequencer Feed(Ultra)的定義、優勢、ben
 
 ### Direct Sequencer Feed(Ultra)是什麼
 
-Direct Sequencer Feed(Ultra) 在[標準版本](direct-sequencer-feed.md)的基礎上深度優化網絡傳輸路徑與傳輸機制，以進一步降低 Sequencer Feed 的端到端傳輸延遲。
+Direct Sequencer Feed（Ultra）是在[標準版](direct-sequencer-feed.md)基礎上推出的超低延遲數據傳輸方案。該方案對網絡傳輸路徑和底層傳輸機制進行了深度優化，進一步降低 Sequencer Feed 的端到端傳輸延遲。\
+​\
+Ultra 版本由底層 BEF 技術驅動，能夠以極致速度直接獲取最新區塊數據，無需自行部署或運行節點。\
+​\
+該方案專為對時效性要求極高的頂級狙擊和跟單策略打造，幫助交易系統更早捕捉鏈上動態，為策略計算與交易執行爭取寶貴窗口。將每一微秒化為制勝武器。
 
 ### 價格
 

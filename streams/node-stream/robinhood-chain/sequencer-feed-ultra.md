@@ -6,7 +6,56 @@ description: 介紹Robinhood Chain Sequencer Feed(Ultra)的定義、benchmark、
 
 ### Node-required Sequencer Feed(Ultra)是什麼
 
-Node-required Sequencer Feed (Ultra) 在[標準版本](sequencer-feed.md)的基礎上深度優化網絡傳輸路徑與傳輸機制，以進一步降低 Sequencer Feed 的端到端傳輸延遲。
+Node-required Sequencer Feed（Ultra）是在[標準版](sequencer-feed.md)基礎上推出的超低延遲數據傳輸方案。該方案對網絡傳輸路徑及底層傳輸機制進行了深度優化，進一步降低 Sequencer Feed 從數據源到本地節點的端到端傳輸延遲。\
+​\
+Ultra 版本底層搭載 BEF 技術，能夠以最低延遲向用戶的本地節點持續交付已排序的區塊數據，縮短數據在網絡傳輸、接收及節點處理鏈路中的等待時間，幫助交易系統更早獲取關鍵的鏈上狀態。\
+​\
+該方案專為對延遲極為敏感的專業場景打造，包括頂級套利、訂單流分析和量化交易等。在以微秒計的競爭環境中，更快獲取順序區塊數據，意味著擁有更充足的策略計算和交易執行窗口。微秒之間，划定領先者的邊界。
+
+### Benchmark
+
+我們使用同一個測試客戶端，分別與 Robinhood Chain Sequencer Feed 和 BlockRazor Sequencer Feed 建立 WSS 連接。官方端点为wss://[feed.mainnet.chain.robinhood.com](http://feed.mainnet.chain.robinhood.com)，BlockRazor 使用 `/ws/ultra` 端點。
+
+測試客戶端分別部署在 AWS 美國東部（俄亥俄）區域的三個可用區（`use2-az1`、`use2-az2` 和 `use2-az3`），用於比較兩個 Sequencer Feed 接收區塊時的相對延遲。對於每個區塊，最先接收到該區塊的 Sequencer Feed，其相對延遲記為 `0 ms`；另一個 Sequencer Feed 的相對延遲，則根據兩者接收到該區塊的時間戳差值計算。
+
+你可以使用 [robinhood-feed-speed 基準測試工具](https://github.com/BlockRazorinc/robinhood-feed-speed) 復現本次測試。
+
+具體Benchmark數據如下：
+
+{% tabs %}
+{% tab title="use2-az1" %}
+樣本總數：`4,232`
+
+| Sequencer Feed                 |          P50 |          P90 |          P95 |          P99 |          最大值 |
+| ------------------------------ | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Sequencer Feed**  | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed |    28.026 ms |    45.177 ms |    52.780 ms |    85.805 ms |   818.664 ms |
+{% endtab %}
+
+{% tab title="use2-az2" %}
+樣本總數：`4,305`
+
+| Sequencer Feed                 |   樣本數 |          P50 |          P90 |          P95 |          P99 |          最大值 |
+| ------------------------------ | ----: | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Sequencer Feed**  | 4,305 | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed | 4,305 |    97.404 ms |   195.406 ms |   301.405 ms |   953.111 ms | 1,616.810 ms |
+{% endtab %}
+
+{% tab title="use2-az3" %}
+樣本總數：`4,714`
+
+| Sequencer Feed                 |   樣本數 |          P50 |          P90 |          P95 |          P99 |          最大值 |
+| ------------------------------ | ----: | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Sequencer Feed**  | 4,714 | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **9.580 ms** |
+| Robinhood Chain Sequencer Feed | 4,714 |    27.310 ms |    52.828 ms |    66.711 ms |   111.686 ms |   736.300 ms |
+{% endtab %}
+{% endtabs %}
+
+在三個可用區中，BlockRazor Sequencer Feed 的相對延遲從 P50 到 P99 均保持為 `0 ms`。相比之下，Robinhood Chain Sequencer Feed 的 P50 相對延遲介於 `27.310 ms` 至 `97.404 ms` 之間。
+
+其中，`use2-az2` 的延遲差距最為明顯。Robinhood Chain Sequencer Feed 的 P50 相對延遲為 `97.404 ms`，P99 達到 `953.111 ms`，最大相對延遲為 `1,616.810 ms`。
+
+綜合測試結果來看，BlockRazor Sequencer Feed 在三個被測可用區中均能更早、更穩定地完成區塊交付，並具有顯著更低的相對延遲，可為延遲敏感型應用和交易提供更快、更穩定的區塊優先交付窗口。
 
 ### 價格
 
