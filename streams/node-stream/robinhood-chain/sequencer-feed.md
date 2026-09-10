@@ -41,6 +41,16 @@ Benchmark數據如下：
 
 綜合而言，BlockRazor Sequencer Feed 在區塊傳輸速度、首達率及延遲穩定性方面均展現出明顯優勢，能為延遲敏感型交易提供更可靠的先發窗口。
 
+### 常見問題
+
+<details>
+
+<summary><strong>Node-required Sequencer Feed 和 Direct Sequencer Feed 有什麼區別</strong></summary>
+
+<table><thead><tr><th width="108.69921875">對比項</th><th width="261.37109375">Node-required Sequencer Feed</th><th>Direct Sequencer Feed</th></tr></thead><tbody><tr><td>接入方式</td><td>需要通過節點接收</td><td>普通客戶端可直接接入，無需運行節點</td></tr><tr><td>區塊傳輸</td><td>按区块高度顺序传输，不跳块</td><td>優先提供最新區塊，網絡擁塞時允許跳過中間區塊</td></tr><tr><td>節點狀態依賴</td><td>依赖节点低延遲同步状态</td><td>不依赖本地节点保持完整、连续的状态同步</td></tr><tr><td>部署成本</td><td>需要部署、維護和監控節點</td><td>接入簡單，運維成本較低</td></tr><tr><td>適合場景</td><td>套利、訂單流項目、量化交易</td><td>狙擊、跟單</td></tr></tbody></table>
+
+</details>
+
 ### 價格
 
 價格為$80 / stream / 日和$800 / stream / 月。 <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_feed_stream&#x26;billing=day" class="button primary small">訂閱</a>
