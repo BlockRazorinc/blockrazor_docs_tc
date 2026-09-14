@@ -11,6 +11,9 @@ metaLinks:
 
 `eth_sendRawTransaction`  是BlockRazor 為 Robinhood Chain 提供的交易發送接口，用户可通过该方法將已簽名的原始交易低延迟發送到鏈上，目前支持HTTPS协议。
 
+* [Benchmark](../#benchmark)
+* [價格和限流](../#jia-ge)
+
 ### 請求參數
 
 <table><thead><tr><th width="150.40234375">参数</th><th width="81">必选</th><th width="82">格式</th><th width="106">示例</th><th>描述</th></tr></thead><tbody><tr><td>-</td><td>是</td><td>String</td><td>"0x…4b"</td><td>經過簽名的raw transaction</td></tr></tbody></table>

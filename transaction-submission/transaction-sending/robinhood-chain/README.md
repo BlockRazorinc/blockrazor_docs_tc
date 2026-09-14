@@ -23,7 +23,7 @@ Robinhood Chain 是一個以太坊 Layer 2 網絡，基於 Arbitrum 構建，專
 
 我們通過比較兩種通道最終成功上鏈交易的佔比來評估性能，上鏈佔比越高，代表交易傳播和執行速度越快。基準測試結果如下。
 
-<table><thead><tr><th width="157.453125">地區</th><th>BlockRazor上鍊率</th><th>Robinhood上鏈率</th></tr></thead><tbody><tr><td>法蘭克福</td><td>88%</td><td>12%</td></tr><tr><td>俄亥俄</td><td>50%</td><td>50%</td></tr><tr><td>日本</td><td>96%</td><td>4%</td></tr></tbody></table>
+<table><thead><tr><th width="157.453125">地區</th><th>BlockRazor上鍊率</th><th>Robinhood上鏈率</th></tr></thead><tbody><tr><td>法蘭克福</td><td>70%</td><td>30%</td></tr><tr><td>俄亥俄</td><td>60%</td><td>40%</td></tr><tr><td>東京</td><td>65%</td><td>35%</td></tr><tr><td>新加坡</td><td>65%</td><td>35%</td></tr></tbody></table>
 
 
 
