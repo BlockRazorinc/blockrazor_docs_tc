@@ -57,7 +57,15 @@ Benchmark數據如下：
 
 ### 端點
 
+{% tabs %}
+{% tab title="ws" %}
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>ws://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="wss" %}
 <table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 ### 使用步驟
 
@@ -67,9 +75,9 @@ Benchmark數據如下：
 {% endstep %}
 
 {% step %}
-**在portal獲取auth，將其作為URI拼接於wss url**
+**在portal獲取auth，將其作為URI拼接於ws url**
 
-wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}
+ws://us.robinhood-feeder.blockrazor.io/ws/{authToken}
 {% endstep %}
 
 {% step %}
@@ -91,7 +99,7 @@ wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}
 
 ```bash
 --node.feed.input.url=wss://feed.mainnet.chain.robinhood.com
---node.feed.input.url=wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}
+--node.feed.input.url=ws://us.robinhood-feeder.blockrazor.io/ws/{authToken}
 ```
 
 完整的主網啟動示例如下：
@@ -109,7 +117,7 @@ docker run --rm -it \
     --parent-chain.connection.url=<L1_EXECUTION_RPC_URL> \
     --parent-chain.blob-client.beacon-url=<L1_BEACON_URL> \
     --init.genesis-json-file=/home/nitro/config/robinhood-genesis.json \
-    --node.feed.input.url=wss://<BLOCKRAZOR_FEED_URL> \
+    --node.feed.input.url=ws://<BLOCKRAZOR_FEED_URL> \
     --http.addr=0.0.0.0 \
     --http.port=8547 \
     --http.api=net,web3,eth

@@ -26,7 +26,15 @@ description: 介紹Robinhood Chain Sequencer Feed的定義、優勢、benchmark�
 
 ### 端點
 
-<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/direct/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/direct/{authToken}</td></tr></tbody></table>
+{% tabs %}
+{% tab title="ws" %}
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>ws://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="wss" %}
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 ### 使用步驟
 
@@ -36,13 +44,13 @@ description: 介紹Robinhood Chain Sequencer Feed的定義、優勢、benchmark�
 {% endstep %}
 
 {% step %}
-**在portal獲取auth，將其作為URI拼接於wss url**
+**在portal獲取auth，將其作為URI拼接於ws url**
 
-wss://us.robinhood-feeder.blockrazor.io/ws/direct/{authToken}
+ws://us.robinhood-feeder.blockrazor.io/ws/direct/{authToken}
 {% endstep %}
 
 {% step %}
-**選擇 WebSocket 客戶端，建立 WSS 連線**
+**選擇 WebSocket 客戶端，建立 WS 連線**
 
 使用普通 WebSocket 客戶端即可，例如 Node.js、Go、Python 或 Rust 的 WebSocket Library；無需部署 Robinhood Chain 節點，也不需要配置 `--node.feed.input.url`
 {% endstep %}
