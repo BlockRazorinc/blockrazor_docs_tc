@@ -30,11 +30,11 @@ Ultra 版本由底層 BEF 技術驅動，能夠以極致速度直接獲取最新
 
 {% tabs %}
 {% tab title="ws" %}
-<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>ws://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>ws://us.robinhood-feeder.blockrazor.io/ws/direct/ultra/{authToken}</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="wss" %}
-<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/direct/ultra/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/direct/ultra/{authToken}</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 

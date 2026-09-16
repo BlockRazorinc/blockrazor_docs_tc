@@ -28,11 +28,11 @@ description: 介紹Robinhood Chain Sequencer Feed的定義、優勢、benchmark�
 
 {% tabs %}
 {% tab title="ws" %}
-<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>ws://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>ws://us.robinhood-feeder.blockrazor.io/ws/direct/{authToken}</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="wss" %}
-<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/{authToken}</td></tr></tbody></table>
+<table><thead><tr><th width="152.515625">地区</th><th>端点</th></tr></thead><tbody><tr><td>俄亥俄</td><td>wss://us.robinhood-feeder.blockrazor.io/ws/direct/{authToken}</td></tr><tr><td>東京</td><td>wss://jp.robinhood-feeder.blockrazor.io/ws/direct/{authToken}</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
