@@ -155,3 +155,4 @@
 ## 声明
 
 * [隱私聲明](sheng-ming/yin-si-sheng-ming.md)
+* [用戶協議](sheng-ming/yong-hu-xie-yi.md)
