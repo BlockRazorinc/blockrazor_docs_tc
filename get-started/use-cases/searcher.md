@@ -1,5 +1,5 @@
 ---
-description: 介紹Searcher在處理bundle過程中的痛點以及如何使用Blockrazor的服務來提升競爭力
+description: 了解 MEV Searcher 如何使用 BlockRazor 获取更早的链上信号并更快地提交交易。
 metaLinks:
   canonical: searcher.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/searcher
 ---
 
-# Searcher
+# MEV Searcher 基礎設施和 Bundle API
 
 隨著競爭日益激烈，Searcher憑借Alpha策略已無法在MEV競爭中完勝，必須具備Beta競爭力以進一步提升勝率。
 

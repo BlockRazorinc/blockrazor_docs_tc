@@ -1,5 +1,5 @@
 ---
-description: 比較 BlockRazor 的 Streams 和 Transaction Sending 方案，查看服務內容，根據需求選擇合適方案。
+description: 查看 BlockRazor 的 Streams 和 Transaction Submission 服務，根據需求選擇合適方案。
 layout:
   width: default
   title:
@@ -26,7 +26,7 @@ metaLinks:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/pricing
 ---
 
-# BlockRazor 服務和價格 ｜Streams 和 Transaction Sending
+# BlockRazor 服務和價格 ｜Streams 和 Transaction Submission
 
 ### 自選服務
 

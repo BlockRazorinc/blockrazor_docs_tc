@@ -11,10 +11,6 @@ metaLinks:
 
 ### 介紹
 
-{% hint style="info" %}
-個人交易者無需訂閱計劃即可使用通用RPC
-{% endhint %}
-
 對於經常在DEX進行交易的用戶，存在極大概率以滑點上限兌換到目標加密貨幣，導致利益在無形中受到損失。个人交易者可以一鍵添加RPC到錢包。從此發起的SWAP交易都可以受到BlockRazor RPC的深度保護，減少滑點損失，同時能以一定概率實時收到交易返利。目前BlockRazor支持個人交易者添加Ethereum和BSC的RPC。
 
 存在差異化需求的用戶可根據需求[選擇不同模式的通用RPC](individual-trader.md#ru-he-zi-ding-yi-tian-jia-rpc-dao-qian-bao)進行添加。如有任何問題，請前往[Discord](https://discord.com/invite/qqJuwRb8Nh)與我們聯繫。
