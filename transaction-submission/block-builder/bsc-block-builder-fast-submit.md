@@ -1,5 +1,7 @@
 ---
-description: 介紹BlockRazor BSC Block Builder的Fast Submit以及接入方式
+description: >-
+  瞭解 BlockRazor BSC Block Builder的Fast
+  Submit服務、包括服務定義、Benchmark數據、價格、原理、目標用戶和接入方式
 metaLinks:
   canonical: bsc-block-builder-fast-submit.md
   alternates:

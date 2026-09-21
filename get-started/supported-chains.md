@@ -1,5 +1,5 @@
 ---
-description: 目前BlockRazor支持Solana, BSC, Ethereum, Base和Robinhood
+description: 目前 BlockRazor 支持 Solana、BSC、Ethereum、Base 和 Robinhood。查看核心能力、使用要求、端點和接入步驟。
 metaLinks:
   canonical: supported-chains.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/supported-chains
 ---
 
-# 我們支持哪些鏈
+# BlockRazor 支持的區塊鏈網絡｜開發文檔
 
 ### Solana
 

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Shred Stream的服務、目標用戶、優勢以及接入方法
+description: 瞭解 BlockRazor Solana Shred Stream的服務、目標用戶、優勢、價格以及集成方法
 metaLinks:
   canonical: shred-stream.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/solana/shred-stream
 ---
 
-# Solana Shred Stream
+# Solana Shred Stream接入指南
 
 <details>
 

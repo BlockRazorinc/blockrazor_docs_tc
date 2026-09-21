@@ -1,5 +1,7 @@
 ---
-description: 介紹集成BlockRazor Ethereum RPC的eth_sendRawTransaction的方法
+description: >-
+  使用 BlockRazor Ethereum RPC eth_sendRawTransaction API，查看端點、請求參數、請求示例、返回示例以及其他
+  JSON RPC 方法
 metaLinks:
   canonical: eth_sendrawtransaction.md
   alternates:
@@ -7,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/ethereum/eth_sendrawtransaction
 ---
 
-# Ethereum RPC eth\_sendRawTransaction
+# Ethereum RPC eth\_sendRawTransaction API 文檔
 
 `eth_sendRawTransaction` 兼容原生的JSON-RPC方法，無需進行額外修改。
 

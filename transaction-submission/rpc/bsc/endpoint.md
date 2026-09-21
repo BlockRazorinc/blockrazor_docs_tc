@@ -1,4 +1,5 @@
 ---
+description: 查看 BlockRazor BSC RPC 端點、比較不同端點模式的異同，瞭解通用端點、專屬端點和區域端點
 layout:
   width: wide
   title:
@@ -16,6 +17,8 @@ layout:
   tags:
     visible: true
   actions:
+    visible: true
+  anchors:
     visible: true
 metaLinks:
   canonical: endpoint.md

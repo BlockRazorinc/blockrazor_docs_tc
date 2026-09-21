@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor為Robinhood Chain提供的Node Stream服務，主要為Sequencer Feed
+description: 瞭解 BlockRazor 為 Robinhood Chain 提供的 Node Stream服務，比較不同 Sequencer Feed 類型以及集成路徑
 metaLinks:
   canonical: ./
   alternates:
@@ -7,29 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/node-stream/robinhood-chain
 ---
 
-# Robinhood Chain Sequencer Feed
+# Robinhood Chain Sequencer Feed 概覽
 
-### Sequencer Feed是什麼
-
-Sequencer Feed 是由 Robinhood Chain Sequencer 實時推送的節點數據流。節點通過 WebSocket 訂閱 Feed，可以快速接收 Sequencer 發布的交易和區塊相關數據，及時同步鏈上最新狀態。
-
-對節點運行者比如Searcher而言，Sequencer Feed 的傳輸速度和穩定性會直接影響節點追塊和狀態更新速度。當官方 Feed 端點出現網絡延遲、網絡抖動或連接不穩定等問題時，節點可能無法及時接收最新數據，造成節點高度落後和數據更新延遲。
-
-### Why BlockRazor Sequencer Feed
-
-BlockRazor Sequencer Feed 為 Robinhood Chain 節點提供更加穩定、高效的 Sequencer Feed 接入服務。
-
-相比直接連接官方 Feed 端點，BlockRazor Sequencer Feed 通過就近接入和傳輸路徑優化，降低Feed同步過程中因網絡抖動和連接中斷帶來的延遲影響。
-
-此外 ，BlockRazor Sequencer Feed兼容官方標準接入方式。節點只需替換 Feed URL，即可更快、更穩定地接收最新數據，減少追塊延遲，保持鏈上狀態實時同步。
-
-### 常見問題
-
-<details>
-
-<summary><strong>Node-required Sequencer Feed 和 Direct Sequencer Feed 有什麼區別</strong></summary>
-
-<table><thead><tr><th width="108.69921875">對比項</th><th width="261.37109375">Node-required Sequencer Feed</th><th>Direct Sequencer Feed</th></tr></thead><tbody><tr><td>接入方式</td><td>需要通過節點接收</td><td>普通客戶端可直接接入，無需運行節點</td></tr><tr><td>區塊傳輸</td><td>按区块高度顺序传输，不跳块</td><td>優先提供最新區塊，網絡擁塞時允許跳過中間區塊</td></tr><tr><td>節點狀態依賴</td><td>依赖节点低延遲同步状态</td><td>不依赖本地节点保持完整、连续的状态同步</td></tr><tr><td>部署成本</td><td>需要部署、維護和監控節點</td><td>接入簡單，運維成本較低</td></tr><tr><td>適合場景</td><td>套利、訂單流項目、量化交易</td><td>狙擊、跟單</td></tr></tbody></table>
-
-</details>
+<table><thead><tr><th width="165.16796875">鏈</th><th width="310.66015625">服務</th><th width="250.1484375">描述</th></tr></thead><tbody><tr><td>Robinhood Chain</td><td><a href="sequencer-feed.md">Node-required Sequencer Feed</a></td><td>透過本地節點低延遲、依序接收區塊數據，適合 Arbitrage、Order Flow 項目與 Quant Trading。</td></tr><tr><td>Robinhood Chain</td><td><a href="sequencer-feed-ultra.md">Node-required Sequencer Feed(Ultra)</a></td><td>底層搭載 BEF 技術，以我們的最低延遲向本地節點交付順序區塊數據。專為頂尖套利、訂單流與量化交易打造，微秒之間，劃定領先者的邊界。</td></tr><tr><td>Robinhood Chain</td><td><a href="direct-sequencer-feed.md">Direct Sequencer Feed</a></td><td>無需運行節點，即可低延遲取得最新區塊，適合 Sniping 與 Copy Trading。</td></tr><tr><td>Robinhood Chain</td><td><a href="direct-sequencer-feed-ultra.md">Direct Sequencer Feed(Ultra)</a></td><td>底層 BEF 技術驅動，以極致速度獲取最新區塊，無需運行節點。為頂尖狙擊與跟單策略而生，將每一微秒化為制勝武器。</td></tr></tbody></table>
 

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending模式下Send Bundle的集成方法
+description: 瞭解 BlockRazor Solana Transaction Sending模式下Send Bundle API、端點、交易構建示例和請求參數
 metaLinks:
   canonical: ./
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-bundle
 ---
 
-# Solana Send Bundle
+# Solana Send Bundle API
 
 {% hint style="warning" %}
 Solana發送bundle的服務默認不對外開放，如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理

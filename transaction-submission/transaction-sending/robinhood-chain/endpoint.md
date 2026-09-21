@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Robinhood Chain Transaction Sending 的端點
+description: 瞭解 BlockRazor Robinhood Chain Transaction Sending 的端點地區和URL
 metaLinks:
   canonical: endpoint.md
   alternates:

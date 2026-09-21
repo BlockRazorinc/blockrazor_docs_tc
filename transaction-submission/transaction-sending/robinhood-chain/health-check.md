@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Robinhood Chain Transaction Sending 健康檢查的集成方法
+description: 瞭解 BlockRazor Robinhood Chain Transaction Sending 健康檢查的集成方法
 metaLinks:
   canonical: health-check.md
   alternates:

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor BSC Block Builder，適合什麼用戶，提供什麼能力，以及如何選擇端點集成
+description: 瞭解 BlockRazor BSC Block Builder，適合什麼用戶，提供什麼能力，以及如何選擇端點集成
 metaLinks:
   canonical: ./
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder
 ---
 
-# BSC Block Builder
+# BSC Block Builder 概覽
 
 ### BSC Block Builder是什麼
 

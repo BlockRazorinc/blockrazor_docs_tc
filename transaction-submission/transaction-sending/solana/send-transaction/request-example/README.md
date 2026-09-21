@@ -1,5 +1,7 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending 模式下 Send Transaction的請求示例
+description: >-
+  瞭解 BlockRazor Solana Transaction Sending 模式下 Send
+  Transaction的請求示例，包括Curl、Go、Rust 和 JS
 metaLinks:
   canonical: ./
   alternates:

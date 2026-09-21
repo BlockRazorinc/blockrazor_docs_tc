@@ -1,7 +1,7 @@
 ---
 description: >-
-  介紹Transaction Submission的模式，包括RPC、Block Builder、Transaction Sending、Gas
-  Sponsor等模式，以及如何根據場景選擇模式
+  瞭解 BlockRazor Transaction Submission的模式，包括RPC、Block Builder、Transaction
+  Sending、Gas Sponsor等模式，以及如何根據場景選擇模式
 metaLinks:
   canonical: overview.md
   alternates:
@@ -9,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/overview
 ---
 
-# Transaction Submission總覽
+# 區塊鏈交易提交模式概覽
 
 ### Transaction Submission是什麼
 

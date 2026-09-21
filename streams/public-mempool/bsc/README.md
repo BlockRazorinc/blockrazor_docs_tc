@@ -1,10 +1,10 @@
 ---
-description: 介紹BlockRazor BSC Mempool 服務，主要為Public Mempool和Private Mempool
+description: 了解 BlockRazor BSC Mempool 服務，主要為 Public Mempool 和 Tx Trace
 metaLinks:
   canonical: ./
   alternates:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/public-mempool/bsc
 ---
 
-# BSC Mempool
+# BSC Public Mempool
 

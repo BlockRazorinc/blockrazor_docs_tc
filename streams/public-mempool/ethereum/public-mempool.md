@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Ethereum Public Mempool的服務、應用場景以及接入方法
+description: 瞭解BlockRazor Ethereum Public Mempool的服務、應用場景、價格、端點和集成方法
 metaLinks:
   canonical: public-mempool.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/public-mempool/ethereum/public-mempool
 ---
 
-# Ethereum Public Mempool
+# Ethereum Public Mempool接入指南
 
 <details>
 

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Geyser Stream的服務、應用場景、關鍵特性以及接入方法
+description: 瞭解BlockRazor Solana Geyser Stream的服務、應用場景、關鍵特性、端點以及採購說明，快速開始集成
 metaLinks:
   canonical: ./
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/solana/geyser-stream
 ---
 
-# Solana Geyser Stream
+# Solana Geyser Stream 接入指南
 
 <details>
 
@@ -45,7 +45,7 @@ Geyser 是 Solana 驗證者的插件機制，可將鏈上的 `account`、`slot`�
 
 </details>
 
-### 快速开始
+### 快速開始
 
 {% stepper %}
 {% step %}
@@ -84,6 +84,6 @@ Geyser Stream按週期（單位：月）流量收費，價格在新採購、續�
 
 <table data-search="false"><thead><tr><th>週期流量</th><th>折扣</th><th>折後價 / 週期</th></tr></thead><tbody><tr><td>5 TiB</td><td>100%</td><td>$250</td></tr><tr><td>10 TiB</td><td>100%</td><td>$500</td></tr><tr><td>50 TiB</td><td>100%</td><td>$2500</td></tr><tr><td>100 TiB</td><td>95%</td><td>$4750</td></tr><tr><td>150 TiB</td><td>90%</td><td>$6750</td></tr><tr><td>200 TiB</td><td>85%</td><td>$8500</td></tr><tr><td>250 TiB</td><td>80%</td><td>$10000</td></tr></tbody></table>
 
-#### 採購說明
+### 採購說明
 
 <table><thead><tr><th width="78.30859375"></th><th width="198.4609375">新採購</th><th width="193.171875">續費</th><th>增加週期流量</th></tr></thead><tbody><tr><td>場景</td><td>首次採購或流量過期後再次採購Geyser Stream</td><td>在Geyser Stream流量週期內續費</td><td>Geyser Stream週期流量提前消耗殆盡，需補充流量</td></tr><tr><td>結果</td><td>根據採購時長生成週期流量。</td><td>延遲流量週期</td><td>不延長有效期，只增加週期內的流量</td></tr><tr><td>例子</td><td>新採購5 TiB 1個週期，則可用流量為：<br>- 起始週期：5 TiB</td><td>採購5 TiB 1個週期，在起始週期內續費1個週期，則可用流量為：<br>- 起始週期：5 TiB<br>- 第2週期：10 TiB</td><td>採購5 TiB 1個週期，同時續費10 Tib 1個週期，起始週期內發現流量消耗殆盡，選擇在起始週期新增流量 5 Tib<br>- 起始週期：5 Tib + 5 Tib<br>- 第2週期：10 Tib</td></tr></tbody></table>

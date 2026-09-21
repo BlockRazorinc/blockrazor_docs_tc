@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Fast模式下Send Transaction的JS請求示例
+description: 瞭解 BlockRazor Solana Fast 模式下 Send Transaction 的 JS 請求示例
 metaLinks:
   canonical: js.md
   alternates:

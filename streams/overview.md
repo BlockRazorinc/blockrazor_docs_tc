@@ -1,12 +1,12 @@
 ---
-description: 介紹BlockRazor的Streams，Streams提供的能力以及如何選擇Stream
+description: 了解 BlockRazor 的 Streams，Streams 提供的能力以及如何選擇 Stream。比較核心能力、適用場景和接入路徑，選擇合適服務。
 metaLinks:
   canonical: overview.md
   alternates:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/overview
 ---
 
-# Streams 總覽
+# 區塊鏈實時數據 Streams 概覽
 
 ### Streams是什麼
 

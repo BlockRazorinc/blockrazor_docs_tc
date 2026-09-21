@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor BSC Public Mempool Tx Trace的服務、應用場景以及接入方法
+description: 瞭解 BlockRazor BSC Public Mempool Tx Trace的服務、應用場景、價格、限流以及接入方法
 metaLinks:
   canonical: tx-trace.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/public-mempool/bsc/tx-trace
 ---
 
-# BSC Public Mempool Tx Trace
+# BSC Public Mempool Tx Trace接入指南
 
 <details>
 

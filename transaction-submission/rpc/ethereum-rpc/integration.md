@@ -1,8 +1,8 @@
 ---
-description: 介紹集成BlockRazor Ethereum RPC的步驟
+description: 按步驟在項目中集成BlockRazor BSC RPC，完成後可發送交易，並在控制台驗證交易和返利情況
 ---
 
-# 集成RPC
+# 如何在項目中集成 Ethereum RPC
 
 {% hint style="info" %}
 BlockRazor RPC面向所有用戶開放，無需採購服務或申請Auth

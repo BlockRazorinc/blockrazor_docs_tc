@@ -1,5 +1,5 @@
 ---
-description: 介紹集成BlockRazor BSC RPC的步驟
+description: 按步驟在項目中集成BlockRazor BSC RPC，完成後可發送交易，並在控制台驗證交易和返利情況
 layout:
   width: default
   title:
@@ -18,11 +18,13 @@ layout:
     visible: true
   actions:
     visible: true
+  anchors:
+    visible: true
 metaLinks:
   canonical: integration.md
 ---
 
-# 如何在項目中集成BSC RPC
+# 如何在項目中集成BSC RPC ｜接入指南
 
 {% hint style="info" %}
 BlockRazor RPC面向所有用户开放，無需采购服务或申请Auth

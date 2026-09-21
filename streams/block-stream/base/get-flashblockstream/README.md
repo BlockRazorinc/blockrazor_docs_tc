@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Base Get FlashBlockStream服務、優勢以及接入方法
+description: 使用 BlockRazor Base Get FlashBlockStream API，查看服務優勢、端點、價格以及集成方法
 metaLinks:
   canonical: ./
   alternates:
@@ -7,19 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/base/get-flashblockstream
 ---
 
-# Base Get FlashBlockStream
-
-<details>
-
-<summary><strong>Base Get FlashBlockStream是什麼</strong></summary>
-
-`Get FlashBlockStream` 是 BlockRazor 為 Base 提供的實時 FlashBlock 數據訂閱接口，用於以更低延遲方式獲取 Base 上更早階段的區塊數據。該接口支持 gRPC 和 WebSocket 兩種協議，適合對數據到達時間更敏感的交易系統、監控系統和實時處理系統接入。
-
-在 Base 上，FlashBlock 可以理解為正式區塊形成之前的“子區塊”數據流，通常以約 200ms 的頻率持續推送。相比標準約 2s 的區塊時間，FlashBlock 能夠更早提供交易相關反饋，因此更適合那些希望盡快感知鏈上變化的低延遲場景。
-
-對於 Trading Bot、量化策略、實時監控平台和前端交易應用來說，等待正式區塊往往意味著更長的反饋時間；而 Get FlashBlockStream 的價值，就是幫助系統在正式區塊到來之前，更早接收到交易和區塊變化信號，為後續判斷和響應爭取更多時間。
-
-</details>
+# Base Get FlashBlockStream API
 
 <details>
 

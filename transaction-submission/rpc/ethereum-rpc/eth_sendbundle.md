@@ -1,5 +1,5 @@
 ---
-description: 介紹集成BlockRazor Ethereum RPC的eth_sendBundle方法
+description: 使用 BlockRazor Ethereum RPC eth_sendBundle API，查看端點、請求參數、請求示例、返回示例
 metaLinks:
   canonical: eth_sendbundle.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/ethereum/eth_sendbundle
 ---
 
-# Ethereum RPC eth\_sendBundle
+# Ethereum RPC eth\_sendBundle API
 
 ### 端點
 

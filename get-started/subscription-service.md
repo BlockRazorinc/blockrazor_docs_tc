@@ -1,5 +1,5 @@
 ---
-description: 訂閱BlockRazor服務，按需擴展，強化競爭優勢
+description: 比較 BlockRazor 的 Streams 和 Transaction Sending 方案，查看服務內容，根據需求選擇合適方案。
 layout:
   width: default
   title:
@@ -18,13 +18,15 @@ layout:
     visible: true
   actions:
     visible: true
+  anchors:
+    visible: true
 metaLinks:
   canonical: subscription-service.md
   alternates:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/pricing
 ---
 
-# 價格
+# BlockRazor 服務和價格 ｜Streams 和 Transaction Sending
 
 ### 自選服務
 

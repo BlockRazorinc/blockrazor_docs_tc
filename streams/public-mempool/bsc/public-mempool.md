@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor BSC Public Mempool的服務、優勢、應用場景以及接入方法
+description: 了解 BlockRazor BSC Public Mempool 的服務、應用場景、Benchmark、價格、端點以及集成方法。
 metaLinks:
   canonical: public-mempool.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/public-mempool/bsc/public-mempool
 ---
 
-# BSC Public Mempool
+# BSC Public Mempool 接入指南
 
 <details>
 

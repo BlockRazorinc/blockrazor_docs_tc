@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Base Get FlashBlockTransaction服務以及接入方法
+description: 介紹BlockRazor Base Get FlashBlockTransaction API 服務、端點、價格以及集成方法
 metaLinks:
   canonical: get-flashblocktransaction.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/base/get-flashblocktransaction
 ---
 
-# Base Get FlashBlockTransaction
+# Base Get FlashBlockTransaction API
 
 <details>
 

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Geyser Stream的JS請求方法
+description: 使用 JS 示例通過 BlockRazor 訂閱 Solana Geyser Stream，查看代碼示例
 metaLinks:
   canonical: js.md
   alternates:
@@ -12,8 +12,6 @@ metaLinks:
 ### 快速開始
 
 請參考[README.md](https://github.com/BlockRazorinc/geyserstream-client-js/blob/main/README.md)
-
-
 
 ### 代碼示例
 

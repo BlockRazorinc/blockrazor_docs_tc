@@ -1,5 +1,5 @@
 ---
-description: 介紹如何解析BlockRazor Base FlashBlock
+description: 使用 BlockRazor Base 解析 FlashBlock API，查看代碼示例
 metaLinks:
   canonical: parseflashblock.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/base/get-flashblockstream/parseflashblock
 ---
 
-# Base 解析 FlashBlock
+# Base 解析 FlashBlock 示例
 
 FlashBlock的解析方法如下：
 

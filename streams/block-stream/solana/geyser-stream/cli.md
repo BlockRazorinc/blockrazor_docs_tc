@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Geyser Stream的CLI訂閱方法
+description: 使用 CLI 示例通過 BlockRazor 訂閱 Solana Geyser Stream
 metaLinks:
   canonical: cli.md
   alternates:

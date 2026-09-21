@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Fast模式下Send Batch的Curl請求示例
+description: 瞭解 BlockRazor Solana Transaction Sending 模式下 Send Batch API 的 Curl 請求示例
 metaLinks:
   canonical: curl.md
   alternates:

@@ -1,6 +1,6 @@
 ---
 description: >-
-  介紹BlockRazor Solana Transaction Sending 模式的端點、接口接入文檔、Priority Fee & Tip以及Keep
+  瞭解 BlockRazor Solana Transaction Sending 模式的端點、接口接入文檔、Priority Fee & Tip以及Keep
   Alive
 metaLinks:
   canonical: ./

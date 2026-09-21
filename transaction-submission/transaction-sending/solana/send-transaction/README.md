@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Fast模式的Send Transaction接口以及集成方法
+description: 瞭解 BlockRazor Solana Send Transaction API，查看端點、交易請求示例和請求參數
 metaLinks:
   canonical: ./
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-transaction
 ---
 
-# Solana Send Transaction
+# Solana Send Transaction API
 
 {% hint style="warning" %}
 Solana發送交易的服務不和訂閱計劃綁定，可前往 [Authentication](../../../../get-started/authentication.md) 獲取API KEY，默认限流为3 TPS。如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理

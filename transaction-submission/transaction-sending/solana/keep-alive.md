@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending 模式的Keep Alive集成方法
+description: 瞭解 BlockRazor Solana Transaction Sending 模式的Keep Alive集成方法
 metaLinks:
   canonical: keep-alive.md
   alternates:

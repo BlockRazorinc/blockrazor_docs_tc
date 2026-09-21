@@ -1,7 +1,7 @@
 ---
 description: >-
-  介紹錢包/去中心化交易所在交易發送場景下的痛點，以及如何通過使用Blockrazor的服務，包括RPC、Transaction
-  Sending模式等來解決痛點
+  了解錢包/去中心化交易所在交易發送場景下的痛點，以及如何通過使用 BlockRazor 的服務，包括 RPC、Transaction Sending
+  模式等來解決痛點。
 metaLinks:
   canonical: wallet-dex.md
   alternates:
@@ -9,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/wallet-dex
 ---
 
-# 錢包/去中心化交易所
+# 錢包和 DEX 低延遲交易基礎設施
 
 在當前DeFi生態中，錢包和去中心化交易所正面臨著日益嚴峻的用戶留存挑戰。在經過市場教育後，用戶並不止步於基礎交易需求被滿足，對交易安全性、便捷性和實時性的要求也在逐漸提高，同時對跟單、狙擊等新的業務形態產生興趣。
 

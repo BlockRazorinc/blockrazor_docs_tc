@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor的Gas Sponsor，以及其核心特性和接入流程
+description: 瞭解 BlockRazor Gas Sponsor 核心特性以及接入流程
 metaLinks:
   canonical: gas-sponsor.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/gas-sponsor
 ---
 
-# Gas Sponsor
+# Gas Sponsor 接入概覽
 
 {% hint style="info" %}
 BlockRazor Gas Sponsor目前支持BSC、Solana、Ethereum和Base，如需接入Gas Sponsor服務請於我們[聯繫](https://discord.gg/qqJuwRb8Nh)。

@@ -1,5 +1,7 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending 模式下Send Batch in Binary的集成方法
+description: >-
+  瞭解 BlockRazor Solana Transaction Sending 模式下 Send Batch in Binary API
+  的端點、請求參數和請求示例
 metaLinks:
   canonical: send-in-binary.md
   alternates:
@@ -7,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/solana/send-batch/send-in-binary
 ---
 
-# Solana Send Batch in Binary
+# Solana Send Batch in Binary API
 
 {% hint style="warning" %}
 Solana發送batch的服務不和訂閱計劃綁定，可前往 [Authentication](../../../../get-started/authentication.md) 獲取API KEY，默认限流为3 BPS。如需提升限流標準，請[聯繫](https://discord.com/invite/qqJuwRb8Nh)我們，我們會在第一時間處理

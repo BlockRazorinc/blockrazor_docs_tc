@@ -1,8 +1,8 @@
 ---
-description: 介紹Robinhood Chain Sequencer Feed(Ultra)的定義、benchmark、價格和接入方法
+description: 瞭解 Robinhood Chain Sequencer Feed(Ultra) 服務、Benchmark數據、價格、端點和集成方法
 ---
 
-# Robinhood Chain Node-required Sequencer Feed(Ultra)
+# Robinhood Chain Node-required Sequencer Feed(Ultra) 接入指南
 
 ### Node-required Sequencer Feed(Ultra)是什麼
 
@@ -11,6 +11,14 @@ Node-required Sequencer Feed（Ultra）是在[標準版](sequencer-feed.md)基�
 Ultra 版本底層搭載 BEF 技術，能夠以最低延遲向用戶的本地節點持續交付已排序的區塊數據，縮短數據在網絡傳輸、接收及節點處理鏈路中的等待時間，幫助交易系統更早獲取關鍵的鏈上狀態。\
 ​\
 該方案專為對延遲極為敏感的專業場景打造，包括頂級套利、訂單流分析和量化交易等。在以微秒計的競爭環境中，更快獲取順序區塊數據，意味著擁有更充足的策略計算和交易執行窗口。微秒之間，划定領先者的邊界。
+
+<details>
+
+<summary><strong>Node-required Sequencer Feed 和 Direct Sequencer Feed 有什麼區別</strong></summary>
+
+<table><thead><tr><th width="108.69921875">對比項</th><th width="261.37109375">Node-required Sequencer Feed</th><th>Direct Sequencer Feed</th></tr></thead><tbody><tr><td>接入方式</td><td>需要通過節點接收</td><td>普通客戶端可直接接入，無需運行節點</td></tr><tr><td>區塊傳輸</td><td>按区块高度顺序传输，不跳块</td><td>優先提供最新區塊，網絡擁塞時允許跳過中間區塊</td></tr><tr><td>節點狀態依賴</td><td>依赖节点低延遲同步状态</td><td>不依赖本地节点保持完整、连续的状态同步</td></tr><tr><td>部署成本</td><td>需要部署、維護和監控節點</td><td>接入簡單，運維成本較低</td></tr><tr><td>適合場景</td><td>套利、訂單流項目、量化交易</td><td>狙擊、跟單</td></tr></tbody></table>
+
+</details>
 
 ### Benchmark
 
@@ -67,16 +75,6 @@ Ultra 版本底層搭載 BEF 技術，能夠以最低延遲向用戶的本地節
 其中，`use2-az2` 的延遲差距最為明顯。Robinhood Chain Sequencer Feed 的 P50 相對延遲為 `97.404 ms`，P99 達到 `953.111 ms`，最大相對延遲為 `1,616.810 ms`。
 
 綜合測試結果來看，BlockRazor Sequencer Feed 在三個被測可用區中均能更早、更穩定地完成區塊交付，並具有顯著更低的相對延遲，可為延遲敏感型應用和交易提供更快、更穩定的區塊優先交付窗口。
-
-### 常見問題
-
-<details>
-
-<summary><strong>Node-required Sequencer Feed 和 Direct Sequencer Feed 有什麼區別</strong></summary>
-
-<table><thead><tr><th width="108.69921875">對比項</th><th width="261.37109375">Node-required Sequencer Feed</th><th>Direct Sequencer Feed</th></tr></thead><tbody><tr><td>接入方式</td><td>需要通過節點接收</td><td>普通客戶端可直接接入，無需運行節點</td></tr><tr><td>區塊傳輸</td><td>按区块高度顺序传输，不跳块</td><td>優先提供最新區塊，網絡擁塞時允許跳過中間區塊</td></tr><tr><td>節點狀態依賴</td><td>依赖节点低延遲同步状态</td><td>不依赖本地节点保持完整、连续的状态同步</td></tr><tr><td>部署成本</td><td>需要部署、維護和監控節點</td><td>接入簡單，運維成本較低</td></tr><tr><td>適合場景</td><td>套利、訂單流項目、量化交易</td><td>狙擊、跟單</td></tr></tbody></table>
-
-</details>
 
 ### 價格
 

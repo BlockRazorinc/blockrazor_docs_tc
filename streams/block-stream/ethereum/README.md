@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor為Ethereum提供的Block Stream服務，主要為NewBlocks
+description: 瞭解 BlockRazor為Ethereum提供的Block Stream服務，主要為NewBlocks
 metaLinks:
   canonical: ./
   alternates:
@@ -7,5 +7,5 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/ethereum
 ---
 
-# Ethereum Block Stream
+# Ethereum Block Stream 服務概覽
 

@@ -1,5 +1,7 @@
 ---
-description: 介紹BlockRazor Ethereum Transaction Sending 模式的 Broadcast Tx 接口以及集成方法
+description: >-
+  介紹BlockRazor Ethereum Transaction Sending 模式的 Broadcast Tx
+  接口、適用場景、價格、限流、端點和集成方法
 metaLinks:
   canonical: broadcast-tx.md
   alternates:
@@ -7,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/ethereum/broadcast-tx
 ---
 
-# Ethereum Broadcast Tx
+# Ethereum Broadcast Tx API
 
 <details>
 

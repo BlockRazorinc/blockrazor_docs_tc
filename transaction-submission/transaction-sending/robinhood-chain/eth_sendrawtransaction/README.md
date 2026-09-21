@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Robinhood Chain eth_sendRawTransaction的集成方法
+description: 瞭解 BlockRazor Robinhood Chain eth_sendRawTransaction API 的請求參數、請求示例和返回示例
 metaLinks:
   canonical: ./
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain/eth_sendrawtransaction
 ---
 
-# Robinhood Chain eth\_sendRawTransaction
+# Robinhood Chain eth\_sendRawTransaction API
 
 `eth_sendRawTransaction`  是BlockRazor 為 Robinhood Chain 提供的交易發送接口，用户可通过该方法將已簽名的原始交易低延迟發送到鏈上，目前支持HTTPS协议。
 

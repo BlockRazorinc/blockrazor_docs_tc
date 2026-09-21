@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Transaction Sending模式，以及提供的服務和接口接入文檔
+description: 瞭解 BlockRazor 低延遲 Transaction Sending API，以及其目標用戶和常見問題
 metaLinks:
   canonical: ./
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending
 ---
 
-# Transaction Sending
+# 低延遲 Transaction Sending API 概覽
 
 ### Transaction Sending 模式是什麼
 
@@ -24,13 +24,13 @@ Transaction Sending 是 BlockRazor 提供的快速交易發送模式，面向對
 
 <details>
 
-<summary>Fast 和 RPC 有什麼區別</summary>
+<summary>Transaction Sending 和 RPC 有什麼區別</summary>
 
-Fast 和 RPC 都屬於交易發送能力，但它們的設計目標不同。
+Transaction Sending 和 RPC 都屬於交易發送能力，但它們的設計目標不同。
 
 RPC 更側重於交易保護與通用接入能力。它提供標準 JSON-RPC 方法，重點解決交易在公開傳播過程中可能遭遇的 MEV 風險，並支持返利、披露策略配置和定制化 RPC 接入，適合 Wallet、DEX 和項目方作為標準交易發送入口使用。
 
-Fast 更側重於交易上鏈速度。它通過 [BEF](../../he-xin-ji-shu/blockchain-edge-fabric.md) 幫助交易以更低延遲進入鏈上執行流程，適合對上鏈時效有更高要求的 Trading Bot、量化策略和時機敏感型交易場景。
+Transaction Sending 更側重於交易上鏈速度。它通過 [BEF](../../he-xin-ji-shu/blockchain-edge-fabric.md) 幫助交易以更低延遲進入鏈上執行流程，適合對上鏈時效有更高要求的 Trading Bot、量化策略和時機敏感型交易場景。
 
 </details>
 

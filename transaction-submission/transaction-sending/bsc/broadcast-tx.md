@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor BSC Transaction Sending 模式的 Broadcast Tx 接口以及集成方法
+description: 瞭解 BlockRazor BSC Transaction Sending 模式下 Broadcast Tx API、價格、端點以及集成方法
 metaLinks:
   canonical: broadcast-tx.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/bsc/broadcast-tx
 ---
 
-# BSC Broadcast Tx
+# BSC Broadcast Tx API
 
 <details>
 

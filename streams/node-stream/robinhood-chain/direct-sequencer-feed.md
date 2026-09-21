@@ -1,16 +1,14 @@
 ---
-description: 介紹Robinhood Chain Sequencer Feed的定義、優勢、benchmark、價格和接入方法
+description: 瞭解 Robinhood Chain Sequencer Feed 服務、價格、端點和使用步驟
 ---
 
-# Robinhood Chain Direct Sequencer Feed
+# Robinhood Chain Direct Sequencer Feed 接入指南
 
 ### Direct Sequencer Feed是什麼
 
 相比Node-required Sequencer Feed，Direct Sequencer Feed 無需部署節點，普通客戶端即可直接接收最新區塊，以更低延遲追蹤鏈上信號，適合狙擊、跟單等不依賴完整節點狀態同步的場景。
 
 需要注意的是，Direct Sequencer Feed在網絡擁堵期間可能出現跳塊現象。
-
-### 常見問題
 
 <details>
 

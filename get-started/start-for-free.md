@@ -1,14 +1,14 @@
 ---
 description: >-
-  BlockRazor面向新註冊用戶免费提供Solana, BSC, Etherem和Base上的多模式交易發送服務，包括RPC、Block
-  Builder、Transaction Sending等模式。
+  免費使用 BlockRazor 多鏈交易提交服務。註冊並獲取 Auth Token，按需選擇 RPC、Block Builder 或 Transaction
+  Sending。
 metaLinks:
   canonical: start-for-free.md
   alternates:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/start-for-free
 ---
 
-# 免費發送交易
+# 免費發送區塊鏈交易
 
 ### RPC
 

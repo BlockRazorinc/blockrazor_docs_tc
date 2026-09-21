@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending 模式的端點
+description: 查看 BlockRazor Solana Transaction Sending 模式支持的協議、地區和端點
 metaLinks:
   canonical: endpoint.md
   alternates:

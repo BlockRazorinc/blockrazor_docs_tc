@@ -1,10 +1,10 @@
 ---
-description: 介紹BlockRazor Ethereum Stream服務，主要為Public Mempool
+description: 瞭解Ethereum Public Mempool服務
 metaLinks:
   canonical: ./
   alternates:
     - ./
 ---
 
-# Ethereum Mempool
+# Ethereum Public Mempool 概覽
 

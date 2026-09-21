@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor為Ethereum提供的Node Stream服務，主要為CL/EL客戶端同步
+description: 瞭解 BlockRazor 為 Ethereum 提供的 Node Stream 服務，主要為 CL/EL 客戶端同步
 metaLinks:
   canonical: ./
   alternates:
@@ -7,5 +7,5 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/node-stream/ethereum
 ---
 
-# Ethereum Node Stream
+# Ethereum Node Stream 概覽
 

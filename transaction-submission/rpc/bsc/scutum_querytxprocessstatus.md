@@ -1,5 +1,5 @@
 ---
-description: 介紹如何集成scutum_queryTxProcessStatus方法來查詢BSC RPC交易狀態
+description: 使用 BlockRazor BSC RPC 交易狀態查詢 API，查看請求示例和返回示例
 metaLinks:
   canonical: scutum_querytxprocessstatus.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/rpc/bsc/scutum_querytxprocessstatus
 ---
 
-# BSC RPC交易狀態查詢
+# BSC RPC交易狀態查詢 API
 
 `scutum_queryTxProcessStatus`  用於實時查詢BlockRazor RPC對於交易的處理狀態，目前支持查询BSC交易。
 

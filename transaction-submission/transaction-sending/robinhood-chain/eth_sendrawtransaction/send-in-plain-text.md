@@ -1,5 +1,7 @@
 ---
-description: 介紹BlockRazor Robinhood Chain eth_sendRawTransaction(send in plain text)的集成方法
+description: >-
+  瞭解 BlockRazor Robinhood Chain eth_sendRawTransaction(send in plain text) API
+  的請求參數、請求示例和返回參數
 metaLinks:
   canonical: send-in-plain-text.md
   alternates:
@@ -7,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain/eth_sendrawtransaction/send-in-plain-text
 ---
 
-# Robinhood Chain Transaction Sending in Plain Text
+# Robinhood Chain Transaction Sending in Plain Text API
 
 `Send in Plain Text` 用於在 Robinhood 上發送已簽名的交易，與 [eth\_sendRawTransaction](./) 方式相比，它提供了一種更精簡、更迅速的交易提交途徑。
 

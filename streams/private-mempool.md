@@ -1,12 +1,12 @@
 ---
-description: 介紹BlockRazor BSC Private Mempool的服務、應用場景、優勢以及接入方法
+description: 瞭解 BlockRazor BSC Private Mempool的服務、應用場景、優勢、端點以及集成方法
 metaLinks:
   canonical: private-mempool.md
   alternates:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/private-mempool
 ---
 
-# BSC Private Mempool
+# BSC Private Mempool 接入指南
 
 <details>
 

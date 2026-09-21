@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Robinhood Chain Transaction Sending、Benchmark和價格
+description: 了解 BlockRazor Robinhood Chain Transaction Sending、價格和 Benchmark 數據
 metaLinks:
   canonical: ./
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain
 ---
 
-# Robinhood Chain Transaction Sending
+# Robinhood Chain Transaction Sending 概覽
 
 ### Robinhood Chain是什么 <a href="#what-is-robinhood-chain" id="what-is-robinhood-chain"></a>
 

@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending 模式下Send Transaction的Rust請求示例
+description: 瞭解 BlockRazor Solana Transaction Sending 模式下 Send Transaction 的 Rust 請求示例
 metaLinks:
   canonical: rust.md
   alternates:

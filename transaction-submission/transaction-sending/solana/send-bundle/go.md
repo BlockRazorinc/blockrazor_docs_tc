@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending模式下Send Bundle的Go請求示例
+description: 瞭解 BlockRazor Solana Transaction Sending模式下 Send Bundle API 的 Go 請求示例
 metaLinks:
   canonical: go.md
   alternates:

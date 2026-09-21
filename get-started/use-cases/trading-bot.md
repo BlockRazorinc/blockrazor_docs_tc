@@ -1,5 +1,7 @@
 ---
-description: 介紹Trading Bot在信號監聽和交易發送場景下的痛點，以及如何使用Blockrazor的服務來擴展、加速信號監聽和交易發送
+description: >-
+  了解 Copy Trading & Sniping 在信號監聽和交易發送場景下的痛點，以及如何使用 BlockRazor
+  的服務來擴展、加速信號監聽和交易發送。
 metaLinks:
   canonical: trading-bot.md
   alternates:
@@ -7,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/trading-bot
 ---
 
-# Trading Bot
+# Copy Trading & Sniping 低延遲交易基礎設施
 
 在鏈上交易中，Trading Bot 的競爭力不僅取決於策略本身，也取決於兩個關鍵速度：
 

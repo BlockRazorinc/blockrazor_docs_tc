@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Geyser Stream的Rust請求方法
+description: 使用 Rust 示例通過 BlockRazor 訂閱 Solana Geyser Stream，查看代碼示例
 metaLinks:
   canonical: rust.md
   alternates:
@@ -12,8 +12,6 @@ metaLinks:
 ### 快速開始
 
 請參考[README.md](https://github.com/BlockRazorinc/geyserstream-client-rust/blob/main/README.md)
-
-
 
 ### 代碼示例
 

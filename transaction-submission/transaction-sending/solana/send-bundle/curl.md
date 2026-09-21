@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Solana Transaction Sending模式下Send Bundle的Curl請求示例
+description: 瞭解 BlockRazor Solana Transaction Sending 模式下 Send Bundle API 的 Curl請求示例
 metaLinks:
   canonical: curl.md
   alternates:

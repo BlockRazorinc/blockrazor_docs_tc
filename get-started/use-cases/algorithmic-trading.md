@@ -1,5 +1,5 @@
 ---
-description: 介紹量化交易系統的痛點以及如何使用Blockrazor的服務來提升上鏈確定性
+description: 了解量化交易系統的痛點以及如何使用 BlockRazor 的服務來提升上鏈確定性。比較適用服務、鏈上交易流程和接入方式，獲取更早信號並提升交易提交速度。
 metaLinks:
   canonical: algorithmic-trading.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/quant-trading
 ---
 
-# 量化交易系统
+# 量化交易區塊鏈基礎設施
 
 搬磚套利是一種低風險的量化交易策略。DEX 和 CEX 上的同一個代幣，由於流動性、市場機制、交易速度等因素，同一時間在價格上可能存在差異，搬磚套利策略在價格較低的交易所買入資產，在價格較高的交易所賣出，從中賺取價差。
 

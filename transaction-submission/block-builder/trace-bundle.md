@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor BSC Block Builder的Trace Bundle接入方法
+description: 瞭解 BlockRazor BSC Block Builder的Trace Bundle的接口說明、價格、請求參數、請求示例和返回示例
 metaLinks:
   canonical: trace-bundle.md
   alternates:
@@ -7,9 +7,9 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/trace-bundle
 ---
 
-# BSC Block Builder Trace Bundle
+# BSC Block Builder Trace Bundle API
 
-### 介紹
+### 接口說明
 
 本方法支持通過bundle hash查詢該 bundle 的當前狀態，請在向builder發送 bundle 後 5 分鐘進行查詢。端點：[https://bsc-bundle-stats.blockrazor.io/](https://bsc-bundle-stats.blockrazor.io/)
 

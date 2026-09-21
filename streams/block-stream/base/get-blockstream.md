@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Base Get BlockStream的服務、優勢以及接入方法
+description: 介紹BlockRazor Base Get BlockStream的服務、優勢、端點、價格以及集成方法
 metaLinks:
   canonical: get-blockstream.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/base/get-blockstream
 ---
 
-# Base Get BlockStream
+# Base Get BlockStream API
 
 <details>
 

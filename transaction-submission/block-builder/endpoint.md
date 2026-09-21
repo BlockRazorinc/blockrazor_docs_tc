@@ -1,8 +1,12 @@
-# BSC Block Builder 端點
+---
+description: 查看 BlockRazor BSC Block Builder API 端點，包括全球端點、區域化優化端點和 Fast Submit 端點
+---
 
-### **默認接入**
+# BSC Block Builder API 端點
 
-優先使用全局通用入口，適合快速完成接入並服務全球請求，端點：<mark style="color:$primary;">**https://rpc.blockrazor.builders**</mark>
+### 全球端點
+
+優先使用全局通用入口，適合快速完成接入並服務全球請求，端點：<mark style="color:blue;">https://rpc.blockrazor.builders</mark>
 
 ### **區域化優化**
 

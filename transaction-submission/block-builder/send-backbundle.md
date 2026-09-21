@@ -1,5 +1,7 @@
 ---
-description: 介紹BlockRazor Block Builder的eth_sendBackBundle(0 Gwei)以及接入方法
+description: >-
+  介紹BlockRazor Block Builder的eth_sendBackBundle(0 Gwei)
+  API的接口說明、價格、端點、請求參數、請求示例和返回示例
 metaLinks:
   canonical: send-backbundle.md
   alternates:
@@ -7,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/send-backbundle
 ---
 
-# BSC Block Builder 0 Gwei
+# BSC Block Builder 0 Gwei API
 
 ### 接口說明
 

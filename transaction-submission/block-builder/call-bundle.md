@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Block Builder的Call Bundle接入方法
+description: 介紹BlockRazor Block Builder的Call Bundle API 的接口說明、價格、限流、請求參數、請求示例和返回示例
 metaLinks:
   canonical: call-bundle.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/block-builder/call-bundle
 ---
 
-# BSC Block Builder Call Bundle
+# BSC Block Builder Call Bundle API
 
 ### 接口說明
 

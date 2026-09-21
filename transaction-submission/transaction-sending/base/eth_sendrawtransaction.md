@@ -1,5 +1,7 @@
 ---
-description: 介紹集成BlockRazor Base Transaction Sending 的 eth_sendRawTransaction的方法
+description: >-
+  瞭解 BlockRazor Base Transaction Sending模式下 eth_sendRawTransaction
+  API、優勢、價格、端點、請求參數、請求示例和返回示例
 metaLinks:
   canonical: eth_sendrawtransaction.md
   alternates:
@@ -7,7 +9,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/base/eth_sendrawtransaction
 ---
 
-# Base eth\_sendRawTransaction
+# Base eth\_sendRawTransaction API
 
 <details>
 

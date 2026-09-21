@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Robinhood Chain RPC eth_sendBatch的集成方法
+description: 瞭解 BlockRazor Robinhood Chain eth_sendBatch API 的請求參數、請求示例和返回示例
 metaLinks:
   canonical: send-batch.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/transaction-submission/transaction-sending/robinhood-chain/eth_sendbatch
 ---
 
-# Robinhood Chain eth\_sendBatch
+# Robinhood Chain eth\_sendBatch API
 
 `Send Batch`  是BlockRazor 為 Robinhood Chain 提供的交易批量發送接口，用户可通过该方法將已簽名的原始交易批量低延迟發送到鏈上，目前支持HTTPS协议。
 

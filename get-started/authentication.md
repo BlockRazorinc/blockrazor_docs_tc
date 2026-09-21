@@ -1,12 +1,12 @@
 ---
-description: 在對接BlockRazor服務的過程中，如需在請求中設置auth，請按如下步驟獲取
+description: 了解如何註冊 BlockRazor、獲取 Auth Token，並在支持的 API 請求中配置 auth，開始接入各項服務。
 metaLinks:
   canonical: authentication.md
   alternates:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/authentication
 ---
 
-# 如何獲取 Auth Token
+# 如何獲取 BlockRazor Auth Token｜API 認證
 
 {% stepper %}
 {% step %}

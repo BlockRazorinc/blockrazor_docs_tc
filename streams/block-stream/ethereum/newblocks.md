@@ -1,5 +1,5 @@
 ---
-description: 介紹BlockRazor Ethereum NewBlocks的服務、應用場景以及接入方法
+description: 瞭解 BlockRazor Ethereum NewBlocks的服務、應用場景、價格、端點以及集成方法
 metaLinks:
   canonical: newblocks.md
   alternates:
@@ -7,7 +7,7 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/streams/block-stream/ethereum/newblocks
 ---
 
-# Ethereum Block Stream
+# Ethereum NewBlocks Stream API
 
 <details>
 

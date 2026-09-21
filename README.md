@@ -1,14 +1,14 @@
 ---
 description: >-
   面向訂單流、交易機器人、Searcher 與量化交易，覆蓋 BSC、Solana、Ethereum、Base 和 Robinhood Chain
-  的全球低延遲基礎設施。
+  的全球低延遲區塊鏈基礎設施。
 metaLinks:
   canonical: ./
   alternates:
     - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/overview
 ---
 
-# 總覽
+# 全球低延遲區塊鏈基礎設施
 
 BlockRazor 是一家專注於 Web3 基礎設施與 DeFi 交易的研究機構，聚焦解決真實交易場景中的關鍵問題，並將研究成果持續沉澱為可落地的基礎設施產品與服務，為追求卓越的構建者打造分佈全球的多鏈高性能基礎設施體系。
 

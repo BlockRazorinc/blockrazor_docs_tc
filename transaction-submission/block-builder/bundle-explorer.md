@@ -1,3 +1,7 @@
+---
+description: 瞭解 BSC Block Builder Bundle 瀏覽器的產品定義、核心能力、適用場景、產品價值和數據說明
+---
+
 # BSC Block Builder Bundle 瀏覽器
 
 {% hint style="info" %}
