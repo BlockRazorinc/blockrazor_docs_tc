@@ -9,27 +9,37 @@ metaLinks:
 
 # Solana Geyser Stream
 
-### **什麼是Geyser Stream**
+<details>
+
+<summary><strong>什麼是Geyser Stream</strong></summary>
 
 Geyser 是 Solana 驗證者的插件機制，可將鏈上的 `account`、`slot`、`block` 和 `transaction` 等數據實時輸出到外部系統。Geyser Stream 是 BlockRazor 基於 Yellowstone gRPC 推出的 Solana 高性能數據流服務，支持客戶端通過 gRPC 以極低延遲訂閱結構化的實時鏈上數據。
 
-### **Geyser Stream的應用場景**
+</details>
+
+<details>
+
+<summary><strong>Geyser Stream的應用場景</strong></summary>
 
 * **交易分析：** 監聽指定賬戶的交易，用於跟單聰明錢賬戶交易，或捕捉 pump.fun 新幣等早期信號
 * **賬戶分析：** 監聽指定賬戶餘額變化，用於跟蹤 Raydium、Orca、Jupiter 等 DEX 池子賬戶狀態，進一步計算代幣對價格
 * **區塊與槽位分析：** 監聽區塊和槽位更新，用於觀察網絡共識進度與節點健康狀態
 
-### **Geyser Stream的關鍵特性**
+</details>
+
+<details>
+
+<summary><strong>Geyser Stream的關鍵特性</strong></summary>
 
 * **高性能：** 基於高性能服務器和低延遲鏈路，實時向客戶端推送 gRPC 數據流
 * **數據完整性：** 支持最近 500 個 slot（約 200 秒）的交易重放，斷連後可快速補齊數據
 * **高穩定性：** 服務採用多雲多實例部署，支持無縫故障轉移，保障長時間穩定運行
 
-### 常见问题
+</details>
 
 <details>
 
-<summary>Geyser Stream和Shred Stream有什麼區別</summary>
+<summary><strong>Geyser Stream和Shred Stream有什麼區別</strong></summary>
 
 兩者的核心區別在於**數據層級**和**使用門檻**。Shred Stream 傳輸的是更底層的原始 `shred`，鏈路更短，延遲更低，適合極度追求時效的 Bots、RPC 和 Validators，但接入方需要自己做重組和解析；Geyser Stream 傳輸的是結構化的 `account`、`slot`、`block` 和 `transaction` 數據，客戶端可直接通過 gRPC 訂閱，接入更簡單，也更適合賬戶監聽、交易分析和穩定生產環境。若你要的是**更早的交易信號**，優先選 [Shred Stream](../shred-stream.md)；若你要的是**更完整、易消費的實時鏈上數據**，優先選 [Geyser Stream](./)。
 
@@ -76,4 +86,4 @@ Geyser Stream按週期（單位：月）流量收費，價格在新採購、續�
 
 #### 採購說明
 
-<table><thead><tr><th width="101.15625"></th><th>新採購</th><th>續費</th><th>增加週期流量</th></tr></thead><tbody><tr><td>場景</td><td>首次採購或流量過期後再次採購Geyser Stream</td><td>在Geyser Stream流量週期內續費</td><td>Geyser Stream週期流量提前消耗殆盡，需補充流量</td></tr><tr><td>結果</td><td>根據採購時長生成週期流量。</td><td>延遲流量週期</td><td>不延長有效期，只增加週期內的流量</td></tr><tr><td>例子</td><td>新採購5 TiB 1個週期，則可用流量為：<br>- 起始週期：5 TiB</td><td>採購5 TiB 1個週期，在起始週期內續費1個週期，則可用流量為：<br>- 起始週期：5 TiB<br>- 第2週期：10 TiB</td><td>採購5 TiB 1個週期，同時續費10 Tib 1個週期，起始週期內發現流量消耗殆盡，選擇在起始週期新增流量 5 Tib<br>- 起始週期：5 Tib + 5 Tib<br>- 第2週期：10 Tib</td></tr></tbody></table>
+<table><thead><tr><th width="78.30859375"></th><th width="198.4609375">新採購</th><th width="193.171875">續費</th><th>增加週期流量</th></tr></thead><tbody><tr><td>場景</td><td>首次採購或流量過期後再次採購Geyser Stream</td><td>在Geyser Stream流量週期內續費</td><td>Geyser Stream週期流量提前消耗殆盡，需補充流量</td></tr><tr><td>結果</td><td>根據採購時長生成週期流量。</td><td>延遲流量週期</td><td>不延長有效期，只增加週期內的流量</td></tr><tr><td>例子</td><td>新採購5 TiB 1個週期，則可用流量為：<br>- 起始週期：5 TiB</td><td>採購5 TiB 1個週期，在起始週期內續費1個週期，則可用流量為：<br>- 起始週期：5 TiB<br>- 第2週期：10 TiB</td><td>採購5 TiB 1個週期，同時續費10 Tib 1個週期，起始週期內發現流量消耗殆盡，選擇在起始週期新增流量 5 Tib<br>- 起始週期：5 Tib + 5 Tib<br>- 第2週期：10 Tib</td></tr></tbody></table>

@@ -9,17 +9,27 @@ metaLinks:
 
 # BSC 全節點同步
 
-### 全節點同步是什麼
+<details>
+
+<summary><strong>全節點同步是什麼</strong></summary>
 
 全節點同步是 BlockRazor 在 Node Stream 下提供的低延遲節點同步服務，用於幫助用戶自己的 BSC 全節點更快同步到最新區塊和 world state。
 
-### 為什麼選擇全節點同步
+</details>
+
+<details>
+
+<summary><strong>為什麼選擇全節點同步</strong></summary>
 
 對於很多高頻交易系統和基礎設施系統來說，“本地節點能不能足夠快地同步到最新狀態”是一個共性問題，即使應用本身邏輯再快，後續策略判斷、數據分析和交易執行計算也仍然會受到滯後狀態的影響。
 
 全節點同步的優勢，不只是“幫助節點連上網絡”，而在於它為依賴本地節點狀態的系統提供了更適合生產環境的低延遲同步方式。與單純訂閱區塊流不同，全節點同步並不是向用戶持續推送一份結構化數據，而是讓用戶自己的全節點直接與 BlockRazor 的高性能網絡節點建立 P2P 連接，利用BlockRazor的全球高性能網絡更快從高質量節點接收最新區塊和狀態更新。
 
-### 全節點同步適合哪些用戶
+</details>
+
+<details>
+
+<summary><strong>全節點同步適合哪些用戶</strong></summary>
 
 * **Quant Team / Trading Bot / Searcher**\
   **依賴本地節點狀態做策略判斷、交易準備或鏈上分析的量化和交易系統。**
@@ -28,6 +38,8 @@ metaLinks:
 
 如果你的目標只是低延遲獲取確認後的區塊數據，Block Stream 通常就已經足夠。\
 如果你的系統需要自己的本地節點盡快同步到最新區塊和 world state，那麼全節點同步會更合適。
+
+</details>
 
 ### Benchmark
 

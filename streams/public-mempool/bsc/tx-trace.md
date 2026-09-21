@@ -9,13 +9,19 @@ metaLinks:
 
 # BSC Public Mempool Tx Trace
 
-### BSC Tx Trace是什麼
+<details>
+
+<summary><strong>BSC Tx Trace是什麼</strong></summary>
 
 Tx Trace 是 BlockRazor 提供的交易傳播路徑觀測工具，用於查詢指定交易在全球網絡中的傳播路徑、到達時間和跨區域時延分布。
 
 對於交易系統來說，很多問題並不能只通過鏈上回執判斷。例如，一筆交易雖然最終成功上鏈，但它最早出現在什麼區域、在不同區域之間傳播花了多長時間，這些都無法僅從鏈上結果中直接看出。基於 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md)，Tx Trace 可以幫助用戶從更接近網絡傳播層的視角觀察交易行為，把原本只能依靠經驗判斷的“延遲問題”或“區域差異問題”，轉化為可以進行分析的數據問題。
 
-### BSC Tx Trace的應用場景
+</details>
+
+<details>
+
+<summary><strong>BSC Tx Trace的應用場景</strong></summary>
 
 **交易延遲排查：**&#x7576;交易發送結果異常、表現不穩定，或實際執行效果與預期不一致時，可以通過 Tx Trace 查看交易在全球網絡中的傳播路徑與時間差，輔助判斷問題是否出在網絡傳播環節。
 
@@ -23,7 +29,7 @@ Tx Trace 是 BlockRazor 提供的交易傳播路徑觀測工具，用於查詢�
 
 **高頻交易鏈路優化：**&#x5C0D;於依賴時機和速度的交易系統，可以通過 Tx Trace 分析交易在不同區域的擴散表現，為鏈路優化提供參考。
 
-### 常見問題
+</details>
 
 <details>
 
@@ -72,7 +78,7 @@ curl -H "Authorization: <YOUR_AUTHORIZATION>" \
 	},
 	{
 		"region": "NA US Virginia",
-		"txTime": "2026-06-03 03:18:10.510",
+		"txTime": "2026-06-03 03:18:10.510", // UTC時間
 		"diff": "+29ms" // 該筆交易從EU Germany傳播至NA US Virginia消耗29ms
 	},
 	{

@@ -9,7 +9,9 @@ metaLinks:
 
 # Base Get FlashBlockTransaction
 
-### Base Get FlashBlockTransaction是什麼
+<details>
+
+<summary>Base Get FlashBlockTransaction是什麼</summary>
 
 `Get FlashBlockStream` 是 BlockRazor 為 Base 提供的實時 FlashBlock 交易數據訂閱接口，用於以更低延遲方式獲取 Base 上FlashBlock中的交易數據。該接口支持 gRPC 和 WebSocket 兩種協議，適合對數據到達時間更敏感的交易系統、監控系統和實時處理系統接入。
 
@@ -17,7 +19,7 @@ metaLinks:
 
 對於 Trading Bot、量化策略、實時監控平台和前端交易應用來說，等待正式區塊往往意味著更長的反饋時間；而 Get FlashBlockTransaction 的價值，就是幫助系統在正式區塊到來之前，更早接收到交易和區塊變化信號，為後續判斷和響應爭取更多時間。
 
-### 常見問題
+</details>
 
 <details>
 

@@ -9,17 +9,25 @@ metaLinks:
 
 # Ethereum Block Stream
 
-### Ethereum NewBlocks是什麼
+<details>
+
+<summary><strong>Ethereum NewBlocks是什麼</strong></summary>
 
 NewBlocks 是 BlockRazor 提供的高性能區塊數據流服務，用於低延遲訂閱鏈上最新區塊與已確認交易。NewBlocks 幫助用戶更早接收到最新區塊內容，並將其中的區塊頭、交易列表和後續出塊者信息，以更低延遲接入自己的監控或策略系統。
 
 NewBlocks 基於 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 分發最新區塊數據。當區塊在網絡中產生並開始傳播時，BlockRazor 會在多個核心區域盡早接收區塊，再通過低延遲鏈路轉發給訂閱方，縮短用戶接收區塊數據的時間。
 
-### Ethereum NewBlocks的應用場景
+</details>
+
+<details>
+
+<summary><strong>Ethereum NewBlocks的應用場景</strong></summary>
 
 * **Confirmed交易監控：** 實時接收最新區塊中的已確認交易，用於監控目標地址、熱門合約或異常交易行為
 * **區塊級數據分析：** 獲取區塊頭、交易列表與後續出塊者信息，用於區塊研究、節點觀測與網絡狀態分析
 * **策略數據輸入：** 作為交易系統的 confirmed 數據源，與 Public Mempool、Transaction Submission 等能力配合使用，構建更完整的監控與執行鏈路
+
+</details>
 
 ### 價格
 

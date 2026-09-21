@@ -8,13 +8,19 @@ metaLinks:
 
 # BSC Private Mempool
 
-### BSC Private Mempool是什麼
+<details>
+
+<summary><strong>BSC Private Mempool是什麼</strong></summary>
 
 BSC Private Mempool 是 BlockRazor 提供的私有交易流訂閱服務，用於獲取 BlockRazor RPC 的私有訂單流數據。
 
 與 Public Mempool 訂閱公開傳播中的 pending 交易不同，Private Mempool 關注的是未進入公開傳播路徑的私有交易數據。這些數據通過 SSE 協議推送，方便用戶直接在策略系統中進行解析、篩選和後續處理。Private Mempool 會對交易內容做統一脫敏，僅披露被授權公開的交易字段。在保留策略分析所需的關鍵信息的同時兼顧數據隱私。
 
-### BSC Private Mempool的應用場景
+</details>
+
+<details>
+
+<summary><strong>BSC Private Mempool的應用場景</strong></summary>
 
 Private Mempool 適用於希望圍繞私有訂單流進行監控、判斷和策略執行的用戶，常見場景包括 backrunning、copy trading 和 sniping。
 
@@ -22,11 +28,17 @@ Private Mempool 適用於希望圍繞私有訂單流進行監控、判斷和策�
 * **Copy Trading:** 當私有訂單流中出現目標地址、策略賬戶或特定類型交易時，用戶可以更早識別這些跟單信號，並圍繞買入、賣出、加倉或調倉等動作構建跟隨策略。
 * **Sniping:** 在新池創建、流動性注入、代幣開盤或特定目標交易即將觸發市場變化時，盡早從私有訂單流中識別這些關鍵信號，為快速入場、信號跟隨和其他時機敏感型策略提供更早的響應窗口。
 
-### 為什麼選擇BSC Private Mempool
+</details>
+
+<details>
+
+<summary><strong>為什麼選擇BSC Private Mempool</strong></summary>
 
 在 BSC 場景中，很多高價值交易並不會出現在公開 Mempool 中，而是通過 BlockRazor RPC 提供的私有通道上鏈。對於希望圍繞這類交易構建策略的用戶來說，等到交易最終上鏈後再捕捉信號，往往已經錯過更有價值的處理時機。
 
 Private Mempool 依賴 [BEF](../he-xin-ji-shu/blockchain-edge-fabric.md) 為不同區域的用戶提供私有訂單流接入能力，讓用戶能夠圍繞私有交易本身做更早的分析與決策。
+
+</details>
 
 ### 快速開始
 

@@ -9,15 +9,21 @@ metaLinks:
 
 # Base Get BlockStream
 
-### Base Get BlockStream是什麼
+<details>
+
+<summary><strong>Base Get BlockStream是什麼</strong></summary>
 
 Get BlockStream 是 BlockRazor 為 Base 提供的實時區塊數據訂閱接口，用於以低延遲方式持續獲取 Base 上最新生成的區塊數據。該接口基於 gRPC 協議提供，適合需要持續消費區塊數據的交易系統、數據系統和基礎設施系統接入。
 
-### 為什麼選擇Base Get BlockStream
+</details>
+
+<details>
+
+<summary><strong>為什麼選擇Base Get BlockStream</strong></summary>
 
 對於交易系統、監控系統和數據系統來說，區塊數據獲取能力不只是“能夠拿到新區塊”，還關係到不同地區服務的接收時效、數據鏈路的穩定性，以及長時間運行場景下的整體表現。BlockRazor 基於全球多點部署和跨洲專線在 Base 上提供 Frankfurt、Virginia 和 Tokyo 等多個區域入口，根據 [Base Benchmark](https://blockrazor.io/zh/blog/20250922basebenchmark/)，BlockRazor 在多個地區的區塊接收延遲相較 Base官方服務均表現出優勢，尤其在中高分位區間領先更明顯。
 
-### 常見問題
+</details>
 
 <details>
 

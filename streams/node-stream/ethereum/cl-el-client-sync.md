@@ -9,19 +9,29 @@ metaLinks:
 
 # Ethereum CL/EL 客戶端同步
 
-### CL/EL 客戶端同步是什麼
+<details>
+
+<summary><strong>CL/EL 客戶端同步是什麼</strong></summary>
 
 CL/EL 客戶端同步是 BlockRazor 在 Node Stream 場景下，面向以太坊節點架構設計的低延遲節點同步能力，用於幫助用戶自己的 Ethereum 節點更快同步最新鏈上狀態。
 
 與 BSC 全節點同步主要面向單一 EVM 執行節點不同，以太坊在 The Merge 後採用 CL/EL 雙客戶端架構。因此，Ethereum 的Node Stream不只是讓 EL 更快執行新區塊，也支持讓 CL 更快跟進正確 head、safe / finalized block 和共識層消息。
 
-### 為什麼選擇 CL/EL 客戶端同步
+</details>
+
+<details>
+
+<summary><strong>為什麼選擇 CL/EL 客戶端同步</strong></summary>
 
 對於很多高頻交易系統、Searcher、量化策略和基礎設施團隊來說，“本地 Ethereum 節點能不能足夠快地同步最新 head、執行最新區塊並更新 world state”是一個核心問題。即使策略系統、撮合邏輯或交易構造本身很快，只要本地節點看到的鏈頭或狀態落後，後續的策略判斷、模擬、風控、交易替換和執行決策仍然會受到影響。
 
 CL/EL 客戶端同步的價值，不只是“幫助節點連上網絡”，而是為依賴本地 Ethereum 節點狀態的生產系統提供更低延遲、更穩定的同步入口，降低本地節點在策略判斷、交易模擬和 MEV 場景中的同步滯後對交易和分析系統造成的影響。
 
-### CL/EL 客戶端同步適合哪些用戶
+</details>
+
+<details>
+
+<summary><strong>CL/EL 客戶端同步適合哪些用戶</strong></summary>
 
 * **Quant Team / Trading Bot / Searcher**\
   **依賴本地節點狀態做策略判斷、交易準備或鏈上分析的量化和交易系統。**
@@ -30,6 +40,8 @@ CL/EL 客戶端同步的價值，不只是“幫助節點連上網絡”，而�
 
 如果你的目標只是低延遲獲取確認後的區塊數據，Block Stream 通常就已經足夠。\
 如果你的系統需要自己的本地節點盡快同步到最新區塊和 world state，那麼CL/EL 客戶端同步會更合適。
+
+</details>
 
 ### 價格
 

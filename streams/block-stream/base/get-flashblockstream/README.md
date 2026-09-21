@@ -9,7 +9,9 @@ metaLinks:
 
 # Base Get FlashBlockStream
 
-### Base Get FlashBlockStream是什麼
+<details>
+
+<summary><strong>Base Get FlashBlockStream是什麼</strong></summary>
 
 `Get FlashBlockStream` 是 BlockRazor 為 Base 提供的實時 FlashBlock 數據訂閱接口，用於以更低延遲方式獲取 Base 上更早階段的區塊數據。該接口支持 gRPC 和 WebSocket 兩種協議，適合對數據到達時間更敏感的交易系統、監控系統和實時處理系統接入。
 
@@ -17,15 +19,19 @@ metaLinks:
 
 對於 Trading Bot、量化策略、實時監控平台和前端交易應用來說，等待正式區塊往往意味著更長的反饋時間；而 Get FlashBlockStream 的價值，就是幫助系統在正式區塊到來之前，更早接收到交易和區塊變化信號，為後續判斷和響應爭取更多時間。
 
-### 為什麼選擇Base Get FlashBlockStream
-
-BlockRazor 基於 [BEF](../../../../he-xin-ji-shu/blockchain-edge-fabric.md) 在 Base 上提供 Frankfurt、Virginia 和 Tokyo 等多個區域入口，根據 [Base Benchmark](https://blockrazor.io/zh/blog/20250922basebenchmark/)，BlockRazor 在多個地區的FlashBlock接收延遲相較 Base官方服務均表現出優勢，尤其在中高分位區間領先更明顯。
-
-### 常見問題
+</details>
 
 <details>
 
-<summary>Get BlockStream 和 Get FlashBlockStream 有什麼區別</summary>
+<summary><strong>為什麼選擇Base Get FlashBlockStream</strong></summary>
+
+BlockRazor 基於 [BEF](../../../../he-xin-ji-shu/blockchain-edge-fabric.md) 在 Base 上提供 Frankfurt、Virginia 和 Tokyo 等多個區域入口，根據 [Base Benchmark](https://blockrazor.io/zh/blog/20250922basebenchmark/)，BlockRazor 在多個地區的FlashBlock接收延遲相較 Base官方服務均表現出優勢，尤其在中高分位區間領先更明顯。
+
+</details>
+
+<details>
+
+<summary><strong>Get BlockStream 和 Get FlashBlockStream 有什麼區別</strong></summary>
 
 兩者的核心區別在於 數據粒度、時間點和適用場景 不同。
 

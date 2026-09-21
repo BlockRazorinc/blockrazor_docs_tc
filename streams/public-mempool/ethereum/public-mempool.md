@@ -9,7 +9,9 @@ metaLinks:
 
 # Ethereum Public Mempool
 
-### Ethereum Public Mempool是什麼
+<details>
+
+<summary><strong>Ethereum Public Mempool是什麼</strong></summary>
 
 Public Mempool 是 BlockRazor 基于 [BEF](../../../he-xin-ji-shu/blockchain-edge-fabric.md) 提供的高性能 pending 交易數據流服務，用於低延遲訂閱公開傳播中的未確認交易。
 
@@ -19,13 +21,19 @@ Public Mempool 是 BlockRazor 基于 [BEF](../../../he-xin-ji-shu/blockchain-edg
 * 更充足的時間完成參數計算與風險控制
 * 更高概率在競爭場景中獲得更優執行位置
 
-### Ethereum Public Mempool的應用場景
+</details>
+
+<details>
+
+<summary><strong>Ethereum Public Mempool的應用場景</strong></summary>
 
 * **Pending交易監控：**&#x5BE6;時監控公開傳播中的 pending 交易，用於識別活躍地址、熱門合約或異常交易行為
 * **Smart Money追蹤：**&#x76E1;早跟蹤目標地址的交易活動，為 copy trading 或策略跟隨提供信號輸入
 * **Backrun機會發現：**&#x767C;現可能觸發 backrun 機會的公開交易，為後續策略判斷和交易提交爭取更多時間
 * **Sniping機會發現：**&#x5728;新池上線、流動性注入或目標交易出現時，盡早捕捉公開市場中的首輪信號
 * **策略實時數據輸入**：作為交易系統的實時輸入源，與 Block Stream、Node Stream、RPC 或 Block Builder 等能力配合使用，構建更完整的監控與執行鏈路
+
+</details>
 
 ### 價格
 
