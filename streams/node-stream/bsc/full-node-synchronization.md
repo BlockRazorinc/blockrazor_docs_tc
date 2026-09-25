@@ -53,7 +53,7 @@ metaLinks:
 
 ### 價格
 
-<table><thead><tr><th width="173.8984375">支付方式</th><th width="295.85546875">價格</th><th width="254.1796875">操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$80 / enode / 日<br>$800 / enode / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_enode&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / month<br>和其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="173.8984375">支付方式</th><th width="295.85546875">價格</th><th width="254.1796875">操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$80 / enode / 日<br>$800 / enode / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_enode&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / month<br>和其他核心服務組合訂閱，享有更高價值。</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### Relay IP
 

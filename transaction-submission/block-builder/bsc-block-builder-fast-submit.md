@@ -33,7 +33,7 @@ Fast Submit 不改變交易邏輯，也不要求用戶重寫現有提交流程�
 
 ### 價格
 
-<table><thead><tr><th width="134.90625">支付方式</th><th width="370.83984375">價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td><strong>$100</strong> / 日<br><strong>$1000</strong> / 月</td><td><a href="https://blockrazor.io/#/portal/pricing?purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_fast_submit&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td><strong>$1250 / 月</strong><br>與其他9項服務打包購買</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="134.90625">支付方式</th><th width="370.83984375">價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td><strong>$100</strong> / 日<br><strong>$1000</strong> / 月</td><td><a href="https://blockrazor.io/#/portal/pricing?purchaseMode=personalized&#x26;chain=bsc&#x26;serviceId=bsc_fast_submit&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td><strong>$1250 / 月</strong><br>與其他核心服務組合訂閱，享有更高價值</td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### 為什麼 Fast Submit 更快、更穩
 
