@@ -2,6 +2,8 @@
 description: >-
   介紹BlockRazor Block Builder的eth_sendBackBundle(0 Gwei)
   API的接口說明、價格、端點、請求參數、請求示例和返回示例
+hidden: true
+noIndex: true
 metaLinks:
   canonical: send-backbundle.md
   alternates:
