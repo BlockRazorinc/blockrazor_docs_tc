@@ -46,10 +46,6 @@ Searcher的成本主要分為Alpha策略執行成本、速度提升成本和交�
 
 bundle上鏈速度的提升涉及Builder API限流解除成本。Searcher可以免費對接RPC的[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)，RPC會將bundle轉發給鏈上的主流Builder，在節省成本的同時保障上鏈速度。
 
-**交易成本**
-
-在計算套利機會時，套利利潤 = 套利空間-交易成本，套利利潤>0才被視為是一個套利機會。如果交易成本被壓縮到極致，市場極小波動產生的套利機會也可以被捕捉，可擴展Alpha策略的覆蓋範圍。目前BSC上的Builder和RPC支持0 gwei交易，Searcher可嘗試對接。
-
 ### BlockRazor如何提升Searcher的Beta競爭力
 
 #### 速度
@@ -63,10 +59,6 @@ BlockRazor為Searcher提供[Public Mempool](../../streams/public-mempool/bsc/pub
 在bundle上鍊速度方面，Searcher可直接對接RPC的[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)，RPC會在第一時間將bundle轉發給鏈上的主流Builder，同時基於 [BEF](../../he-xin-ji-shu/blockchain-edge-fabric.md)，RPC可以在網絡層面實現交易端到端的低延遲轉發。數據表明，提交至RPC的交易在下個區塊內上鏈的概率高達95%，100%的交易可以在兩個區塊內上鏈，交易上鏈的速度和穩定性遠超其他RPC。
 
 <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption><p>benchmark客戶端分別向BlockRazor RPC、A RPC和B RPC發送交易，記錄交易發送時的最新區塊號和上鏈區塊號的差值，差值越小，表示交易上鏈速度越快。</p></figcaption></figure>
-
-#### 成本
-
-BlockRazor為Searcher提供極具性價比的訂閱計劃，一經訂閱，Searcher以極低延遲訂閱Public Mempool交易，向BSC上出塊率第一的Block Builder發送0 gwei交易，同時訂閱[Private Mempool](../../streams/private-mempool.md)的隱私交易流執行backrun策略以拓展套利機會範圍。
 
 ### 如何使用BlockRazor的服务
 
