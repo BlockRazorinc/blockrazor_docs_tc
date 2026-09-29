@@ -28,7 +28,7 @@ metaLinks:
 
 # BlockRazor 服務和價格 ｜Streams 和 Transaction Submission
 
-### 自選服務
+### Personalized
 
 {% tabs %}
 {% tab title="BSC" %}
@@ -56,13 +56,13 @@ metaLinks:
 {% endtab %}
 {% endtabs %}
 
-### 極速服務包
+### Package
 
 {% hint style="info" %}
 相比單項服務的組合式採購，用戶可以更低價格打包採購BSC和Ethereum服務，訂閱價格&#x70BA;**$1250 / 月，**&#x7ACB;即前往 <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a>。
 {% endhint %}
 
-<table data-search="false"><thead><tr><th width="206.2421875">服務</th><th width="77.7890625">數量</th><th width="422.9609375">描述</th></tr></thead><tbody><tr><td><a href="../streams/public-mempool/bsc/public-mempool.md">Public Mempool - BSC</a><br><a href="../streams/public-mempool/ethereum/public-mempool.md">Public Mempool - ETH</a></td><td>2</td><td>更早掌握 BSC pending交易，在聰明錢追蹤、狙擊、跟單與 Backrun 中取得決定性優勢，訂閱額度跨鏈共享</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream - BSC</a><br><a href="../streams/block-stream/ethereum/newblocks.md">Block Stream - ETH</a></td><td>2</td><td>低延遲接收最新 BSC 區塊與已確認交易，讓策略立即回應，訂閱額度跨鏈共享</td></tr><tr><td><a href="../streams/node-stream/bsc/full-node-synchronization.md">Node Stream - BSC</a><br><a href="../streams/node-stream/ethereum/cl-el-client-sync.md">Node Stream - ETH</a></td><td>1</td><td>加速 BSC 全節點世界狀態同步，讓依賴狀態的策略領先競爭對手，同步额度跨链共享</td></tr><tr><td><a href="../transaction-submission/block-builder/call-bundle.md">Call Bundle</a></td><td>1</td><td>提交前模擬 Bundle，及早發現 Revert 與參數問題，避免昂貴的鏈上失敗</td></tr><tr><td><a href="../transaction-submission/block-builder/bsc-block-builder-fast-submit.md">Fast Submit</a></td><td>1</td><td>透過專用優化通道更快、更可靠地抵達 BSC Builder，無需改寫提交流程</td></tr><tr><td><a href="../streams/public-mempool/bsc/tx-trace.md">Tx Trace</a></td><td>1</td><td>可視化全球交易傳播與區域延遲，快速定位瓶頸</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th width="206.2421875">服務</th><th width="77.7890625">數量</th><th width="422.9609375">描述</th></tr></thead><tbody><tr><td><a href="../streams/public-mempool/bsc/public-mempool.md">Public Mempool - BSC</a><br><a href="../streams/public-mempool/ethereum/public-mempool.md">Public Mempool - ETH</a></td><td>2</td><td>更早掌握 BSC pending交易，在聰明錢追蹤、狙擊、跟單與 Backrun 中取得決定性優勢，訂閱額度跨鏈共享</td></tr><tr><td><a href="../streams/block-stream/bsc/newblocks.md">Block Stream - BSC</a><br><a href="../streams/block-stream/ethereum/newblocks.md">Block Stream - ETH</a></td><td>2</td><td>低延遲接收最新 BSC 區塊與已確認交易，讓策略立即回應，訂閱額度跨鏈共享</td></tr><tr><td><a href="../streams/node-stream/bsc/full-node-synchronization.md">Node Stream - BSC</a><br><a href="../streams/node-stream/ethereum/cl-el-client-sync.md">Node Stream - ETH</a></td><td>1</td><td>加速 BSC 全節點世界狀態同步，讓依賴狀態的策略領先競爭對手，同步额度跨链共享</td></tr><tr><td><a href="../transaction-submission/block-builder/call-bundle.md">Call Bundle - BSC</a></td><td>1</td><td>提交前模擬 Bundle，及早發現 Revert 與參數問題，避免昂貴的鏈上失敗</td></tr><tr><td><a href="../transaction-submission/block-builder/bsc-block-builder-fast-submit.md">Fast Submit - BSC</a></td><td>1</td><td>透過專用優化通道更快、更可靠地抵達 BSC Builder，無需改寫提交流程</td></tr><tr><td><a href="../streams/public-mempool/bsc/tx-trace.md">Tx Trace - BSC</a></td><td>1</td><td>可視化全球交易傳播與區域延遲，快速定位瓶頸</td></tr><tr><td><a href="../streams/node-stream/robinhood-chain/sequencer-feed.md">Sequencer Feed</a></td><td>1</td><td>默認包含 Node-required Sequencer Feed。如需替換為 Direct，請通過 <a href="https://discord.gg/qqJuwRb8Nh">Discord</a>。</td></tr></tbody></table>
 
 ### 折扣說明
 
