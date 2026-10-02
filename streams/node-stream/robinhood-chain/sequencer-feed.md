@@ -49,21 +49,30 @@ Benchmark數據如下：
 
 {% tabs %}
 {% tab title="use2-az1" %}
-快照時間：2026-08-12T10:18:57.825039121Z，测试測試區塊總數：252798
+快照時間：2026/10/02 08:28:52，测试測試區塊總數：3,742
 
-<table><thead><tr><th>Sequencer Feed</th><th width="109.0546875">Win rate</th><th width="101.1484375">P50</th><th width="110.5859375">P90</th><th width="105.84375">P95</th><th width="117.4296875">P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>80.27%</strong></td><td><strong>0.000 ms</strong></td><td><strong>0.000 ms</strong></td><td><strong>2.771 ms</strong></td><td><strong>6.116 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>19.73%</strong></td><td><strong>4.640 ms</strong></td><td><strong>9.604 ms</strong></td><td><strong>15.651 ms</strong></td><td><strong>19.749 ms</strong></td></tr></tbody></table>
+| Sequencer Feed                 |      P50 |      P90 |      P95 |       P99 |          最大值 |
+| ------------------------------ | -------: | -------: | -------: | --------: | -----------: |
+| BlockRazor Sequencer Feed      | 0.000 ms | 0.000 ms | 0.000 ms |  0.000 ms |     1.180 ms |
+| Robinhood Chain Sequencer Feed | 3.302 ms | 5.388 ms | 6.202 ms | 20.267 ms | 1,686.011 ms |
 {% endtab %}
 
 {% tab title="use2-az2" %}
-快照時間：2026-08-12T10:18:56.218075456Z，測試區塊總數：252451
+快照時間：2026/10/02 08:28:57，測試區塊總數：3,561
 
-<table><thead><tr><th width="157.8203125">Sequencer Feed</th><th width="94.6875">Win rate</th><th width="104.75">P50</th><th width="105.765625">P90</th><th width="107.68359375">P95</th><th>P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>87.01%</strong></td><td><strong>0.000 ms</strong></td><td><strong>0.445 ms</strong></td><td><strong>1.659 ms</strong></td><td><strong>4.831 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>12.98%</strong></td><td><strong>5.302 ms</strong></td><td><strong>17.379 ms</strong></td><td><strong>23.194 ms</strong></td><td><strong>70.723 ms</strong></td></tr></tbody></table>
+| Sequencer Feed                 |       P50 |       P90 |       P95 |       P99 |          最大值 |
+| ------------------------------ | --------: | --------: | --------: | --------: | -----------: |
+| BlockRazor Sequencer Feed      |  0.000 ms |  0.000 ms |  0.000 ms |  0.000 ms |     0.000 ms |
+| Robinhood Chain Sequencer Feed | 24.752 ms | 25.541 ms | 28.123 ms | 66.117 ms | 1,609.138 ms |
 {% endtab %}
 
 {% tab title="use2-az3" %}
-快照時間：2026-08-12T10:18:17.587552975Z，測試區塊總數：251670
+快照時間：2026/10/02 08:28:55，測試區塊總數：3,614
 
-<table><thead><tr><th>Sequencer Feed</th><th width="103.37109375">Win rate</th><th width="109.68359375">P50</th><th width="106.984375">P90</th><th width="106.8828125">P95</th><th>P99</th></tr></thead><tbody><tr><td>BlockRazor Sequencer Feed</td><td><strong>76.48%</strong></td><td><strong>0.000 ms</strong></td><td><strong>1.640 ms</strong></td><td><strong>2.842 ms</strong></td><td><strong>6.336 ms</strong></td></tr><tr><td>Robinhood Chain Sequencer Feed</td><td><strong>23.52%</strong></td><td><strong>2.742 ms</strong></td><td><strong>11.219 ms</strong></td><td><strong>16.373 ms</strong></td><td><strong>32.839 ms</strong></td></tr></tbody></table>
+| Sequencer Feed                 |       P50 |       P90 |       P95 |       P99 |        最大值 |
+| ------------------------------ | --------: | --------: | --------: | --------: | ---------: |
+| US Sequencer Feed              |  0.000 ms |  0.000 ms |  0.000 ms |  0.000 ms |   0.000 ms |
+| Robinhood Chain Sequencer Feed | 22.859 ms | 23.551 ms | 24.896 ms | 55.628 ms | 512.214 ms |
 {% endtab %}
 {% endtabs %}
 
