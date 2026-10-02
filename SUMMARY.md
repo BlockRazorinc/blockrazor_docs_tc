@@ -51,7 +51,7 @@
       * [使用Dedicate Node](streams/node-stream/bsc/dedicate-node/shi-yong-dedicate-node.md)
   * [Ethereum Node Stream 概覽](streams/node-stream/ethereum/README.md "Ethereum")
     * [Ethereum CL/EL 客戶端同步接入指南](streams/node-stream/ethereum/cl-el-client-sync.md "CL/EL 客戶端同步")
-  * [Robinhood Chain Sequencer Feed 概覽](streams/node-stream/robinhood-chain/README.md "Robinhood Chain")
+  * [Robinhood Chain Sequencer Feed 接入指南](streams/node-stream/robinhood-chain/README.md "Robinhood Chain")
     * [Robinhood Chain Node-required Sequencer Feed 接入指南](streams/node-stream/robinhood-chain/sequencer-feed.md "Node-required Sequencer Feed")
     * [Robinhood Chain Node-required Sequencer Feed(Ultra) 接入指南](streams/node-stream/robinhood-chain/sequencer-feed-ultra.md "Node-required Sequencer Feed(Ultra)")
     * [Robinhood Chain Direct Sequencer Feed 接入指南](streams/node-stream/robinhood-chain/direct-sequencer-feed.md "Direct Sequencer Feed")
