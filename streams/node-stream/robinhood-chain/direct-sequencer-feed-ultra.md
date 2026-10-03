@@ -20,6 +20,12 @@ Ultra 版本由底層 BEF 技術驅動，能夠以極致速度直接獲取最新
 
 </details>
 
+### **高性能 JSON 解析**
+
+對於接入 Robinhood Chain Direct Sequencer Feed(Ultra) 的 Go 應用程序，可以使用 [ByteDance Sonic](https://github.com/bytedance/sonic) 將通過 WebSocket 接收的每條 JSON 消息反序列化為應用程序自定義的結構體。Sonic 是一個高性能 JSON 序列化與反序列化庫，在支持的運行環境中使用 JIT 和 SIMD 技術進行加速。它提供易於使用的 `Marshal` 和 `Unmarshal` API、流式解碼器以及基於 AST 的部分字段讀取能力，適合希望降低應用程序端 JSON 解析開銷的延遲敏感型交易系統。
+
+實際性能取決於消息結構、CPU 架構和運行時配置，建議應用程序在自身生產環境中進行基準測試，並在處理延遲敏感型流量之前預熱常用的 Go 類型。
+
 ### 價格
 
 價格為$200 / stream / 日和$2000 / stream / 月。 <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_direct_feed_stream_speedup&#x26;billing=day" class="button primary small">訂閱</a>
