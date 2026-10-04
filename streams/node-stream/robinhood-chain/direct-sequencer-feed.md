@@ -18,11 +18,13 @@ description: 瞭解 Robinhood Chain Sequencer Feed 服務、價格、端點和�
 
 </details>
 
-### **高性能 JSON 解析**
+### 高性能 JSON 解析
 
-對於接入 Robinhood Chain Direct Sequencer Feed 的 Go 應用程序，可以使用 [ByteDance Sonic](https://github.com/bytedance/sonic) 將通過 WebSocket 接收的每條 JSON 消息反序列化為應用程序自定義的結構體。Sonic 是一個高性能 JSON 序列化與反序列化庫，在支持的運行環境中使用 JIT 和 SIMD 技術進行加速。它提供易於使用的 `Marshal` 和 `Unmarshal` API、流式解碼器以及基於 AST 的部分字段讀取能力，適合希望降低應用程序端 JSON 解析開銷的延遲敏感型交易系統。
+接入 Robinhood Chain Direct Sequencer Feed 的 Go 客戶端，可使用 [ByteDance Sonic](https://github.com/bytedance/sonic) 解析通過 WebSocket 接收的 JSON 消息。Sonic 利用 JIT 和 SIMD 技術加速序列化與反序列化，可以有效降低交易策略在消息解析環節的延遲和 CPU 開銷。
 
-實際性能取決於消息結構、CPU 架構和運行時配置，建議應用程序在自身生產環境中進行基準測試，並在處理延遲敏感型流量之前預熱常用的 Go 類型。
+經實測，Sonic 的 JSON 解析延遲 **P50 約為 2–3 微秒**。實際性能仍會受到消息大小、數據結構、CPU 架構及運行環境的影響，建議使用真實 Feed 數據進行基準測試，並在正式處理延遲敏感型流量前完成預熱。
+
+目前我們提供的參考實現以 **Go** 為主。如果客戶端交易策略使用 Rust、C++等其他語言，可以參考上述延遲基準，選擇對應語言的高性能 JSON 解析庫，並在自身生產環境中完成性能驗證。
 
 ### 價格
 
