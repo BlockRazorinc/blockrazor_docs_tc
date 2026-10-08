@@ -49,30 +49,39 @@ Benchmark數據如下：
 
 {% tabs %}
 {% tab title="use2-az1" %}
-快照時間：2026/10/02 08:28:52，测试測試區塊總數：3,742
+Snapshot Time: 2026/10/08 02:11:48\
+Total Blocks Tested: 813
 
-| Sequencer Feed                 |      P50 |      P90 |      P95 |       P99 |          最大值 |
-| ------------------------------ | -------: | -------: | -------: | --------: | -----------: |
-| BlockRazor Sequencer Feed      | 0.000 ms | 0.000 ms | 0.000 ms |  0.000 ms |     1.180 ms |
-| Robinhood Chain Sequencer Feed | 3.302 ms | 5.388 ms | 6.202 ms | 20.267 ms | 1,686.011 ms |
+| Sequencer Feed                 |          P50 |          P90 |          P95 |          P99 |      Maximum |
+| ------------------------------ | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Node Required**   | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed |    19.814 ms |    21.312 ms |    23.615 ms |    58.855 ms |   443.588 ms |
+
+**BlockRazor Node Required Win Rate: 100.00%**
 {% endtab %}
 
 {% tab title="use2-az2" %}
-快照時間：2026/10/02 08:28:57，測試區塊總數：3,561
+Snapshot Time: 2026/10/08 02:11:45\
+Total Blocks Tested: 989
 
-| Sequencer Feed                 |       P50 |       P90 |       P95 |       P99 |          最大值 |
-| ------------------------------ | --------: | --------: | --------: | --------: | -----------: |
-| BlockRazor Sequencer Feed      |  0.000 ms |  0.000 ms |  0.000 ms |  0.000 ms |     0.000 ms |
-| Robinhood Chain Sequencer Feed | 24.752 ms | 25.541 ms | 28.123 ms | 66.117 ms | 1,609.138 ms |
+| Sequencer Feed                 |          P50 |          P90 |          P95 |          P99 |      Maximum |
+| ------------------------------ | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Node Required**   | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed |     3.965 ms |     4.889 ms |     5.771 ms |    29.968 ms |   468.612 ms |
+
+**BlockRazor Node Required Win Rate: 100.00%**
 {% endtab %}
 
 {% tab title="use2-az3" %}
-快照時間：2026/10/02 08:28:55，測試區塊總數：3,614
+Snapshot Time: 2026/10/08 02:11:50\
+Total Blocks Tested: 414
 
-| Sequencer Feed                 |       P50 |       P90 |       P95 |       P99 |        最大值 |
-| ------------------------------ | --------: | --------: | --------: | --------: | ---------: |
-| US Sequencer Feed              |  0.000 ms |  0.000 ms |  0.000 ms |  0.000 ms |   0.000 ms |
-| Robinhood Chain Sequencer Feed | 22.859 ms | 23.551 ms | 24.896 ms | 55.628 ms | 512.214 ms |
+| Sequencer Feed                 |          P50 |          P90 |          P95 |          P99 |      Maximum |
+| ------------------------------ | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Node Required**   | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed |    22.039 ms |    23.821 ms |    47.472 ms |    64.479 ms |   445.627 ms |
+
+**BlockRazor Node Required Win Rate: 100.00%**
 {% endtab %}
 {% endtabs %}
 

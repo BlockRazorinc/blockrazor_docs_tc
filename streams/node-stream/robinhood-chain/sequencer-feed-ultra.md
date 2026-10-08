@@ -32,47 +32,54 @@ Ultra 版本底層搭載 BEF 技術，能夠以最低延遲向用戶的本地節
 
 {% tabs %}
 {% tab title="use2-az1" %}
-快照时间: 2026/10/02 07:49:57 樣本總數：2984
+Snapshot Time: 2026/10/08 02:22:30\
+Total Blocks Tested: 2,570
 
-| Sequencer Feed                 |      P50 |      P90 |      P95 |       P99 |        最大值 |
-| ------------------------------ | -------: | -------: | -------: | --------: | ---------: |
-| BlockRazor Sequencer Feed      | 0.000 ms | 0.000 ms | 0.000 ms |  0.000 ms |   0.000 ms |
-| Robinhood Chain Sequencer Feed | 7.449 ms | 9.086 ms | 9.644 ms | 17.949 ms | 474.037 ms |
+| Sequencer Feed                     |          P50 |          P90 |          P95 |          P99 |      Maximum |
+| ---------------------------------- | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Node Required Ultra** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed     |    22.271 ms |    23.640 ms |    26.388 ms |    53.690 ms |   471.721 ms |
+
+**BlockRazor Node Required Ultra Win Rate: 100.00%**
 {% endtab %}
 
 {% tab title="use2-az2" %}
-快照時間: 2026/10/02 07:50:13 樣本總數：2945
+Snapshot Time: 2026/10/08 02:24:06\
+Total Blocks Tested: 250
 
-| Sequencer Feed                 |       P50 |       P90 |       P95 |        P99 |        最大值 |
-| ------------------------------ | --------: | --------: | --------: | ---------: | ---------: |
-| BlockRazor Sequencer Feed      |  0.000 ms |  0.000 ms |  0.000 ms |   0.000 ms |   0.000 ms |
-| Robinhood Chain Sequencer Feed | 30.732 ms | 41.094 ms | 58.442 ms | 104.372 ms | 493.632 ms |
+| Sequencer Feed                     |          P50 |          P90 |          P95 |          P99 |      Maximum |
+| ---------------------------------- | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Node Required Ultra** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed     |     8.448 ms |     9.054 ms |     9.234 ms |   263.049 ms |   462.267 ms |
+
+**BlockRazor Node Required Ultra Win Rate: 100.00%**
 {% endtab %}
 
 {% tab title="use2-az3" %}
-快照時間: 2026/10/02 07:50:09 樣本總數：2982
+Snapshot Time: 2026/10/08 02:22:36\
+Total Blocks Tested: 2,583
 
-| Sequencer Feed                 |       P50 |       P90 |       P95 |       P99 |        最大值 |
-| ------------------------------ | --------: | --------: | --------: | --------: | ---------: |
-| BlockRazor Sequencer Feed      |  0.000 ms |  0.000 ms |  0.000 ms |  0.000 ms |   0.000 ms |
-| Robinhood Chain Sequencer Feed | 27.053 ms | 28.322 ms | 31.812 ms | 61.687 ms | 459.429 ms |
+| Sequencer Feed                     |          P50 |          P90 |          P95 |          P99 |      Maximum |
+| ---------------------------------- | -----------: | -----------: | -----------: | -----------: | -----------: |
+| **BlockRazor Node Required Ultra** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** |
+| Robinhood Chain Sequencer Feed     |    24.639 ms |    25.396 ms |    29.256 ms |    60.855 ms |   433.240 ms |
+
+**BlockRazor Node Required Ultra Win Rate: 100.00%**
 {% endtab %}
 
 {% tab title="Tokyo" %}
-樣本總數：`3,996`
+Total Blocks Tested：3996
 
-| Sequencer Feed                 |          P50 |          P90 |          P95 |          P99 |           最大值 |
+| Sequencer Feed                 |          P50 |          P90 |          P95 |          P99 |       Maximum |
 | ------------------------------ | -----------: | -----------: | -----------: | -----------: | ------------: |
 | **BlockRazor Sequencer Feed**  | **0.000 ms** | **0.000 ms** | **0.000 ms** | **0.000 ms** | **68.232 ms** |
 | Robinhood Chain Sequencer Feed |    71.365 ms |    108.596ms |    116.049ms |    220.859ms |    1969.576ms |
 {% endtab %}
 {% endtabs %}
 
-在三個可用區中，BlockRazor Sequencer Feed 的相對延遲從 P50 到 P99 均保持為 `0 ms`。相比之下，Robinhood Chain Sequencer Feed 的 P50 相對延遲介於 `7.449 ms` 至 `30.732 ms` 之間。
+從延遲分布來看，BlockRazor 不僅在大多數區塊上率先到達，而且這種領先優勢具有較高的一致性；相比之下，Robinhood Chain Sequencer Feed 更經常處於落後位置，且延遲波動更為明顯。
 
-其中，`use2-az2` 的延遲差距最為明顯。Robinhood Chain Sequencer Feed 的 P50 相對延遲為 `30.732 ms`，P99 達到 `104.372 ms`，最大相對延遲為 `493.632 ms`。
-
-綜合測試結果來看，BlockRazor Sequencer Feed 在三個被測可用區中均能更早、更穩定地完成區塊交付，並具有顯著更低的相對延遲，可為延遲敏感型應用和交易提供更快、更穩定的區塊優先交付窗口。
+綜合而言，BlockRazor Sequencer Feed 在區塊傳輸速度、首達率及延遲穩定性方面均展現出明顯優勢，能為延遲敏感型交易提供更可靠的先發窗口。
 
 ### 價格
 
