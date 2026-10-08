@@ -45,7 +45,7 @@ Total Blocks Tested: 2,570
 
 {% tab title="use2-az2" %}
 Snapshot Time: 2026/10/08 02:24:06\
-Total Blocks Tested: 250
+Total Blocks Tested: 2512
 
 | Sequencer Feed                     |          P50 |          P90 |          P95 |          P99 |      Maximum |
 | ---------------------------------- | -----------: | -----------: | -----------: | -----------: | -----------: |
