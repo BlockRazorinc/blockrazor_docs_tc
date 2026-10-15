@@ -40,51 +40,93 @@ package main
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
-	"math/rand"
 	"net/http"
+	"net/url"
+	"strings"
 	"time"
 
+	examples "github.com/BlockRazorinc/solana-trader-client-go/example"
 	"github.com/gagliardetto/solana-go"
 	"github.com/gagliardetto/solana-go/programs/system"
 	"github.com/gagliardetto/solana-go/rpc"
 )
 
 const (
-	httpEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction?auth=<auth_token>"
-	mainNetRPC   = ""
-	privateKey   = ""
-	publicKey    = ""
-	amount       = 200_000
-	tipAmount    = 1_000_000
+	// Example endpoints only. Always use the current endpoints published on the BlockRazor website.
+	httpBinaryEndpoint  = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction"
+	healthEndpoint      = "http://frankfurt.solana.blockrazor.xyz:443/health"
+	tipAccountsEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/getTipAccounts"
+	mainNetRPC          = ""
+	authKey             = ""
+	privateKey          = ""
+	publicKey           = ""
+	amount              = 200_000
+	tipAmount           = 100_000
+	mode                = "fast"
 )
-
-var tipAccounts = []string{
-	"Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
-	"FjmZZrFvhnqqb9ThCuMVnENaM3JGVuGWNyCAxRJcFpg9",
-	"6No2i3aawzHsjtThw81iq1EXPJN6rh8eSJCLaYZfKDTG",
-	"A9cWowVAiHe9pJfKAj3TJiN9VpbzMUq6E4kEvf5mUT22",
-	"68Pwb4jS7eZATjDfhmTXgRJjCiZmw1L7Huy4HNpnxJ3o",
-	"4ABhJh5rZPjv63RBJBuyWzBK3g9gWMUQdTZP2kiW31V9",
-	"B2M4NG5eyZp5SBQrSdtemzk5TqVuaWGQnowGaCBt8GyM",
-	"5jA59cXMKQqZAVdtopv8q3yyw9SYfiE3vUCbt7p8MfVf",
-	"5YktoWygr1Bp9wiS1xtMtUki1PeYuuzuCF98tqwYxf61",
-	"295Avbam4qGShBYK7E9H5Ldew4B3WyJGmgmXfiWdeeyV",
-	"EDi4rSy2LZgKJX74mbLTFk4mxoTgT6F7HxxzG2HBAFyK",
-	"BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
-	"Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
-	"AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
-}
 
 var httpClient = &http.Client{
 	Timeout: 10 * time.Second,
 }
 
+type HealthResponse struct {
+	Result string `json:"result"`
+}
+
 func main() {
+	// Pre-warm: perform an initial health check to establish the HTTP connection
+	err := pingHealth()
+	if err != nil {
+		fmt.Printf("health check failed: %v\n", err)
+	}
+	// Start a background goroutine to periodically send /health requests
+	// For low-frequency users, this keeps the HTTP connection alive (warm)
+	go func() {
+		for {
+			err := pingHealth()
+			if err != nil {
+				fmt.Printf("health check failed: %v\n", err)
+			}
+			time.Sleep(30 * time.Second)
+		}
+	}()
+	// send transactions
 	if err := sendTx(); err != nil {
 		fmt.Printf("send tx failed: %v\n", err)
 	}
+}
+
+func pingHealth() error {
+	req, err := http.NewRequest("POST", healthEndpoint, bytes.NewBufferString("{}"))
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("apikey", authKey)
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	// ⚠️ Important Note:
+	// According to the Go net/http documentation, in order for the underlying TCP connection
+	// to be reused (i.e. kept alive), the response body must be fully read and closed.
+	// Otherwise, the Transport may not reuse the connection for future requests.
+	// Reference: https://pkg.go.dev/net/http#Response
+	// > "The default HTTP client's Transport may not reuse HTTP/1.x 'keep-alive' TCP connections
+	//    if the Body is not read to completion and closed."
+
+	// Read the full response body to enable connection reuse
+	bodyBytes, _ := io.ReadAll(resp.Body)
+	var healthRes HealthResponse
+	if err := json.Unmarshal(bodyBytes, &healthRes); err != nil {
+		return fmt.Errorf("decode error: %v", err)
+	}
+
+	return nil
 }
 
 func sendTx() error {
@@ -92,9 +134,11 @@ func sendTx() error {
 	if err != nil {
 		return err
 	}
-
 	receivePub := solana.MustPublicKeyFromBase58(publicKey)
-	tipPub := solana.MustPublicKeyFromBase58(tipAccounts[rand.Intn(len(tipAccounts))])
+	tipPub, err := examples.HTTPTipAccount(context.Background(), httpClient, tipAccountsEndpoint)
+	if err != nil {
+		return err
+	}
 
 	rpcClient := rpc.New(mainNetRPC)
 	blockhash, err := rpcClient.GetLatestBlockhash(context.TODO(), rpc.CommitmentFinalized)
@@ -124,25 +168,43 @@ func sendTx() error {
 		return fmt.Errorf("sign tx error: %v", err)
 	}
 
-	binTx, err := tx.MarshalBinary()
-	if err != nil {
-		return fmt.Errorf("marshal tx error: %v", err)
-	}
-
-	req, err := http.NewRequest("POST", httpEndpoint, bytes.NewReader(binTx))
+	txBin, err := tx.MarshalBinary()
 	if err != nil {
 		return err
 	}
-	req.Header.Set("Content-Type", "application/octet-stream")
 
-	resp, err := httpClient.Do(req)
+	u, err := url.Parse(httpBinaryEndpoint)
+	if err != nil {
+		return err
+	}
+	query := u.Query()
+	query.Set("auth", authKey)
+	query.Set("mode", mode)
+	u.RawQuery = query.Encode()
+
+	httpReq, err := http.NewRequest("POST", u.String(), bytes.NewReader(txBin))
+	if err != nil {
+		return err
+	}
+	httpReq.Header.Set("Content-Type", "application/octet-stream")
+	resp, err := httpClient.Do(httpReq)
 	if err != nil {
 		return fmt.Errorf("send http error: %v", err)
 	}
 	defer resp.Body.Close()
 
-	bodyBytes, _ := io.ReadAll(resp.Body)
-	fmt.Printf("[send tx] response: %s\n", string(bodyBytes))
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return fmt.Errorf("read response body: %w", err)
+	}
+	if resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusMultipleChoices {
+		return fmt.Errorf("send transaction failed: status=%s body=%s", resp.Status, strings.TrimSpace(string(bodyBytes)))
+	}
+	signature := strings.TrimSpace(string(bodyBytes))
+	if signature == "" {
+		return fmt.Errorf("send transaction returned an empty signature")
+	}
+	fmt.Printf("[send tx] signature: %s\n", signature)
 	return nil
 }
 ```
@@ -151,8 +213,8 @@ func sendTx() error {
 {% tab title="Rust" %}
 ```rust
 use bincode;
-use rand::Rng;
 use reqwest::header::{HeaderMap, HeaderValue, CONTENT_TYPE};
+use serde::Deserialize;
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::{
     commitment_config::CommitmentConfig,
@@ -161,64 +223,118 @@ use solana_sdk::{
     transaction::Transaction,
 };
 use solana_system_interface::instruction::transfer;
+use solana_trader_client_rust::get_http_tip_account;
 use std::str::FromStr;
+use std::time::Duration;
+use tokio::time::sleep;
+
+#[derive(Deserialize, Debug)]
+struct HealthResponse {
+    result: String,
+}
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let http_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction?auth=<auth_token>";
+    // Configuration values
+    // Example endpoints only. Always use the current endpoints published on the BlockRazor website.
+    let http_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction";
+    let health_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/health";
+    let tip_accounts_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/getTipAccounts";
     let mainnetrpc = "";
+    // replace your authKey
+    let authkey = "";
+    // relace your private key
     let privatekey = "";
+    // relace your target public key
     let publickey = "";
+    // transaction amount
     let amount: u64 = 200_000;
-    let tipamount: u64 = 1_000_000;
+    // tip amount
+    let tipamount: u64 = 100_000;
+    // send mode
+    let mode = "fast";
 
-    let tip_accounts = [
-        "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
-        "FjmZZrFvhnqqb9ThCuMVnENaM3JGVuGWNyCAxRJcFpg9",
-        "6No2i3aawzHsjtThw81iq1EXPJN6rh8eSJCLaYZfKDTG",
-        "A9cWowVAiHe9pJfKAj3TJiN9VpbzMUq6E4kEvf5mUT22",
-        "68Pwb4jS7eZATjDfhmTXgRJjCiZmw1L7Huy4HNpnxJ3o",
-        "4ABhJh5rZPjv63RBJBuyWzBK3g9gWMUQdTZP2kiW31V9",
-        "B2M4NG5eyZp5SBQrSdtemzk5TqVuaWGQnowGaCBt8GyM",
-        "5jA59cXMKQqZAVdtopv8q3yyw9SYfiE3vUCbt7p8MfVf",
-        "5YktoWygr1Bp9wiS1xtMtUki1PeYuuzuCF98tqwYxf61",
-        "295Avbam4qGShBYK7E9H5Ldew4B3WyJGmgmXfiWdeeyV",
-        "EDi4rSy2LZgKJX74mbLTFk4mxoTgT6F7HxxzG2HBAFyK",
-        "BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
-        "Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
-        "AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
-    ];
-
+    // Create a shared HTTP client with keep-alive support
     let client = reqwest::Client::new();
 
+    // Perform initial health check to warm up the connection
+    ping_health(&client, health_endpoint, authkey).await?;
+
+    // Start background health pinger to keep the connection alive
+    let health_endpoint_clone = health_endpoint.to_string();
+    let authkey_clone = authkey.to_string();
+    let client_clone = client.clone();
+    tokio::spawn(async move {
+        loop {
+            if let Err(e) = ping_health(&client_clone, &health_endpoint_clone, &authkey_clone).await
+            {
+                eprintln!("Health check failed: {:?}", e);
+            }
+            sleep(Duration::from_secs(30)).await;
+        }
+    });
+
+    // Send Solana transaction
     send_transaction(
         &client,
         mainnetrpc,
+        authkey,
         privatekey,
         publickey,
-        &tip_accounts,
         tipamount,
         amount,
-        http_endpoint,
+        mode,
+        &http_endpoint,
+        tip_accounts_endpoint,
     )
     .await?;
 
     Ok(())
 }
 
+/// Perform POST /health to keep the HTTP connection alive.
+async fn ping_health(
+    client: &reqwest::Client,
+    health_endpoint: &str,
+    authkey: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let mut headers = HeaderMap::new();
+    headers.insert("apikey", HeaderValue::from_str(authkey)?);
+    headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/json"));
+
+    let res = client
+        .post(health_endpoint)
+        .headers(headers)
+        .json(&serde_json::json!({}))
+        .send()
+        .await?;
+
+    let body = res.text().await?;
+    let parsed: Result<HealthResponse, _> = serde_json::from_str(&body);
+    if let Ok(hr) = parsed {
+        println!("Health result: {}", hr.result);
+    } else {
+        return Err("Failed to parse health response".into());
+    }
+    Ok(())
+}
+
+/// Build and send a binary transaction via HTTP POST
 async fn send_transaction(
     client: &reqwest::Client,
     mainnetrpc: &str,
+    authkey: &str,
     privatekey: &str,
     publickey: &str,
-    tip_accounts: &[&str],
     tipamount: u64,
     amount: u64,
+    mode: &str,
     http_endpoint: &str,
+    tip_accounts_endpoint: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let from = Keypair::from_base58_string(privatekey);
     let receiver = Pubkey::from_str(publickey)?;
-    let tip = Pubkey::from_str(tip_accounts[rand::thread_rng().gen_range(0..tip_accounts.len())])?;
+    let tip = get_http_tip_account(client, tip_accounts_endpoint).await?;
 
     let rpcurl = String::from(mainnetrpc);
     let connection = RpcClient::new_with_commitment(rpcurl, CommitmentConfig::confirmed());
@@ -237,19 +353,29 @@ async fn send_transaction(
     );
 
     let serialized = bincode::serialize(&tx)?;
-
-    let mut headers = HeaderMap::new();
-    headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/octet-stream"));
-
     let res = client
         .post(http_endpoint)
-        .headers(headers)
+        .query(&[("auth", authkey), ("mode", mode)])
+        .header(CONTENT_TYPE, "application/octet-stream")
         .body(serialized)
         .send()
         .await?;
 
+    let status = res.status();
     let text = res.text().await?;
-    println!("[send tx] response: {}", text);
+    if !status.is_success() {
+        return Err(format!(
+            "send transaction failed: status={} body={}",
+            status,
+            text.trim()
+        )
+        .into());
+    }
+    let signature = text.trim();
+    if signature.is_empty() {
+        return Err("send transaction returned an empty signature".into());
+    }
+    println!("Transaction Signature: {}", signature);
 
     Ok(())
 }
@@ -258,90 +384,178 @@ async fn send_transaction(
 
 {% tab title="JS" %}
 ```javascript
-const axios = require("axios");
-const web3 = require("@solana/web3.js");
-const bs58 = require("bs58");
-const http = require("http");
-const https = require("https");
+const axios = require('axios');
+const web3 = require('@solana/web3.js');
+const bs58 = require('bs58');
+const { getHttpTipAccount } = require('./get_tip_accounts');
 
-const httpEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction?auth=<auth_token>";
+// ------------------ Configuration Constants ------------------
+// Example endpoints only. Always use the current endpoints published on the BlockRazor website.
+const httpEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/v2/sendBinaryTransaction";
+const healthEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/health";
+const tipAccountsEndpoint = "http://frankfurt.solana.blockrazor.xyz:443/getTipAccounts";
+// Replace with your Solana RPC endpoint
 const mainNetRPC = "";
+// Replace with your authKey
+const authKey = "";
+// Replace with your private key (base58)
 const privateKey = "";
+// Replace with your target public key
 const publicKey = "";
+// Send mode
+const mode = "fast";
+// Transaction amount
 const amount = 200_000;
-const tipAmount = 1_000_000;
+// Tip amount
+const tipAmount = 100_000;
 
-const tipAccounts = [
-  "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
-  "FjmZZrFvhnqqb9ThCuMVnENaM3JGVuGWNyCAxRJcFpg9",
-  "6No2i3aawzHsjtThw81iq1EXPJN6rh8eSJCLaYZfKDTG",
-  "A9cWowVAiHe9pJfKAj3TJiN9VpbzMUq6E4kEvf5mUT22",
-  "68Pwb4jS7eZATjDfhmTXgRJjCiZmw1L7Huy4HNpnxJ3o",
-  "4ABhJh5rZPjv63RBJBuyWzBK3g9gWMUQdTZP2kiW31V9",
-  "B2M4NG5eyZp5SBQrSdtemzk5TqVuaWGQnowGaCBt8GyM",
-  "5jA59cXMKQqZAVdtopv8q3yyw9SYfiE3vUCbt7p8MfVf",
-  "5YktoWygr1Bp9wiS1xtMtUki1PeYuuzuCF98tqwYxf61",
-  "295Avbam4qGShBYK7E9H5Ldew4B3WyJGmgmXfiWdeeyV",
-  "EDi4rSy2LZgKJX74mbLTFk4mxoTgT6F7HxxzG2HBAFyK",
-  "BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
-  "Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
-  "AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
-];
-
+// ------------------ Axios HTTP Client (Connection Reuse Enabled) ------------------
 const httpClient = axios.create({
-  timeout: 10000,
-  httpAgent: new http.Agent({ keepAlive: true }),
-  httpsAgent: new https.Agent({ keepAlive: true }),
+    timeout: 10000,
+    httpAgent: new (require('http').Agent)({ keepAlive: true }),
+    httpsAgent: new (require('https').Agent)({ keepAlive: true }),
 });
 
-async function sendTx() {
-  const senderPrivateKey = new Uint8Array(bs58.decode(privateKey));
-  const senderKeypair = web3.Keypair.fromSecretKey(senderPrivateKey);
-  const receiver = new web3.PublicKey(publicKey);
-  const tipAccount = new web3.PublicKey(
-    tipAccounts[Math.floor(Math.random() * tipAccounts.length)]
-  );
-
-  const connection = new web3.Connection(mainNetRPC);
-  const { blockhash } = await connection.getLatestBlockhash("finalized");
-
-  const tx = new web3.Transaction()
-    .add(
-      web3.SystemProgram.transfer({
-        fromPubkey: senderKeypair.publicKey,
-        toPubkey: tipAccount,
-        lamports: tipAmount,
-      })
-    )
-    .add(
-      web3.SystemProgram.transfer({
-        fromPubkey: senderKeypair.publicKey,
-        toPubkey: receiver,
-        lamports: amount,
-      })
-    );
-
-  tx.recentBlockhash = blockhash;
-  tx.feePayer = senderKeypair.publicKey;
-  tx.sign(senderKeypair);
-
-  const serialized = tx.serialize();
-
-  try {
-    const res = await httpClient.post(httpEndpoint, Buffer.from(serialized), {
-      headers: {
-        "Content-Type": "application/octet-stream",
-      },
-      responseType: "text",
-    });
-
-    console.log("[send tx] response:", res.data);
-  } catch (err) {
-    console.error("SendTx failed:", err.response?.data || err.message);
-  }
+// ------------------ Periodic Health Ping to Keep Connection Alive ------------------
+async function pingHealth() {
+    try {
+        const res = await httpClient.post(healthEndpoint, {}, {
+            headers: { 'Content-Type': 'application/json', apikey: authKey },
+        });
+        console.log(`Health result:`, res.data);
+    } catch (err) {
+        console.error('Health check failed:', err.message);
+    }
 }
 
-sendTx().catch(console.error);
+// ------------------ Build and Send Transaction ------------------
+async function sendTx() {
+    const senderPrivateKey = new Uint8Array(bs58.decode(privateKey));
+    const senderKeypair = web3.Keypair.fromSecretKey(senderPrivateKey);
+    const receiver = new web3.PublicKey(publicKey);
+    const tipAccount = new web3.PublicKey(await getHttpTipAccount(tipAccountsEndpoint));
+
+    const connection = new web3.Connection(mainNetRPC);
+    const { blockhash } = await connection.getLatestBlockhash('finalized');
+
+    const tx = new web3.Transaction()
+        .add(web3.SystemProgram.transfer({
+            fromPubkey: senderKeypair.publicKey,
+            toPubkey: tipAccount,
+            lamports: tipAmount,
+        }))
+        .add(web3.SystemProgram.transfer({
+            fromPubkey: senderKeypair.publicKey,
+            toPubkey: receiver,
+            lamports: amount,
+        }));
+
+    tx.recentBlockhash = blockhash;
+    tx.feePayer = senderKeypair.publicKey;
+    tx.sign(senderKeypair);
+
+    const serialized = tx.serialize();
+
+    try {
+        const url = new URL(httpEndpoint);
+        url.searchParams.set('auth', authKey);
+        url.searchParams.set('mode', mode);
+        const res = await httpClient.post(url.toString(), serialized, {
+            headers: {
+                'Content-Type': 'application/octet-stream',
+            },
+            responseType: 'text',
+        });
+        const signature = res.data.trim();
+        if (!signature) {
+            throw new Error('send transaction returned an empty signature');
+        }
+        console.log('[send tx] signature:', signature);
+    } catch (err) {
+        console.error('SendTx failed:', err.response?.data || err.message);
+    }
+}
+
+// ------------------ Main Entry ------------------
+(async () => {
+    // Initial health check (establish connection)
+    await pingHealth();
+
+    // Periodically send /health to keep connection alive
+    setInterval(pingHealth, 30 * 1000);
+    sendTx().catch(console.error);
+})();
+```
+{% endtab %}
+
+{% tab title="Proto" %}
+```go
+syntax = "proto3";
+
+package serverpb;
+
+option go_package = "./pb/serverpb";
+
+service Server {
+    rpc SendTransaction(SendRequest) returns(SendResponse) {};
+
+    rpc SendBatch(SendBatchRequest) returns(SendBatchResponse) {};
+
+    rpc SendBundle(SendBundleRequest) returns(SendBundleResponse) {};
+
+    rpc GetHealth(HealthRequest) returns(HealthResponse) {};
+
+    rpc GetTipAccounts(GetTipAccountsRequest) returns(GetTipAccountsResponse) {};
+}
+
+message SendRequest {
+    string transaction = 1;
+    string mode = 2;
+    int32 safeWindow = 3;
+    bool revertProtection = 4;
+}
+
+message SendResponse {
+    string signature = 1;
+}
+
+message SendBundleRequest {
+    repeated string transactions = 1;
+}
+
+message SendBundleResponse {
+    string signature = 1;
+}
+
+message SendBatchRequest {
+    repeated string transactions = 1;
+    string mode = 2;
+    int32 safeWindow = 3;
+    bool revertProtection = 4;
+}
+
+message SendBatchResponse {
+    repeated BatchResponse result = 1;
+}
+
+message BatchResponse {
+    string signature = 1;
+    string error = 2;
+}
+
+message HealthRequest {
+}
+
+message HealthResponse {
+    string status = 1;
+}
+
+message GetTipAccountsRequest {
+}
+
+message GetTipAccountsResponse {
+    repeated string tipAccounts = 1;
+}
 ```
 {% endtab %}
 {% endtabs %}

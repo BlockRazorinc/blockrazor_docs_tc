@@ -28,6 +28,17 @@ Priority Fee是Solana在Base Fee（發送交易的最低成本，交易中每包
 "BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
 "Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
 "AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
+"8EpzWhsr7uyZkfVD7MTHoWqupM14xngzMeUcCkWbY1UG",
+"56XRik27PddNnR7JkHKqd5pWdMHeqje7TCm1gsdmvnTP",
+"2DJNtR1tT7vfub7sDJ6v9NGmrzGVFUer5FvjhEcWEpvv",
+"3AveZTS3PJo5qKEqHJci5bjW8neufriirr9mJXfsv4iH",
+"9DC798ezxU2f2i8ggQ4vsqrsNxdDWJWAFg4cT1xLDR1X",
+```
+
+你也可以動態獲取Tip地址，以防Tip地址更新時無法及時同步
+
+```bash
+curl http://frankfurt.solana.blockrazor.xyz:443/getTipAccounts
 ```
 
 {% hint style="info" %}

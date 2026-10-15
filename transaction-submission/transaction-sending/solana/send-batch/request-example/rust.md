@@ -17,7 +17,6 @@ metaLinks:
 ```rust
 use base64::{engine::general_purpose, Engine as _};
 use bincode;
-use rand::Rng;
 use reqwest::header::{HeaderMap, HeaderValue, CONTENT_TYPE};
 use serde::{Deserialize, Serialize};
 use solana_client::rpc_client::RpcClient;
@@ -28,6 +27,7 @@ use solana_sdk::{
     transaction::Transaction,
 };
 use solana_system_interface::instruction::transfer;
+use solana_trader_client_rust::get_http_tip_account;
 use std::str::FromStr;
 use std::time::Duration;
 use tokio::time::sleep;
@@ -62,19 +62,21 @@ struct HealthResponse {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Configuration values
+    // Example endpoints only. Always use the current endpoints published on the BlockRazor website.
     let http_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/sendBatch";
     let health_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/health";
+    let tip_accounts_endpoint = "http://frankfurt.solana.blockrazor.xyz:443/getTipAccounts";
     let mainnetrpc = "";
     // replace your authKey
     let authkey = "";
     // relace your private key
-    let privatekey ="";
+    let privatekey = "";
     // relace your target public key
     let publickey = "";
     // transaction amount
     let amount: u64 = 200_000;
     // tip amount
-    let tipamount: u64 = 1_000_000;
+    let tipamount: u64 = 100_000;
     // safe window
     let safe_window: u32 = 5;
     // revert protection
@@ -82,22 +84,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // send mode
     let mode = "fast";
 
-    let tip_accounts = [
-        "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
-        "FjmZZrFvhnqqb9ThCuMVnENaM3JGVuGWNyCAxRJcFpg9",
-        "6No2i3aawzHsjtThw81iq1EXPJN6rh8eSJCLaYZfKDTG",
-        "A9cWowVAiHe9pJfKAj3TJiN9VpbzMUq6E4kEvf5mUT22",
-        "68Pwb4jS7eZATjDfhmTXgRJjCiZmw1L7Huy4HNpnxJ3o",
-        "4ABhJh5rZPjv63RBJBuyWzBK3g9gWMUQdTZP2kiW31V9",
-        "B2M4NG5eyZp5SBQrSdtemzk5TqVuaWGQnowGaCBt8GyM",
-        "5jA59cXMKQqZAVdtopv8q3yyw9SYfiE3vUCbt7p8MfVf",
-        "5YktoWygr1Bp9wiS1xtMtUki1PeYuuzuCF98tqwYxf61",
-        "295Avbam4qGShBYK7E9H5Ldew4B3WyJGmgmXfiWdeeyV",
-        "EDi4rSy2LZgKJX74mbLTFk4mxoTgT6F7HxxzG2HBAFyK",
-        "BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
-        "Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
-        "AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
-    ];
     // Create a shared HTTP client with keep-alive support
     let client = reqwest::Client::new();
 
@@ -125,20 +111,20 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         authkey,
         privatekey,
         publickey,
-        &tip_accounts,
         tipamount,
         amount,
         mode,
         safe_window,
         revert_protection,
-        http_endpoint,
+        &http_endpoint,
+        tip_accounts_endpoint,
     )
     .await?;
 
     Ok(())
 }
 
-/// Perform GET /health to keep HTTP connection alive
+/// Perform POST /health to keep the HTTP connection alive.
 async fn ping_health(
     client: &reqwest::Client,
     health_endpoint: &str,
@@ -148,7 +134,12 @@ async fn ping_health(
     headers.insert("apikey", HeaderValue::from_str(authkey)?);
     headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/json"));
 
-    let res = client.get(health_endpoint).headers(headers).send().await?;
+    let res = client
+        .post(health_endpoint)
+        .headers(headers)
+        .json(&serde_json::json!({}))
+        .send()
+        .await?;
 
     let body = res.text().await?;
     let parsed: Result<HealthResponse, _> = serde_json::from_str(&body);
@@ -167,17 +158,17 @@ async fn send_batch(
     authkey: &str,
     privatekey: &str,
     publickey: &str,
-    tip_accounts: &[&str],
     tipamount: u64,
     amount: u64,
     mode: &str,
     safe_window: u32,
     revert_protection: bool,
     http_endpoint: &str,
+    tip_accounts_endpoint: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let from = Keypair::from_base58_string(privatekey);
     let receiver = Pubkey::from_str(publickey)?;
-    let tip = Pubkey::from_str(tip_accounts[rand::thread_rng().gen_range(0..tip_accounts.len())])?;
+    let tip = get_http_tip_account(client, tip_accounts_endpoint).await?;
 
     let rpcurl = String::from(mainnetrpc);
     let connection = RpcClient::new_with_commitment(rpcurl, CommitmentConfig::confirmed());
@@ -234,21 +225,19 @@ async fn send_batch(
 ```rust
 use base64::{engine::general_purpose, Engine as _};
 use bincode;
-use rand::Rng;
 use server::server_client::ServerClient;
-use server::{HealthRequest, SendBatchRequest};
+use server::{GetTipAccountsRequest, HealthRequest, SendBatchRequest};
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::commitment_config::CommitmentConfig;
-use solana_sdk::pubkey::Pubkey;
 use solana_sdk::signature::{Keypair, Signer};
 use solana_sdk::transaction::Transaction;
 use solana_system_interface::instruction::transfer;
+use solana_trader_client_rust::random_tip_account;
 use std::error::Error;
-use std::str::FromStr;
 use std::time::Duration;
+use tokio::time::interval;
 use tonic::metadata::AsciiMetadataValue;
 use tonic::transport::Channel;
-use tokio::time::interval;
 
 pub mod server {
     tonic::include_proto!("serverpb");
@@ -256,7 +245,7 @@ pub mod server {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // BlockRazor relay endpoint address
+    // This example endpoint may change. Always use the current endpoint published on the BlockRazor website.
     let blzendpoint = "http://frankfurt.solana-grpc.blockrazor.xyz:80";
     // replace your solana rpc endpoint
     let mainnetrpc = "";
@@ -265,34 +254,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // relace your private key
     let privatekey = "";
     // tip amount
-    let tipamount = 1_000_000;
+    let tipamount = 100_000;
     // send mode
     let mode = "fast";
     // safe window
-    let safe_window = None;
+    let safe_window = 0;
     // revert protection
     let revert_protection = false;
-
-    let tip_accounts = [
-        "Gywj98ophM7GmkDdaWs4isqZnDdFCW7B46TXmKfvyqSm",
-        "FjmZZrFvhnqqb9ThCuMVnENaM3JGVuGWNyCAxRJcFpg9",
-        "6No2i3aawzHsjtThw81iq1EXPJN6rh8eSJCLaYZfKDTG",
-        "A9cWowVAiHe9pJfKAj3TJiN9VpbzMUq6E4kEvf5mUT22",
-        "68Pwb4jS7eZATjDfhmTXgRJjCiZmw1L7Huy4HNpnxJ3o",
-        "4ABhJh5rZPjv63RBJBuyWzBK3g9gWMUQdTZP2kiW31V9",
-        "B2M4NG5eyZp5SBQrSdtemzk5TqVuaWGQnowGaCBt8GyM",
-        "5jA59cXMKQqZAVdtopv8q3yyw9SYfiE3vUCbt7p8MfVf",
-        "5YktoWygr1Bp9wiS1xtMtUki1PeYuuzuCF98tqwYxf61",
-        "295Avbam4qGShBYK7E9H5Ldew4B3WyJGmgmXfiWdeeyV",
-        "EDi4rSy2LZgKJX74mbLTFk4mxoTgT6F7HxxzG2HBAFyK",
-        "BnGKHAC386n4Qmv9xtpBVbRaUTKixjBe3oagkPFKtoy6",
-        "Dd7K2Fp7AtoN8xCghKDRmyqr5U169t48Tw5fEd3wT9mq",
-        "AP6qExwrbRgBAVaehg4b5xHENX815sMabtBzUzVB4v8S",
-    ];
-
-    let mut rng = rand::thread_rng();
-    let random_index = rng.gen_range(0..tip_accounts.len());
-    let tip_account = tip_accounts[random_index];
 
     let channel = Channel::from_shared(blzendpoint.to_string())
         .map_err(|e| Box::<dyn Error>::from(format!("Invalid URI: {}", e)))?
@@ -304,24 +272,35 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .map_err(|e| Box::<dyn Error>::from(format!("Invalid API key format: {}", e)))?;
 
     let mut client = ServerClient::new(channel.clone());
+    let tip_accounts = client
+        .get_tip_accounts(tonic::Request::new(GetTipAccountsRequest {}))
+        .await?
+        .into_inner()
+        .tip_accounts;
+    let tip_account = random_tip_account(&tip_accounts)?;
     let mut request = tonic::Request::new(HealthRequest {});
     request.metadata_mut().insert("apikey", apikeyvalue.clone());
     let response = client.get_health(request).await?;
     println!("health check response: {:?}", response.into_inner().status);
 
     // Start a background goroutine to periodically send /health requests
-	// For low-frequency users, this keeps the grpc connection alive (warm)
-    let mut health_client = ServerClient::new(channel); 
+    // For low-frequency users, this keeps the grpc connection alive (warm)
+    let mut health_client = ServerClient::new(channel);
     let health_apikey = apikeyvalue.clone();
     tokio::spawn(async move {
         let mut interval = interval(Duration::from_secs(30));
         loop {
             interval.tick().await;
             let mut request = tonic::Request::new(HealthRequest {});
-            request.metadata_mut().insert("apikey", health_apikey.clone());
+            request
+                .metadata_mut()
+                .insert("apikey", health_apikey.clone());
             match health_client.get_health(request).await {
                 Ok(response) => {
-                    println!("[Health Check] Response: {:?}", response.into_inner().status);
+                    println!(
+                        "[Health Check] Response: {:?}",
+                        response.into_inner().status
+                    );
                 }
                 Err(e) => {
                     eprintln!("[Health Check] Failed: {}", e);
@@ -332,7 +311,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let from = Keypair::from_base58_string(privatekey);
     let frompubkey = Signer::pubkey(&from);
-    let topubkey = Pubkey::from_str(tip_account).expect("Failed to parse receivers pubkey");
+    let topubkey = tip_account;
 
     let rpcurl = String::from(mainnetrpc);
     let connection = RpcClient::new_with_commitment(rpcurl, CommitmentConfig::confirmed());
@@ -347,12 +326,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // tx base64
     let serialized = bincode::serialize(&tx)?;
     let base64_encoded = general_purpose::STANDARD.encode(serialized);
-    let mut batch_request: tonic::Request<SendBatchRequest> = tonic::Request::new(SendBatchRequest {
-        transactions: vec![base64_encoded],
-        mode: mode.to_string(),
-        safe_window: safe_window.unwrap_or_default(),
-        revert_protection: revert_protection
-    });
+    let mut batch_request: tonic::Request<SendBatchRequest> =
+        tonic::Request::new(SendBatchRequest {
+            transactions: vec![base64_encoded],
+            mode: mode.to_string(),
+            safe_window: safe_window,
+            revert_protection: revert_protection,
+        });
     batch_request
         .metadata_mut()
         .insert("apikey", apikeyvalue.clone());
@@ -377,26 +357,19 @@ option go_package = "./pb/serverpb";
 service Server {
     rpc SendTransaction(SendRequest) returns(SendResponse) {};
 
-    rpc SendBinaryTransaction(SendBinaryRequest) returns(SendResponse) {};
-
     rpc SendBatch(SendBatchRequest) returns(SendBatchResponse) {};
 
     rpc SendBundle(SendBundleRequest) returns(SendBundleResponse) {};
 
     rpc GetHealth(HealthRequest) returns(HealthResponse) {};
+
+    rpc GetTipAccounts(GetTipAccountsRequest) returns(GetTipAccountsResponse) {};
 }
 
 message SendRequest {
     string transaction = 1;
     string mode = 2;
-    optional int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendBinaryRequest {
-    bytes binaryTransaction = 1;
-    string mode = 2;
-    optional int32 safeWindow = 3;
+    int32 safeWindow = 3;
     bool revertProtection = 4;
 }
 
@@ -415,7 +388,7 @@ message SendBundleResponse {
 message SendBatchRequest {
     repeated string transactions = 1;
     string mode = 2;
-    optional int32 safeWindow = 3;
+    int32 safeWindow = 3;
     bool revertProtection = 4;
 }
 
@@ -433,6 +406,13 @@ message HealthRequest {
 
 message HealthResponse {
     string status = 1;
+}
+
+message GetTipAccountsRequest {
+}
+
+message GetTipAccountsResponse {
+    repeated string tipAccounts = 1;
 }
 ```
 {% endcode %}
