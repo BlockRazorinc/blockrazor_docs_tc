@@ -16,7 +16,6 @@ metaLinks:
 BlockRazor MEV服務的區塊構建算法傾向於向BlockRazor Builder EOA轉賬原生代幣（BNB）數量更多的bundle，當前BlockRazor Builder EOA地址為
 
 ```
-0x1266C6bE60392A8Ff346E8d5ECCd3E69dD9c5F20
 0xc7d4187cBda07F4b5be04418B9723b5faF65dB5C
 ```
 
