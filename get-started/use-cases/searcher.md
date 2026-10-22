@@ -7,94 +7,200 @@ metaLinks:
       https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/use-cases/searcher
 ---
 
-# MEV Searcher 基礎設施和 Bundle API
+# 全鏈 Searcher 基礎設施：從信號獲取到交易提交
 
-隨著競爭日益激烈，Searcher憑借Alpha策略已無法在MEV競爭中完勝，必須具備Beta競爭力以進一步提升勝率。
+我們為多鏈 Backrun 和套利 Searcher 提供從信號獲取、狀態同步到交易提交的 BlockRazor 基礎設施。目前支持 Solana、BSC、Ethereum、Base 和 Robinhood Chain。
 
-什麼是Beta競爭力？如果將Searcher競爭比喻為一場戰爭，Alpha策略是戰略和戰術，Beta競爭力就是裝備、補給等基礎設施，是競爭的前提條件。
+### Searcher 的全鏈工作流
 
-Searcher的Beta競爭力包括但不限於速度、成本等，分別可以從不同環節提高競爭勝率。
+Searcher 的 Alpha 策略負責發現機會、計算收益和控制風險；我們提供的基礎設施則用於縮短信號獲取、狀態同步和交易提交鏈路，為策略計算保留更多時間。
 
-### 速度
+我們將 Backrun 和套利工作流拆成四個階段，幫助 Searcher 按實際需求選擇服務：
 
-在Ethereum或BSC中，區塊出塊的時間間隔是固定的。在這條生產區塊的流水線上，為了將套利的bundle及時發送給Builder，處理bundle的速度需要得到提升。Searcher處理bundle的步驟如下：
+<table><thead><tr><th width="121.0625">階段</th><th>Searcher 要解決的問題</th><th>不同鏈上的典型數據或接口</th></tr></thead><tbody><tr><td>獲取信號</td><td>如何更早看到可能觸發策略的交易、區塊或排序數據</td><td>Public/Private Mempool、Block Stream、Sequencer Feed、Shred/Geyser Stream</td></tr><tr><td>同步狀態</td><td>如何獲得足以支持模擬和風控的最新狀態</td><td>本地全節點、Node Stream、Node-required Sequencer Feed</td></tr><tr><td>策略計算</td><td>如何完成解析、模擬、機會篩選和交易構建</td><td>Searcher 自有策略、節點、模擬器和風控系統</td></tr><tr><td>提交交易</td><td>如何把 Raw Transaction、Batch 或 Bundle 送到正確的執行路徑</td><td>RPC、Transaction Sending、Bundle API、Block Builder</td></tr></tbody></table>
 
-1. 訂閱目標交易，同步最新區塊
-2. 基於最新區塊的世界狀態，根據Alpha策略計算每筆交易的套利機會
-3. 篩選套利機會，將篩選出的目標交易和策略交易按指定順序組裝為bundle
-4. 將bundle發送給Builder
+{% hint style="warning" %}
+我們不把信號流等同於可模擬的完整鏈狀態。BSC NewBlocks 和 Robinhood Chain Direct Sequencer Feed 可以提供較新的區塊信號，但不能替代 Searcher 自己維護的完整本地 world state。
+{% endhint %}
 
-從上述步驟可知，bundle處理時長由交易訂閱延遲、套利計算時長、bundle發送延遲決定。
+### 我們為 Searcher 提供的多鏈能力
 
-此外，最新世界狀態的同步是計算套利機會的前提條件（基於舊狀態計算會導致套利動作變形，失去Alpha策略競爭力），如果狀態同步延遲高，會嚴重擠壓套利計算的時長，尤其在網絡交易擁堵期間，會對計算性能造成巨大壓力。因此，世界狀態同步的時延也是bundle處理速度的關鍵。
+<table><thead><tr><th width="170.359375">區塊鏈</th><th>信號與狀態能力</th><th>交易提交能力</th></tr></thead><tbody><tr><td>BSC</td><td>Public Mempool、Private Mempool、NewBlocks、Full Node Synchronization、Network Fee Stream</td><td>RPC、Orderflow Auction、Block Builder、Broadcast Tx</td></tr><tr><td>Robinhood Chain</td><td>Node-required Sequencer Feed、Direct Sequencer Feed，均提供 Standard 和 Ultra</td><td><code>eth_sendRawTransaction</code>、<code>eth_sendBatch</code></td></tr><tr><td>Ethereum</td><td>Public Mempool、NewBlocks、CL/EL Client Sync</td><td>RPC、Transaction Sending</td></tr><tr><td>Solana</td><td>Shred Stream、Geyser Stream、Network Fee Stream</td><td>Transaction Sending</td></tr><tr><td>Base</td><td>Block Stream</td><td>RPC、Transaction Sending</td></tr></tbody></table>
 
-在Searcher處理bundle的第4步，Searcher需要將由目標交易和套利交易組成的bundle發給鏈上的所有主流Builder，確保參與競拍的區塊中都包含bundle，以提升bundle的上鏈速度。
+### 鏈上場景示例：BSC
 
-### 成本
+在 BSC，我們圍繞三個關鍵環節為 Searcher 提供服務：更早獲取 Pending Transaction、更快同步區塊或本地 world state，以及將 Raw Transaction 或 Bundle 提交到合適的 RPC 或 Builder 路徑。
 
-成本直接影響Searcher的利潤。在勢均力敵的Searcher競爭中，如果每個套利機會的平均成本相差較多，長期來看，成本高的Searcher由於利潤微薄，將逐漸在競爭中趨向弱勢。
+#### BSC 場景一：基於公開 Pending Transaction 尋找機會
 
-Searcher的成本主要分為Alpha策略執行成本、速度提升成本和交易成本，提升成本可以提升Beta競爭力，但利潤也會受到影響，需做好權衡取捨。
+如果你的 Backrun 或套利策略依賴已經在 BSC 公開網絡中傳播的未確認交易，我們建議接入 [BSC Public Mempool](https://docs.blockrazor.io/tc/streams/public-mempool/bsc/public-mempool)。
 
-**Alpha策略執行**
+我們建議將 Public Mempool 用於：
 
-由於Alpha策略是Searcher的核心競爭力，同時執行速度也直接影響bundle處理時長 ，本項成本不能降低。
+* 監控可能觸發 Backrun 或套利的 Pending Transaction
+* 跟蹤目標地址、合約和交易類型，形成套利信號
+* 發現公開交易帶來的 Backrun 機會
+* 為跨市場、跨協議或狀態變化套利提供實時輸入
 
-**bundle處理速度提升**
+```
+BSC Public Mempool
+      ↓
+交易解析與機會識別
+      ↓
+基於最新狀態進行模擬和風控
+      ↓
+構建 Raw Transaction 或 Bundle
+      ↓
+BSC RPC / Block Builder / Broadcast Tx
+```
 
-為了降低交易訂閱延遲、bundle發送延遲和最新世界狀態同步延遲，需自建分布式的高速骨幹網絡，對於Searcher而言成本過高，使用專業的第三方服務是高性價比的選擇。
+我們的 Public Mempool 只覆蓋公開傳播的 Pending Transaction，不包含通過 BlockRazor 私有 RPC 路徑進入的 Private Orderflow。
 
-bundle上鏈速度的提升涉及Builder API限流解除成本。Searcher可以免費對接RPC的[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)，RPC會將bundle轉發給鏈上的主流Builder，在節省成本的同時保障上鏈速度。
+#### BSC 場景二：基於 Private Orderflow 執行 Backrun
 
-### BlockRazor如何提升Searcher的Beta競爭力
+如果你的 Backrun 策略需要處理通過 BlockRazor RPC 私有路徑進入、尚未公開傳播的訂單流，可以接入 [BSC Private Mempool](https://docs.blockrazor.io/tc/streams/private-mempool)。
 
-#### 速度
+我們通過 Private Mempool 提供經授權披露和統一匿名化處理的字段。Searcher 可以解析 Raw Bundle、完成模擬與風控，再通過 [BSC RPC Orderflow Auction](https://docs.blockrazor.io/tc/transaction-submission/rpc/bsc/orderflow-auction) 的 `eth_sendMevBundle` 提交 Backrun Transaction。
 
-BlockRazor為Searcher提供[Public Mempool](../../streams/public-mempool/bsc/public-mempool.md)和[Block Stream](../../streams/block-stream/)服務，Searcher能夠以極低延遲訂閱交易同步區塊。在與業界領先的高性能網絡提供商bloXroute的對比中，BlockRazor能夠以更低延遲接收到最新交易，詳細數據對比如下
+```
+BSC Private Mempool Raw Bundle
+      ↓
+解析已披露字段並執行模擬
+      ↓
+構建 Backrun Transaction
+      ↓
+eth_sendMevBundle → 同區域 BSC RPC
+      ↓
+Orderflow Auction 與後續 Builder 提交
+```
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
+{% hint style="warning" %}
+我們要求 Private Mempool 訂閱與 Bundle 提交保持區域和域名一致。接入前請核對 Private Mempool 和 Orderflow Auction 的最新 Endpoint 文檔。
+{% endhint %}
 
-同時，在最新世界狀態同步等時延指標上，BlockRazor同樣擁有優秀的性能表現，可以更好地滿足速度敏感型用戶的需求。全部指標對比結果，請詳見[benchmark分析](https://blockrazor.io/#/blogs/20240914benchmark)。
+#### BSC 場景三：選擇 NewBlocks 或 Full Node Synchronization
 
-在bundle上鍊速度方面，Searcher可直接對接RPC的[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)，RPC會在第一時間將bundle轉發給鏈上的主流Builder，同時基於 [BEF](../../he-xin-ji-shu/blockchain-edge-fabric.md)，RPC可以在網絡層面實現交易端到端的低延遲轉發。數據表明，提交至RPC的交易在下個區塊內上鏈的概率高達95%，100%的交易可以在兩個區塊內上鏈，交易上鏈的速度和穩定性遠超其他RPC。
+我們根據 Searcher 是否運行本地全節點、是否依賴完整 world state，推薦不同的狀態服務：
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption><p>benchmark客戶端分別向BlockRazor RPC、A RPC和B RPC發送交易，記錄交易發送時的最新區塊號和上鏈區塊號的差值，差值越小，表示交易上鏈速度越快。</p></figcaption></figure>
+| 判斷條件                                      | 推薦服務                                                                                                         | 適用邊界                            |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| 只需要低延遲獲取確認區塊、交易列表、區塊頭和 Next Validator 信息  | [NewBlocks](https://docs.blockrazor.io/tc/streams/block-stream/bsc/newblocks)                                | 面向應用的結構化區塊流，不提供完整本地 world state |
+| Searcher 運行自己的 BSC 全節點，策略依賴本地 world state | [Full Node Synchronization](https://docs.blockrazor.io/tc/streams/node-stream/bsc/full-node-synchronization) | 通過 P2P 連接加速用戶自己的節點，不是結構化區塊訂閱接口  |
+| 同時需要 Pending Transaction 和最新本地狀態          | Public/Private Mempool + Full Node Synchronization                                                           | 前者提供信號，後者加速本地節點狀態更新             |
 
-### 如何使用BlockRazor的服务
+#### BSC 場景四：根據交易類型選擇提交路徑
 
-**隱私交易流套利**
+我們在 BSC 提供多種提交方式。Searcher 應根據交易是否為 Bundle、是否需要私有路由以及目標 Builder 來選擇：
 
-1. [註冊](https://www.blockrazor.io/#/register)BlockRazor
-2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，采购Private Mempool，前往賬戶模塊獲取token
-3. ​訂閱 [Private Mempool](../../streams/private-mempool.md)
-4. 執行套利策略，將隱私流交易和backrun策略交易以[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)提交至RPC
+| 提交需求                                                | 推薦能力                                                                                                            | 需要注意                                 |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| 將 Raw Bundle 或 Backrun Bundle 通過統一入口轉發給主流 Builders  | [BSC RPC Orderflow Auction](https://docs.blockrazor.io/tc/transaction-submission/rpc/bsc/orderflow-auction)     | 使用 `eth_sendMevBundle`；被轉發不等同於一定被打包  |
+| 明確希望直接使用 BlockRazor Builder                         | [BSC Block Builder](https://docs.blockrazor.io/tc/transaction-submission/block-builder)                         | Bundle 直接進入 BlockRazor Builder 的處理路徑 |
+| 已有成熟 Builder 提交流程，需要縮短到 BlockRazor Builder 的網絡和請求路徑 | [Fast Submit](https://docs.blockrazor.io/tc/transaction-submission/block-builder/bsc-block-builder-fast-submit) | 優化提交鏈路，不改變交易邏輯，也不保證打包                |
+| 發送單筆或批量 Raw Transaction，優先速度且不要求私有傳輸                | [BSC Broadcast Tx](https://docs.blockrazor.io/tc/transaction-submission/transaction-sending/bsc/broadcast-tx)   | 交易進入公開傳播路徑，不提供 MEV Protection        |
 
-**公開交易流套利**
+### 鏈上場景示例：Robinhood Chain
 
-1. [註冊](https://www.blockrazor.io/#/register)BlockRazor
-2. [登錄](https://www.blockrazor.io/#/login)BlockRazor，采购Public Mempool，前往賬戶模塊獲取token
-3. 對接[Public Mempool](../../streams/public-mempool/bsc/public-mempool.md)方法，低延遲訂閱最新交易；如果本地有節點，則採購[Node Stream](../../streams/node-stream/)低延遲同步節點數據。
-4. 執行套利策略，將Mempool交易和策略交易[Bundle](../../transaction-submission/rpc/bsc/orderflow-auction.md)提交至Scutum。
+在 Robinhood Chain，我們通過 Sequencer Feed 為 Backrun 和套利 Searcher 提供區塊信號。這條鏈不使用 BSC 式 Public Mempool；我們提供 Node-required 和 Direct 兩種接入方式，兩者均有 Standard 和 Ultra 版本。
 
-### **常見問題**
+#### 先選擇 Node-required 還是 Direct
+
+<table><thead><tr><th>模式</th><th width="112.6015625">是否需要節點</th><th width="199.05078125">數據行為</th><th>我們推薦的 Searcher 用法</th></tr></thead><tbody><tr><td>Node-required Standard</td><td>是</td><td>按區塊高度連續交付，不跳塊</td><td>節點同步、Backrun、訂單流分析和套利</td></tr><tr><td>Node-required Ultra</td><td>是</td><td>保持連續交付語義，進一步優化延遲</td><td>高競爭 Backrun、Arbitrage 和高頻策略</td></tr><tr><td>Direct Standard</td><td>否</td><td>優先最新區塊，擁堵時可能跳過中間區塊</td><td>不依賴完整本地狀態的套利信號獲取</td></tr><tr><td>Direct Ultra</td><td>否</td><td>通過 Ultra 路徑優先交付最新區塊</td><td>對延遲更敏感的套利信號獲取</td></tr></tbody></table>
+
+#### Robinhood Chain 場景一：依賴完整本地狀態的 Backrun 或 Arbitrage
+
+如果你的 Backrun 或套利策略需要連續區塊、完整本地狀態或本地執行結果，我們建議選擇 [Node-required Sequencer Feed](https://docs.blockrazor.io/tc/streams/node-stream/robinhood-chain/sequencer-feed)。
+
+```
+Node-required Sequencer Feed Standard / Ultra
+      ↓
+Robinhood Chain 本地節點連續同步
+      ↓
+本地狀態、模擬與策略計算
+      ↓
+構建並簽名 Raw Transaction 或 Batch
+      ↓
+Robinhood Chain Transaction Sending
+```
+
+當毫秒級差異對你的生產策略具有實際價值時，可以評估我們的 [Node-required Sequencer Feed Ultra](https://docs.blockrazor.io/tc/streams/node-stream/robinhood-chain/sequencer-feed-ultra)。Ultra 不改變 Node-required 的連續交付語義，只優化傳輸路徑。
+
+#### Robinhood Chain 場景二：不運行節點的套利信號獲取
+
+如果你的套利策略只需要盡快獲取最新區塊信號，且不依賴完整連續狀態，可以接入我們的 [Direct Sequencer Feed](https://docs.blockrazor.io/tc/streams/node-stream/robinhood-chain/direct-sequencer-feed)。
+
+```
+Direct Sequencer Feed Standard / Ultra
+      ↓
+客戶端解析最新區塊和交易信號
+      ↓
+策略判斷與交易構建
+      ↓
+Robinhood Chain Transaction Sending
+```
+
+我們的 Direct Feed 在擁堵或客戶端處理不及時時可能跳過中間區塊，因此不適合要求完整區塊歷史或連續本地狀態的 Backrun 和套利策略。對延遲更敏感時，可以評估 [Direct Sequencer Feed Ultra](https://docs.blockrazor.io/tc/streams/node-stream/robinhood-chain/direct-sequencer-feed-ultra)，並另外配置可靠的狀態與模擬來源。
+
+#### Robinhood Chain 交易提交
+
+我們的 [Robinhood Chain Transaction Sending](https://docs.blockrazor.io/tc/transaction-submission/transaction-sending/robinhood-chain) 提供區域 Endpoint，支持：
+
+* `eth_sendRawTransaction`：提交單筆已簽名 Raw Transaction。
+* `eth_sendBatch`：批量提交交易。
+
+### Benchmark 摘要
+
+#### BSC
+
+* Public Mempool：在已公開的多區域測試中，BlockRazor 在絕大多數樣本中比普通 Node 更早向客戶端交付同一筆 Pending Transaction。[查看完整 Benchmark](https://docs.blockrazor.io/tc/streams/public-mempool/bsc/public-mempool#benchmark)
+* NewBlocks：在已公開的多區域測試中，BlockRazor 在幾乎全部樣本中更早向客戶端交付同一區塊。[查看完整 Benchmark](https://docs.blockrazor.io/tc/streams/block-stream/bsc/newblocks#benchmark)
+* Full Node Synchronization：連接 BlockRazor Relay 的節點在絕大多數樣本中更早收到同一區塊。[查看完整 Benchmark](https://docs.blockrazor.io/tc/streams/node-stream/bsc/full-node-synchronization#benchmark)
+* Broadcast Tx：在同 Nonce 的成對交易測試中，BlockRazor 提交路徑更常進入較早區塊，或在同一區塊中獲得更靠前的 Transaction Index。[查看完整 Benchmark](https://docs.blockrazor.io/tc/transaction-submission/transaction-sending/bsc/broadcast-tx#benchmark)
+* Block Builder Fast Submit：公開測試顯示，Fast Submit 可以縮短跨區域提交到 BlockRazor Builder 的路徑延遲。[查看完整 Benchmark](https://docs.blockrazor.io/tc/transaction-submission/block-builder/bsc-block-builder-fast-submit#benchmark)
+
+#### Robinhood Chain
+
+* Node-required Sequencer Feed Ultra：在已公開的 AWS Ohio 多可用區測試中，BlockRazor Ultra Feed 比官方 Feed 更早交付匹配區塊。[查看完整 Benchmark](https://docs.blockrazor.io/tc/streams/node-stream/robinhood-chain/sequencer-feed-ultra#benchmark)
+* Transaction Sending：在已公開的多區域同 Nonce 成對交易測試中，BlockRazor 區域 Endpoint 的交易獲得了更高的包含比例。[查看完整 Benchmark](https://docs.blockrazor.io/tc/transaction-submission/transaction-sending/robinhood-chain#benchmark)
+
+### 更多支持鏈能力
+
+我們也為 Ethereum、Solana 和 Base 的 Backrun 或套利系統提供相應的數據與提交能力。具體可用性以各產品文檔為準。
+
+#### Ethereum
+
+* 信號：[Ethereum Public Mempool](https://docs.blockrazor.io/tc/streams/public-mempool/ethereum/public-mempool)
+* 區塊：[Ethereum NewBlocks](https://docs.blockrazor.io/tc/streams/block-stream/ethereum/newblocks)
+* 節點同步：[Ethereum CL/EL Client Sync](https://docs.blockrazor.io/tc/streams/node-stream/ethereum/cl-el-client-sync)
+* 提交：[Ethereum RPC](https://docs.blockrazor.io/tc/transaction-submission/rpc/ethereum-rpc) 或 [Ethereum Broadcast Tx](https://docs.blockrazor.io/tc/transaction-submission/transaction-sending/ethereum/broadcast-tx)
+
+#### Solana
+
+* 信號與區塊：[Shred Stream](https://docs.blockrazor.io/tc/streams/block-stream/solana/shred-stream) 或 [Geyser Stream](https://docs.blockrazor.io/tc/streams/block-stream/solana/geyser-stream)
+* 費用信號：[Network Fee Stream](https://docs.blockrazor.io/tc/streams/network-fee-stream/solana/get-transactionfee)
+* 提交：[Solana Transaction Sending](https://docs.blockrazor.io/tc/transaction-submission/transaction-sending/solana/send-transaction)
+
+#### Base
+
+* 區塊信號：[Base Block Stream](https://docs.blockrazor.io/tc/streams/block-stream/base/get-blockstream)
+* 提交：[Base Transaction Sending](https://docs.blockrazor.io/tc/transaction-submission/transaction-sending/base/eth_sendrawtransaction)
+
+我們仍然使用“信號 → 狀態 → 計算 → 提交”框架幫助 Searcher 選型，但每條鏈需要使用自己的 API、數據字段和 Benchmark。
+
+### FAQ
 
 <details>
 
-<summary>提交Bundle至RPC和提交Bundle至Block Builder有什麼區別</summary>
+<summary><strong>Robinhood Chain Node-required 和 Direct Feed 如何選擇？</strong></summary>
 
-两者的核心区别在于 Bundle 的提交路径和最终到达的目标不同。
-
-提交 [Bundle](../../transaction-submission/rpc/bsc/eth_sendbundle.md) 至 **BlockRazor RPC** 时，BlockRazor RPC 会将 Bundle 低延迟转发给主流 builders。这种方式更适合作为统一接入入口，用户不需要逐个对接不同 builder，即可完成 Bundle 提交。
-
-提交 Bundle 至 **Block Builder** 时，Bundle 会直接发送到 BlockRazor Builder。它更适合明确希望使用 BlockRazor Builder 能力与接入路径的场景。
+如果你的 Backrun 或套利策略需要連續區塊、完整本地狀態或本地執行結果，我們建議選擇 Node-required。沒有節點、只需要最新套利信號時可以選擇 Direct，但 Direct 在擁堵時可能跳過中間區塊。
 
 </details>
 
 <details>
 
-<summary><strong>如何理解bundle的平均gas price需不小於0.05 gwei？</strong></summary>
+<summary><strong>低延遲是否保證交易被打包或獲得更高收益？</strong></summary>
 
-假設一個 Bundle 中有 3 筆交易 `{tx1, tx2, tx3}`，其中 `tx1` 來自 mempool，BlockRazor Builder 會排除 `tx1`，僅計算 `tx2` 和 `tx3` 的平均 gas price。若 `tx3` 額外支付 tip 給 Builder，則該 tip 金額會加入計算公式的分子，分母仍只計算 `tx2` 和 `tx3` 的 gas used。計算公式為：`(tx2.gas price × tx2.gas used + tx3.gas price × tx3.gas used + tx3.tip) / (tx2.gas used + tx3.gas used)`。
+不保證。我們的服務用於縮短信號、狀態同步或提交鏈路，但交易結果仍受有效性、費用、出價、區塊空間、Builder 或 Sequencer 行為、鏈上狀態和市場競爭影響。
 
 </details>
-

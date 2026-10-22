@@ -91,7 +91,7 @@ Total Blocks Tested: 414
 
 ### 價格
 
-價格為$80 / stream / 日和$800 / stream / 月。 <a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_feed_stream&#x26;billing=day" class="button primary small">訂閱</a>
+<table><thead><tr><th width="159.0859375">支付方式</th><th>價格</th><th>操作</th></tr></thead><tbody><tr><td>Personalized</td><td>$80 / stream / 日<br>$800 / stream / 月</td><td><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=robinhood&#x26;serviceId=robinhood_feed_stream&#x26;billing=day" class="button primary small">訂閱</a></td></tr><tr><td>Package</td><td>$1250 / month<br>和其他核心服務組合訂閱，享有更高價值。如需調整為Direct Sequencer Feed，請與我們<a href="https://discord.gg/qqJuwRb8Nh">聯繫</a></td><td><a href="https://blockrazor.io/#/portal/pricing?redirect=pricing&#x26;purchaseMode=package&#x26;billing=month" class="button primary small">訂閱</a></td></tr></tbody></table>
 
 ### 端點
 
@@ -125,7 +125,7 @@ ws://us.robinhood-feeder.blockrazor.io/ws/{authToken}
 {% endstep %}
 
 {% step %}
-**替換Feed URL**
+**添加Feed URL**
 
 在節點啟動命令中找到以下配置：
 

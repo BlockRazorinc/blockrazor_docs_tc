@@ -10,7 +10,7 @@
 * [BlockRazor 適用用戶和鏈上交易場景](get-started/use-cases/README.md "用戶案例")
   * [錢包和 DEX 低延遲交易基礎設施](get-started/use-cases/wallet-dex.md "錢包/去中心化交易所")
   * [Copy Trading & Sniping 低延遲交易基礎設施](get-started/use-cases/trading-bot.md "Trading Bot")
-  * [MEV Searcher 基礎設施和 Bundle API](get-started/use-cases/searcher.md "Searcher")
+  * [全鏈 Searcher 基礎設施：從信號獲取到交易提交](get-started/use-cases/searcher.md "Searcher")
   * [量化交易區塊鏈基礎設施](get-started/use-cases/algorithmic-trading.md "量化交易系統")
   * [個人交易者配置 BlockRazor RPC](get-started/use-cases/individual-trader.md "個人交易者")
 
