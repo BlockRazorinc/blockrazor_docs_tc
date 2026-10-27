@@ -1,5 +1,7 @@
 ---
 description: 使用 BlockRazor Base Get FlashBlockStream API，查看服務優勢、端點、價格以及集成方法
+hidden: true
+noIndex: true
 metaLinks:
   canonical: ./
   alternates:

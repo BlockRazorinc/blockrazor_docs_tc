@@ -1,5 +1,6 @@
 ---
 description: 使用 BlockRazor Base 解析 FlashBlock API，查看代碼示例
+hidden: true
 metaLinks:
   canonical: parseflashblock.md
   alternates:

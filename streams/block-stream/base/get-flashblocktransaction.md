@@ -1,5 +1,7 @@
 ---
 description: 介紹BlockRazor Base Get FlashBlockTransaction API 服務、端點、價格以及集成方法
+hidden: true
+noIndex: true
 metaLinks:
   canonical: get-flashblocktransaction.md
   alternates:
