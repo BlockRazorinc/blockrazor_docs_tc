@@ -5,7 +5,8 @@ description: >-
 metaLinks:
   canonical: ./
   alternates:
-    - https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/overview
+    - >-
+      https://app.gitbook.com/s/jbyfG8gOgcdsK3wVxNdQ/get-started/global-low-latency-web3-infrastructure
 ---
 
 # 全球低延遲區塊鏈基礎設施

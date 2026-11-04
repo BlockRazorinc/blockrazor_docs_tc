@@ -12,11 +12,11 @@ metaLinks:
 
 ### RPC
 
-<table><thead><tr><th width="125.16015625">鏈</th><th>方法</th><th>限流</th></tr></thead><tbody><tr><td>BSC</td><td><ul><li><a href="../transaction-submission/rpc/bsc/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/bsc/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr><tr><td>Ethereum</td><td><ul><li><a href="../transaction-submission/rpc/ethereum-rpc/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/ethereum-rpc/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr></tbody></table>
+<table><thead><tr><th width="125.16015625">鏈</th><th>方法</th><th>限流</th></tr></thead><tbody><tr><td>BSC</td><td><ul><li><a href="../transaction-submission/rpc/bsc/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/bsc/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr><tr><td>Ethereum</td><td><ul><li><a href="../transaction-submission/rpc/ethereum/eth_sendrawtransaction.md"><code>eth_sendRawTransaction</code></a></li><li><a href="../transaction-submission/rpc/ethereum/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li>其他JSON RPC方法</li></ul></td><td>-</td></tr></tbody></table>
 
 ### Block Builder
 
-<table><thead><tr><th width="125.484375">鏈</th><th width="288.10546875">方法</th><th>限流</th></tr></thead><tbody><tr><td>BSC</td><td><ul><li><a href="../transaction-submission/rpc/ethereum-rpc/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li><a href="../transaction-submission/block-builder/send-privatetransaction.md"><code>eth_sendPrivateTransaction</code></a></li></ul></td><td>-</td></tr></tbody></table>
+<table><thead><tr><th width="125.484375">鏈</th><th width="288.10546875">方法</th><th>限流</th></tr></thead><tbody><tr><td>BSC</td><td><ul><li><a href="../transaction-submission/rpc/ethereum/eth_sendbundle.md"><code>eth_sendBundle</code></a></li><li><a href="../transaction-submission/block-builder/send-privatetransaction.md"><code>eth_sendPrivateTransaction</code></a></li></ul></td><td>-</td></tr></tbody></table>
 
 ### Transaction Sending
 

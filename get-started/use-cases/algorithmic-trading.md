@@ -66,7 +66,7 @@ BlockRazor RPC會為項目方生成專屬的RPC URL，專屬RPC支持原生的JS
 3. 前往RPC模塊，查看專屬RPC（目前支持Ethereum和BSC），一鍵可視化配置RPC參數，複製RPC URL
 4. 前往量化交易系統項目工程，找到鏈的RPC配置文件，將默認端點替換為專屬RPC URL
 5. 更新發佈項目
-6. 執行搬磚套利策略，將交易以[`eth_sendRawtransaction`](../../transaction-submission/rpc/ethereum-rpc/eth_sendrawtransaction.md#eth_sendrawtransaction)提交至RPC，如策略涉及多筆交易，則以[Bundle](../../transaction-submission/rpc/bsc/eth_sendbundle.md)提交至RPC
+6. 執行搬磚套利策略，將交易以[`eth_sendRawtransaction`](../../transaction-submission/rpc/ethereum/eth_sendrawtransaction.md#eth_sendrawtransaction)提交至RPC，如策略涉及多筆交易，則以[Bundle](../../transaction-submission/rpc/bsc/eth_sendbundle.md)提交至RPC
 7. [登錄](https://www.blockrazor.io/#/login)BlockRazor控制台，查看返利和交易情況
 
 #### Builder直連通道

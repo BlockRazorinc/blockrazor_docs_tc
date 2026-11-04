@@ -11,7 +11,7 @@ metaLinks:
 
 ### 接口說明
 
-本方法支持通過bundle hash查詢該 bundle 的當前狀態，請在向builder發送 bundle 後 5 分鐘進行查詢。端點：[https://bsc-bundle-stats.blockrazor.io/](https://bsc-bundle-stats.blockrazor.io/)
+本方法支持通過bundle hash查詢該 bundle 的當前狀態，請在向builder發送 bundle 後 5 分鐘進行查詢。端點：https://bsc-bundle-stats.blockrazor.io/
 
 ### 價格
 
