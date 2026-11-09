@@ -138,6 +138,8 @@
   * [Base Transaction Sending 概覽](transaction-submission/transaction-sending/base/README.md "Base")
     * [Base eth\_sendRawTransaction API](transaction-submission/transaction-sending/base/eth_sendrawtransaction.md "eth_sendRawTransaction")
     * [Base eth\_sendRawTransaction(tip)](transaction-submission/transaction-sending/base/eth_sendrawtransaction-tip.md "eth_sendRawTransaction(tip)")
+  * [Elysium](transaction-submission/transaction-sending/elysium/README.md)
+    * [Elysium eth\_sendRawTransaction API](transaction-submission/transaction-sending/elysium/eth_sendrawtransaction.md "eth_sendRawTransaction")
   * [Sui](transaction-submission/transaction-sending/sui/README.md)
     * [sui\_executeTransactionBlock](transaction-submission/transaction-sending/sui/sui_executetransactionblock/README.md)
       * [TS](transaction-submission/transaction-sending/sui/sui_executetransactionblock/ts.md)

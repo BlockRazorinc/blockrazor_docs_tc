@@ -11,7 +11,7 @@ metaLinks:
 
 ### Transaction Sending 模式是什麼
 
-Transaction Sending 是 BlockRazor 提供的快速交易發送模式，面向對交易上鏈速度有更高要求的用戶，適用於 Solana、BSC 和 Base。
+Transaction Sending 是 BlockRazor 提供的快速交易發送模式，面向對交易上鏈速度有更高要求的用戶，適用於 Solana、BSC、Base、Robinhood Chain 和 Elysium。
 
 相比 RPC 發送模式，Transaction Sending 更關注交易從客戶端發出後，如何以更快的路徑進入鏈上執行流程。它依託 [BEF](../../he-xin-ji-shu/blockchain-edge-fabric.md) 充分利用不同鏈的底層機制，為交易系統提供更低延遲的發送體驗。
 
