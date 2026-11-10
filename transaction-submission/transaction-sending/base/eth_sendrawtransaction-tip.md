@@ -2,6 +2,8 @@
 description: >-
   瞭解 BlockRazor Base Transaction Sending 模式下 的
   eth_sendRawTransaction(tip)接口、端點、限流、請求示例和返回示例
+hidden: true
+noIndex: true
 metaLinks:
   canonical: eth_sendrawtransaction-tip.md
   alternates:
