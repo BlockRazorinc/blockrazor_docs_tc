@@ -11,7 +11,7 @@ Elysium 是屬於 Hyperliquid 生態的高性能 Layer 2 網絡，基於 Arbitru
 
 ### 價格
 
-<table><thead><tr><th width="118.61328125">用戶類型</th><th width="309.9453125">價格</th><th width="284.26953125">限流</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>1 Tx / 5s</td><td>免費</td></tr><tr><td>付費用戶</td><td>20 Txs / 1s</td><td>$100 / 日<br>$1000 / 月<br><br><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=hyperliquid_l2&#x26;serviceId=hyperliquid_l2_transaction_sending&#x26;billing=day" class="button primary medium">訂閱</a></td></tr></tbody></table>
+<table><thead><tr><th width="118.61328125">用戶類型</th><th width="309.9453125">價格</th><th width="284.26953125">限流</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>1 Tx / 5s</td><td>免費</td></tr><tr><td>付費用戶</td><td>10 Txs / 1s</td><td>$100 / 日<br>$1000 / 月<br><br><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=hyperliquid_l2&#x26;serviceId=hyperliquid_l2_transaction_sending&#x26;billing=day" class="button primary medium">訂閱</a></td></tr></tbody></table>
 
 ### 端點
 
