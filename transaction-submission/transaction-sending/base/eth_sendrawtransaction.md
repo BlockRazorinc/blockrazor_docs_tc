@@ -39,6 +39,12 @@ BlockRazor Base RPC 的優化重點不僅在入口節點部署，也在區域 re
 
 <table><thead><tr><th width="155.45703125">用戶類型</th><th width="208.93359375">限流</th><th>價格</th></tr></thead><tbody><tr><td>新註冊用戶</td><td>1 Tx / 5s</td><td>免費</td></tr><tr><td>付費用戶</td><td>20 Txs / 1s</td><td>$100 / 日<br>$1000 / 月<br><br><a href="https://blockrazor.io/#/login?redirect=pricing&#x26;purchaseMode=personalized&#x26;chain=base&#x26;serviceId=base_rpc_send_tx&#x26;billing=day" class="button primary small">訂閱</a></td></tr></tbody></table>
 
+### Benchmark
+
+全部 **1,200 次競速**中，**BlockRazor Virginia 勝出 813 次，上鏈勝率為 67.75%**，Base 官方 Sequencer 勝出 387 次（32.25%）。BlockRazor 在 **12 輪中的 9 輪領先**，取得超過三分之二的勝方打包結果。
+
+[https://blockrazor.io/zh/blog/base-transaction-submission-benchmark/](https://blockrazor.io/zh/blog/base-transaction-submission-benchmark/)
+
 ### 端點
 
 {% tabs %}
