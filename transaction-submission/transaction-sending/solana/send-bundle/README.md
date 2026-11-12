@@ -33,4 +33,4 @@ Solana發送bundle的服務默認不對外開放，如需提升限流標準，�
 
 ### 请求参数
 
-<table><thead><tr><th width="103.18359375">字段</th><th width="81.4765625">必填</th><th width="100.2734375">格式</th><th width="173.57421875">示例</th><th>備注</th></tr></thead><tbody><tr><td>transactions</td><td>是</td><td>string[]</td><td>["$base64_tx_1","$base64_tx_2","$base64_tx_3"]</td><td>已完成簽名的交易列表，Base64编码</td></tr></tbody></table>
+<table><thead><tr><th width="103.18359375">字段</th><th width="81.4765625">必填</th><th width="100.2734375">格式</th><th width="173.57421875">示例</th><th>備注</th></tr></thead><tbody><tr><td>transactions</td><td>是</td><td>string[]</td><td>["$base64_tx_1","$base64_tx_2","$base64_tx_3"]</td><td>已完成簽名的交易列表，Base64编码</td></tr><tr><td>mode</td><td>否</td><td>string</td><td>"sandwichMitigation"</td><td>如填寫sandwichMitigation則開啟bundle三明治保護模式，缺省則不開啟</td></tr></tbody></table>

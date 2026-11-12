@@ -37,6 +37,8 @@ const publicKey = "";
 const amount = 200_000;
 // Tip amount
 const tipAmount = 100_000;
+// Leave empty to preserve the original bundle behavior. Set to "sandwichMitigation" to opt in.
+const mode = "";
 
 // ------------------ Axios HTTP Client (Connection Reuse Enabled) ------------------
 const httpClient = axios.create({
@@ -91,6 +93,9 @@ async function sendBundle() {
 		const payload = {
 				transactions: [base64Tx],
 		};
+		if (mode) {
+				payload.mode = mode;
+		}
 
 		try {
 				const res = await httpClient.post(httpEndpoint, payload);
@@ -148,6 +153,8 @@ const privateKey = "";
 
 // tip amount
 const tipAmount = 100_000;
+// Leave empty to preserve the original bundle behavior. Set to "sandwichMitigation" to opt in.
+const mode = "";
 
 const client = new serverProto.Server(
 		blzRelayEndpoint,
@@ -200,7 +207,12 @@ async function pingHealth() {
 		const serializedTransaction = transaction.serialize();
 		const base64Tx = serializedTransaction.toString('base64');
 
-		client.SendBundle({ transactions: [base64Tx] }, meta, (err, response) => {
+		const request = { transactions: [base64Tx] };
+		if (mode) {
+				request.mode = mode;
+		}
+
+		client.SendBundle(request, meta, (err, response) => {
 				if (err) {
 						console.error('[send bundle] error:', err);
 						return;
@@ -209,79 +221,6 @@ async function pingHealth() {
 				console.log('[send bundle] response:', response);
 		});
 })();
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Proto" %}
-{% code overflow="wrap" %}
-```go
-syntax = "proto3";
-
-package serverpb;
-
-option go_package = "./pb/serverpb";
-
-service Server {
-    rpc SendTransaction(SendRequest) returns(SendResponse) {};
-
-    rpc SendBinaryTransaction(SendBinaryRequest) returns(SendResponse) {};
-
-    rpc SendBatch(SendBatchRequest) returns(SendBatchResponse) {};
-
-    rpc SendBundle(SendBundleRequest) returns(SendBundleResponse) {};
-
-    rpc GetHealth(HealthRequest) returns(HealthResponse) {};
-}
-
-message SendRequest {
-    string transaction = 1;
-    string mode = 2;
-    int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendBinaryRequest {
-    bytes binaryTransaction = 1;
-    string mode = 2;
-    int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendResponse {
-    string signature = 1;
-}
-
-message SendBundleRequest {
-    repeated string transactions = 1;
-}
-
-message SendBundleResponse {
-    string signature = 1;
-}
-
-message SendBatchRequest {
-    repeated string transactions = 1;
-    string mode = 2;
-    int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendBatchResponse {
-    repeated BatchResponse result = 1;
-}
-
-message BatchResponse {
-    string signature = 1;
-    string error = 2;
-}
-
-message HealthRequest {
-}
-
-message HealthResponse {
-    string status = 1;
-}
 ```
 {% endcode %}
 {% endtab %}

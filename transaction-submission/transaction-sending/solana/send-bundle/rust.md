@@ -35,6 +35,8 @@ use tokio::time::sleep;
 #[derive(Serialize)]
 struct SendBundleRequest {
     transactions: Vec<String>,
+    #[serde(skip_serializing_if = "String::is_empty")]
+    mode: String,
 }
 
 #[derive(Deserialize, Debug)]
@@ -65,6 +67,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let amount: u64 = 200_000;
     // tip amount
     let tipamount: u64 = 100_000;
+    // Leave empty to preserve the original bundle behavior. Set to "sandwichMitigation" to opt in.
+    let mode = "";
 
     // Create a shared HTTP client with keep-alive support
     let client = reqwest::Client::new();
@@ -95,6 +99,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         publickey,
         tipamount,
         amount,
+        mode,
         &http_endpoint,
         tip_accounts_endpoint,
     )
@@ -139,6 +144,7 @@ async fn send_bundle(
     publickey: &str,
     tipamount: u64,
     amount: u64,
+    mode: &str,
     http_endpoint: &str,
     tip_accounts_endpoint: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
@@ -166,6 +172,7 @@ async fn send_bundle(
     let base64_encoded = general_purpose::STANDARD.encode(serialized);
     let request = SendBundleRequest {
         transactions: vec![base64_encoded],
+        mode: mode.to_string(),
     };
     let mut headers = HeaderMap::new();
     headers.insert("apikey", HeaderValue::from_str(authkey)?);
@@ -228,6 +235,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let privatekey = "";
     // tip amount
     let tipamount = 100_000;
+    // Leave empty to preserve the original bundle behavior. Set to "sandwichMitigation" to opt in.
+    let mode = "";
 
     let channel = Channel::from_shared(blzendpoint.to_string())
         .map_err(|e| Box::<dyn Error>::from(format!("Invalid URI: {}", e)))?
@@ -296,6 +305,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut bundle_request: tonic::Request<SendBundleRequest> =
         tonic::Request::new(SendBundleRequest {
             transactions: vec![base64_encoded],
+            mode: mode.to_string(),
         });
     bundle_request
         .metadata_mut()
@@ -304,79 +314,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("SEND BUNDLE RESPONSE={:?}", response);
 
     Ok(())
-}
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Proto" %}
-{% code overflow="wrap" %}
-```go
-syntax = "proto3";
-
-package serverpb;
-
-option go_package = "./pb/serverpb";
-
-service Server {
-    rpc SendTransaction(SendRequest) returns(SendResponse) {};
-
-    rpc SendBatch(SendBatchRequest) returns(SendBatchResponse) {};
-
-    rpc SendBundle(SendBundleRequest) returns(SendBundleResponse) {};
-
-    rpc GetHealth(HealthRequest) returns(HealthResponse) {};
-
-    rpc GetTipAccounts(GetTipAccountsRequest) returns(GetTipAccountsResponse) {};
-}
-
-message SendRequest {
-    string transaction = 1;
-    string mode = 2;
-    int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendResponse {
-    string signature = 1;
-}
-
-message SendBundleRequest {
-    repeated string transactions = 1;
-}
-
-message SendBundleResponse {
-    string signature = 1;
-}
-
-message SendBatchRequest {
-    repeated string transactions = 1;
-    string mode = 2;
-    int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendBatchResponse {
-    repeated BatchResponse result = 1;
-}
-
-message BatchResponse {
-    string signature = 1;
-    string error = 2;
-}
-
-message HealthRequest {
-}
-
-message HealthResponse {
-    string status = 1;
-}
-
-message GetTipAccountsRequest {
-}
-
-message GetTipAccountsResponse {
-    repeated string tipAccounts = 1;
 }
 ```
 {% endcode %}

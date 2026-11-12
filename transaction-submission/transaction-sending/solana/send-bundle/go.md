@@ -43,6 +43,8 @@ const (
 	publicKey           = ""
 	amount              = 200_000
 	tipAmount           = 100_000
+	// Leave empty to preserve the original bundle behavior. Set to "sandwichMitigation" to opt in.
+	mode = ""
 )
 
 var httpClient = &http.Client{
@@ -51,6 +53,7 @@ var httpClient = &http.Client{
 
 type SendRequest struct {
 	Transactions []string `json:"transactions"`
+	Mode         string   `json:"mode,omitempty"`
 }
 
 type SendResponse struct {
@@ -159,6 +162,7 @@ func sendBundle() error {
 
 	reqBody := SendRequest{
 		Transactions: []string{txBase64},
+		Mode:         mode,
 	}
 	jsonBody, _ := json.Marshal(reqBody)
 
@@ -222,6 +226,8 @@ const (
 
 	// tip amount
 	tipAmount = 100_000
+	// Leave empty to preserve the original bundle behavior. Set to "sandwichMitigation" to opt in.
+	mode = ""
 )
 
 func main() {
@@ -304,6 +310,7 @@ func main() {
 
 	sendRes, err := client.SendBundle(context.TODO(), &pb.SendBundleRequest{
 		Transactions: []string{txBase64},
+		Mode:         mode,
 	})
 	if err != nil {
 		panic(fmt.Sprintf("[send bundle] error: %v", err))
@@ -333,79 +340,6 @@ func pingHealth(client pb.ServerClient) error {
 	}
 	fmt.Printf("[health] response: %+v \n", healthRes.Status)
 	return err
-}
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Proto" %}
-{% code overflow="wrap" %}
-```go
-syntax = "proto3";
-
-package serverpb;
-
-option go_package = "./pb/serverpb";
-
-service Server {
-    rpc SendTransaction(SendRequest) returns(SendResponse) {};
-
-    rpc SendBatch(SendBatchRequest) returns(SendBatchResponse) {};
-
-    rpc SendBundle(SendBundleRequest) returns(SendBundleResponse) {};
-
-    rpc GetHealth(HealthRequest) returns(HealthResponse) {};
-
-    rpc GetTipAccounts(GetTipAccountsRequest) returns(GetTipAccountsResponse) {};
-}
-
-message SendRequest {
-    string transaction = 1;
-    string mode = 2;
-    int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendResponse {
-    string signature = 1;
-}
-
-message SendBundleRequest {
-    repeated string transactions = 1;
-}
-
-message SendBundleResponse {
-    string signature = 1;
-}
-
-message SendBatchRequest {
-    repeated string transactions = 1;
-    string mode = 2;
-    int32 safeWindow = 3;
-    bool revertProtection = 4;
-}
-
-message SendBatchResponse {
-    repeated BatchResponse result = 1;
-}
-
-message BatchResponse {
-    string signature = 1;
-    string error = 2;
-}
-
-message HealthRequest {
-}
-
-message HealthResponse {
-    string status = 1;
-}
-
-message GetTipAccountsRequest {
-}
-
-message GetTipAccountsResponse {
-    repeated string tipAccounts = 1;
 }
 ```
 {% endcode %}
