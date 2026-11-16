@@ -1,5 +1,7 @@
 ---
 description: 瞭解 Robinhood Chain Sequencer Feed(Ultra) 服務、價格、端點和使用步驟
+hidden: true
+noIndex: true
 ---
 
 # Robinhood Chain Direct Sequencer Feed(Ultra) 接入指南
