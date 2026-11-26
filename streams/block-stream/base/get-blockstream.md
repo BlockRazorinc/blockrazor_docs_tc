@@ -25,19 +25,6 @@ Get BlockStream 是 BlockRazor 為 Base 提供的實時區塊數據訂閱接口�
 
 </details>
 
-<details>
-
-<summary><strong>Get BlockStream 和 Get FlashBlockStream 有什麼區別</strong></summary>
-
-兩者的核心區別在於 數據粒度、時間點和適用場景 不同。
-
-* **Get BlockStream**\
-  用於獲取 Base 上已經形成的正式區塊數據，關注的是已確認區塊和其中的交易內容。它更適合確認結果監控、區塊級分析、鏈上數據處理和需要穩定消費正式區塊的數據系統。
-* **Get FlashBlockStream**\
-  用於獲取 Base 上的 FlashBlock 數據。FlashBlock 是 Base 每約 200ms 推送一次的“子區塊”數據，相比標準約 2s 的正式區塊時間，能夠更早提供交易預確認信息。它更適合對低延遲更敏感、希望盡早看到鏈上變化的場景。
-
-</details>
-
 ### 端點
 
 {% tabs %}
