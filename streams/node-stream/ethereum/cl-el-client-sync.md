@@ -55,7 +55,7 @@ CL/EL 客戶端同步的價值，不只是“幫助節點連上網絡”，而�
 
 #### 步驟1：採購Node Stream
 
-1. 前往[https://www.blockrazor.io/](https://www.blockrazor.io/)，點擊右上角的【註冊】，完成註冊
+1. 前往[https://blockrazor.io/](https://blockrazor.io/)，點擊右上角的【註冊】，完成註冊
 2. 登錄控制台，前往【訂閱】- Node Stream，完成採購
 3. 前往【服務】 - 【Streams】-【Node Stream】，點擊【編輯】
 4. 選擇離 EL 客戶端最近的地區，輸入需要連接relay的 EL 客戶端Enode，點擊【確認】，完成添加
